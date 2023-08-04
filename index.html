@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en-ES"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="p​ortfolio, design, contact us">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
+    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
+    <link rel="icon" href="images/favicon.png">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900|PT+Sans:400,400i,700,700i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Aleo:300,300i,400,400i,700,700i">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Portfolio",
+		"logo": "/images/logo_transparent2.png",
+		"sameAs": [
+				"https://twitter.com/yeymura",
+				"https://www.instagram.com/yey2wavy/",
+				"https://www.linkedin.com/in/yahved-fernández-202017170/"
+		]
+}</script>
+    <meta name="theme-color" content="#1f203a">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Home">
+    <meta name="twitter:description" content="Portfolio">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <script>
+var buttonSelector = 'a[href*="-popup"]',
+    parseId = function (href) { return href.replace('-popup', '').replace('#', ''); };
+jQuery(function($) {
+    $('body').on('click', buttonSelector, function (event) {
+        var id = parseId(event.currentTarget.getAttribute('href'));
+        var modalId = 'modal-' + id;
+        if ($('#' + modalId).length === 0) {
+            $('body').append('<div class="flex align-center align-vert modal modal--align" id="' + modalId + '">' +
+                '    <div class="modal__container">' +
+                '        <span class="modal__close modal__close--x" aria-hidden="true">×</span>' +
+                '        ' + document.getElementById(id).outerHTML +
+                '    </div>' +
+                '</div>');      
+        }
+        $('#' + modalId).addClass('modal--show');
+    });
+    var closeModal = function (modal) {
+        modal.removeClass('modal--show');
+        modal.addClass('modal--hide');
+        var afterAnimation = function () {
+            modal.removeClass('modal--hide');   
+        };
+        // This listens for the CSS animations to finish and then hides the modal
+        modal[0].addEventListener("webkitAnimationEnd", afterAnimation, false);
+        modal[0].addEventListener("oAnimationEnd", afterAnimation, false);
+        modal[0].addEventListener("msAnimationEnd", afterAnimation, false);
+        modal[0].addEventListener("animationend", afterAnimation, false);
+        setTimeout(afterAnimation, 400);
+    }
+    // Close the modal with any element with class 'modal__close'
+    $('body').on('click', '.modal__close', function (e) {
+        closeModal($(e.currentTarget).closest('.modal'));
+    });
+    // Click outside of the modal and close it
+    window.onclick = function (e) {
+        if ($(e.target).is('.modal')) {
+            closeModal($(e.target));
+        }
+    }
+    // Use the escape key to close modal
+    document.onkeyup = function (e) {
+        e = e || window.event;
+        if (e.keyCode == 27 && $('.modal--show').length === 1) {
+            closeModal($('.modal--show'));
+        }
+    }
+ });
+document.addEventListener("DOMContentLoaded", function(event) {
+    var buttons = document.querySelectorAll(buttonSelector);
+    for (var i = 0; i < buttons.length; i++) {
+        var section = document.getElementById(parseId(buttons[i].getAttribute('href')));
+        if (section) {
+            section.style.display = 'none';
+        }       
+    }
+});
+</script></head>
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode"><header class="u-clearfix u-header u-image u-shading u-header" id="home" data-image-width="840" data-image-height="939"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="/Home.html" data-page-id="43701195" class="u-image u-image-round u-logo u-image-1" data-image-width="1200" data-image-height="1200" data-animation-name="jackInTheBox" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="" title="-">
+          <img src="/images/logo_transparent2.png" class="u-logo-image u-logo-image-1" data-image-width="124.7142">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-offcanvas-shift u-menu-1" data-responsive-from="XL">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-palette-1-light-1" href="#blockmodal-1" style="font-size: calc(1em + 60px); color: rgb(255, 255, 255) !important;">
+              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="-42 0 512 512.001" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c53c"></use></svg>
+              <svg class="u-svg-content" viewBox="-42 0 512 512.001" id="svg-c53c"><path d="m135.746094 380.710938c-.988282 1.796874-2.519532 2.335937-3.957032 2.335937s-2.875-.539063-3.863281-2.335937l-10.339843-19.417969v39.371093c0 2.429688-2.964844 3.6875-5.839844 3.6875-2.96875 0-5.84375-1.257812-5.84375-3.6875v-56.183593c0-4.3125 2.875-5.839844 5.84375-5.839844 4.222656 0 6.113281.898437 9.078125 6.199219l11.058593 20.136718 11.054688-20.136718c2.96875-5.300782 4.945312-6.199219 9.171875-6.199219 2.964844 0 5.839844 1.527344 5.839844 5.839844v56.183593c0 2.429688-2.964844 3.6875-5.839844 3.6875-2.96875 0-5.84375-1.257812-5.84375-3.6875v-38.652343zm0 0"></path><path d="m190.484375 366.863281h13.664063c2.335937 0 3.683593 2.25 3.683593 4.675781 0 2.066407-1.167969 4.496094-3.683593 4.496094h-13.664063v18.066406h25.4375c2.339844 0 3.6875 2.425782 3.6875 5.214844 0 2.425782-1.167969 5.035156-3.6875 5.035156h-32c-2.605469 0-5.125-1.261718-5.125-3.6875v-58.339843c0-2.425781 2.515625-3.6875 5.125-3.6875h32c2.519531 0 3.6875 2.609375 3.6875 5.035156 0 2.789063-1.347656 5.214844-3.6875 5.214844h-25.4375zm0 0"></path><path d="m267.519531 400.664062-19.328125-36.136718v36.136718c0 2.429688-2.964844 3.6875-5.84375 3.6875-2.964844 0-5.84375-1.257812-5.84375-3.6875v-58.339843c0-2.515625 2.878906-3.683594 5.84375-3.683594 4.226563 0 5.933594.898437 8.722656 6.199219l17.347657 33.53125v-36.136719c0-2.515625 2.875-3.597656 5.84375-3.597656 2.875 0 5.839843 1.078125 5.839843 3.597656v58.429687c0 2.425782-2.964843 3.6875-5.839843 3.6875-2.789063 0-5.214844-.898437-6.742188-3.6875zm0 0"></path><path d="m332.148438 342.234375c0-2.515625 2.875-3.59375 5.839843-3.59375 2.878907 0 5.84375 1.078125 5.84375 3.59375v42.070313c0 15.011718-9.527343 20.585937-21.574219 20.585937-12.136718 0-21.574218-5.574219-21.574218-20.585937v-42.070313c0-2.515625 2.875-3.59375 5.84375-3.59375 2.875 0 5.839844 1.078125 5.839844 3.59375v42.070313c0 7.011718 3.6875 10.339843 9.890624 10.339843 6.203126 0 9.886719-3.328125 9.886719-10.339843v-42.070313zm0 0"></path><path d="m355.257812 422.148438h-42.730468c-4.195313 0-7.59375 3.398437-7.59375 7.589843 0 4.195313 3.398437 7.589844 7.59375 7.589844h42.730468c4.195313 0 7.589844-3.394531 7.589844-7.589844 0-4.191406-3.394531-7.589843-7.589844-7.589843zm0 0"></path><path d="m277.207031 422.148438h-172.941406c-4.191406 0-7.589844 3.398437-7.589844 7.589843 0 4.195313 3.398438 7.589844 7.589844 7.589844h172.941406c4.195313 0 7.589844-3.394531 7.589844-7.589844 0-4.191406-3.394531-7.589843-7.589844-7.589843zm0 0"></path><path d="m355.257812 306.242188h-250.992187c-4.191406 0-7.589844 3.398437-7.589844 7.589843 0 4.191407 3.398438 7.589844 7.589844 7.589844h250.992187c4.195313 0 7.589844-3.398437 7.589844-7.589844 0-4.191406-3.394531-7.589843-7.589844-7.589843zm0 0"></path><path d="m351.035156 212.128906h-7.367187c-2.84375-52.300781-41.074219-95.339844-91.109375-105.527344l1.464844-14.003906c.480468-4.570312-1.011719-9.148437-4.085938-12.558594-3.074219-3.414062-7.472656-5.371093-12.066406-5.371093h-16.214844c-4.597656 0-8.992188 1.960937-12.070312 5.371093-3.074219 3.414063-4.5625 7.992188-4.082032 12.558594l1.464844 14.003906c-50.035156 10.1875-88.265625 53.222657-91.109375 105.523438h-7.367187c-6.515626 0-11.816407 5.300781-11.816407 11.816406v15.664063c0 6.515625 5.300781 11.816406 11.816407 11.816406h242.539062c6.515625 0 11.816406-5.300781 11.816406-11.816406v-15.664063c0-6.511718-5.296875-11.8125-11.8125-11.8125zm-130.167968-121.929687c.210937-.230469.472656-.347657.789062-.347657h16.214844c.3125 0 .578125.117188.789062.347657.210938.234375.300782.511719.265625.820312l-1.417969 13.5625c-2.558593-.171875-5.140624-.269531-7.742187-.269531-2.605469 0-5.183594.097656-7.742187.269531l-1.421876-13.5625c-.03125-.308593.058594-.585937.265626-.820312zm126.800781 146.042969h-235.808594v-8.933594h31.988281c4.195313 0 7.59375-3.398438 7.59375-7.589844s-3.398437-7.589844-7.59375-7.589844h-12.777344c3.242188-51.625 46.265626-92.632812 98.691407-92.632812 52.429687 0 95.453125 41.007812 98.695312 92.632812h-149.289062c-4.195313 0-7.589844 3.398438-7.589844 7.589844s3.394531 7.589844 7.589844 7.589844h168.5zm0 0"></path><path d="m409.484375 0h-359.441406c-10.65625 0-19.328125 8.671875-19.328125 19.328125v13.710937h-7.082032c-13.03125 0-23.632812 10.605469-23.632812 23.636719s10.601562 23.636719 23.632812 23.636719h7.082032v32.457031h-7.082032c-13.03125 0-23.632812 10.601563-23.632812 23.636719 0 13.03125 10.601562 23.632812 23.632812 23.632812h7.082032v32.460938h-7.082032c-13.03125 0-23.632812 10.601562-23.632812 23.636719 0 13.03125 10.601562 23.632812 23.632812 23.632812h7.082032v32.460938h-7.082032c-13.03125 0-23.632812 10.601562-23.632812 23.632812 0 13.035157 10.601562 23.636719 23.632812 23.636719h7.082032v32.460938h-7.082032c-13.03125 0-23.632812 10.601562-23.632812 23.632812 0 13.035156 10.601562 23.636719 23.632812 23.636719h7.082032v32.460937h-7.082032c-13.03125 0-23.632812 10.601563-23.632812 23.632813s10.601562 23.636719 23.632812 23.636719h7.082032v13.710937c0 10.65625 8.671875 19.328125 19.328125 19.328125h359.441406c10.65625 0 19.332031-8.671875 19.332031-19.328125v-473.34375c0-10.65625-8.675781-19.328125-19.332031-19.328125zm-378.773437 65.132812h-7.078126c-4.660156 0-8.453124-3.792968-8.453124-8.457031 0-4.660156 3.792968-8.453125 8.453124-8.453125h7.078126zm0 79.726563h-7.078126c-4.660156 0-8.453124-3.792969-8.453124-8.453125 0-4.664062 3.792968-8.453125 8.453124-8.453125h7.078126zm0 79.730469h-7.078126c-4.660156 0-8.453124-3.792969-8.453124-8.453125 0-4.664063 3.792968-8.457031 8.453124-8.457031h7.078126zm0 79.730468h-7.078126c-4.660156 0-8.453124-3.792968-8.453124-8.457031 0-4.660156 3.792968-8.453125 8.453124-8.453125h7.078126zm0 79.726563h-7.078126c-4.660156 0-8.453124-3.789063-8.453124-8.453125 0-4.660156 3.792968-8.453125 8.453124-8.453125h7.078126zm0 79.730469h-7.078126c-4.660156 0-8.453124-3.792969-8.453124-8.453125 0-4.664063 3.792968-8.453125 8.453124-8.453125h7.078126zm382.921874 28.890625c0 2.289062-1.859374 4.152343-4.148437 4.152343h-359.441406c-2.289063 0-4.148438-1.863281-4.148438-4.152343v-473.339844c0-2.285156 1.859375-4.148437 4.148438-4.148437h359.441406c2.289063 0 4.148437 1.863281 4.148437 4.148437zm0 0"></path></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="/Home.html" style="padding: 10px 0px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="/Projects.html" style="padding: 10px 0px;">Projects</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="/About.html" style="padding: 10px 0px;">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="/Contact.html" style="padding: 10px 0px;">Contact</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-container-style u-inner-container-layout u-opacity u-opacity-85 u-palette-1-dark-1 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-custom-font u-font-open-sans u-nav u-popupmenu-items u-spacing-9 u-text-active-palette-1-dark-1 u-text-grey-10 u-text-hover-palette-1-light-3 u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Home.html" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Projects.html" style="padding: 10px 20px;">Projects</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/About.html" style="padding: 10px 20px;">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Contact.html" style="padding: 10px 20px;">Contact</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-65"></div>
+          </div>
+        </nav>
+        <nav data-position="" class="u-menu u-menu-dropdown u-offcanvas u-offcanvas-shift u-menu-2" data-responsive-from="XL">
+          <div class="menu-collapse u-custom-font u-font-open-sans" style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 700;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-border-radius u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-text-shadow u-custom-top-bottom-menu-spacing u-nav-link u-text-white" href="#" style="padding: 2px 0px; font-size: calc(1em + 4px);">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-custom-font u-font-open-sans u-nav u-spacing-2 u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-light-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-white" href="/Home.html" style="padding: 10px 44px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Home</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-light-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-white" href="/Projects.html" style="padding: 10px 44px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Projects</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-light-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-white" href="/About.html" style="padding: 10px 44px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">About</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-light-3 u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-white" href="/Contact.html" style="padding: 10px 44px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Contact</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Home.html" style="padding: 8px 18px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Projects.html" style="padding: 8px 18px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Projects</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/About.html" style="padding: 8px 18px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Contact.html" style="padding: 8px 18px; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Contact</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-align-left u-clearfix u-palette-1-base u-section-1" id="carousel_2505">
+      <div class="u-expanded-width u-palette-1-dark-1 u-shape u-shape-rectangle u-shape-1"></div>
+      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-center-sm u-align-center-xs u-container-style u-effect-hover-liftUp u-layout-cell u-right-cell u-size-30 u-layout-cell-1" data-image-width="1125" data-image-height="2000">
+              <div class="u-background-effect u-expanded">
+                <div class="u-background-effect-image u-expanded u-image u-shading u-image-1" data-image-width="1200" data-image-height="1600"></div>
+              </div>
+              <div class="u-container-layout u-container-layout-1">
+                <h1 class="u-text u-text-body-alt-color u-text-1">p​ortfolio</h1>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <blockquote class="u-align-center u-text u-text-2">Resident in Barcelona, Spain<br>Studying and freelancing, but also investing my time in to learn new ways to evolve in my work area.<br>
+                </blockquote>
+                <blockquote class="u-align-center u-text u-text-3">HTML, CSS and Python are my main areas of work, i'm also learning 3D Design and animation with Spline.&nbsp; In november 2020 I've achieved the&nbsp;<a href="/files/verifycertiport.comoobv-uGhQ-1.pdf" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-custom-color-4 u-btn-1">Microsoft Technology Asociate for Windows Operating System Fundamentals<br>
+                  </a>
+                </blockquote>
+                <blockquote class="u-align-center u-text u-text-4">I love simple design and code, as you can see in my site.&nbsp;<br>It just make things easier!<br>If you like what you see have no doubt to send me a message
+                </blockquote>
+                <img src="/images/lillogo_transparent.png" alt="" class="u-image u-image-round u-preserve-proportions u-image-2" data-image-width="1200" data-image-height="1200" data-href="/Home.html#carousel_c284" data-page-id="43701195" data-animation-name="fadeIn" data-animation-duration="1750" data-animation-direction="">
+                <blockquote class="u-align-center u-text u-text-5">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-font-roboto-slab u-hover-none u-none u-text-white u-btn-2" href="/Home.html#carousel_c284" data-page-id="43701195">Contact me</a>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-1-base u-section-2" id="sec-32c2">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    <section class="u-align-left u-clearfix u-palette-1-base u-section-3" id="sec-34ca">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-group u-palette-1-base u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <h1 class="u-text u-text-body-alt-color u-text-1">whoami</h1>
+            <h3 class="u-text u-text-grey-15 u-text-2">no need no sudo for this</h3>
+            <p class="u-text u-text-white u-text-3">I can't describe myself better at my job than showing my work and exposing to you whoami.&nbsp;<br>I'm a student in Cornella, living in Barcelona and freelancing as my work.&nbsp;<br>From a young age, I've always gotten to the deepest parts of my toys just to see how they actually work. That fever never stopped, just evolved into bigger toys!!<br>I love web design, that's why I entered the HTML and CSS world, mixed with Python and 3D Design in progress!&nbsp;<a href="/files/verifycertiport.comoobv-uGhQ-1.pdf" c="" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-4 u-btn-1">
+                <span class="u-text-white">Ive achieved to be a</span> Microsoft Technology Asociate for Windows Operating System Fundamentals
+              </a>
+            </p>
+            <a href="/About.html#carousel_3350" data-page-id="741817402" class="u-btn u-button-style u-hover-white u-palette-1-light-2 u-btn-2" target="_blank">learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-carousel u-slide u-valign-middle u-block-0e46-1" id="games" data-interval="0" data-u-ride="false" data-pause="false">
+      <ol class="u-absolute-hcenter u-carousel-indicators u-block-0e46-2">
+        <li data-u-target="#games" class="u-active u-active-palette-4-light-2 u-grey-60 u-hover-palette-3-base u-shape-circle" data-u-slide-to="0" style="width: 10px; height: 10px;"></li>
+        <li data-u-target="#games" class="u-active-palette-4-light-2 u-grey-60 u-hover-palette-3-base u-shape-circle" data-u-slide-to="1" style="width: 10px; height: 10px;"></li>
+        <li data-u-target="#games" class="u-active-palette-4-light-2 u-grey-60 u-hover-palette-3-base u-shape-circle" data-u-slide-to="2" style="width: 10px; height: 10px;"></li>
+        <li data-u-target="#games" class="u-active-palette-4-light-2 u-grey-60 u-hover-palette-3-base u-shape-circle" data-u-slide-to="3" style="width: 10px; height: 10px;"></li>
+      </ol>
+      <div class="u-carousel-inner" role="listbox">
+        <div class="u-active u-carousel-item u-clearfix u-palette-1-dark-1 u-section-4-1">
+          <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width-sm u-expanded-width-xs u-palette-1-light-1 u-shape u-shape-rectangle u-shape-1"></div>
+            <div class="u-clearfix u-gutter-12 u-layout-wrap u-layout-wrap-1">
+              <div class="u-gutter-0 u-layout">
+                <div class="u-layout-row">
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-1">
+                        <div class="u-container-layout u-valign-bottom-xs u-container-layout-1">
+                          <div class="u-clearfix u-custom-html u-custom-html-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
+                            <iframe src="https://trinket.io/embed/python/c1d6bf4259" width="100%" height="650" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen=""></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-size-30">
+                    <div class="u-layout-col">
+                      <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-1-dark-1 u-size-30 u-layout-cell-2">
+                        <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-2">
+                          <h1 class="u-custom-font u-text u-title u-text-1">Text-Based-Game</h1>
+                          <p class="u-text u-text-2"> Thats a Text-Based-Game I made with Python in a few tries. Its very simple but I enjoy it a lot, it was very funny to make and test.</p>
+                          <a href="/Projects.html#carousel_1085" data-page-id="11621465" class="u-active-palette-1-light-2 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">More work</a>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-left-cell u-size-30 u-layout-cell-3">
+                        <div class="u-container-layout"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-carousel-item u-clearfix u-palette-1-dark-1 u-section-4-2">
+          <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width-sm u-expanded-width-xs u-palette-1-light-1 u-shape u-shape-rectangle u-shape-1"></div>
+            <div class="u-clearfix u-gutter-12 u-layout-wrap u-layout-wrap-1">
+              <div class="u-gutter-0 u-layout">
+                <div class="u-layout-row">
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-60 u-image-1" data-image-width="286" data-image-height="1600">
+                        <div class="u-container-layout u-valign-bottom u-container-layout-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-size-30">
+                    <div class="u-layout-col">
+                      <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-1-dark-1 u-size-30 u-layout-cell-2">
+                        <div class="u-container-layout u-valign-middle u-container-layout-2">
+                          <h1 class="u-custom-font u-text u-title u-text-1">App - Web Development</h1>
+                          <p class="u-text u-text-2">A Web Development webpage I made that I liked a lot because of his simplicity and level of responsiveness.&nbsp;<br>Clean and elegant way to present your info and present it&nbsp;concise and direct.
+                          </p>
+                          <a href="/Projects.html#carousel_1085" data-page-id="11621465" class="u-active-palette-1-light-2 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">more work</a>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-left-cell u-size-30 u-layout-cell-3">
+                        <div class="u-container-layout"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-carousel-item u-clearfix u-palette-1-dark-1 u-section-4-3">
+          <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width-sm u-expanded-width-xs u-palette-1-light-1 u-shape u-shape-rectangle u-shape-1"></div>
+            <div class="u-clearfix u-gutter-12 u-layout-wrap u-layout-wrap-1">
+              <div class="u-gutter-0 u-layout">
+                <div class="u-layout-row">
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-60 u-image-1" data-image-width="1600" data-image-height="1066">
+                        <div class="u-container-layout u-valign-bottom u-container-layout-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-size-30">
+                    <div class="u-layout-col">
+                      <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-1-dark-1 u-size-30 u-layout-cell-2">
+                        <div class="u-container-layout u-valign-middle u-container-layout-2">
+                          <h1 class="u-custom-font u-text u-title u-text-1">Paulo Henrique</h1>
+                          <p class="u-text u-text-2">I've worked 6 months rebuilding a house and got a lot of experience from that. From having to stay awake soon and very late because of the terms of the work I got to do everything as fast as I can but also being very precise</p>
+                          <a href="/Projects.html#carousel_1085" data-page-id="11621465" class="u-active-palette-1-light-3 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">More work</a>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-left-cell u-size-30 u-layout-cell-3">
+                        <div class="u-container-layout"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-carousel-item u-clearfix u-palette-1-dark-1 u-section-4-4">
+          <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width-sm u-expanded-width-xs u-palette-1-light-1 u-shape u-shape-rectangle u-shape-1"></div>
+            <div class="u-clearfix u-gutter-12 u-layout-wrap u-layout-wrap-1">
+              <div class="u-gutter-0 u-layout">
+                <div class="u-layout-row">
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-60 u-image-1" data-image-width="399" data-image-height="267">
+                        <div class="u-container-layout u-valign-bottom u-container-layout-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-size-30">
+                    <div class="u-layout-col">
+                      <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-1-dark-1 u-size-30 u-layout-cell-2">
+                        <div class="u-container-layout u-container-layout-2">
+                          <h1 class="u-custom-font u-text u-text-white u-title u-text-1">ISM</h1>
+                          <p class="u-text u-text-2">I made a 3 month practice period with ISM and I can't be thankful enough with them!I've learned a lot of operating systems fundamentals, ways to communicate with clients and how to make a good presence and very polite work.</p>
+                          <a href="#games" class="u-active-palette-1-light-2 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">More work</a>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-left-cell u-size-30 u-layout-cell-3">
+                        <div class="u-container-layout"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-40 u-text-hover-palette-4-light-2 u-block-0e46-5" href="#games" role="button" data-u-slide="prev">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 477.175 477.175"><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                    c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path></svg>
+        </span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-40 u-text-hover-palette-4-light-2 u-block-0e46-6" href="#games" role="button" data-u-slide="next">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 477.175 477.175"><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path></svg>
+        </span>
+        <span class="sr-only">Next</span>
+      </a>
+    </section>
+    <section class="u-align-center u-clearfix u-palette-1-dark-1 u-section-5" id="sec-bdca">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <blockquote class="u-text u-text-1">My coworker and I</blockquote>
+        <div class="u-clearfix u-gutter-20 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1" data-image-width="2775" data-image-height="3701">
+                <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1">
+                  <div class="u-container-style u-group u-opacity u-opacity-50 u-palette-1-dark-2 u-radius-5 u-shape-round u-group-1">
+                    <div class="u-container-layout u-container-layout-2">
+                      <h4 class="u-custom-font u-font-pt-sans u-text u-text-white u-text-2">Yahved Fernández</h4>
+                      <p class="u-custom-font u-font-pt-sans u-text u-text-body-alt-color u-text-3">Computer technician with 3 years of proven experience. HTML, CSS and Python.<br>Windows system fundamentals certified and much more to come.<br>Alex is my school classmate and we've been working together since then.<br>
+                      </p>
+                      <h6 class="u-custom-font u-font-pt-sans u-text u-text-body-alt-color u-text-4">manager</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-container-style u-image u-layout-cell u-right-cell u-size-30 u-image-2" data-image-width="872" data-image-height="1050">
+                <div class="u-container-layout u-container-layout-3">
+                  <div class="u-container-style u-group u-opacity u-opacity-50 u-palette-1-dark-2 u-radius-50 u-shape-round u-group-2">
+                    <div class="u-container-layout u-container-layout-4">
+                      <h4 class="u-custom-font u-font-pt-sans u-text u-text-body-alt-color u-text-5">Alex Fernández</h4>
+                      <p class="u-custom-font u-font-pt-sans u-text u-text-body-alt-color u-text-6">Photographer, computer technician and videographer with 3 years of proven experience.<br>I've known Yahved since we entered classes and became friends. From there we continued working together since.
+                      </p>
+                      <h6 class="u-custom-font u-font-pt-sans u-text u-text-body-alt-color u-text-7">DEputy chief</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-gradient u-section-6" id="carousel_c284">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-size-32">
+                <div class="u-layout-col">
+                  <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                      <div class="u-align-left u-form u-form-1">
+                        <form action="/scripts/form-carousel_c284.php" method="POST" class="u-clearfix u-form-spacing-28 u-form-vertical u-inner-form" style="padding: 42px;" source="customphp" name="form">
+                          <div class="u-form-group u-form-name">
+                            <label for="name-5a14" class="u-form-control-hidden u-label" wfd-invisible="true">Name</label>
+                            <input type="text" placeholder="Enter your Name, visitor" id="name-5a14" name="name" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-palette-1-light-2 u-text-black" required="">
+                          </div>
+                          <div class="u-form-email u-form-group">
+                            <label for="email-5a14" class="u-form-control-hidden u-label" wfd-invisible="true">Email</label>
+                            <input type="email" placeholder="Enter your mail, please" id="email-5a14" name="email" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-palette-1-light-2 u-text-black" required="">
+                          </div>
+                          <div class="u-form-group u-form-message">
+                            <label for="message-5a14" class="u-form-control-hidden u-label" wfd-invisible="true">Message</label>
+                            <textarea placeholder="Tell me whatever you want!" rows="4" cols="50" id="message-5a14" name="message" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-palette-1-light-2 u-text-black" required=""></textarea>
+                          </div>
+                          <div class="u-align-center u-form-group u-form-submit">
+                            <a href="#blockmodal-1" class="u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-1">Submit</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden" wfd-invisible="true">
+                          </div>
+                          <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
+                          <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
+                          <input type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-28">
+                <div class="u-layout-col">
+                  <div class="u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-2">
+                    <div class="u-container-layout u-container-layout-2">
+                      <h1 class="u-text u-text-palette-5-light-3 u-text-1">contact me!</h1><span class="u-icon u-icon-circle u-icon-1" data-href="mailto:dfernandezy@hotmail.com?subject=Greetings%20Yahved!"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a2b9"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-a2b9" style="enable-background:new 0 0 512 512;"><g><g><path d="M452,68H60C26.916,68,0,94.916,0,128v256c0,33.084,26.916,60,60,60h392c33.084,0,60-26.916,60-60V128    C512,94.916,485.084,68,452,68z M472,384c0,11.028-8.972,20-20,20H60c-11.028,0-20-8.972-20-20V128c0-11.028,8.972-20,20-20h392    c11.028,0,20,8.972,20,20V384z"></path>
+</g>
+</g><g><g><polygon points="468.604,92.937 256,251.074 43.396,92.937 19.522,125.032 256,300.926 492.478,125.032   "></polygon>
+</g>
+</g></svg></span>
+                      <div class="u-social-icons u-spacing-38 u-social-icons-1" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
+                        <a class="u-social-url" target="_blank" href="https://www.facebook.com" title="Facebook"><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-white u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="-110 1 511 511.99996" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7b6f"></use></svg><svg class="u-svg-content" viewBox="-110 1 511 511.99996" id="svg-7b6f"><path d="m180 512h-81.992188c-13.695312 0-24.835937-11.140625-24.835937-24.835938v-184.9375h-47.835937c-13.695313 0-24.835938-11.144531-24.835938-24.835937v-79.246094c0-13.695312 11.140625-24.835937 24.835938-24.835937h47.835937v-39.683594c0-39.347656 12.355469-72.824219 35.726563-96.804688 23.476562-24.089843 56.285156-36.820312 94.878906-36.820312l62.53125.101562c13.671875.023438 24.792968 11.164063 24.792968 24.835938v73.578125c0 13.695313-11.136718 24.835937-24.828124 24.835937l-42.101563.015626c-12.839844 0-16.109375 2.574218-16.808594 3.363281-1.152343 1.308593-2.523437 5.007812-2.523437 15.222656v31.351563h58.269531c4.386719 0 8.636719 1.082031 12.289063 3.121093 7.878906 4.402344 12.777343 12.726563 12.777343 21.722657l-.03125 79.246093c0 13.6875-11.140625 24.828125-24.835937 24.828125h-58.46875v184.941406c0 13.695313-11.144532 24.835938-24.839844 24.835938zm-76.8125-30.015625h71.632812v-193.195313c0-9.144531 7.441407-16.582031 16.582032-16.582031h66.726562l.027344-68.882812h-66.757812c-9.140626 0-16.578126-7.4375-16.578126-16.582031v-44.789063c0-11.726563 1.191407-25.0625 10.042969-35.085937 10.695313-12.117188 27.550781-13.515626 39.300781-13.515626l36.921876-.015624v-63.226563l-57.332032-.09375c-62.023437 0-100.566406 39.703125-100.566406 103.609375v53.117188c0 9.140624-7.4375 16.582031-16.578125 16.582031h-56.09375v68.882812h56.09375c9.140625 0 16.578125 7.4375 16.578125 16.582031zm163.0625-451.867187h.003906zm0 0"></path></svg></span>
+                        </a>
+                        <a class="u-social-url" target="_blank" href="https://twitter.com/yeymura" title="Twitter"><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-white u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 24 24" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-8972"></use></svg><svg class="u-svg-content" viewBox="0 0 24 24" id="svg-8972"><path d="m.473 19.595c2.222 1.41 4.808 2.155 7.478 2.155 3.91 0 7.493-1.502 10.09-4.229 2.485-2.61 3.852-6.117 3.784-9.676.942-.806 2.05-2.345 2.05-3.845 0-.575-.624-.94-1.13-.647-.885.52-1.692.656-2.522.423-1.695-1.652-4.218-2-6.344-.854-1.858 1-2.891 2.83-2.798 4.83-3.139-.383-6.039-1.957-8.061-4.403-.332-.399-.962-.352-1.226.1-.974 1.668-.964 3.601-.117 5.162-.403.071-.652.41-.652.777 0 1.569.706 3.011 1.843 3.995-.212.204-.282.507-.192.777.5 1.502 1.632 2.676 3.047 3.264-1.539.735-3.241.98-4.756.794-.784-.106-1.171.948-.494 1.377zm7.683-1.914c.561-.431.263-1.329-.441-1.344-1.24-.026-2.369-.637-3.072-1.598.339-.022.69-.074 1.024-.164.761-.206.725-1.304-.048-1.459-1.403-.282-2.504-1.304-2.917-2.62.377.093.761.145 1.144.152.759.004 1.046-.969.427-1.376-1.395-.919-1.99-2.542-1.596-4.068 2.436 2.468 5.741 3.955 9.237 4.123.501.031.877-.44.767-.917-.475-2.059.675-3.502 1.91-4.167 1.222-.66 3.184-.866 4.688.712.447.471 1.955.489 2.722.31-.344.648-.873 1.263-1.368 1.609-.211.148-.332.394-.319.651.161 3.285-1.063 6.551-3.358 8.96-2.312 2.427-5.509 3.764-9.004 3.764-1.39 0-2.753-.226-4.041-.662 1.54-.298 3.003-.95 4.245-1.906z"></path></svg></span>
+                        </a>
+                        <a class="u-social-url" target="_blank" title="Instagram" href="https://www.instagram.com/yey2wavy/"><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-white u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512.00096 512.00096" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-2b8e"></use></svg><svg class="u-svg-content" viewBox="0 0 512.00096 512.00096" id="svg-2b8e"><path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm108.578125 373.410156c0 59.867188-48.707031 108.574219-108.578125 108.574219h-234.8125c-59.871094 0-108.578125-48.707031-108.578125-108.574219v-234.816406c0-59.871094 48.707031-108.578125 108.578125-108.578125h234.816406c59.867188 0 108.574219 48.707031 108.574219 108.578125zm0 0"></path><path d="m256 116.003906c-77.195312 0-139.996094 62.800782-139.996094 139.996094s62.800782 139.996094 139.996094 139.996094 139.996094-62.800782 139.996094-139.996094-62.800782-139.996094-139.996094-139.996094zm0 249.976563c-60.640625 0-109.980469-49.335938-109.980469-109.980469 0-60.640625 49.339844-109.980469 109.980469-109.980469 60.644531 0 109.980469 49.339844 109.980469 109.980469 0 60.644531-49.335938 109.980469-109.980469 109.980469zm0 0"></path><path d="m399.34375 66.285156c-22.8125 0-41.367188 18.558594-41.367188 41.367188 0 22.8125 18.554688 41.371094 41.367188 41.371094s41.371094-18.558594 41.371094-41.371094-18.558594-41.367188-41.371094-41.367188zm0 52.71875c-6.257812 0-11.351562-5.09375-11.351562-11.351562 0-6.261719 5.09375-11.351563 11.351562-11.351563 6.261719 0 11.355469 5.089844 11.355469 11.351563 0 6.257812-5.09375 11.351562-11.355469 11.351562zm0 0"></path></svg></span>
+                        </a>
+                        <a class="u-social-url" target="_blank" title="LinkedIn" href="https://www.linkedin.com/in/yahved-fernández-202017170/"><span class="u-icon u-icon-circle u-social-icon u-social-linkedin u-icon-5"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f4b2"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-f4b2"><path d="m160.007812 423h-70v-226h70zm6.984376-298.003906c0-22.628906-18.359376-40.996094-40.976563-40.996094-22.703125 0-41.015625 18.367188-41.015625 40.996094 0 22.636718 18.3125 41.003906 41.015625 41.003906 22.617187 0 40.976563-18.367188 40.976563-41.003906zm255.007812 173.667968c0-60.667968-12.816406-105.664062-83.6875-105.664062-34.054688 0-56.914062 17.03125-66.246094 34.742188h-.066406v-30.742188h-68v226h68v-112.210938c0-29.386718 7.480469-57.855468 43.90625-57.855468 35.929688 0 37.09375 33.605468 37.09375 59.722656v110.34375h69zm90 153.335938v-392c0-33.085938-26.914062-60-60-60h-392c-33.085938 0-60 26.914062-60 60v392c0 33.085938 26.914062 60 60 60h392c33.085938 0 60-26.914062 60-60zm-60-412c11.027344 0 20 8.972656 20 20v392c0 11.027344-8.972656 20-20 20h-392c-11.027344 0-20-8.972656-20-20v-392c0-11.027344 8.972656-20 20-20zm0 0"></path></svg></span>
+                        </a>
+                      </div>
+                      <blockquote class="u-align-left-xs u-text u-text-palette-5-light-3 u-text-2">Yahved F.D. number:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</blockquote>
+                      <h6 class="u-align-left-xs u-text u-text-white u-text-3">
+                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-white u-btn-2" href="tel:+34622494800">+34 622 494 800&nbsp;<br>
+                          <br>
+                        </a>
+                      </h6>
+                      <blockquote class="u-align-left-xs u-text u-text-palette-5-light-3 u-text-4">
+                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-white u-btn-3" href="tel:+34626293859">Alex F.M. number:&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+                        </a>
+                      </blockquote>
+                      <h6 class="u-text u-text-white u-text-5">
+                        <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-white u-btn-4" href="tel:+34626293859">+34 626 29 38 59<br>
+                        </a>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    <footer class="u-clearfix u-footer u-grey-80" id="sec-0f65"><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-dropdown-icon u-menu u-menu-dropdown u-offcanvas u-menu-1" data-position="Bottom menu">
+          <div class="menu-collapse" style="font-size: 1rem; font-weight: 700; letter-spacing: 0px; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link" href="#seccion" style="padding: 2px 0px; font-size: calc(1em + 4px);">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-palette-1-dark-1" href="/Home.html" style="padding: 10px 0px;">Home</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-palette-1-dark-1" href="/Projects.html" style="padding: 10px 0px;">Projects</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-palette-1-dark-1" href="/About.html" style="padding: 10px 0px;">About</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-light-2 u-text-grey-10 u-text-hover-palette-1-dark-1" href="/Contact.html" style="padding: 10px 0px;">Contact</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Home.html" style="padding: 10px 0px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Projects.html" style="padding: 10px 0px;">Projects</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/About.html" style="padding: 10px 0px;">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Contact.html" style="padding: 10px 0px;">Contact</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+        <div class="u-align-left u-social-icons u-spacing-45 u-social-icons-1">
+          <a class="u-social-url" title="facebook" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e7d8"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-e7d8"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
+            c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
+          </a>
+          <a class="u-social-url" title="Twitter" target="_blank" href="https://twitter.com/yeymura"><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-black u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-508d"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-508d"><circle fill="currentColor" class="st0" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M83.8,47.3c0,0.6,0,1.2,0,1.7c0,17.7-13.5,38.2-38.2,38.2C38,87.2,31,85,25,81.2c1,0.1,2.1,0.2,3.2,0.2
+            c6.3,0,12.1-2.1,16.7-5.7c-5.9-0.1-10.8-4-12.5-9.3c0.8,0.2,1.7,0.2,2.5,0.2c1.2,0,2.4-0.2,3.5-0.5c-6.1-1.2-10.8-6.7-10.8-13.1
+            c0-0.1,0-0.1,0-0.2c1.8,1,3.9,1.6,6.1,1.7c-3.6-2.4-6-6.5-6-11.2c0-2.5,0.7-4.8,1.8-6.7c6.6,8.1,16.5,13.5,27.6,14
+            c-0.2-1-0.3-2-0.3-3.1c0-7.4,6-13.4,13.4-13.4c3.9,0,7.3,1.6,9.8,4.2c3.1-0.6,5.9-1.7,8.5-3.3c-1,3.1-3.1,5.8-5.9,7.4
+            c2.7-0.3,5.3-1,7.7-2.1C88.7,43,86.4,45.4,83.8,47.3z"></path></svg></span>
+          </a>
+          <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/yey2wavy/"><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-black u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ddf8"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-ddf8"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
+            z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
+            C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
+            c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
+          </a>
+          <a class="u-social-url" title="linkedin" target="_blank" href="https://www.linkedin.com/in/yahved-fernández-202017170/"><span class="u-icon u-icon-circle u-social-icon u-social-linkedin u-text-black u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-02b1"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-02b1"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M41.3,83.7H27.9V43.4h13.4V83.7z M34.6,37.9L34.6,37.9c-4.6,0-7.5-3.1-7.5-7c0-4,3-7,7.6-7s7.4,3,7.5,7
+            C42.2,34.8,39.2,37.9,34.6,37.9z M89.6,83.7H76.2V62.2c0-5.4-1.9-9.1-6.8-9.1c-3.7,0-5.9,2.5-6.9,4.9c-0.4,0.9-0.4,2.1-0.4,3.3v22.5
+            H48.7c0,0,0.2-36.5,0-40.3h13.4v5.7c1.8-2.7,5-6.7,12.1-6.7c8.8,0,15.4,5.8,15.4,18.1V83.7z"></path></svg></span>
+          </a>
+        </div>
+      </div></footer><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 100px; box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4); padding: 10px; color: rgb(255, 255, 255) !important;" class="u-back-to-top u-custom-color-1 u-icon u-icon-circle u-opacity u-opacity-85" data-href="#"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="-21 0 512 512.39734" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-94c3"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="-21 0 512 512.39734" id="svg-94c3" data-color="rgb(255, 255, 255)"><path d="m234.867188 512.398438c-129.386719 0-234.667969-105.28125-234.667969-234.667969 0-88.339844 48.746093-168.171875 127.210937-208.339844 7.933594-4.074219 17.515625-.898437 21.546875 6.953125 4.007813 7.871094.894531 17.515625-6.957031 21.527344-67.730469 34.664062-109.800781 103.59375-109.800781 179.859375 0 111.746093 90.921875 202.667969 202.667969 202.667969 111.742187 0 202.664062-90.921876 202.664062-202.667969 0-76.136719-42.003906-145.066407-109.632812-179.859375-7.847657-4.054688-10.941407-13.699219-6.890626-21.546875 4.035157-7.832031 13.65625-10.945313 21.570313-6.914063 78.3125 40.320313 126.953125 120.148438 126.953125 208.320313 0 129.40625-105.277344 234.667969-234.664062 234.667969zm0 0"></path><path d="m132.550781 282.210938c-6.996093 0-13.910156-2.710938-19.136719-7.9375-7.957031-7.957032-10.175781-20.117188-5.589843-30.269532l102.292969-228.203125c.917968-2.496093 2.945312-5.527343 5.65625-8.214843 10.089843-10.089844 28.050781-10.152344 38.269531.042968 2.753906 2.753906 4.738281 5.78125 5.953125 9.023438l101.953125 227.394531c4.585937 10.152344 2.324219 22.3125-5.589844 30.226563-8.320313 8.34375-20.972656 10.328124-31.488281 4.972656l-90.027344-45.589844-90.046875 45.609375c-3.863281 1.984375-8.085937 2.945313-12.246094 2.945313zm102.316407-82.496094c2.472656 0 4.949218.574218 7.230468 1.726562l84.96875 43.03125-92.199218-205.71875-92.183594 205.71875 84.949218-43.03125c2.28125-1.152344 4.757813-1.726562 7.234376-1.726562zm-4.4375-170.835938c.039062.082032.082031.191406.125.277344zm9.257812-.855468-.386719.832031c.128907-.253907.257813-.53125.386719-.832031zm0 0"></path></svg>
+        
+        
+    </span>
+  
+</body></html>
