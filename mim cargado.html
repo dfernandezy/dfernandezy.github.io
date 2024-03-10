@@ -46,15 +46,17 @@
         transform: translateX(-50%) translateY(-50%) scale(0.95);
       }
 
-      /* Estilos para dispositivos móviles */
-      @media only screen and (max-width: 768px) {
+      /* Consulta de medios para dispositivos con un ancho máximo de 768px (tamaño de pantalla de un teléfono móvil en orientación vertical) */
+      @media (max-width: 768px) {
         .card {
-          width: 90%;
-          /* Ajusta el ancho al 90% del tamaño de la pantalla */
-          height: auto;
-          /* Altura automática para adaptarse al contenido */
-          padding: 20px;
-          /* Reduce el relleno para hacerlo más compacto */
+          width: 100%;
+          /* Muestra la tarjeta a pantalla completa */
+          max-width: none;
+          /* Elimina el ancho máximo */
+          border-radius: 0;
+          /* Elimina el radio del borde */
+          box-shadow: none;
+          /* Elimina la sombra */
         }
       }
 
