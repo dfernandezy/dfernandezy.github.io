@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas al 100% del Viewport</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            /* Para evitar que el iframe tenga barras de desplazamiento */
+        }
+
+        #canvas3d {
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            /* Para que el iframe se posicione de forma fija en la ventana */
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe src="https://my.spline.design/aroomcopy-17ec746699d0d408b1f0fb9b8468a094/" frameborder="0"></iframe>
+
+</body>
+
+</html>
