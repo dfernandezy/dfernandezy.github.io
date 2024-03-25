@@ -102,13 +102,13 @@
         }
 
         .interested {
-            margin-top: 9%;
+            margin-top: 5%;
             /* Ajusta según sea necesario */
             position: relative;
-            z-index: 2;
             text-align: center;
             /* Añadido */
         }
+
 
         .interested button {
             width: 100%;
@@ -116,7 +116,13 @@
             /* Añadido para evitar que el botón sea demasiado ancho en dispositivos grandes */
             margin: 0 auto;
             /* Centra horizontalmente el botón */
+            z-index: 2;
         }
+
+        .interested-button:hover{
+            color: blue;
+        }
+
 
 
         .powered-icons {
@@ -134,23 +140,38 @@
         /* Media query para dispositivos móviles */
         @media only screen and (max-width: 600px) {
 
-            div.principal-h1{
+            div.principal-h1 {
                 margin-top: -12%;
                 font-size: small;
                 text-align: center !important;
             }
-            
+
             p {
-            font-size: medium;
-        }
+                font-size: medium;
+            }
+
             .lefttext {
                 margin-top: 60px;
                 margin-left: 10px;
                 max-width: none;
             }
-            .interested{
-                margin-top: 10%;
+
+            .interested {
+                margin-top: 40%;
             }
+
+            .interested button {
+                width: 100%;
+                max-width: 200px;
+                /* Añadido para evitar que el botón sea demasiado ancho en dispositivos grandes */
+                margin: 0 auto;
+                /* Centra horizontalmente el botón */
+                z-index: 2;
+                /* Ajuste del z-index */
+                position: relative;
+                /* Añadido */
+            }
+
 
         }
     </style>
@@ -179,7 +200,7 @@
 
         <div class="interested">
             <p>If you are interested in something like this send your idea down below.</p>
-            <button style="width: 40%;">Your Button</button>
+            <button class="interested-button" style="width: 40%;">Your Button</button>
         </div>
         <div class="tech-icons">
             <br>
