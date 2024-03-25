@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* Estilos generales */
         body,
         html {
             font-family: 'DM Sans', Courier, monospace;
@@ -38,13 +39,20 @@
                 80px 80px;
         }
 
+        p {
+            font-size: large;
+        }
+
         /* Sección Izquierda Explicativa /En proceso/ */
         .lefttext {
-            margin-top: 100px;
+            margin-top: 11.5%;
+            /* Ajusta según sea necesario */
             margin-left: 20px;
             max-width: 450px;
+            text-align: center;
             color: white;
-            /* Cambio el color del texto a blanco para que sea visible en el fondo oscuro */
+            position: relative;
+            /* Añadido */
         }
 
         #canvas3d {
@@ -57,24 +65,22 @@
             width: 100%;
             height: 100%;
             position: fixed;
-            /* Para que el iframe se posicione de forma fija en la ventana */
             top: 0;
             left: 0;
             z-index: 1;
-            /* Asegura que el iframe esté por detrás del h1 */
         }
 
-
         h1 {
-            position: absolute;
-            top: 0px;
-            /* Puedes ajustar la posición vertical según sea necesario */
-            left: 20px;
-            /* Puedes ajustar la posición horizontal según sea necesario */
+            position: relative;
+            /* Cambiado a relativo */
+            margin-top: 0;
+            /* Añadido */
             z-index: 2;
-            /* Asegura que el h1 esté por encima del iframe */
             color: white;
-            /* Cambio el color del texto a blanco para que sea visible en el fondo oscuro */
+        }
+
+        .principal-h1 {
+            font-size: large;
         }
 
         .social-icons {
@@ -82,9 +88,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            position: absolute;
-            top: 60px;
-            left: 20px;
+            /* Ajusta según sea necesario */
             z-index: 2;
         }
 
@@ -97,40 +101,97 @@
             color: lightblue;
         }
 
+        .interested {
+            margin-top: 9%;
+            /* Ajusta según sea necesario */
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            /* Añadido */
+        }
+
+        .interested button {
+            width: 100%;
+            max-width: 200px;
+            /* Añadido para evitar que el botón sea demasiado ancho en dispositivos grandes */
+            margin: 0 auto;
+            /* Centra horizontalmente el botón */
+        }
+
+
+        .powered-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .powered-icons img {
+            width: 50px;
+            /* Establece el tamaño deseado para las imágenes */
+        }
+
+        /* Media query para dispositivos móviles */
         @media only screen and (max-width: 600px) {
 
-            /* Estilos para dispositivos móviles con ancho de pantalla máximo de 600px */
+            div.principal-h1{
+                margin-top: -12%;
+                font-size: small;
+                text-align: center !important;
+            }
+            
+            p {
+            font-size: medium;
+        }
             .lefttext {
-                margin-top: 100px;
+                margin-top: 60px;
                 margin-left: 10px;
                 max-width: none;
-                /* Eliminamos la restricción de ancho máximo */
+            }
+            .interested{
+                margin-top: 10%;
             }
 
-            h1 {
-                font-size: 24px;
-                /* Tamaño de fuente más pequeño para h1 en dispositivos móviles */
-            }
         }
     </style>
 </head>
 
 <body>
     <div class="lefttext">
-        <h1>dfernandezy_3D_Portfolio</h1>
+
+        <div class="principal-h1">
+            <h1>dfernandezy_3D_Portfolio</h1>
+        </div>
+
         <div class="social-icons">
-            <a href="www.linkedin.com/es"><img src="./img/linkedin.png" alt="" style="width: 30px;"><i
-                    class="linkdin-top"></i></a>
-            <a href="www.github.com"><img src="./img/github.png" alt="" style="width: 30px;"><i
+            <a href="www.github.com"><img src="./images/github.png" alt="" style="width: 40px;"><i
                     class="github-top"></i></a>
-            <a href="www.twitter.com"><img src="./img/twitter.png" alt="" style="width: 30px;"><i
+            <a href="www.linkedin.com/es"><img src="./images/linkedin.png" alt="" style="width: 50px;"><i
+                    class="linkdin-top"></i></a>
+            <a href="www.twitter.com"><img src="./images/twitter.png" alt="" style="width: 40px;"><i
                     class="twitter-top"></i></a>
         </div>
-        <h2>WEB Freelancer Developer</h2>
-        <p>3 Years of Experience calling your auntie.</p>
+        <h2><i>3D WEB</i> Developer</h2>
+
+
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aliquid consectetur reiciendis deleniti
             voluptatibus? Suscipit nisi eligendi ut mollitia esse perspiciatis placeat libero totam maiores!</p>
+
+        <div class="interested">
+            <p>If you are interested in something like this send your idea down below.</p>
+            <button style="width: 40%;">Your Button</button>
+        </div>
+        <div class="tech-icons">
+            <br>
+            <p>Powered by</p>
+            <div class="powered-icons">
+                <img src="./images/dfernandezy.png" alt="">
+                <img src="./images/spline.png" alt="">
+                <img src="./images/js.png" alt="">
+            </div>
+        </div>
     </div>
+
 
     <iframe src="https://my.spline.design/room-83711a41050587e572e72b7300236087/" frameborder="0"></iframe>
 
