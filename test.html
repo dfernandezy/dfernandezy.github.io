@@ -4,15 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas al 100% del Viewport</title>
+    <title>dfernandezy 3DFolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body,
         html {
+            font-family: 'DM Sans', Courier, monospace;
+            font-style: oblique;
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
             /* Para evitar que el iframe tenga barras de desplazamiento */
+            background:
+                linear-gradient(-90deg, rgba(0, 0, 0, .05) 1px, transparent 1px),
+                linear-gradient(rgba(0, 0, 0, .05) 1px, transparent 1px),
+                linear-gradient(-90deg, rgba(0, 0, 0, .04) 1px, transparent 1px),
+                linear-gradient(rgba(0, 0, 0, .04) 1px, transparent 1px),
+                linear-gradient(transparent 3px, #4E507D 3px, #4E507D 78px, transparent 78px),
+                linear-gradient(-90deg, #4E507D 1px, transparent 1px),
+                linear-gradient(-90deg, transparent 3px, #4E507D 3px, #4E507D 78px, transparent 78px),
+                linear-gradient(#4E507D 1px, transparent 1px),
+                #4E507D;
+            background-size:
+                6px 6px,
+                6px 6px,
+                80px 80px,
+                80px 80px,
+                80px 80px,
+                80px 80px,
+                80px 80px,
+                80px 80px;
+        }
+
+        /* Sección Izquierda Explicativa /En proceso/ */
+        .lefttext {
+            margin-top: 100px;
+            margin-left: 20px;
+            max-width: 450px;
+            color: white;
+            /* Cambio el color del texto a blanco para que sea visible en el fondo oscuro */
         }
 
         #canvas3d {
@@ -28,13 +60,79 @@
             /* Para que el iframe se posicione de forma fija en la ventana */
             top: 0;
             left: 0;
+            z-index: 1;
+            /* Asegura que el iframe esté por detrás del h1 */
+        }
+
+
+        h1 {
+            position: absolute;
+            top: 0px;
+            /* Puedes ajustar la posición vertical según sea necesario */
+            left: 20px;
+            /* Puedes ajustar la posición horizontal según sea necesario */
+            z-index: 2;
+            /* Asegura que el h1 esté por encima del iframe */
+            color: white;
+            /* Cambio el color del texto a blanco para que sea visible en el fondo oscuro */
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+        }
+
+        .social-icons a:hover {
+            color: lightblue;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            /* Estilos para dispositivos móviles con ancho de pantalla máximo de 600px */
+            .lefttext {
+                margin-top: 100px;
+                margin-left: 10px;
+                max-width: none;
+                /* Eliminamos la restricción de ancho máximo */
+            }
+
+            h1 {
+                font-size: 24px;
+                /* Tamaño de fuente más pequeño para h1 en dispositivos móviles */
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="lefttext">
+        <h1>dfernandezy_3D_Portfolio</h1>
+        <div class="social-icons">
+            <a href="www.linkedin.com/es"><img src="./img/linkedin.png" alt="" style="width: 30px;"><i
+                    class="linkdin-top"></i></a>
+            <a href="www.github.com"><img src="./img/github.png" alt="" style="width: 30px;"><i
+                    class="github-top"></i></a>
+            <a href="www.twitter.com"><img src="./img/twitter.png" alt="" style="width: 30px;"><i
+                    class="twitter-top"></i></a>
+        </div>
+        <h2>WEB Freelancer Developer</h2>
+        <p>3 Years of Experience calling your auntie.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aliquid consectetur reiciendis deleniti
+            voluptatibus? Suscipit nisi eligendi ut mollitia esse perspiciatis placeat libero totam maiores!</p>
+    </div>
 
-    <iframe src="https://my.spline.design/aroomcopy-17ec746699d0d408b1f0fb9b8468a094/" frameborder="0"></iframe>
+    <iframe src="https://my.spline.design/room-83711a41050587e572e72b7300236087/" frameborder="0"></iframe>
 
 </body>
 
