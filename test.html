@@ -160,12 +160,47 @@
                 max-width: 80%;
                 /* Establece el ancho máximo para evitar que el contenido se estire demasiado en pantallas anchas */
             }
+
+            .interested-button:hover {
+                letter-spacing: 0px;
+            }
         }
+
 
         @media only screen and (min-width: 601px) {
             .lefttext {
                 margin-left: 3.4%;
             }
+        }
+
+        .interested-button {
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 0;
+            background-color: white;
+            box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+            z-index: 2;
+            position: relative;
+
+        }
+
+        .interested-button:hover {
+            background-color: hsl(261deg 80% 48%);
+            color: white;
+            box-shadow: rgb(255, 255, 255) 0px 7px 29px 0px;
+        }
+
+        .interested-button:active {
+            letter-spacing: 2px;
+            background-color: hsl(261deg 80% 48%);
+            color: rgb(255, 255, 255);
+            box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+            transform: translateY(5px);
+            transition: 300ms;
         }
     </style>
 </head>
@@ -193,7 +228,7 @@
 
         <div class="interested">
             <p>If you are interested in something like this send your idea down below.</p>
-            <button class="interested-button" style="width: 40%;">Your Button</button>
+            <button class="interested-button" style="width: 40%;">Click me</button>
         </div>
         <div class="tech-icons">
             <br>
@@ -207,7 +242,7 @@
     </div>
 
 
-    <!-- <iframe src="https://my.spline.design/room-83711a41050587e572e72b7300236087/" frameborder="0"></iframe> -->
+    <iframe src="https://my.spline.design/room-83711a41050587e572e72b7300236087/" frameborder="0"></iframe>
 
 </body>
 
