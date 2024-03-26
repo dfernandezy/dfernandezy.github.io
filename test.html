@@ -45,10 +45,10 @@
 
         /* Sección Izquierda Explicativa /En proceso/ */
         .lefttext {
-            margin-top: 11%;
+            margin-top: 10%;
             /* Ajusta según sea necesario */
-            margin-left: 3%;
-            max-width: 400px;
+            margin-left: 0%;
+            max-width: 350px;
             text-align: center;
             color: white;
             position: relative;
@@ -58,9 +58,10 @@
 
         .lefttext h1 {
             text-align: center;
+            font-size: 140%;
             margin-bottom: 50px;
             /* Centra horizontalmente el texto */
-            margin-left: 3%;
+            margin-left: 0%;
             /* Ajusta según sea necesario */
             max-width: 400px;
             /* Ajusta según sea necesario */
@@ -152,52 +153,18 @@
             /* Establece el tamaño deseado para las imágenes */
         }
 
-        /* Media query para dispositivos móviles */
         @media only screen and (max-width: 600px) {
-
             .lefttext {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
+                margin: 10% auto;
+                /* Establece margen superior e inferior del 10% y márgenes automáticos a los lados */
+                max-width: 80%;
+                /* Establece el ancho máximo para evitar que el contenido se estire demasiado en pantallas anchas */
             }
+        }
 
-            .principal-h1 {
-                font-size: small;
-                text-align: center !important;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 2;
-            }
-
-            .social-icons {
-                position: fixed;
-                left: 0;
-                width: 100%;
-                z-index: 2;
-            }
-
-            h2 {
-                margin-top: 25px;
-            }
-
-
-            .social-icons a img {
-                width: 40px !important;
-                /* Ajusta el tamaño deseado de los logos */
-            }
-
-            .interested {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                margin: 0;
-                padding: 20px;
-                /* Añadido para evitar que el botón quede pegado al borde inferior */
-                z-index: 2;
+        @media only screen and (min-width: 601px) {
+            .lefttext {
+                margin-left: 3.4%;
             }
         }
     </style>
@@ -240,7 +207,7 @@
     </div>
 
 
-    <iframe src="https://my.spline.design/room-83711a41050587e572e72b7300236087/" frameborder="0"></iframe>
+    <!-- <iframe src="https://my.spline.design/room-83711a41050587e572e72b7300236087/" frameborder="0"></iframe> -->
 
 </body>
 
