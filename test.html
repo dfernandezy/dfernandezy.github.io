@@ -98,7 +98,7 @@
             font-size: 100%;
         } */
 
-        h2{
+        h2 {
             font-size: auto;
         }
 
@@ -127,19 +127,19 @@
             margin-bottom: 5px;
         }
 
-        .downleft h2{
+        .downleft h2 {
             font-size: 100%;
             max-width: 350px;
             margin: 0 auto;
         }
 
-        .downleft h2 i{
+        .downleft h2 i {
             font-size: 140%;
             color: rgb(246, 246, 246);
             box-shadow: #ffffff 5px, 5px;
         }
 
-        .downleft p{
+        .downleft p {
             font-size: 90%;
         }
 
@@ -203,8 +203,13 @@
 
 
             .interested {
-                margin-top: 70%;
-                /* Ajusta según sea necesario para mantener espacio entre las secciones */
+                max-height: 50vh;
+                z-index: 2;
+                position: absolute;
+                /* Establece el máximo de altura como el 50% del alto de la ventana del navegador */
+                overflow-y: auto;
+                /* Añade una barra de desplazamiento vertical si el contenido excede la altura máxima */
+                margin-top: 80%;
             }
 
 
@@ -212,9 +217,23 @@
                 letter-spacing: 0px;
             }
 
-            div.downleft p{
+            div.downleft p {
                 display: none;
             }
+        }
+
+        #canvas3d {
+            width: 100%;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 60%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
         }
 
         /* 
