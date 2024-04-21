@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Empresas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu-lateral">
+            <div class="hamburguesa" onclick="toggleMenu()">&#9776;</div>
+            <ul class="enlaces">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Empresas</a></li>
+                <li><a href="#">Activos</a></li>
+                <li><a href="#">Estadísticas</a></li>
+            </ul>
+        </nav>
+        <h1>corpManager</h1>
+        <a href="./index_dark.html"><img src="../img/lightmode.png" height="50px" width="50px" alt=""></a>
+    </header>
+
+
+
+    <main>
+        <section class="dashboard">
+            <div class="metricas">
+                <div class="metrica">
+                    <h3>Número de Empresas</h3>
+                    <p id="numeroTotalEmpresas">-</p>
+                </div>
+                <div class="metrica">
+                    <h3>Balance 30 días</h3>
+                    <p id="estadisticaNumeros">-</p><img src="../img/up.png" height="35px" width="35px"
+                        alt="imagen flecha">
+                </div>
+                <div class="metrica">
+                    <h3>Activos Revisables</h3>
+                    <p id="activosRevisables">0</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="avisos">
+            <h3>Avisos<div class="dropdown">
+                    <button class="dropdown-toggle" type="button">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Descargar</a>
+                        <a href="#" class="dropdown-item">Editar</a>
+                        <a style="color: red;" href="#" class="dropdown-item">Eliminar</a>
+                    </div>
+                </div>
+            </h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Impuesto a pagar</th>
+                        <th>ID del impuesto de activo</th>
+                        <th>Fecha de pago</th>
+                        <th>Fecha de aviso</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Impuesto de Sociedades</td>
+                        <td>12345</td>
+                        <td>2024-05-31</td>
+                        <td>2024-05-25</td>
+                        <td>$5000</td>
+                    </tr>
+                    <tr>
+                        <td>Impuesto sobre el Valor Añadido (IVA)</td>
+                        <td>67890</td>
+                        <td>2024-06-15</td>
+                        <td>2024-06-10</td>
+                        <td>$3000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class="estadisticas">
+            <div class="balance" style="width: 95%; margin: 0 auto 45px;">
+                <h3>Balance de Costes<div class="dropdown">
+                        <button class="dropdown-toggle" type="button">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Descargar</a>
+                            <a href="#" class="dropdown-item">Editar</a>
+                            <a style="color: red;" href="#" class="dropdown-item">Eliminar</a>
+                        </div>
+                    </div>
+                </h3>
+                <canvas id="graficoBarras" width="1500" height="350"></canvas>
+            </div>
+
+
+            <div class="contenedor-flex">
+                <div class="activos-valiosos">
+                    <h3>Activos en Alza<div class="dropdown">
+                            <button class="dropdown-toggle" type="button">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Descargar</a>
+                                <a href="#" class="dropdown-item">Editar</a>
+                                <a style="color: red;" href="#" class="dropdown-item">Eliminar</a>
+                            </div>
+                        </div>
+                    </h3>
+                    <table>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre Activo</th>
+                                    <th>Nombre Calle</th>
+                                    <th>Valor Mercado</th>
+                                    <th>Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Edificio de Oficinas</td>
+                                    <td>Calle Principal</td>
+                                    <td>$500,000</td>
+                                    <td>$400,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Edificio de Oficinas</td>
+                                    <td>Calle Principal</td>
+                                    <td>$500,000</td>
+                                    <td>$400,000</td>
+                                </tr>
+                                <!-- Puedes añadir más filas según sea necesario -->
+                            </tbody>
+                        </table>
+                    </table>
+                </div>
+
+
+
+                <div class="activos-rentabilizados">
+                    <h3>Activos en Baja<div class="dropdown">
+                            <button class="dropdown-toggle" type="button">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Descargar</a>
+                                <a href="#" class="dropdown-item">Editar</a>
+                                <a style="color: red;" href="#" class="dropdown-item">Eliminar</a>
+                            </div>
+                        </div>
+                    </h3>
+                    <table>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Activo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Acciones de la Empresa X</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Bonos Gubernamentales</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Fondos de Inversión</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <footer>
+            <button class="boton-editar">Editar</button>
+        </footer>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Datos de ejemplo (costes y nombres de empresas)
+        const costes = [200, 300, 150, 400 , 215];
+        const nombresEmpresas = ["Empresa A", "Empresa B", "Empresa C", "Empresa D" , "Empresa E"];
+
+        // Obtener el contexto del lienzo
+        const ctx = document.getElementById('graficoBarras').getContext('2d');
+
+        // Crear el gráfico de barras
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: nombresEmpresas,
+                datasets: [{
+                    label: 'Costes',
+                    data: costes,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)', // Color de la primera barra (rojo)
+                        'rgba(54, 162, 235, 0.5)', // Color de la segunda barra (azul)
+                        'rgba(255, 206, 86, 0.5)', // Color de la tercera barra (amarillo)
+                        'rgba(75, 192, 192, 0.5)', // Color de la cuarta barra (verde)
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // Comenzar el eje y en 0
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false // Ocultar la leyenda
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.dataset.label + ': ' + context.parsed.y + '€';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="script.js"></script>
+    <script src="../config/supabaseConnect.js"></script>
+
+
+
+</body>
+
+</html>
