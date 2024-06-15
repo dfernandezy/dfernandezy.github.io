@@ -20,10 +20,11 @@ Open and enjoy.
 
 -----------------
 
-Credits and Acknowledgements
+#Credits and Acknowledgements
 Special thanks to the Spline community and the tutorials from EVERYWHERE.
 
-Contributions
+
+#Contributions
 I welcome contributions. Please open an issue to discuss any changes or improvements.
 
 Contact
