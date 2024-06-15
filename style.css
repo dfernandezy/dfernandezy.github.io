@@ -41,7 +41,7 @@
         max-width: 350px;
         text-align: center;
         color: white;
-        position: relative;
+        position: absolute;
         /* Añadido */
     }
 
@@ -95,14 +95,10 @@
     }
 
     .social-icons {
-        margin-top: 4%;
-        margin-bottom: 4%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        /* Ajusta según sea necesario */
-        z-index: 2;
+        position:relative;
+        z-index: 99;
+        margin: 25px 0px ;
+  
     }
 
     .social-icons a {
