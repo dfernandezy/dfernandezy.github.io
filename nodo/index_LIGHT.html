@@ -166,7 +166,7 @@
         .team-card {
             background-color: #FFFFFF;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 2cap;
             text-align: center;
         }
 
@@ -218,7 +218,7 @@
             font-size: 2.5rem;
         }
 
-        .listo{
+        .listo {
             font-size: 1.5rem !important;
         }
 
@@ -236,6 +236,78 @@
                 background-color: #f9f9f9;
             }
         }
+
+
+
+        .team-section {
+            padding: 50px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .team-members {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-members li {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1em;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .team-members li:hover {
+            background-color: #e8f4fc;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -245,7 +317,6 @@
             <nav>
                 <div class="logo">Nodo</div>
                 <div class="nav-links">
-                    <a href="#" class="active">Inicio</a>
                     <a href="#services">Servicios</a>
                     <a href="#team">Equipo</a>
                     <a href="#contact">Contacto</a>
@@ -269,19 +340,19 @@
                 <h2>Nuestros Servicios</h2>
                 <div class="service-grid">
                     <div class="service-card">
-                        <i>🕒</i>
+                        <i>🔬</i>
                         <h3>Análisis de marca</h3>
                         <p>Nuestro equipo se encarga de analizar tu negocio para que no tengas que preocuparte de nada.
                         </p>
                     </div>
                     <div class="service-card">
                         <i>⚡</i>
-                        <h3>Optimización SEO</h3>
+                        <h3>Optimización de recursos</h3>
                         <p>Mejora tu visibilidad en los motores de búsqueda.</p>
                     </div>
                     <div class="service-card">
                         <i>👥</i>
-                        <h3>Marketing en Redes Sociales</h3>
+                        <h3>Estrategia de Marketing en Redes Sociales</h3>
                         <p>Conecta con tu audiencia y aumenta tu engagement.</p>
                     </div>
                 </div>
