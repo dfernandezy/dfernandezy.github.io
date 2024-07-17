@@ -212,62 +212,10 @@
 </head>
 
 <body>
-    <div id="loading-screen">
-        <h1>Welcome to QR CODE UNIVERSE</h1>
-        <button id="start-button">Start</button>
-        <div id="loading-indicator">
-            <svg class="pl" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
-                        <stop offset="0%" stop-color="hsl(313,90%,55%)" />
-                        <stop offset="100%" stop-color="hsl(223,90%,55%)" />
-                    </linearGradient>
-                    <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="hsl(313,90%,55%)" />
-                        <stop offset="100%" stop-color="hsl(223,90%,55%)" />
-                    </linearGradient>
-                </defs>
-                <circle class="pl__ring" cx="100" cy="100" r="82" fill="none" stroke="url(#pl-grad1)" stroke-width="36"
-                    stroke-dasharray="0 257 1 257" stroke-dashoffset="0.01" stroke-linecap="round"
-                    transform="rotate(-90,100,100)" />
-                <line class="pl__ball" stroke="url(#pl-grad2)" x1="100" y1="18" x2="100.01" y2="182" stroke-width="36"
-                    stroke-dasharray="1 165" stroke-linecap="round" />
-            </svg>
-        </div>
-        <p style="color: #fff; margin-top: 20px;"></p>
-    </div>
-    </div>
+   
     <iframe id="main-iframe" src="about:blank" title="QR CODE UNIVERSE"></iframe>
 
-    <script>
-        document.getElementById('start-button').addEventListener('click', function () {
-            this.style.display = 'none';
-            var loadingIndicator = document.getElementById('loading-indicator');
-            loadingIndicator.style.display = 'flex';
-
-            // Reset the animation for the circles
-            var circles = document.querySelectorAll('.circle');
-            circles.forEach(function (circle, index) {
-                circle.style.animation = 'none';
-                circle.offsetHeight; // Trigger reflow
-                circle.style.animation = null;
-            });
-
-            var iframe = document.getElementById('main-iframe');
-            var loadingScreen = document.getElementById('loading-screen');
-
-            // Start loading the iframe immediately
-            iframe.src = "https://my.spline.design/goodonecopy-d32bab6f53fbd67b0718ec906438bc81/";
-
-            // Wait for 3 seconds before hiding the loading screen
-            setTimeout(function () {
-                loadingScreen.style.opacity = '0';
-                setTimeout(function () {
-                    loadingScreen.style.display = 'none';
-                }, 500); // Wait for fade out animation to complete
-            }, 3000);
-        });
-    </script>
+  
 </body>
 
 </html>
