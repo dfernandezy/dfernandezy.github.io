@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR PLANET</title>
+    <title>QR CODE UNIVERSE</title>
     <style>
         :root {
-            --sp: 2.5s; /* change speed */
+            --sp: 2.5s;
+            /* change speed */
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body, html {
+
+        body,
+        html {
             height: 100%;
             font-family: 'Arial', sans-serif;
             color: #333;
             overflow: hidden;
         }
+
         #loading-screen {
             position: fixed;
             top: 0;
@@ -33,12 +39,14 @@
             z-index: 1000;
             transition: opacity 0.5s ease-out;
         }
+
         h1 {
             font-size: 2rem;
             margin-bottom: 2rem;
             font-weight: 300;
             color: #fff;
         }
+
         #start-button {
             padding: 0.8rem 2rem;
             font-size: 1rem;
@@ -53,31 +61,134 @@
             outline-offset: 2px;
             animation: colorChange 6s infinite;
         }
+
         #start-button:hover {
             transform: scale(1.05);
         }
+
         @keyframes colorChange {
-            0%, 100% {
+
+            0%,
+            100% {
                 background-color: #BFFF00;
                 color: black;
                 outline-color: #fff;
             }
+
             33% {
                 background-color: white;
                 color: black;
                 outline-color: #BFFF00;
             }
+
             66% {
                 background-color: black;
                 color: white;
                 outline-color: #BFFF00;
             }
         }
+
         #loading-indicator {
             display: none;
             flex-direction: column;
             align-items: center;
         }
+
+        * {
+            border: 0;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --hue: 223;
+            --bg: hsl(var(--hue), 10%, 90%);
+            --fg: hsl(var(--hue), 10%, 10%);
+            font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font: 1em/1.5 sans-serif;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .pl {
+            display: block;
+            width: 6.25em;
+            height: 6.25em;
+        }
+
+        .pl__ring,
+        .pl__ball {
+            animation: ring 2s ease-out infinite;
+        }
+
+        .pl__ball {
+            animation-name: ball;
+        }
+
+        /* Dark theme  */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: hsl(var(--hue), 10%, 10%);
+                --fg: hsl(var(--hue), 10%, 90%);
+            }
+        }
+
+        /* Animation */
+        @keyframes ring {
+            from {
+                stroke-dasharray: 0 257 0 0 1 0 0 258;
+            }
+
+            25% {
+                stroke-dasharray: 0 0 0 0 257 0 258 0;
+            }
+
+            50%,
+            to {
+                stroke-dasharray: 0 0 0 0 0 515 0 0;
+            }
+        }
+
+        @keyframes ball {
+
+            from,
+            50% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: 1;
+            }
+
+            64% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: -109;
+            }
+
+            78% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: -145;
+            }
+
+            92% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: -157;
+            }
+
+            57%,
+            71%,
+            85%,
+            99%,
+            to {
+                animation-timing-function: ease-out;
+                stroke-dashoffset: -163;
+            }
+        }
+
         .content {
             width: 50vmin;
             height: 50vmin;
@@ -88,84 +199,7 @@
             transform: scale(0.65);
             animation: spin-all calc(var(--sp) * 2) linear 0s infinite
         }
-        .circle {
-            --in: 80%;
-            --ar: #ff9800;
-            --dt: #ffea34;
-            --shadow: drop-shadow(0vmin 0vmin 0.5vmin #000) drop-shadow(0vmin 1vmin 0.5vmin #0004);
-            --cross: linear-gradient(0deg, #fff0 calc(50% - 2px), #000 calc(50% - 1px) calc(50% + 1px), #fff0 calc(50% + 2px)), linear-gradient(90deg, #fff0 calc(50% - 2px), #000 calc(50% - 1px) calc(50% + 1px), #fff0 calc(50% + 2px));
-            border: 6vmin solid var(--ar);
-            width: var(--in);
-            height: var(--in);
-            border-radius: 100%;
-            position: absolute;
-            box-sizing: border-box;
-            border-top-color: #fff0;
-            border-left-color: #fff0;
-            top: 15vmin;
-            right: -10vmin;
-            animation: fade-in 0.5s ease-out, spin-bot var(--sp) ease 0s infinite;
-            background-image: var(--cross), radial-gradient(var(--dt) 5.5vmin, #fff0 calc(5.5vmin + 1px));
-            background-repeat: no-repeat;
-            background-size: 3vmin 1vmin, 1vmin 3vmin, 100% 100%;
-            background-position: center center;
-            filter: var(--shadow);
-            opacity: 0;
-        }
-        .circle:nth-child(2) {
-            --in: 60%;
-            top: -2vmin;
-            animation: fade-in 0.5s ease-out 0.1s forwards, spin-top var(--sp) ease 0s infinite;
-            transform: rotate(-45deg);
-            background-image: var(--cross), radial-gradient(var(--dt) 1.25vmin, #fff0 calc(1.25vmin + 1px));
-            right: -4vmin;
-            filter: hue-rotate(10deg) var(--shadow);
-            background-size: 1.4vmin 1vmin, 1vmin 1.4vmin, 100% 100%;
-        }
-        .circle:nth-child(3) {
-            --in: 100%;
-            top: -5vmin;
-            left: -13vmin;
-            transform: rotate(175deg);
-            animation: fade-in 0.5s ease-out 0.2s forwards, spin-left var(--sp) ease calc(var(--sp) / 4) infinite;
-            background-image: var(--cross), radial-gradient(var(--dt) 9vmin, #fff0 calc(9vmin + 1px));
-            filter: hue-rotate(20deg) var(--shadow);
-            background-size: 5vmin 1vmin, 1vmin 5vmin, 100% 100%;
-        }
-        .circle:nth-child(4) {
-            --in: 60%;
-            top: 35vmin;
-            left: -6vmin;
-            transform: rotate(-280deg);
-            animation: fade-in 0.5s ease-out 0.3s forwards, spin-last var(--sp) ease calc(calc(calc(var(--sp) / 4) + var(--sp)) * -1) infinite;
-            background-image: var(--cross), radial-gradient(var(--dt) 2.5vmin, #fff0 calc(2.5vmin + 1px));
-            filter: hue-rotate(30deg) var(--shadow);
-            background-size: 2vmin 1vmin, 1vmin 2vmin, 100% 100%;
-        }
-        @keyframes fade-in {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes spin-all {
-            0% { transform: rotate(0deg) scale(0.65); }
-            100% { transform: rotate(360deg) scale(0.65); }
-        }
-        @keyframes spin-top {
-            0% { transform: rotate(-45deg); }
-            100% { transform: rotate(315deg); }
-        }
-        @keyframes spin-bot {
-            0%, 35% { transform: rotate(0deg); }
-            80%, 100% { transform: rotate(-360deg); }
-        }
-        @keyframes spin-left {
-            0%, 35% { transform: rotate(175deg); }
-            80%, 100% { transform: rotate(535deg); }
-        }
-        @keyframes spin-last {
-            0%, 10% { transform: rotate(-280deg); }
-            90%, 100% { transform: rotate(-640deg); }
-        }
+
         iframe {
             position: absolute;
             top: 0;
@@ -176,50 +210,64 @@
         }
     </style>
 </head>
+
 <body>
     <div id="loading-screen">
-        <h1>Welcome to QR PLANET</h1>
+        <h1>Welcome to QR CODE UNIVERSE</h1>
         <button id="start-button">Start</button>
         <div id="loading-indicator">
-            <div class="content">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-            </div>
-            <p style="color: #fff; margin-top: 20px;">Loading...</p>
+            <svg class="pl" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
+                        <stop offset="0%" stop-color="hsl(313,90%,55%)" />
+                        <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+                    </linearGradient>
+                    <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="hsl(313,90%,55%)" />
+                        <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+                    </linearGradient>
+                </defs>
+                <circle class="pl__ring" cx="100" cy="100" r="82" fill="none" stroke="url(#pl-grad1)" stroke-width="36"
+                    stroke-dasharray="0 257 1 257" stroke-dashoffset="0.01" stroke-linecap="round"
+                    transform="rotate(-90,100,100)" />
+                <line class="pl__ball" stroke="url(#pl-grad2)" x1="100" y1="18" x2="100.01" y2="182" stroke-width="36"
+                    stroke-dasharray="1 165" stroke-linecap="round" />
+            </svg>
         </div>
+        <p style="color: #fff; margin-top: 20px;"></p>
     </div>
-    <iframe id="main-iframe" src="about:blank" title="QR PLANET"></iframe>
+    </div>
+    <iframe id="main-iframe" src="about:blank" title="QR CODE UNIVERSE"></iframe>
 
     <script>
-        document.getElementById('start-button').addEventListener('click', function() {
+        document.getElementById('start-button').addEventListener('click', function () {
             this.style.display = 'none';
             var loadingIndicator = document.getElementById('loading-indicator');
             loadingIndicator.style.display = 'flex';
-            
+
             // Reset the animation for the circles
             var circles = document.querySelectorAll('.circle');
-            circles.forEach(function(circle, index) {
+            circles.forEach(function (circle, index) {
                 circle.style.animation = 'none';
                 circle.offsetHeight; // Trigger reflow
                 circle.style.animation = null;
             });
-            
+
             var iframe = document.getElementById('main-iframe');
             var loadingScreen = document.getElementById('loading-screen');
-            
+
             // Start loading the iframe immediately
-            iframe.src = "https://my.spline.design/qrcodeuniversecopy-b971dd558e0dc74c88f73d93e8e8cb3e/";
-            
+            iframe.src = "https://my.spline.design/goodonecopy-d32bab6f53fbd67b0718ec906438bc81/";
+
             // Wait for 3 seconds before hiding the loading screen
-            setTimeout(function() {
+            setTimeout(function () {
                 loadingScreen.style.opacity = '0';
-                setTimeout(function() {
+                setTimeout(function () {
                     loadingScreen.style.display = 'none';
                 }, 500); // Wait for fade out animation to complete
             }, 3000);
         });
     </script>
 </body>
+
 </html>
