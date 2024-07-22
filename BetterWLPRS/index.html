@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <style>
+        body,
+        html {
+            background-image: url("pexel.jpg");
+            background-color: #000000;
+
+            font-family: 'DM Sans', Courier, monospace;
+            font-style: oblique;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* Para evitar que el iframe tenga barras de desplazamiento */
+            /* background:
+                linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(transparent 3px, #fff 3px, #fff 78px, transparent 78px),
+                linear-gradient(-90deg, #0000000d 1px, transparent 1px),
+                linear-gradient(-90deg, transparent 3px, #fff 3px, #fff 78px, transparent 78px),
+                linear-gradient(#0000000a 1px, transparent 1px),
+                #fff;
+            background-size:
+                6px 6px,
+                6px 6px,
+                80px 80px,
+                80px 80px,
+                80px 80px,
+                80px 80px,
+                80px 80px,
+                80px 80px;
+        } */
+        }
+
+        header {
+            background-color: #33333300;
+            color: #000000;
+            padding: 10px 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100px;
+            /* ajusta el ancho según tu necesidad */
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-left: auto;
+            /* Esto alinea los elementos a la derecha */
+        }
+
+        ul li {
+            margin-right: 20px;
+        }
+
+        ul li:last-child {
+            margin-right: 0;
+        }
+
+        ul li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+
+
+
+
+
+
+
+
+        .hero-section {
+            text-align: center;
+            padding: 15px 20px;
+            margin-top: -50px;
+        }
+
+        .hero-section p {
+            font-weight: 800;
+            font-style: italic;
+        }
+
+        .hero-section h1 {
+            margin: 0;
+            font-size: 290%;
+            font-weight: 900;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            
+            /* ajusta la altura según tu necesidad */
+            border: none;
+            z-index: -1;
+        }
+
+        .divided {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 250px !important;
+            padding: 0px 60px;
+            gap: 50px;
+            height: 30%;
+        }
+
+        .column {
+            width: 30%;
+            /* Ajusta el ancho según sea necesario */
+            text-align: center;
+            background-color: #f8f8f8;
+            /* Color de fondo */
+            padding: 20px;
+            /* Padding alrededor del contenido */
+            border-radius: 10px;
+            /* Borde redondeado */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.667);
+            /* Sombra */
+            margin-bottom: 20px;
+            /* Espacio entre las columnas */
+        }
+
+        .column img {
+            width: 100%;
+            border-radius: 10px;
+            /* Ajusta el radio de borde según sea necesario */
+        }
+
+        .column h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .column p {
+            font-size: 16px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="icon.png" alt="Logo" style="width: 50px;" height="45px">
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <p>A web by dfernandezy</p>
+        <h1>Better WALLPPRS</h1>
+        <p>Top Selected WLLPPRS from our Team</p>
+        <iframe src="https://my.spline.design/steamdeckwllpprsfcopycopy-46da4e5bd354ae7e17554dc32cf728c6/"
+            frameborder="0"></iframe>
+    </section>
+
+    <section class="divided">
+        <div class="column">
+            <img src="uno.png" style="height: 45%; width: 80%;" alt="Imagen 1">
+            <h2>Movies & Series</h2>
+            <p>Top selected Screenshots and movie Scenes. Personally Selected.</p>
+            <button>botón</button>
+        </div>
+        <div class="column">
+            <img src="dos.png" style="height: 45%; width: 80%;" alt="Imagen 2">
+            <h2>VideoGames</h2>
+            <p>Párrafo 2</p>
+            <button>botón</button>
+        </div>
+        <div class="column">
+            <img src="imagen3.jpg" alt="Imagen 3">
+            <h2>Vehicles</h2>
+            <p>Párrafo 3</p>
+            <button>botón</button>
+        </div>
+    </section>
+</body>
+
+</html>

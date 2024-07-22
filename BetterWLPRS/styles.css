@@ -1,0 +1,229 @@
+body,
+html {
+    background-image: url("pexel.jpg");
+    background-color: #d0d0d0;
+
+    font-family: 'DM Sans', Courier, monospace;
+    font-style: oblique;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Para evitar que el iframe tenga barras de desplazamiento */
+    /* background:
+        linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(transparent 3px, #fff 3px, #fff 78px, transparent 78px),
+        linear-gradient(-90deg, #0000000d 1px, transparent 1px),
+        linear-gradient(-90deg, transparent 3px, #fff 3px, #fff 78px, transparent 78px),
+        linear-gradient(#0000000a 1px, transparent 1px),
+        #fff;
+    background-size:
+        6px 6px,
+        6px 6px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px;
+} */
+}
+
+header {
+    background-color: #33333300;
+    color: #000000;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+}
+
+.logo img {
+    width: 100px;
+    /* ajusta el ancho según tu necesidad */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: auto;
+    /* Esto alinea los elementos a la derecha */
+}
+
+ul li {
+    margin-right: 20px;
+}
+
+ul li:last-child {
+    margin-right: 0;
+}
+
+ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+.hero-section {
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: -50px;
+}
+
+.hero-section img {
+    margin: 0 auto;
+    position: absolute;
+    top: -129px;
+    pointer-events: none;
+    /* Hace que la imagen no sea interactuable */
+    right: 30px;
+    left: 25px;
+}
+
+.hero-section p {
+    font-weight: 800;
+    font-style: italic;
+}
+
+.hero-section h1 {
+    margin: 0;
+    font-size: 290%;
+    font-weight: 900;
+}
+
+iframe {
+    width: 70%;
+    height: 600px;
+    margin-top: 150px;
+    /* ajusta la altura según tu necesidad */
+    border: none;
+    /* Asegura que el contenido del iframe no tenga scroll */
+
+}
+
+.divided {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 250px !important;
+    padding: 20px 60px;
+    gap: 50px;
+    height: 30%;
+}
+
+.column {
+    width: 30%;
+    /* Ajusta el ancho según sea necesario */
+    text-align: center;
+    background-color: #f8f8f8;
+    /* Color de fondo */
+    padding: 20px;
+    /* Padding alrededor del contenido */
+    border-radius: 10px;
+    /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.667);
+    /* Sombra */
+    margin-bottom: 20px;
+    /* Espacio entre las columnas */
+}
+
+.column img {
+    width: 100%;
+    border-radius: 10px;
+    /* Ajusta el radio de borde según sea necesario */
+}
+
+.column h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.column p {
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card:hover svg {
+    scale: 0;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
