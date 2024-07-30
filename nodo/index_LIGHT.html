@@ -94,7 +94,6 @@
             display: flex;
             justify-content: space-between;
             color: black;
-
             align-items: center;
         }
 
@@ -237,8 +236,6 @@
             }
         }
 
-
-
         .team-section {
             padding: 50px 0;
         }
@@ -308,6 +305,55 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Nuevos estilos para la sección de crecimiento */
+        .growth-section {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            padding: 2rem;
+            border-radius: 1rem;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .growth-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .percentage {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+
+        .arrow {
+            font-size: 3rem;
+            animation: bounce 9s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
     </style>
 </head>
 
@@ -332,6 +378,18 @@
                 <p>Agencia de <span id="palabra-cambiante"></span> especializada en impulsar tus negocios.</p>
 
                 <a href="#" class="btn">Comenzar →</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Impulsa tu Crecimiento con Nosotros</h2>
+                <div class="growth-section" id="growth-section">
+                    <h2>Nuestros clientes experimentan en promedio:</h2>
+                    <div class="percentage" id="percentage">0%</div>
+                    <p>más de ventas</p>
+                    <div class="arrow">↑</div>
+                </div>
             </div>
         </section>
 
@@ -437,7 +495,37 @@
         }
 
         escribirPalabra();
+
+        // Animación del porcentaje
+        function animatePercentage() {
+            const percentageElement = document.getElementById('percentage');
+            let percentage = 0;
+            const interval = setInterval(() => {
+                if (percentage <= 100) {
+                    percentageElement.textContent = `${percentage}%`;
+                    percentage++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 10);
+        }
+
+        // Utilizar Intersection Observer para iniciar la animación al entrar en la sección
+        const growthSection = document.getElementById('growth-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animatePercentage();
+                    observer.unobserve(growthSection); // Dejar de observar después de iniciar la animación
+                }
+            });
+        }, {
+            threshold: 0.5 // Iniciar la animación cuando el 50% de la sección esté visible
+        });
+
+        observer.observe(growthSection);
     </script>
+
 </body>
 
 </html>
