@@ -7,9 +7,9 @@
     <title>Frutería Fresca - Sabor y salud en cada bocado</title>
     <style>
         :root {
-            --color-primary: #c9edb4;
+            --color-primary: #a1ff6b;
             --color-secondary: #4ECDC4;
-            --color-accent: #66d145;
+            --color-accent: #45B7D1;
             --color-background: #F7FFF7;
             --color-text: #2C3E50;
         }
@@ -25,7 +25,7 @@
         }
 
         header {
-            background-color: #87f18f;
+            background-color: var(--color-primary);
             color: white;
             padding: 1rem;
             position: fixed;
@@ -76,7 +76,7 @@
         }
 
         .hero {
-            background-image: url(./9.JPG);
+            background-image:url(./1.JPG);
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -154,7 +154,7 @@
 
         .price {
             font-weight: bold;
-            color: black;
+            color: var(--color-primary);
         }
 
         .add-to-cart {
@@ -173,7 +173,7 @@
 
         #cart {
             position: fixed;
-            top: 2%;
+            top: 70px;
             right: 20px;
             background-color: white;
             padding: 1rem;
@@ -202,13 +202,11 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
-            align-items: center;
-            justify-content: center;
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 30% auto 15% auto;
+            margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
@@ -289,19 +287,19 @@
             }
 
             .hero {
-
+                
                 margin-top: 80px;
                 /* Ajuste para compensar el header */
             }
 
+            
 
-
-            .hero {
-                height: 85vh;
+            .hero{
+               height: 85vh;
             }
 
 
-            #productos {
+            #productos{
                 padding: 0rem 2rem;
             }
 
@@ -313,7 +311,7 @@
     <header>
         <nav>
             <div class="logo"> <img src="fruticat.png" height="55px" width="90px" alt="">
-
+                
                 <button class="menu-toggle" id="menu-toggle">&#9776;</button>
             </div>
             <ul id="menu">
@@ -337,17 +335,17 @@
     <main>
         <section id="inicio" class="hero">
             <div class="hero-content">
-                <h1>Sabor y Frescura en cada bocado</h1>
+                <h1>Sabor y salud en cada bocado</h1>
                 <p>Descubre la frescura de nuestras frutas seleccionadas</p>
                 <a href="#productos" class="cta-button">Ver nuestros productos</a>
             </div>
         </section>
 
         <section id="productos">
-            <h2>Nuestras Frutas Más Frescas</h2>
+            <h2>Nuestras Frutas Frescas</h2>
             <div class="products">
                 <div class="product">
-                    <img src="manzana.jpg" alt="Manzanas">
+                    <img src="/api/placeholder/300/200" alt="Manzanas">
                     <div class="product-info">
                         <h3>Manzanas</h3>
                         <p>Deliciosas manzanas frescas de nuestra huerta local.</p>
@@ -356,7 +354,7 @@
                     </div>
                 </div>
                 <div class="product">
-                    <img src="platano.jpg" alt="Plátanos">
+                    <img src="/api/placeholder/300/200" alt="Plátanos">
                     <div class="product-info">
                         <h3>Plátanos</h3>
                         <p>Plátanos maduros y nutritivos, perfectos para un snack saludable.</p>
@@ -365,7 +363,7 @@
                     </div>
                 </div>
                 <div class="product">
-                    <img src="fresas.jpg" alt="Fresas">
+                    <img src="/api/placeholder/300/200" alt="Fresas">
                     <div class="product-info">
                         <h3>Fresas</h3>
                         <p>Fresas jugosas y dulces, ideales para postres o comer solas.</p>
@@ -495,7 +493,11 @@
             document.getElementById('address-modal').style.display = 'none';
         });
 
-
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 500) {
+                document.getElementById('cart').style.display = 'block';
+            }
+        });
 
 
         // Funcionalidad para el menú desplegable
