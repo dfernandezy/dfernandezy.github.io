@@ -259,7 +259,19 @@
 
         @media (max-width: 768px) {
             header {
-                position:sticky;
+                position: fixed;
+                padding: 0;
+                
+
+            }
+            
+            nav{
+                padding: 5px;
+            }
+
+            #frutilogo{
+                height: 45px;
+                width: 65px;
             }
 
             .menu-toggle {
@@ -305,7 +317,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo"> <img src="fruticat.png" height="55px" width="90px" alt="">
+            <div class="logo"> <img id="frutilogo" src="fruticat.png" height="55px" width="90px" alt="">
 
                 <button class="menu-toggle" id="menu-toggle">&#9776;</button>
             </div>
