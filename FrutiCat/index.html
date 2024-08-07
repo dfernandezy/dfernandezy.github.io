@@ -1,1 +1,536 @@
 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutería Fresca - Sabor y salud en cada bocado</title>
+    <style>
+        :root {
+            --color-primary: #c9edb4;
+            --color-secondary: #4ECDC4;
+            --color-accent: #66d145;
+            --color-background: #F7FFF7;
+            --color-text: #2C3E50;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+        }
+
+        header {
+            background-color: #87f18f;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo span {
+            margin-right: 10px;
+            /* Ajusta este valor según sea necesario */
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0 60px;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: rgb(19, 18, 18);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-secondary);
+        }
+
+        .hero {
+            background-image:url(./9.JPG);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-secondary);
+        }
+
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product h3 {
+            margin-top: 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: black;
+        }
+
+        .add-to-cart {
+            background-color: var(--color-accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--color-secondary);
+        }
+
+        #cart {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        #cart h2 {
+            margin-top: 0;
+        }
+
+        #cart-items {
+            margin-bottom: 1rem;
+        }
+
+        #address-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #address-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            /* Esto asegura que el botón se alinee a la derecha */
+        }
+
+        @media (max-width: 768px) {
+            header {
+                position: absolute;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin: 0px 25px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--color-primary);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 1rem;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero {
+                
+                margin-top: 80px;
+                /* Ajuste para compensar el header */
+            }
+
+            
+
+            .hero{
+               height: 85vh;
+            }
+
+
+            #productos{
+                padding: 0rem 2rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"> <img src="fruticat.png" height="55px" width="90px" alt="">
+                
+                <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+            </div>
+            <ul id="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav>
+        <div class="logo"> </div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Sabor y Frescura en cada bocado</h1>
+                <p>Descubre la frescura de nuestras frutas seleccionadas</p>
+                <a href="#productos" class="cta-button">Ver nuestros productos</a>
+            </div>
+        </section>
+
+        <section id="productos">
+            <h2>Nuestras Frutas Más Frescas</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="manzana.jpg" alt="Manzanas">
+                    <div class="product-info">
+                        <h3>Manzanas</h3>
+                        <p>Deliciosas manzanas frescas de nuestra huerta local.</p>
+                        <p class="price">2.50€ / kg</p>
+                        <button class="add-to-cart" onclick="addToCart('Manzanas', 2.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="platano.jpg" alt="Plátanos">
+                    <div class="product-info">
+                        <h3>Plátanos</h3>
+                        <p>Plátanos maduros y nutritivos, perfectos para un snack saludable.</p>
+                        <p class="price">1.80€ / kg</p>
+                        <button class="add-to-cart" onclick="addToCart('Plátanos', 1.80)">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="fresas.jpg" alt="Fresas">
+                    <div class="product-info">
+                        <h3>Fresas</h3>
+                        <p>Fresas jugosas y dulces, ideales para postres o comer solas.</p>
+                        <p class="price">3.20€ / kg</p>
+                        <button class="add-to-cart" onclick="addToCart('Fresas', 3.20)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>En Frutería Fresca, nos apasiona ofrecer las frutas más frescas y sabrosas a nuestros clientes.
+                Trabajamos directamente con agricultores locales para garantizar la mejor calidad en todos nuestros
+                productos, apoyando la agricultura sostenible y promoviendo una alimentación saludable en nuestra
+                comunidad.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form>
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit" class="cta-button">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="cart">
+        <h2>Tu Cesta</h2>
+        <div id="cart-items"></div>
+        <p>Total: <span id="cart-total">0.00€</span></p>
+        <button class="cta-button" onclick="checkout()">Realizar Pedido</button>
+    </div>
+
+    <div id="address-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Dirección de envío</h2>
+            <form id="address-form">
+                <input type="text" id="street" placeholder="Calle y número" required>
+                <input type="text" id="city" placeholder="Ciudad" required>
+                <input type="text" id="postcode" placeholder="Código Postal" required>
+                <button type="submit" class="cta-button">Confirmar pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Frutería Fresca. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="address-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Dirección de envío</h2>
+            <form id="address-form">
+                <input type="text" id="street" placeholder="Calle y número" required>
+                <input type="text" id="city" placeholder="Ciudad" required>
+                <input type="text" id="postcode" placeholder="Código Postal" required>
+                <button type="submit" class="cta-button">Confirmar pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let cart = {};
+        let total = 0;
+
+        function addToCart(item, price) {
+            if (cart[item]) {
+                cart[item].quantity++;
+            } else {
+                cart[item] = { price: price, quantity: 1 };
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            total = 0;
+
+            for (const [item, details] of Object.entries(cart)) {
+                const itemTotal = details.price * details.quantity;
+                total += itemTotal;
+                cartItems.innerHTML += `<p>${item} x ${details.quantity} - ${itemTotal.toFixed(2)}€</p>`;
+            }
+
+            cartTotal.textContent = total.toFixed(2) + '€';
+            document.getElementById('cart').style.display = 'block';
+        }
+
+        function checkout() {
+            document.getElementById('address-modal').style.display = 'block';
+        }
+
+        function sendWhatsAppMessage(address) {
+            let message = "Hola, me gustaría hacer el siguiente pedido:\n\n";
+            for (const [item, details] of Object.entries(cart)) {
+                message += `${item} x ${details.quantity} - ${(details.price * details.quantity).toFixed(2)}€\n`;
+            }
+            message += `\nTotal: ${total.toFixed(2)}€\n\n`;
+            message += `Dirección de envío:\n${address}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/34622494800?text=${encodedMessage}`;
+            window.open(whatsappLink, '_blank');
+
+            cart = {};
+            updateCart();
+            document.getElementById('address-modal').style.display = 'none';
+        }
+
+        document.getElementById('address-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const street = document.getElementById('street').value;
+            const city = document.getElementById('city').value;
+            const postcode = document.getElementById('postcode').value;
+            const fullAddress = `${street}, ${city}, ${postcode}`;
+            sendWhatsAppMessage(fullAddress);
+        });
+
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('address-modal').style.display = 'none';
+        });
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 650) {
+                document.getElementById('cart').style.display = 'block';
+            }
+        });
+
+
+        // Funcionalidad para el menú desplegable
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('show');
+            });
+
+            // Cerrar el menú al hacer clic en un enlace
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('show');
+                    }
+                });
+            });
+
+            // Ajustar visibilidad del menú al cambiar el tamaño de la ventana
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+
+        // ... (mantener el resto del JavaScript) ...
+    </script>
+    </script>
+</body>
+
+</html>
