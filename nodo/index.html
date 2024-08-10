@@ -374,6 +374,14 @@
             transform: scale(1.1);
         }
 
+
+        /* Efecto táctil para dispositivos móviles */
+        .growth-section:active {
+            transform: scale(1.05);
+            background-position: 100% 100%;
+            /* Puedes ajustar esto para que coincida con el efecto de hover */
+        }
+
         .percentage {
             font-size: 4rem;
             font-weight: bold;
@@ -459,8 +467,7 @@
             /* Vuelve a la posición original */
         }
 
-        .popup h2 {
-        }
+        .popup h2 {}
 
         .popup p {
             margin-bottom: 20px;
