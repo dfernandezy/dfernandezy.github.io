@@ -334,7 +334,14 @@
     </footer>
 
     <script>
-
+        document.querySelectorAll('.category').forEach(category => {
+            category.addEventListener('touchstart', () => {
+                category.classList.add('active');
+            });
+            category.addEventListener('touchend', () => {
+                category.classList.remove('active');
+            });
+        });
 
         document.querySelectorAll('.category').forEach(category => {
             category.addEventListener('mouseenter', () => {
