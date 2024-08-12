@@ -234,6 +234,10 @@
         .social-links a:hover {
             color: var(--cp-pink);
         }
+
+        .category.active .mod-list {
+            display: block;
+        }
     </style>
 </head>
 
@@ -334,11 +338,17 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.category').forEach(category => {
+        // Seleccionar todos los elementos de categoría
+        const categories = document.querySelectorAll('.category');
+
+        // Agregar evento touchstart a cada elemento de categoría
+        categories.forEach(category => {
             category.addEventListener('touchstart', () => {
+                // Agregar clase active al elemento de categoría
                 category.classList.add('active');
             });
             category.addEventListener('touchend', () => {
+                // Remover clase active del elemento de categoría
                 category.classList.remove('active');
             });
         });
