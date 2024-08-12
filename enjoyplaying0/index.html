@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enjoyplaying CyberPunk List</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        :root {
+            --cp-yellow: #fcee0a;
+            --cp-blue: #00ffff;
+            --cp-pink: #ff00de;
+            --cp-dark: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--cp-dark);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--cp-dark);
+            color: var(--cp-yellow);
+            text-align: center;
+            padding: 2em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glitch-wrapper {
+            position: relative;
+        }
+
+        .glitch {
+            font-size: 3em;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--cp-pink);
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--cp-blue);
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(17px, 9999px, 94px, 0);
+            }
+
+            20% {
+                clip: rect(33px, 9999px, 39px, 0);
+            }
+
+            40% {
+                clip: rect(90px, 9999px, 74px, 0);
+            }
+
+            60% {
+                clip: rect(22px, 9999px, 91px, 0);
+            }
+
+            80% {
+                clip: rect(66px, 9999px, 68px, 0);
+            }
+
+            100% {
+                clip: rect(84px, 9999px, 71px, 0);
+            }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% {
+                clip: rect(132px, 9999px, 137px, 0);
+            }
+
+            20% {
+                clip: rect(39px, 9999px, 57px, 0);
+            }
+
+            40% {
+                clip: rect(126px, 9999px, 57px, 0);
+            }
+
+            60% {
+                clip: rect(25px, 9999px, 24px, 0);
+            }
+
+            80% {
+                clip: rect(11px, 9999px, 140px, 0);
+            }
+
+            100% {
+                clip: rect(65px, 9999px, 112px, 0);
+            }
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2em;
+        }
+
+        .category {
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--cp-blue);
+            padding: 1em;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .category:hover {
+
+            background-color: rgba(255, 255, 255, 0.2);
+
+            box-shadow: 0 0 15px var(--cp-blue);
+        }
+
+        .category h2 {
+            color: var(--cp-yellow);
+            margin: 0;
+        }
+
+        .mod-list {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+            margin-top: 1em;
+        }
+
+        .mod-item {
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5em;
+            padding: 0.5em;
+            border-left: 3px solid var(--cp-pink);
+            text-align: left;
+        }
+
+        .mod-name {
+            color: var(--cp-pink);
+            font-weight: bold;
+        }
+
+        .mod-description {
+            color: #cccccc;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: var(--cp-dark);
+            color: var(--cp-blue);
+            border-top: 2px solid var(--cp-yellow);
+            margin-top: 2em;
+        }
+
+        #download-all {
+            display: block;
+            width: 200px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: var(--cp-pink);
+            color: var(--cp-dark);
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        #download-all:hover {
+            background-color: var(--cp-yellow);
+            box-shadow: 0 0 15px var(--cp-blue);
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: var(--cp-dark);
+            color: var(--cp-blue);
+            border-top: 2px solid var(--cp-yellow);
+            margin-top: 2em;
+        }
+
+        .social-links {
+            margin-top: 1em;
+        }
+
+        .social-links a {
+            color: var(--cp-blue);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--cp-pink);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="glitch-wrapper">
+            <h1 class="glitch" data-text="Most Needed">Most Needed</h1><br>
+            <h1 class="glitch" data-text="Cyberpunk 2077 Mods">Cyberpunk 2077 Mods</h1>
+            <h3>Made by enjoyplaying</h3>
+        </div>
+    </header>
+    <main>
+        <div class="category-container">
+            <div class="category" id="graphics">
+                <h2>Graphics</h2>
+                <ul class="mod-list">
+                    <li class="mod-item">
+                        <a href="https://www.nexusmods.com/cyberpunk2077/mods/7652" target="_blank">
+                            <div class="mod-name">Textures Overhaul</div>
+                            <div class="mod-description">Improve ALL Textures, very high quality mod.
+                            </div>
+
+                    </li>
+                    <li class="mod-item">
+                        <a href="https://www.nexusmods.com/cyberpunk2077/mods/14726" target="_blank">
+                            <div class="mod-name">More FPS</div>
+                            <div class="mod-description">It gives +20-30 FPS Mod, big performance BOOST.</div>
+                            <a href="https://example.com/ray-tracing" class="mod-link"
+                                style="display:none;">Descargar</a>
+                    </li>
+                    <li class="mod-item">
+                        <a href="https://www.nexusmods.com/cyberpunk2077/mods/11622?tab=posts" target="_blank">
+
+                            <div class="mod-name">Graphic Preset</div>
+                            <div class="mod-description">It's my exact graphic preset. Be sure to select the Classic
+                                version.</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="category" id="gameplay">
+                <h2>Gameplay</h2>
+                <ul class="mod-list">
+                    <li class="mod-item">
+                        <a href="https://www.nexusmods.com/cyberpunk2077/mods/6889" target="_blank">
+                            <div class="mod-name">Enhanced Driving Camera</div>
+                            <div class="mod-description">Without this mod you can't drive in First Person. Honestly.
+                            </div>
+                           
+                    </li>
+                    <li class="mod-item">
+                        <a href="https://www.nexusmods.com/cyberpunk2077/mods/6278?tab=files" target="_blank">
+                        <div class="mod-name">Cyberdeck & Sandevistan</div>
+                        <div class="mod-description">Netrunning + Sandevistan. Anything else?
+                        </div>
+                        
+                    </li>
+                    <li class="mod-item">
+                        <a href="https://www.nexusmods.com/cyberpunk2077/mods/categories/14/" target="_blank">
+
+                        <div class="mod-name">Cars</div>
+                        <div class="mod-description">Cars. Simply Cars. Cars. Cars?
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button id="download-all"><a href="https://www.youtube.com/@enjoyplaying0"
+                style="text-decoration: none; color: var(--cp-blue);">Thanks </a></button>
+
+    </main>
+
+    <footer>
+        <p>enjoyplaying © 2024</p>
+        <div class="social-links">
+            <a href="https://dfernandezy.github.io" target="_blank">My Web</a>
+            <a href="https://x.com/yeymura" target="_blank">Twitter</a>
+            <a href="https://www.youtube.com/@enjoyplaying0" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/yey2wavy/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+
+
+        document.querySelectorAll('.category').forEach(category => {
+            category.addEventListener('mouseenter', () => {
+                category.querySelector('.mod-list').style.display = 'block';
+            });
+            category.addEventListener('mouseleave', () => {
+                category.querySelector('.mod-list').style.display = 'none';
+            });
+        });
+
+
+        // Función para aplicar el efecto glitch aleatoriamente
+        function randomGlitch() {
+            const glitch = document.querySelector('.glitch');
+            glitch.style.animation = 'none';
+            void glitch.offsetWidth; // Trigger reflow
+            glitch.style.animation = null;
+        }
+
+        // Aplicar el efecto glitch cada 3 segundos
+        setInterval(randomGlitch, 3000);
+    </script>
+</body>
+
+</html>
