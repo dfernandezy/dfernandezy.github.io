@@ -81,6 +81,7 @@
             margin: 0;
             letter-spacing: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 11;
         }
 
         .hero p {
@@ -179,6 +180,45 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 5em;
+                letter-spacing: 10px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                margin-left: 10px;
+            }
+
+            .content-block {
+                flex-basis: 100%;
+            }
+
+            .sword-collection img {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 5em;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .sword-collection img {
+                width: 120px;
+            }
         }
     </style>
 </head>
