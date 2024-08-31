@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWORD</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cinzel', serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+
+
+        .logo {
+            color: #c0a080;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23222"/><path d="M0 0L100 100M100 0L0 100" stroke="%23333" stroke-width="1"/></svg>');
+            background-size: 10px 10px;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 120px;
+            margin: 0;
+            letter-spacing: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        .sword-image {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+            height: 120%;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #c0a080;
+            color: #1a1a1a;
+            padding: 10px 30px;
+            margin-top: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #d4b494;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 20px;
+        }
+
+        .content-block {
+            flex-basis: 48%;
+        }
+
+        .content-block h2 {
+            color: #c0a080;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .content-block p {
+            line-height: 1.6;
+        }
+
+        .sword-collection {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .sword-collection img {
+            width: 200px;
+            margin: 0 20px;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+        }
+
+
+
+        .hero {
+            background-color: #1a1a1a;
+            background-image: url('./back.png');
+            /* Reemplaza 'back.png' con la ruta de tu imagen */
+            background-size: cover;
+            /* Asegura que la imagen cubra todo el contenedor */
+            background-position: center;
+            /* Centra la imagen en el contenedor */
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            /* Aumenta el z-index para que esté por encima del iframe */
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SWORD</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Catalog</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>SWORD</h1>
+            <p>Forging legends, crafting destiny</p>
+            <a href="#" class="cta-button">Explore Collection</a>
+        </div>
+        <iframe src='https://my.spline.design/mysticalweaponpack1premium-44b01dce423bbc8a0c415ff7943e0523/'
+            frameborder='0'></iframe>
+    </section>
+
+    <section class="content container">
+        <div class="content-block">
+            <h2>Our Legacy</h2>
+            <p>For centuries, we have been crafting the finest blades, each one a testament to the art of swordmaking.
+                Our legacy is built on tradition, innovation, and an unwavering commitment to excellence.</p>
+        </div>
+        <div class="content-block">
+            <h2>Master Craftsmanship</h2>
+            <p>Every sword that bears our mark is a masterpiece, forged by skilled artisans who have dedicated their
+                lives to perfecting their craft. We combine ancient techniques with modern technology to create weapons
+                of unparalleled quality.</p>
+        </div>
+    </section>
+
+    <section class="sword-collection container">
+        <img src="/api/placeholder/200/400" alt="Sword 1">
+        <img src="/api/placeholder/200/400" alt="Sword 2">
+        <img src="/api/placeholder/200/400" alt="Sword 3">
+    </section>
+</body>
+
+</html>
