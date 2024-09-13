@@ -37,7 +37,9 @@
         }
 
 
-
+        spline-viewer{
+            background-color: white;
+        }
 
 
         body,
@@ -147,7 +149,6 @@
             right: 0;
             bottom: 0;
             z-index: 1;
-            background-color: rgba(0, 0, 0, 0.5);
             /* Fondo oscuro semitransparente sobre el video */
         }
 
@@ -571,8 +572,8 @@
 
     <main>
         <section class="hero">
-            <iframe id="esplain" src="https://my.spline.design/ipadnodo-7a38f3af5fa0fe2d0068102d6eeacfa9/"
-                class="background-iframe" frameborder="0"></iframe>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/jQ-mKWX37BCXsrxR/scene.splinecode"></spline-viewer>
 
             <!-- <div class="container hero-content">
                 <h1 class="Potencia">Transforma tu negocio con <br> <span class="highlight">Nodo</span></h1>
@@ -729,34 +730,6 @@
 
         //     escribirPalabra();
 
-        let scrollCount = 0; // Contador de desplazamientos
-        const maxScrolls = 15; // Número de desplazamientos requeridos
-        const heroSection = document.querySelector('section.hero'); // Selección de la sección hero
-
-        heroSection.addEventListener('wheel', (event) => {
-            if (scrollCount < maxScrolls) {
-                event.preventDefault(); // Bloquea el scroll dentro de hero
-                scrollCount++; // Incrementa el contador de scrolls
-                console.log(`Scroll Count: ${scrollCount}`); // Depuración
-            } else {
-                // Cuando llega a maxScrolls, eliminamos el bloqueo de scroll en la sección hero
-                heroSection.classList.remove('lock-scroll');
-            }
-        }, { passive: false });
-
-        // Alternativamente, puedes también escuchar el scroll en la ventana, pero solo bloquear el de la sección hero:
-        window.addEventListener('scroll', () => {
-            const heroRect = heroSection.getBoundingClientRect();
-            if (heroRect.bottom > 0 && scrollCount < maxScrolls) {
-                // Aún en la sección hero, y no se ha alcanzado el límite de scroll
-                window.scrollTo(0, 0); // Forzamos el scroll hacia arriba si intentan desplazarse fuera de la sección
-                scrollCount++;
-                console.log(`Scroll Count: ${scrollCount}`);
-            } else if (scrollCount >= maxScrolls) {
-                // Cuando se alcanza el número de scrolls permitimos que se continúe el desplazamiento
-                heroSection.classList.remove('lock-scroll');
-            }
-        });
 
         // Animación del porcentaje y frases
         function animatePercentageAndPhrases() {
@@ -822,10 +795,7 @@
                 const scrollPosition = window.pageYOffset;
                 const heroHeight = heroSection.offsetHeight;
 
-                // Aplicar parallax solo mientras se hace scroll en la sección hero
-                if (scrollPosition <= heroHeight) {
-                    iframe.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-                }
+
             });
         });
     </script>
