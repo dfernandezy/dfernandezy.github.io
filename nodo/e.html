@@ -51,7 +51,7 @@
 
         a {
             font-weight: 500;
-            color: #646cff;
+            color: #535bf2;
             text-decoration: inherit;
         }
 
@@ -68,7 +68,7 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #3b82f6;
+            color: #535bf2;
         }
 
         .nav-links a {
@@ -77,7 +77,13 @@
             margin-left: 20px;
         }
 
+        /*  */
 
+        /* hero content */
+        .hero-content {
+            font-size: larger;
+            font-stretch: expanded;
+        }
 
         /*  */
 
@@ -117,7 +123,7 @@
         }
 
         .cta {
-            background-color: #2563EB;
+            background-color: #535bf2;
             padding: 50px 0;
             text-align: center;
         }
@@ -134,7 +140,19 @@
 
         /*  */
 
+        ::selection {
+            background-color: #7824d2;
+            text-decoration: underline;
+            /* Fondo naranja */
+            color: #ffffff;
+            /* Texto blanco */
+        }
 
+        #expertoarriba:hover{
+            text-decoration: underline;
+        }
+
+        /*  */
 
         /* Sección Palabra Cambiante */
         .palabracambiante {
@@ -142,27 +160,50 @@
             padding: 50px 0;
             text-align: center;
             margin-top: -30px;
-            margin-bottom: -70px;
+            margin-bottom: -80px;
             position: relative;
             z-index: 100;
+
+        }
+
+
+        #palabra-cambiante {
+            color: #535bf2;
+            font-weight: 700;
         }
 
 
         .highlight {
-            color: #2563EB;
+            color: #535bf2;
             font-weight: 800;
         }
 
+        /*  */
+        /* resaltado */
+
+
+        /*  */
+
+
+        /* seccion agencia */
+        .agenciade {
+            font-weight: 350;
+        }
+
+
+
         .Potencia {
             font-size: 2.5rem;
+            color: #3A3A3A;
         }
 
         .listo {
             font-size: 1.5rem !important;
         }
 
-        /*  */
 
+
+        /*  */
 
 
 
@@ -180,6 +221,19 @@
                 /* Para asegurarnos de que el video cubra toda la pantalla */
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        
     </style>
 </head>
 
@@ -201,10 +255,12 @@
     <main>
         <section class="palabracambiante">
             <div class="container hero-content">
-                <h1 class="Potencia">Transforma tu negocio con <br> <span class="highlight">Nodo</span></h1>
-                <p>Agencia de <span id="palabra-cambiante"></span> especializada en impulsar tus negocios.</p>
+                <h1 class="Potencia">Transforma tu negocio con <br> <span class="highlight">Nodo.</span></h1>
+                <p class="agenciade">Agencia de <span id="palabra-cambiante"
+                        style="text-decoration:underline;"></span></span> especializada en impulsar tus
+                    negocios.</p>
 
-                <a href="#" class="btn">Contacta con nuestros expertos →</a>
+                <a href="#" id="expertoarriba" class="btn expertoarriba">Contacta con nuestros expertos →</a>
             </div>
         </section>
 
