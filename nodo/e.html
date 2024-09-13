@@ -1,46 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nodo - Potencia tu presencia online</title>
-    <style>
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
+    <title>Nodo</title>
 
+    <style>
         :root {
             font-family: Inter, 'dm sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
             line-height: 1.5;
             font-weight: 400;
             color-scheme: light dark;
-            color: rgba(255, 255, 255, 0.87);
-            background-color: #242424;
+            background-color: #ffffff;
             font-synthesis: none;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
-
-
-        .lock-scroll {
-            overflow: hidden;
-            /* Evita el desplazamiento */
-        }
-
-
-        p#growth-phrase {
-            transition: ease-in-out 9s ease-in-out;
-            /* Ajusta la duración y la función de tiempo según lo necesites */
-        }
-
-
-        spline-viewer{
-            background-color: white;
-        }
-
 
         body,
         html {
@@ -48,30 +25,28 @@
             padding: 0;
             min-width: 320px;
             min-height: 100vh;
-            background-color: #242424;
-            color: #ffffff;
+            color: black;
+        }
+
+
+        /* Barra de navegación */
+
+
+        header {
+            padding: 20px 0;
+            color: black;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
-        .container h2 {
-            font-weight: 1000;
-            color: white;
-
-        }
-
-        h1,
-        h2 {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3.2em;
-            line-height: 1.1;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         a {
@@ -84,38 +59,10 @@
             color: #535bf2;
         }
 
-        button {
-            border-radius: 8px;
-            border: 1px solid transparent;
-            padding: 0.6em 1.2em;
-            font-size: 1em;
-            font-weight: 500;
-            font-family: inherit;
-            background-color: #1a1a1a;
-            cursor: pointer;
-            transition: border-color 0.25s;
-        }
+        .container h2 {
+            font-weight: 1000;
+            color: white;
 
-        button:hover {
-            border-color: #646cff;
-        }
-
-        button:focus,
-        button:focus-visible {
-            outline: 4px auto -webkit-focus-ring-color;
-        }
-
-        header {
-            background-color: #ffffff;
-            color: black;
-            padding: 20px 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            color: black;
-            align-items: center;
         }
 
         .logo {
@@ -130,26 +77,29 @@
             margin-left: 20px;
         }
 
+
+
+        /*  */
+
+        /* 3D Model css */
+
+        #esplain {
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            position: relative;
+        }
+
+
+        /* Hero section */
+
         .hero {
             text-align: center;
             position: relative;
             overflow: hidden;
-            height: 100vh;
-            /* Aseguramos que cubra toda la pantalla */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            height: 90vh;
+            /* Para asegurarnos de que el video cubra toda la pantalla */
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-            /* Fondo oscuro semitransparente sobre el video */
         }
 
         .hero-content {
@@ -162,76 +112,8 @@
             font-size: 18px;
             margin-bottom: 30px;
             font-weight: 100;
-            color: #ffffff;
-        }
-
-        .btn {
-            display: inline-block;
-            margin: 0px 50px;
-            background-color: #2563EB;
-            color: #ffffff;
-            padding: 17px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .services {
-            background-color: #242424;
-            padding: 50px 0;
-            z-index: 0;
-            position: relative;
-        }
-
-        .services,
-        .team-section {
-            padding: 50px 0;
-            background-color: #242424;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Asegura que el video cubra toda la sección sin distorsión */
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            /* El video debe estar detrás del contenido */
-        }
-
-        .service-grid,
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .service-card,
-        .team-card {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 2cap;
-            text-align: center;
-        }
-
-        .service-card i {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .team-card h3 {
-            color: #3b82f6;
-        }
-
-        .team-members {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .team-members li {
-            margin-bottom: 10px;
+            color: #000000;
+            margin-top: -650px;
         }
 
         .cta {
@@ -250,10 +132,21 @@
             color: black;
         }
 
-        #palabra-cambiante {
-            font-weight: 800;
-            color: #2563EB;
+        /*  */
+
+
+
+        /* Sección Palabra Cambiante */
+        .palabracambiante {
+            background-color: #ffffff00;
+            padding: 50px 0;
+            text-align: center;
+            margin-top: -30px;
+            margin-bottom: -70px;
+            position: relative;
+            z-index: 100;
         }
+
 
         .highlight {
             color: #2563EB;
@@ -268,85 +161,12 @@
             font-size: 1.5rem !important;
         }
 
-        @media (prefers-color-scheme: light) {
-            :root {
-                color: #213547;
-                background-color: #ffffff;
-            }
+        /*  */
 
-            a:hover {
-                color: #747bff;
-            }
 
-            button {
-                background-color: #f9f9f9;
-            }
-        }
 
-        .team-section {
-            padding: 50px 0;
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .team-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .team-card h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .team-members {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .team-members li {
-            margin-bottom: 15px;
-            color: #555;
-            font-size: 1em;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .team-members li:hover {
-            background-color: #e8f4fc;
-        }
-
+        /* Media queries */
         @media (max-width: 768px) {
             .team-grid {
                 grid-template-columns: 1fr;
@@ -360,203 +180,11 @@
                 /* Para asegurarnos de que el video cubra toda la pantalla */
             }
         }
-
-        /* Nuevos estilos para la sección de crecimiento */
-        .growth-section {
-            background: linear-gradient(to right, #3b82f6, #8b5cf6);
-            background-size: 200% 200%;
-            /* Tamaño del gradiente para un movimiento más suave */
-            padding: 2rem;
-            border-radius: 1rem;
-            color: white;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 50px;
-            transition: transform 0.3s ease-in-out;
-            /* Suaviza la animación del zoom */
-            animation: gradientAnimation 10s linear infinite;
-            /* Define la animación del gradiente */
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 0%;
-            }
-
-            50% {
-                background-position: 100% 0%;
-            }
-
-            100% {
-                background-position: 0% 0%;
-            }
-        }
-
-
-        .growth-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        /* Efecto de zoom en toda la sección */
-        .growth-section:hover {
-            transform: scale(1.05);
-        }
-
-        /* Efecto de transform en los elementos internos */
-        .growth-section h2,
-        .growth-section .percentage {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Aplicar un ligero zoom a los elementos internos */
-        .growth-section:hover h2,
-        .growth-section:hover .percentage {
-            transform: scale(1.1);
-        }
-
-
-        /* Efecto táctil para dispositivos móviles */
-        .growth-section:active {
-            transform: scale(1.05);
-            background-position: 100% 100%;
-            /* Puedes ajustar esto para que coincida con el efecto de hover */
-        }
-
-        .percentage {
-            font-size: 4rem;
-            font-weight: bold;
-            margin: 1rem 0;
-            position: relative;
-        }
-
-
-        .arrow {
-            font-size: 3rem;
-            animation: bounce 9s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-30px);
-            }
-
-            60% {
-                transform: translateY(-15px);
-            }
-        }
-
-
-        /* Testimonios */
-        .testimonials {
-            padding: 50px 0;
-            background-color: #242424;
-        }
-
-        .testimonial-card {
-            background-color: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-        }
-
-        .testimonial-card h3 {
-            color: #2563EB;
-            margin-top: 15px;
-        }
-
-        /* Popup */
-        .popup {
-            position: fixed;
-            bottom: 20px;
-            /* Ajusta la distancia desde el borde inferior */
-            right: 20px;
-            /* Ajusta la distancia desde el borde derecho */
-            width: 300px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            z-index: 1000;
-            display: none;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            opacity: 0;
-            /* Oculto por defecto */
-            transform: translateY(20px);
-            /* Desplazado inicialmente */
-        }
-
-        .popup.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-            /* Vuelve a la posición original */
-        }
-
-
-        .popup p {
-            margin-bottom: 20px;
-            color: black;
-        }
-
-        .popup .btn-close {
-            background-color: #2563EB;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 900;
-            display: none;
-        }
-
-        .overlay.show {
-            display: block;
-        }
-
-        #esplain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            /* Para que se coloque detrás del contenido */
-            transform: translateY(0);
-            transition: transform 0.1s ease-out;
-        }
     </style>
 </head>
 
 <body>
+
     <header>
         <div class="container">
             <nav>
@@ -571,233 +199,55 @@
     </header>
 
     <main>
-        <section class="hero">
-            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
-            <spline-viewer url="https://prod.spline.design/jQ-mKWX37BCXsrxR/scene.splinecode"></spline-viewer>
-
-            <!-- <div class="container hero-content">
+        <section class="palabracambiante">
+            <div class="container hero-content">
                 <h1 class="Potencia">Transforma tu negocio con <br> <span class="highlight">Nodo</span></h1>
                 <p>Agencia de <span id="palabra-cambiante"></span> especializada en impulsar tus negocios.</p>
 
                 <a href="#" class="btn">Contacta con nuestros expertos →</a>
-            </div> -->
-        </section>
-
-        <section id="services" class="services">
-            <div class="container">
-                <div class="growth-section" id="growth-section">
-                    <h2>Nuestros clientes experimentan en promedio:</h2>
-                    <div class="percentage" id="percentage">0%</div>
-                    <p id="growth-phrase">más en ventas</p>
-                    <div class="arrow">↑</div>
-                </div>
-            </div>
-            <h2 style="color: white;">Impulsa tu Crecimiento con Nosotros</h2>
-        </section>
-
-        <!-- Testimonios -->
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <h2>Lo que Dicen Nuestros Clientes</h2>
-                <div class="testimonial-card">
-                    <p>"Gracias a Nodo, nuestras ventas se dispararon en un 50% en solo 3 meses. ¡Son increíbles!"</p>
-                    <h3>Juan Pérez, CEO de EjemploCorp</h3>
-                </div>
-                <div class="testimonial-card">
-                    <p>"El equipo de Nodo transformó nuestra presencia online. Pasamos de ser invisibles a estar en el
-                        top de Google."</p>
-                    <h3>María García, Fundadora de TiendaEjemplo</h3>
-                </div>
             </div>
         </section>
 
-
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Nuestros Servicios</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <i>🔬</i>
-                        <h3>Análisis de marca</h3>
-                        <p>Nuestro equipo se encarga de analizar tu negocio para que no tengas que preocuparte de nada.
-                        </p>
-                    </div>
-                    <div class="service-card">
-                        <i>⚡</i>
-                        <h3>Optimización de recursos</h3>
-                        <p>Mejora tu visibilidad en los motores de búsqueda.</p>
-                    </div>
-                    <div class="service-card">
-                        <i>👥</i>
-                        <h3>Estrategia de Marketing en Redes Sociales</h3>
-                        <p>Conecta con tu audiencia y aumenta tu engagement.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="team-section">
-            <div class="container">
-                <h2>Nuestro Equipo</h2>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <h3>Desarrolladores</h3>
-                        <ul class="team-members">
-                            <li>Ana García - Full Stack Developer</li>
-                            <li>Carlos Ruiz - Frontend Specialist</li>
-                            <li>Laura Martínez - Backend Engineer</li>
-                        </ul>
-                    </div>
-                    <div class="team-card">
-                        <h3>Diseñadores</h3>
-                        <ul class="team-members">
-                            <li>Miguel Ángel Soto - UI/UX Designer</li>
-                            <li>Elena Pérez - Graphic Designer</li>
-                            <li>David López - Motion Designer</li>
-                        </ul>
-                    </div>
-                    <div class="team-card">
-                        <h3>Equipo de Marketing</h3>
-                        <ul class="team-members">
-                            <li>Sofía Rodríguez - Marketing Manager</li>
-                            <li>Javier Fernández - Content Strategist</li>
-                            <li>Isabel Torres - SEO Specialist</li>
-                        </ul>
-                    </div>
-                    <div class="team-card">
-                        <h3>Equipo de Ventas</h3>
-                        <ul class="team-members">
-                            <li>Alberto Sánchez - Sales Director</li>
-                            <li>Carmen Navarro - Account Executive</li>
-                            <li>Roberto Díaz - Business Development</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="cta">
-            <div class="container">
-                <h2 class="listo">¿Listo para impulsar tu negocio?<br>Contáctanos hoy mismo.</h2>
-                <a href="#" class="btn">Contactar</a>
-            </div>
+        <section class="hero">
+            <iframe id="esplain" src="https://my.spline.design/ipadnodo-7a38f3af5fa0fe2d0068102d6eeacfa9/"
+                class="background-iframe" frameborder="0"></iframe>
         </section>
     </main>
 
-
-
-    <!-- Popup de Oferta -->
-    <div class="overlay"></div>
-    <div class="popup">
-        <h2>¡Regalo Exclusivo!</h2>
-        <p>Recibe hoy mismo un libro epub gratis y un descuento exclusivo para Nodo</p>
-        <button class="btn-close">Cerrar</button>
-    </div>
-
-
-
-
     <script>
-        // document.addEventListener('DOMContentLoaded', (event) => {
-        //     // Código para la animación de palabras cambiantes
-        //     const palabras = ['Marketing', 'Desarrollo', 'Diseño'];
-        //     let indicePalabra = 0;
-        //     let indiceLetra = 0;
-        //     let borrando = false;
-        //     const elementoPalabra = document.getElementById('palabra-cambiante');
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Código para la animación de palabras cambiantes
+            const palabras = ['Marketing', 'Desarrollo', 'Diseño'];
+            let indicePalabra = 0;
+            let indiceLetra = 0;
+            let borrando = false;
+            const elementoPalabra = document.getElementById('palabra-cambiante');
 
-        //     function escribirPalabra() {
-        //         const palabraActual = palabras[indicePalabra];
-        //         if (borrando) {
-        //             elementoPalabra.textContent = palabraActual.substring(0, indiceLetra - 1);
-        //             indiceLetra--;
-        //             if (indiceLetra === 0) {
-        //                 borrando = false;
-        //                 indicePalabra = (indicePalabra + 1) % palabras.length;
-        //             }
-        //         } else {
-        //             elementoPalabra.textContent = palabraActual.substring(0, indiceLetra + 1);
-        //             indiceLetra++;
-        //             if (indiceLetra === palabraActual.length) {
-        //                 borrando = true;
-        //                 setTimeout(escribirPalabra, 1000); // Pausa antes de borrar
-        //                 return;
-        //             }
-        //         }
-        //         const velocidad = borrando ? 100 : 200;
-        //         setTimeout(escribirPalabra, velocidad);
-        //     }
-
-        //     escribirPalabra();
-
-
-        // Animación del porcentaje y frases
-        function animatePercentageAndPhrases() {
-            const percentageElement = document.getElementById('percentage');
-            const phraseElement = document.getElementById('growth-phrase');
-            const phrases = ['más en ventas', ', más en clientes', ', más en ingresos'];
-            let percentage = 0;
-            let currentPhraseIndex = 0;
-
-            const interval = setInterval(() => {
-                if (percentage <= 110) {
-                    percentageElement.textContent = `${percentage}%`;
-
-                    // Añadir frases en puntos específicos
-                    if (percentage === 0) {
-                        phraseElement.textContent = phrases[0];
-                    } else if (percentage === 35) {
-                        phraseElement.textContent += phrases[1];
-                    } else if (percentage === 88) {
-                        phraseElement.textContent += phrases[2];
+            function escribirPalabra() {
+                const palabraActual = palabras[indicePalabra];
+                if (borrando) {
+                    elementoPalabra.textContent = palabraActual.substring(0, indiceLetra - 1);
+                    indiceLetra--;
+                    if (indiceLetra === 0) {
+                        borrando = false;
+                        indicePalabra = (indicePalabra + 1) % palabras.length;
                     }
-
-                    percentage++;
                 } else {
-                    clearInterval(interval);
+                    elementoPalabra.textContent = palabraActual.substring(0, indiceLetra + 1);
+                    indiceLetra++;
+                    if (indiceLetra === palabraActual.length) {
+                        borrando = true;
+                        setTimeout(escribirPalabra, 1000); // Pausa antes de borrar
+                        return;
+                    }
                 }
-            }, 15); // Ajustado para una animación más lenta y visible
-        }
+                const velocidad = borrando ? 100 : 200;
+                setTimeout(escribirPalabra, velocidad);
+            }
 
-        // Utilizar Intersection Observer para iniciar la animación al entrar en la sección
-        const growthSection = document.getElementById('growth-section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animatePercentageAndPhrases();
-                    observer.unobserve(growthSection); // Dejar de observar después de iniciar la animación
-                }
-            });
-        }, {
-            threshold: 0.3 // Iniciar la animación cuando el 50% de la sección esté visible
-        });
+            escribirPalabra();
+        })
 
-
-
-
-        // Mostrar popup después de 10 segundos
-        setTimeout(() => {
-            document.querySelector('.popup').classList.add('show');
-            document.querySelector('.overlay').classList.add('show');
-        }, 1055);
-
-        // Cerrar popup
-        document.querySelector('.btn-close').addEventListener('click', () => {
-            document.querySelector('.popup').classList.remove('show');
-            document.querySelector('.overlay').classList.remove('show');
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const heroSection = document.querySelector('.hero');
-            const iframe = document.getElementById('esplain');
-
-            window.addEventListener('scroll', function () {
-                const scrollPosition = window.pageYOffset;
-                const heroHeight = heroSection.offsetHeight;
-
-
-            });
-        });
     </script>
 </body>
 
