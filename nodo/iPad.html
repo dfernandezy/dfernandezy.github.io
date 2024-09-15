@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nodo - Potencia tu presencia online</title>
+    <title>Nodo - Impulsa tu Crecimiento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        /* Estilos existentes */
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
@@ -24,11 +26,10 @@
         }
 
 
-
+        /* 
         .lock-scroll {
             overflow: hidden;
             /* Evita el desplazamiento */
-        }
 
 
         p#growth-phrase {
@@ -109,6 +110,7 @@
             padding: 20px 0;
         }
 
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -130,9 +132,9 @@
 
         .hero {
             text-align: center;
+            background-color: white;
             position: relative;
             overflow: hidden;
-            height: 70vh;
             /* Para asegurarnos de que el video cubra toda la pantalla */
         }
 
@@ -143,14 +145,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.5);
             /* Fondo oscuro semitransparente sobre el video */
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
             /* Asegura que el contenido esté encima del video */
         }
 
@@ -160,6 +159,68 @@
             font-weight: 100;
             color: #ffffff;
         }
+
+
+
+        /* Texto iframe */
+
+        .textoiframe h1 {
+            position: absolute;
+            top: -1.2em;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 10vw;
+            /* Tamaño del texto en función del ancho de la pantalla */
+            padding: 20px 0;
+            z-index: 10;
+        }
+
+        .textoiframe {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .textoiframe h2 {
+            margin-top: 3.3em;
+        }
+
+
+
+        /* Nuevo estilo para el efecto de colores */
+        .efecto-colores {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 200% 200%;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /*  */
+        /*  */
+        /*  */
 
         .btn {
             display: inline-block;
@@ -210,6 +271,12 @@
             margin-bottom: 20px;
         }
 
+        .service-card p,
+        h3 {
+            color: black;
+
+        }
+
         .team-card h3 {
             color: #3b82f6;
         }
@@ -244,10 +311,24 @@
             color: #2563EB;
         }
 
+        .about-content p {
+            color: black;
+
+        }
+
         .highlight {
             color: #2563EB;
             font-weight: 800;
         }
+
+
+        span.highlight {
+            font-weight: 990;
+            color: #2563EB;
+            margin-bottom: 20px;
+        }
+
+
 
         .Potencia {
             font-size: 2.5rem;
@@ -336,18 +417,41 @@
             background-color: #e8f4fc;
         }
 
+
+
+
+
+        /* MEDIAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+
+
         @media (max-width: 768px) {
             .team-grid {
                 grid-template-columns: 1fr;
+            }
+
+            header{
+                padding: 0px;
             }
 
             .hero {
                 text-align: center;
                 position: relative;
                 overflow: hidden;
-                height: 50vh;
+                height: 90vh;
                 /* Para asegurarnos de que el video cubra toda la pantalla */
             }
+
+            .textoiframe h2 {
+                margin-top: 2.5rem;
+            }
+
+
+            .hero-content {
+                height: 0px;
+            }
+
+
         }
 
         /* Nuevos estilos para la sección de crecimiento */
@@ -537,10 +641,93 @@
             z-index: 10;
             position: relative;
         }
+
+
+
+
+
+        ::selection {
+            color: whitesmoke;
+            background-color: orange;
+        }
+
+        /* 
+         /* Estilo para el scroll lock */
+        /* body.scroll-lock {
+            overflow: hidden;
+        } */
+
+        /* Estilo para la barra de progreso */
+        /* .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            background-color: #4CAF50;
+            transition: width 0.3s;
+        } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .about-agency {
+            background-color: #ffffff;
+            color: #333;
+            position: relative;
+            top: -35px;
+            text-align: center;
+            padding: 0px 15px 25px;
+        }
+
+        .about-content h2 {
+            color: rgb(66, 64, 64);
+
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #2563EB;
+            font-weight: 700;
+        }
+
+        .about-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .about-content ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-align: left;
+            display: inline-block;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .about-content strong {
+            font-weight: 700;
+        }
     </style>
 </head>
 
 <body>
+
     <header>
         <div class="container">
             <nav>
@@ -555,19 +742,92 @@
     </header>
 
     <main>
-        <section class="hero">
-            <iframe id="esplain" src="https://my.spline.design/ipadnodo-7a38f3af5fa0fe2d0068102d6eeacfa9/"
-                class="background-iframe" frameborder="0"></iframe>
+        <header class="header">
 
-            <!-- <div class="container hero-content">
-                <h1 class="Potencia">Transforma tu negocio con <br> <span class="highlight">Nodo</span></h1>
-                <p>Agencia de <span id="palabra-cambiante"></span> especializada en impulsar tus negocios.</p>
+            <section class="hero">
+                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
+                <spline-viewer url="https://prod.spline.design/kfZS3b9vAGif43zq/scene.splinecode"></spline-viewer>
 
-                <a href="#" class="btn">Contacta con nuestros expertos →</a>
-            </div> -->
+
+                <div class="textoiframe">
+                    <h1 class="efecto-colores">Crece Con Nodo</h1>
+                    <h2>↓ Desliza hacia abajo ↓</h2>
+                </div>
+                <!-- <div class="container hero-content">
+                    <h1 class="Potencia">Transforma tu negocio con <br> <span class="highlight">Nodo</span></h1>
+                    <p>Agencia de <span id="palabra-cambiante"></span> especializada en impulsar tus negocios.</p>
+
+                    <a href="#" class="btn">Contacta con nuestros expertos →</a>
+                </div> -->
+            </section>
+        </header>
+
+
+
+
+        <section class="about-agency">
+            <div class="container">
+                <div class="about-content">
+                    <section class="hero">
+                        <div class="container hero-content">
+                            <h1 class="Potencia">Potencia tu presencia online con <br> <span
+                                    class="highlight">Nodo</span></h1>
+                            <p>Agencia de <span id="palabra-cambiante"></span> especializada en impulsar tus negocios.
+                            </p>
+                            <h3>Echa un vistazo a lo que somos capaces</h3>
+                            <a href="#" class="btn">Comenzar →</a>
+                        </div>
+
+
+                </div>
+
+
+            </div>
         </section>
 
+
+
+
+
+
+
+
+
+
         <section id="services" class="services">
+            <div class="container">
+                <h2>Servicios que Impulsan tu Crecimiento</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>Desarrollo Web</h3>
+                        <p>Diseñamos estrategias de marketing digital personalizadas que maximizan tu presencia online y
+                            atraen a los clientes correctos.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Branding</h3>
+                        <p>Mejoramos el posicionamiento de tu web en los motores de búsqueda para que tus clientes
+                            potenciales te encuentren antes que a la competencia.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Redes Sociales</h3>
+                        <p>Desarrollamos sitios web dinámicos y atractivos que no solo lucen bien, sino que también
+                            convierten visitantes en clientes.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Publicidad</h3>
+                        <p>Creamos campañas publicitarias efectivas en plataformas como Facebook, Instagram y LinkedIn
+                            para conectar con tu audiencia ideal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- <section id="services" class="services">
             <div class="container">
                 <div class="growth-section" id="growth-section">
                     <h2>Nuestros clientes experimentan en promedio:</h2>
@@ -576,19 +836,19 @@
                     <div class="arrow">↑</div>
                 </div>
             </div>
-            <h2 style="color: white;">Impulsa tu Crecimiento con Nosotros</h2>
-        </section>
+        </section> -->
 
-        <!-- Testimonios -->
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <h2>Lo que Dicen Nuestros Clientes</h2>
                 <div class="testimonial-card">
-                    <p>"Gracias a Nodo, nuestras ventas se dispararon en un 50% en solo 3 meses. ¡Son increíbles!"</p>
+                    <p>"Gracias a Nodo, nuestras ventas se dispararon en un 50% en solo 3 meses. ¡Son increíbles!"
+                    </p>
                     <h3>Juan Pérez, CEO de EjemploCorp</h3>
                 </div>
                 <div class="testimonial-card">
-                    <p>"El equipo de Nodo transformó nuestra presencia online. Pasamos de ser invisibles a estar en el
+                    <p>"El equipo de Nodo transformó nuestra presencia online. Pasamos de ser invisibles a estar en
+                        el
                         top de Google."</p>
                     <h3>María García, Fundadora de TiendaEjemplo</h3>
                 </div>
@@ -603,7 +863,8 @@
                     <div class="service-card">
                         <i>🔬</i>
                         <h3>Análisis de marca</h3>
-                        <p>Nuestro equipo se encarga de analizar tu negocio para que no tengas que preocuparte de nada.
+                        <p>Nuestro equipo se encarga de analizar tu negocio para que no tengas que preocuparte de
+                            nada.
                         </p>
                     </div>
                     <div class="service-card">
@@ -681,67 +942,133 @@
 
 
 
+    <!-- Tu contenido HTML existente -->
+
+    <!-- <div class="progress-bar" id="scrollLockProgress"></div> -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
+
     <script>
-        // document.addEventListener('DOMContentLoaded', (event) => {
-        //     // Código para la animación de palabras cambiantes
-        //     const palabras = ['Marketing', 'Desarrollo', 'Diseño'];
-        //     let indicePalabra = 0;
-        //     let indiceLetra = 0;
-        //     let borrando = false;
-        //     const elementoPalabra = document.getElementById('palabra-cambiante');
 
-        //     function escribirPalabra() {
-        //         const palabraActual = palabras[indicePalabra];
-        //         if (borrando) {
-        //             elementoPalabra.textContent = palabraActual.substring(0, indiceLetra - 1);
-        //             indiceLetra--;
-        //             if (indiceLetra === 0) {
-        //                 borrando = false;
-        //                 indicePalabra = (indicePalabra + 1) % palabras.length;
-        //             }
-        //         } else {
-        //             elementoPalabra.textContent = palabraActual.substring(0, indiceLetra + 1);
-        //             indiceLetra++;
-        //             if (indiceLetra === palabraActual.length) {
-        //                 borrando = true;
-        //                 setTimeout(escribirPalabra, 1000); // Pausa antes de borrar
-        //                 return;
-        //             }
-        //         }
-        //         const velocidad = borrando ? 100 : 200;
-        //         setTimeout(escribirPalabra, velocidad);
-        //     }
 
-        //     escribirPalabra();
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Código para la animación de palabras cambiantes
+            const palabras = ['Marketing', 'Desarrollo', 'Diseño'];
+            let indicePalabra = 0;
+            let indiceLetra = 0;
+            let borrando = false;
+            const elementoPalabra = document.getElementById('palabra-cambiante');
 
-        let scrollCount = 0; // Contador de desplazamientos
-        const maxScrolls = 15; // Número de desplazamientos requeridos
-        const heroSection = document.querySelector('section.hero'); // Selección de la sección hero
-
-        heroSection.addEventListener('wheel', (event) => {
-            if (scrollCount < maxScrolls) {
-                event.preventDefault(); // Bloquea el scroll dentro de hero
-                scrollCount++; // Incrementa el contador de scrolls
-                console.log(`Scroll Count: ${scrollCount}`); // Depuración
-            } else {
-                // Cuando llega a maxScrolls, eliminamos el bloqueo de scroll en la sección hero
-                heroSection.classList.remove('lock-scroll');
+            function escribirPalabra() {
+                const palabraActual = palabras[indicePalabra];
+                if (borrando) {
+                    elementoPalabra.textContent = palabraActual.substring(0, indiceLetra - 1);
+                    indiceLetra--;
+                    if (indiceLetra === 0) {
+                        borrando = false;
+                        indicePalabra = (indicePalabra + 1) % palabras.length;
+                        setTimeout(escribirPalabra, 500); // Pausa antes de empezar a escribir la nueva palabra
+                        return;
+                    }
+                } else {
+                    elementoPalabra.textContent = palabraActual.substring(0, indiceLetra + 1);
+                    indiceLetra++;
+                    if (indiceLetra === palabraActual.length) {
+                        borrando = true;
+                        setTimeout(escribirPalabra, 1000); // Pausa antes de borrar
+                        return;
+                    }
+                }
+                const velocidad = borrando ? 100 : 200;
+                setTimeout(escribirPalabra, velocidad);
             }
-        }, { passive: false });
 
-        // Alternativamente, puedes también escuchar el scroll en la ventana, pero solo bloquear el de la sección hero:
-        window.addEventListener('scroll', () => {
-            const heroRect = heroSection.getBoundingClientRect();
-            if (heroRect.bottom > 0 && scrollCount < maxScrolls) {
-                // Aún en la sección hero, y no se ha alcanzado el límite de scroll
-                window.scrollTo(0, 0); // Forzamos el scroll hacia arriba si intentan desplazarse fuera de la sección
-                scrollCount++;
-                console.log(`Scroll Count: ${scrollCount}`);
-            } else if (scrollCount >= maxScrolls) {
-                // Cuando se alcanza el número de scrolls permitimos que se continúe el desplazamiento
-                heroSection.classList.remove('lock-scroll');
+            escribirPalabra();
+        });
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('.header');
+            const h2 = document.querySelector('h2');
+
+            if (header && h2) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 50) {
+                        h2.style.color = 'white';
+                    } else {
+                        h2.style.color = '#333';
+                    }
+                });
+            } else {
+                console.error('No se encontraron los elementos header o h2');
             }
         });
+
+
+        //
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const body = document.body;
+        //     const progressBar = document.getElementById('scrollLockProgress');
+        //     let scrollAttempts = 0;
+        //     const maxScrollAttempts = 6;
+        //     let isLocked = true;
+
+        //     function updateScrollLock() {
+        //         if (isLocked) {
+        //             scrollAttempts++;
+        //             const progress = (scrollAttempts / maxScrollAttempts) * 1;
+        //             progressBar.style.width = `${progress}%`;
+
+        //             if (scrollAttempts >= maxScrollAttempts) {
+        //                 // Desbloquear el scroll
+        //                 body.classList.remove('scroll-lock');
+        //                 isLocked = false;
+        //                 // Ocultar la barra de progreso
+        //                 progressBar.style.display = 'none';
+        //             }
+        //         }
+        //     }
+
+        // Activar el scroll lock inicialmente
+        // body.classList.add('scroll-lock');
+
+        // Detectar intentos de scroll
+        //     window.addEventListener('wheel', function (e) {
+        //         if (isLocked) {
+        //             e.preventDefault();
+        //             updateScrollLock();
+        //         }
+        //     }, { passive: false });
+
+        //     // Para el scroll táctil (móviles y tablets)
+        //     window.addEventListener('touchmove', function (e) {
+        //         if (isLocked) {
+        //             e.preventDefault();
+        //             updateScrollLock();
+        //         }
+        //     }, { passive: false });
+
+        //     // Para el scroll con teclado
+        //     window.addEventListener('keydown', function (e) {
+        //         if (isLocked && (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Space')) {
+        //             e.preventDefault();
+        //             updateScrollLock();
+        //         }
+        //     });
+        // });
+
+
+        //
+
+
+
 
         // Animación del porcentaje y frases
         function animatePercentageAndPhrases() {
@@ -785,8 +1112,6 @@
         });
 
         observer.observe(growthSection);
-        });
-
 
 
         // Mostrar popup después de 10 segundos
@@ -802,6 +1127,11 @@
         });
 
 
+
+
+
+        // Puedes llamar a scrollLockSequence() en cualquier momento para iniciar la secuencia,
+        // por ejemplo, cuando comience la animación de tu iframe
     </script>
 </body>
 
