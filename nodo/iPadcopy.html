@@ -163,8 +163,10 @@
 
         /* Arreglar iframe */
         spline-viewer {
-            position: absolute !important;
-            z-index: 1 !important;
+            position: absolute !;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
             /* Bring spline-viewer to the front */
         }
 
@@ -240,9 +242,10 @@
             border-radius: 5px;
         }
 
+
+
         .services,
         .team-section {
-            padding: 50px 0;
             background-color: #242424;
         }
 
@@ -430,9 +433,12 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            height: 90vh;
-            /* Para asegurarnos de que el video cubra toda la pantalla */
         }
+
+
+
+
+
 
         /* MEDIAAAAAAAAAAAAAAAAAAAAAAAAAA */
 
@@ -455,28 +461,12 @@
                 /* Para asegurarnos de que el video cubra toda la pantalla */
             }
 
-
-            .textoiframe{
-                top: 0.5%;
+            section.about-agency {
+                height: 50vh;
             }
-
-            .textoiframe h1 {
-                position: absolute;
-                top: -0.9em;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                font-size: 10vw;
-                /* Tamaño del texto en función del ancho de la pantalla */
-                padding: 20px 0;
-                z-index: 10;
-            }
-
-          
 
             .textoiframe h2 {
                 margin-top: 4.5rem;
-                font-size: 190%;
             }
 
 
