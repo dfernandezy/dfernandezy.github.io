@@ -161,6 +161,14 @@
         }
 
 
+        /* Arreglar iframe */
+        spline-viewer {
+            position: absolute !important;
+            z-index: 1 !important;
+            /* Bring spline-viewer to the front */
+        }
+
+
 
         /* Texto iframe */
 
@@ -418,8 +426,13 @@
         }
 
 
-
-
+        .cambiante {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 90vh;
+            /* Para asegurarnos de que el video cubra toda la pantalla */
+        }
 
         /* MEDIAAAAAAAAAAAAAAAAAAAAAAAAAA */
 
@@ -430,7 +443,7 @@
                 grid-template-columns: 1fr;
             }
 
-            header{
+            header {
                 padding: 0px;
             }
 
@@ -442,8 +455,28 @@
                 /* Para asegurarnos de que el video cubra toda la pantalla */
             }
 
+
+            .textoiframe{
+                top: 0.5%;
+            }
+
+            .textoiframe h1 {
+                position: absolute;
+                top: -0.9em;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 10vw;
+                /* Tamaño del texto en función del ancho de la pantalla */
+                padding: 20px 0;
+                z-index: 10;
+            }
+
+          
+
             .textoiframe h2 {
                 margin-top: 4.5rem;
+                font-size: 190%;
             }
 
 
@@ -768,7 +801,7 @@
         <section class="about-agency">
             <div class="container">
                 <div class="about-content">
-                    <section class="hero">
+                    <section class="cambiante">
                         <div class="container hero-content">
                             <h1 class="Potencia">Potencia tu presencia online con <br> <span
                                     class="highlight">Nodo</span></h1>
@@ -777,6 +810,8 @@
                             <h3>Echa un vistazo a lo que somos capaces</h3>
                             <a href="#" class="btn">Comenzar →</a>
                         </div>
+
+                    </section>
 
 
                 </div>
