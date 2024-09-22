@@ -80,7 +80,8 @@
         }
 
         a:hover {
-            color: #535bf2;
+            background-color: #3b82f6;
+            color: black;
         }
 
         button {
@@ -161,6 +162,16 @@
         }
 
 
+        /* Arreglar iframe */
+        spline-viewer {
+            position: absolute !;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* Bring spline-viewer to the front */
+        }
+
+
 
         /* Texto iframe */
 
@@ -232,9 +243,10 @@
             border-radius: 5px;
         }
 
+
+
         .services,
         .team-section {
-            padding: 50px 0;
             background-color: #242424;
         }
 
@@ -363,6 +375,14 @@
             padding: 0 15px;
         }
 
+        .container img {
+            width: 100%;
+            /* Ajusta la imagen al ancho del contenedor */
+            height: auto;
+            /* Mantiene la proporción de la imagen */
+            display: block;
+        }
+
         h2 {
             text-align: center;
             color: #333;
@@ -418,6 +438,14 @@
         }
 
 
+        .cambiante {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
 
 
 
@@ -430,8 +458,12 @@
                 grid-template-columns: 1fr;
             }
 
-            header{
+            header {
                 padding: 0px;
+            }
+
+            .about-agency {
+                color: black !important;
             }
 
             .hero {
@@ -442,14 +474,14 @@
                 /* Para asegurarnos de que el video cubra toda la pantalla */
             }
 
+
+
             .textoiframe h2 {
-                margin-top: 2.5rem;
+                margin-top: 4.5rem;
             }
 
 
-            .hero-content {
-                height: 0px;
-            }
+
 
 
         }
@@ -768,7 +800,7 @@
         <section class="about-agency">
             <div class="container">
                 <div class="about-content">
-                    <section class="hero">
+                    <section class="cambiante">
                         <div class="container hero-content">
                             <h1 class="Potencia">Potencia tu presencia online con <br> <span
                                     class="highlight">Nodo</span></h1>
@@ -777,6 +809,8 @@
                             <h3>Echa un vistazo a lo que somos capaces</h3>
                             <a href="#" class="btn">Comenzar →</a>
                         </div>
+
+                    </section>
 
 
                 </div>
@@ -800,6 +834,7 @@
                 <div class="service-grid">
                     <div class="service-card">
                         <h3>Desarrollo Web</h3>
+                        <img src="./web.PNG" alt="" srcset="">
                         <p>Diseñamos estrategias de marketing digital personalizadas que maximizan tu presencia online y
                             atraen a los clientes correctos.</p>
                     </div>
