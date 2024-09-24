@@ -99,6 +99,7 @@ button:focus-visible {
 /* Nuevos estilos para la sección de crecimiento */
 .growth-section {
     background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    margin-top: 2rem;
     background-size: 200% 200%;
     /* Tamaño del gradiente para un movimiento más suave */
     padding: 2rem;
