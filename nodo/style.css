@@ -132,7 +132,7 @@
             left: 0;
             width: 100%;
             text-align: center;
-            font-size: 10vw;
+            font-size: 2.8rem;
             /* Tamaño del texto en función del ancho de la pantalla */
             padding: 20px 0;
             z-index: 10;
@@ -156,11 +156,11 @@
         }
 
 
-        #services h2{
+        #services h2 {
             margin: 0px;
         }
 
-        #services h3{
+        #services h3 {
             text-align: center;
             color: white;
             font-size: 3rem;
@@ -281,7 +281,7 @@
             padding: 50px 0;
         }
 
-        section#services.bajalo h2{
+        section#services.bajalo h2 {
             margin-top: 5rem;
             margin-bottom: 5rem;
         }
@@ -395,7 +395,7 @@
 
             .textoiframe h2 {
                 margin-top: 4.5rem;
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
 
 
