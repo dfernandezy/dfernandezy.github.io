@@ -72,14 +72,14 @@
 
 
 
-        <section id="services" class="services">
+        <!-- <section id="services" class="services">
             <div class="container">
                 <h2>Modelos VR</h2>
                 <h3>que desafían la realidad</h3>
                 <div class="service-grid">
                     <div class="service-card">
-                        <!-- <h3>Haz Click</h3> -->
-                        <script type="module"
+                     <h3>Haz Click</h3> -->
+        <!-- <script type="module"
                             src="https://unpkg.com/@splinetool/viewer@1.9.27/build/spline-viewer.js"></script>
                         <spline-viewer
                             url="https://prod.spline.design/vFQ1wWTelH-mtjhj/scene.splinecode"></spline-viewer>
@@ -90,13 +90,13 @@
 
                 </div>
             </div>
-        </section>
+        </section>   -->
 
 
 
         <section id="services" class="bajalo" class="services">
             <div class="container">
-                <h2>La mejor calidad del mercado.</h2>
+                <h2>Compatible con VR</h2>
                 <div class="service-grid">
                     <div class="service-card">
                         <!-- <h3>Haz Click</h3> -->
@@ -121,7 +121,7 @@
                 <div class="growth-section" id="growth-section">
                     <h2>Nuestros clientes experimentan en promedio:</h2>
                     <div class="percentage" id="percentage">0%</div>
-                    <p id="growth-phrase">más en ventas</p>
+                    <p id="growth-phrase"></p>
                     <div class="arrow">↑</div>
                 </div>
             </div>
@@ -146,15 +146,15 @@
 
 
         <section id="services" class="services">
-            <div class="container">
+            <div class="container" id="achetres">
                 <h2>Nuestros Servicios</h2>
                 <div class="service-grid">
                     <div class="service-card">
                         <i>🔬</i>
-                        <h3>Análisis de marca</h3>
-                        <p>Nuestro equipo se encarga de analizar tu negocio para que no tengas que preocuparte de
-                            nada.
-                        </p>
+                        <h3">Análisis de marca</h3>
+                            <p>Nuestro equipo se encarga de analizar tu negocio para que no tengas que preocuparte de
+                                nada.
+                            </p>
                     </div>
                     <div class="service-card">
                         <i>⚡</i>
@@ -221,12 +221,12 @@
 
 
     <!-- Popup de Oferta -->
-    <div class="overlay"></div>
+    <!-- <div class="overlay"></div>
     <div class="popup">
         <h2>¡Regalo Exclusivo!</h2>
         <p>Recibe hoy mismo un libro epub gratis y un descuento exclusivo para Nodo</p>
         <button class="btn-close">Cerrar</button>
-    </div>
+    </div> -->
 
 
 
@@ -359,11 +359,11 @@
 
 
 
-        // Animación del porcentaje y frases
+        // Animación del porcentaje y frases con efecto "pop in"
         function animatePercentageAndPhrases() {
             const percentageElement = document.getElementById('percentage');
             const phraseElement = document.getElementById('growth-phrase');
-            const phrases = ['más en ventas', ', más en clientes', ', más en ingresos'];
+            const phrases = ['más ventas', ', más clientes', ', más ingresos'];
             let percentage = 0;
             let currentPhraseIndex = 0;
 
@@ -371,13 +371,13 @@
                 if (percentage <= 110) {
                     percentageElement.textContent = `${percentage}%`;
 
-                    // Añadir frases en puntos específicos
+                    // Añadir frases en puntos específicos con efecto "pop in"
                     if (percentage === 0) {
-                        phraseElement.textContent = phrases[0];
+                        addPhraseWithPopIn(phraseElement, phrases[0]);
                     } else if (percentage === 35) {
-                        phraseElement.textContent += phrases[1];
+                        addPhraseWithPopIn(phraseElement, phrases[1]);
                     } else if (percentage === 88) {
-                        phraseElement.textContent += phrases[2];
+                        addPhraseWithPopIn(phraseElement, phrases[2]);
                     }
 
                     percentage++;
@@ -385,6 +385,22 @@
                     clearInterval(interval);
                 }
             }, 15); // Ajustado para una animación más lenta y visible
+        }
+
+        // Función para añadir la frase con efecto "pop in"
+        function addPhraseWithPopIn(element, phrase) {
+            const span = document.createElement('span'); // Crear un nuevo span para la frase
+            span.textContent = phrase;
+            element.appendChild(span); // Añadir la nueva frase como un span
+            applyPopInEffect(span); // Aplicar el efecto pop-in solo al nuevo span
+        }
+
+        // Función para aplicar la clase de animación "pop in"
+        function applyPopInEffect(element) {
+            element.classList.remove('pop-in'); // Quitar clase anterior para reiniciar la animación
+            setTimeout(() => {
+                element.classList.add('pop-in'); // Añadir clase para disparar la animación
+            }, 10); // Pequeño retardo para asegurar que el navegador detecte el cambio de clase
         }
 
         // Utilizar Intersection Observer para iniciar la animación al entrar en la sección
@@ -397,7 +413,7 @@
                 }
             });
         }, {
-            threshold: 0.3 // Iniciar la animación cuando el 50% de la sección esté visible
+            threshold: 0.3 // Iniciar la animación cuando el 30% de la sección esté visible
         });
 
         observer.observe(growthSection);
