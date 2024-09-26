@@ -83,7 +83,27 @@ button:focus-visible {
 
 
 
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
 
+    80% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pop-in {
+    animation: popIn 0.4s ease-in-out forwards;
+    /* 'forwards' asegura que el último estado de la animación se mantenga */
+    display: inline-block;
+}
 
 
 
@@ -116,10 +136,10 @@ button:focus-visible {
 
 
 
-p#growth-phrase {
+/* p#growth-phrase {
     transition: ease-in-out 9s ease-in-out;
     /* Ajusta la duración y la función de tiempo según lo necesites */
-}
+/* } */
 
 
 @keyframes gradientAnimation {
@@ -175,6 +195,7 @@ p#growth-phrase {
 
 
 .arrow {
+    font-weight: 1000;
     font-size: 3rem;
     animation: bounce 9s infinite;
 }
