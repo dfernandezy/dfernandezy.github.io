@@ -493,24 +493,72 @@
 
 
 
+        /* Estilos para la sección de mantenimiento */
+        .maintenance {
+            background-color: #fff3cd;
+            border: 2px solid #ffeeba;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .maintenance h2 {
+            color: #856404;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .maintenance p {
+            color: #856404;
+            font-size: 16px;
+        }
+
+        /* Icono de advertencia */
+        .maintenance::before {
+            content: "⚠️";
+            font-size: 36px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .maintenance {
+            animation: blink 2s linear infinite;
+        }
 
 
 
 
         /* Servicios */
 
-        #achetres{
+        #achetres {
             color: black;
             text-align: center;
-            font-size: 2,3rem;
+            font-size: 2, 3rem;
             font-weight: 1000;
             margin-top: -0.5rem;
         }
-        h3#achetres{
+
+        h3#achetres {
             color: rgb(255, 0, 0) !important;
             text-align: center;
-            font-size: 2,3rem;
+            font-size: 2, 3rem;
             font-weight: 1000;
             margin-top: -0.5rem;
         }
