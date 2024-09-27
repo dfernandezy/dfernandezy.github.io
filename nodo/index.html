@@ -127,6 +127,13 @@
             </div>
         </section>
 
+
+        <section id="maintenance" class="maintenance">
+            <div class="container">
+                <h2>Aviso de Mantenimiento</h2>
+                <p>De aquí hacia abajo, estamos en mantenimiento. Disculpe las molestias.</p>
+            </div>
+        </section>
         <!-- <section id="testimonials" class="testimonials">
             <div class="container">
                 <h2>Lo que Dicen Nuestros Clientes</h2>
@@ -409,7 +416,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     animatePercentageAndPhrases();
-                    observer.unobserve(growthSection); // Dejar de observar después de iniciar la animación
+                    observer.unobserve(growthSection); // Dejar de observar después de iniciar la animación 
                 }
             });
         }, {
