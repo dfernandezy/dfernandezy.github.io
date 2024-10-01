@@ -21,30 +21,41 @@
 
 
 
-
-
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            min-width: 320px;
-            min-height: 100vh;
-            background-color: #242424;
-            color: #ffffff;
+        /* Definir propiedades personalizadas */
+        @property --w_raw {
+            syntax: '<length>';
+            inherits: true;
+            initial-value: 100vw;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        @property --h_raw {
+            syntax: '<length>';
+            inherits: true;
+            initial-value: 100vh;
         }
 
-        .container h2 {
-            font-weight: 1000;
-            color: white;
-
+        /* Convertir valores a números sin unidades */
+        :root {
+            --w: tan(atan2(var(--w_raw), 1px));
+            --h: tan(atan2(var(--h_raw), 1px));
         }
 
+        /* Aplicar ajustes en el diseño según el tamaño de la ventana */
+        body {
+            font-size: calc(1rem + var(--w) / 100);
+        }
+
+        .header {
+            padding: calc(20px + var(--h) / 50) 0;
+        }
+
+        .hero h1 {
+            font-size: calc(3rem + var(--w) / 50);
+        }
+
+        .service-card {
+            padding: calc(20px + var(--h) / 50);
+        }
 
 
         header {
@@ -136,6 +147,7 @@
             /* Tamaño del texto en función del ancho de la pantalla */
             padding: 20px 0;
             z-index: 10;
+
         }
 
         .textoiframe {
@@ -393,13 +405,23 @@
 
 
 
-            .textoiframe h2 {
-                margin-top: 10rem;
-                font-size: 1.5rem;
+            .textoiframe h1 {
+                font-size: 4.5rem;
+                /* Ajuste del tamaño del texto para pantallas pequeñas */
+                white-space: pre-line;
+                /* Forzar el salto de línea */
+                display: block;
+                /* Asegura que se comporte como un bloque */
+                text-align: center;
+                /* Centrar el texto en pantallas pequeñas */
             }
 
-
-
+            .textoiframe h2 {
+                margin-top: 10rem;
+                /* Aumentar la distancia con el texto superior */
+                font-size: 2rem;
+                /* Ajustar el tamaño del texto para pantallas pequeñas */
+            }
 
 
         }
