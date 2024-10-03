@@ -129,9 +129,20 @@
 
 
         <section id="maintenance" class="maintenance">
-            <div class="container">
-                <h2>Aviso de Mantenimiento</h2>
-                <p>De aquí hacia abajo, estamos en mantenimiento. Disculpe las molestias.</p>
+            <div class="container sendo">
+                <button onclick="sendWhatsAppMessage()">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span>Send</span>
+                </button>
             </div>
         </section>
         <!-- <section id="testimonials" class="testimonials">
@@ -151,78 +162,6 @@
             </div>
         </section> -->
 
-
-        <section id="services" class="services">
-            <div class="container" id="achetres">
-                <h2>Nuestros Servicios</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <i>🔬</i>
-                        <h3">Análisis de marca</h3>
-                            <p>Nuestro equipo se encarga de analizar tu negocio para que no tengas que preocuparte de
-                                nada.
-                            </p>
-                    </div>
-                    <div class="service-card">
-                        <i>⚡</i>
-                        <h3>Optimización de recursos</h3>
-                        <p>Mejora tu visibilidad en los motores de búsqueda.</p>
-                    </div>
-                    <div class="service-card">
-                        <i>👥</i>
-                        <h3>Estrategia de Marketing en Redes Sociales</h3>
-                        <p>Conecta con tu audiencia y aumenta tu engagement.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="team-section">
-            <div class="container">
-                <h2>Nuestro Equipo</h2>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <h3>Desarrolladores</h3>
-                        <ul class="team-members">
-                            <li>Ana García - Full Stack Developer</li>
-                            <li>Carlos Ruiz - Frontend Specialist</li>
-                            <li>Laura Martínez - Backend Engineer</li>
-                        </ul>
-                    </div>
-                    <div class="team-card">
-                        <h3>Diseñadores</h3>
-                        <ul class="team-members">
-                            <li>Miguel Ángel Soto - UI/UX Designer</li>
-                            <li>Elena Pérez - Graphic Designer</li>
-                            <li>David López - Motion Designer</li>
-                        </ul>
-                    </div>
-                    <div class="team-card">
-                        <h3>Equipo de Marketing</h3>
-                        <ul class="team-members">
-                            <li>Sofía Rodríguez - Marketing Manager</li>
-                            <li>Javier Fernández - Content Strategist</li>
-                            <li>Isabel Torres - SEO Specialist</li>
-                        </ul>
-                    </div>
-                    <div class="team-card">
-                        <h3>Equipo de Ventas</h3>
-                        <ul class="team-members">
-                            <li>Alberto Sánchez - Sales Director</li>
-                            <li>Carmen Navarro - Account Executive</li>
-                            <li>Roberto Díaz - Business Development</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="cta">
-            <div class="container">
-                <h2 class="listo">¿Listo para impulsar tu negocio?<br>Contáctanos hoy mismo.</h2>
-                <a href="#" class="btn">Contactar</a>
-            </div>
-        </section>
     </main>
 
 
@@ -306,6 +245,15 @@
                 console.error('No se encontraron los elementos header o h2');
             }
         });
+
+
+
+        function sendWhatsAppMessage() {
+            let message = "Hola Nodo! Soy";
+            let phone = "1234567890"; // Aquí va el número de teléfono al que se enviará el mensaje
+            let url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
 
 
         //
