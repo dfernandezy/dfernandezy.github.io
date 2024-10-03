@@ -539,7 +539,6 @@
 
         /* Icono de advertencia */
         .maintenance::before {
-            content: "⚠️";
             font-size: 36px;
             display: block;
             margin-bottom: 10px;
