@@ -59,26 +59,33 @@
         }
 
         .iframe-container {
+            position: relative;
             width: 100%;
-            /* Ancho completo del contenedor */
             height: 60vh;
-            /* Puedes ajustar esta altura según lo que necesites */
             overflow: hidden;
-            /* Evita que aparezcan scrollbars si algo se sale del contenedor */
             margin-bottom: 20px;
-            /* Espacio debajo del iframe */
         }
 
         .iframe-container iframe {
             width: 100%;
             height: 100%;
             border: none;
-            /* Sin borde */
-        } 
+        }
+
+        .iframe-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            /* El fondo es transparente, pero el div está presente para bloquear la interacción */
+            z-index: 10;
+        }
 
 
         .explanation {
-            display: flex;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
@@ -152,6 +159,8 @@
             .hero {
                 margin: 0px;
             }
+
+
         }
     </style>
 </head>
@@ -173,12 +182,13 @@
     <div class="iframe-container">
         <iframe src="https://my.spline.design/steamdeckwllpprsfcopy-b2b27bf945328bbde988cf13623510ed/"
             title="Contenido embebido"></iframe>
+        <div class="iframe-overlay"></div>
     </div>
-
+    <div class="explanation">
+        <p>Top Selected WALLPRS from Videogames, Movies and <b>much more</b></p>
+    </div>
     <div class="cards-container">
-        <div class="explanation">
-            <p>Top Selected WALLPRS from Videogames, Movies and <b>much more</b></p>
-        </div>
+
         <div class="card">
             <img src="jedi1.png" alt="Tarjeta 1">
             <div class="card-content">
