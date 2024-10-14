@@ -26,7 +26,7 @@ rgbeLoader.load('goegap_road_2k.hdr', function (texture) {
 
     // Cargar el modelo GLTF después de cargar el HDRI
     const loader = new THREE.GLTFLoader();
-    loader.load('https://drive.google.com/uc?id=1kWPsZCsFFvwNv0ve1pik0iyl9XcllAXc', function (gltf) {
+    loader.load('https://drive.google.com/file/d/1kWPsZCsFFvwNv0ve1pik0iyl9XcllAXc/view?usp=drive_link', function (gltf) {
         const model = gltf.scene;
         scene.add(model);
 
