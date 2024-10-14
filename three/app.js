@@ -26,24 +26,24 @@ rgbeLoader.load('goegap_road_2k.hdr', function (texture) {
 
     // Cargar el modelo GLTF después de cargar el HDRI
     const loader = new THREE.GLTFLoader();
-    loader.load('models/scene.glb', function (gltf) {
-        const model = gltf.scene;
-        scene.add(model);
+loader.load('https://raw.githubusercontent.com/dfernandezy/dfernandezy.github.io/main/three/scene.glb', function (gltf) {
+    const model = gltf.scene;
+    scene.add(model);
 
-        model.position.set(0, -1, 0);
-        model.scale.set(1, 1, 1);
+    model.position.set(0, -1, 0);
+    model.scale.set(1, 1, 1);
 
-        model.traverse((child) => {
-            if (child.isMesh) {
-                child.castShadow = true;
-                child.receiveShadow = true;
-            }
-        });
-
-        animate();
-    }, undefined, function (error) {
-        console.error('Error al cargar el modelo:', error);
+    model.traverse((child) => {
+        if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+        }
     });
+
+    animate();
+}, undefined, function (error) {
+    console.error('Error al cargar el modelo:', error);
+});
 }, undefined, function (error) {
     console.error('Error al cargar el HDRI:', error);
 });
