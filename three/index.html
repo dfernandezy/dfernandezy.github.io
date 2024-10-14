@@ -1,256 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Modelos 3D</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <title>Three.js GLTF Viewer</title>
     <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --text-color: #333;
-            --background-color: #ecf0f1;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            margin: 0;
         }
 
-        nav {
-            background-color: var(--secondary-color);
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin: 0.5rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 6rem 1rem 3rem;
-            margin-top: 3rem;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            margin-bottom: 0.5rem;
-        }
-
-        h2 {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            font-weight: normal;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        .model-section {
-            padding: 2rem 1rem;
-            background-color: white;
-            margin: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .model-section h2 {
-            color: var(--primary-color);
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            margin-bottom: 1rem;
-        }
-
-        .model-container {
-            width: 100%;
-            height: 300px;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            nav ul {
-                justify-content: flex-end;
-            }
-
-            .model-container {
-                height: 400px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .model-container {
-                height: 500px;
-            }
+        canvas {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="#modelo1">Spiderman</a></li>
-            <li><a href="#modelo2">Cubo</a></li>
-            <li><a href="#modelo3">Toro</a></li>
-        </ul>
-    </nav>
+    <!-- Cargar Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-    <header>
-        <h1>Galería de Modelos 3D</h1>
-        <h2>Explora nuestros increíbles modelos en 3D</h2>
-    </header>
+    <!-- Cargar los cargadores adicionales -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/RGBELoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
-    <main>
-        <section id="modelo1" class="model-section">
-            <h2>Modelo 1: Spiderman</h2>
-            <div class="model-container" id="container1"></div>
-        </section>
-
-        <section id="modelo2" class="model-section">
-            <h2>Modelo 2: Cubo Rotativo</h2>
-            <div class="model-container" id="container2"></div>
-        </section>
-
-        <section id="modelo3" class="model-section">
-            <h2>Modelo 3: Toro Giratorio</h2>
-            <div class="model-container" id="container3"></div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Galería de Modelos 3D. Todos los derechos reservados.</p>
-    </footer>
-
-    <script>
-        function createScene(containerId, modelType) {
-            const container = document.getElementById(containerId);
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            container.appendChild(renderer.domElement);
-
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-            scene.add(ambientLight);
-            const pointLight = new THREE.PointLight(0xffffff, 1);
-            pointLight.position.set(5, 5, 5);
-            scene.add(pointLight);
-
-            let mesh;
-
-            if (modelType === 'gltf') {
-                const loader = new THREE.GLTFLoader();
-                loader.load(
-                    'spiderman/scene.gltf',  // Asegúrate de que esta ruta sea correcta
-                    function (gltf) {
-                        mesh = gltf.scene;
-                        scene.add(mesh);
-                        // Ajusta la posición y escala del modelo si es necesario
-                        mesh.scale.set(0.5, 0.5, 0.5);  // Ajusta según sea necesario
-                        mesh.position.set(0, -1, 0);  // Ajusta según sea necesario
-                    },
-                    function (xhr) {
-                        console.log((xhr.loaded / xhr.total * 100) + '% cargado');
-                    },
-                    function (error) {
-                        console.error('Error al cargar el modelo', error);
-                    }
-                );
-            } else {
-                let geometry, material;
-                switch (modelType) {
-                    case 'cube':
-                        geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-                        material = new THREE.MeshPhongMaterial({ color: 0xe74c3c });
-                        break;
-                    case 'torus':
-                        geometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
-                        material = new THREE.MeshPhongMaterial({ color: 0x2ecc71 });
-                        break;
-                    default:
-                        geometry = new THREE.BoxGeometry();
-                        material = new THREE.MeshPhongMaterial({ color: 0xffffff });
-                }
-                mesh = new THREE.Mesh(geometry, material);
-                scene.add(mesh);
-            }
-
-            camera.position.z = 5;
-
-            function animate() {
-                requestAnimationFrame(animate);
-                if (mesh) {
-                    if (modelType === 'gltf') {
-                        mesh.rotation.y += 0.005;  // Rotación más lenta para el modelo GLTF
-                    } else {
-                        mesh.rotation.x += 0.01;
-                        mesh.rotation.y += 0.01;
-                    }
-                }
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            function onWindowResize() {
-                camera.aspect = container.clientWidth / container.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            }
-
-            window.addEventListener('resize', onWindowResize);
-        }
-
-        createScene('container1', 'gltf');
-        createScene('container2', 'cube');
-        createScene('container3', 'torus');
-    </script>
+    <!-- Tu script para la app -->
+    <script src="app.js"></script>
 </body>
 
 </html>
