@@ -26,7 +26,7 @@ rgbeLoader.load('goegap_road_2k.hdr', function (texture) {
 
     // Cargar el modelo GLTF después de cargar el HDRI
     const loader = new THREE.GLTFLoader();
-    loader.load('https://drive.google.com/file/d/1kWPsZCsFFvwNv0ve1pik0iyl9XcllAXc/view?usp=drive_link', function (gltf) {
+    loader.load('models/scene.glb', function (gltf) {
         const model = gltf.scene;
         scene.add(model);
 
@@ -61,12 +61,10 @@ scene.add(directionalLight);
 camera.position.z = 5;
 
 // Animación de la escena
+// Animación de la escena
 function animate() {
     requestAnimationFrame(animate);
-
-    // Actualizar los controles de órbita en cada frame
-    controls.update();
-
+    scene.rotation.y += 0.0008;
     renderer.render(scene, camera);
 }
 
