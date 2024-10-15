@@ -83,7 +83,7 @@
                 model = object.scene || object;
                 scene.add(model);
                 fitCameraToObject(camera, model, controls);
-                document.getElementById('info').textContent = 'Modelo cargado';
+                document.getElementById('info').textContent = 'Heceho con ThreeJS';
             }, undefined, function(error) {
                 console.error(error);
                 document.getElementById('info').textContent = 'Error al cargar el modelo';
