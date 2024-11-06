@@ -196,7 +196,7 @@
             /* Establece el máximo de altura como el 50% del alto de la ventana del navegador */
             overflow-y: auto;
             /* Añade una barra de desplazamiento vertical si el contenido excede la altura máxima */
-            margin-top: 80%;
+            margin-top: 20%;
         }
 
 
