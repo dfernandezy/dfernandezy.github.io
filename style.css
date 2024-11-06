@@ -46,18 +46,16 @@
     }
 
 
-    .lefttext h1 {
+    .lefttext {
+        margin-top: 7%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        max-width: 350px;
         text-align: center;
-        font-weight: 800;
-        font-size: 140%;
-        margin-bottom: 50px;
-        /* Centra horizontalmente el texto */
-        margin-left: 0%;
-        /* Ajusta según sea necesario */
-        max-width: 400px;
-        /* Ajusta según sea necesario */
-        margin: 0 auto;
-        /* Centra horizontalmente */
+        color: white;
+        position: absolute;
     }
 
 
@@ -95,10 +93,10 @@
     }
 
     .social-icons {
-        position:relative;
+        position: relative;
         z-index: 99;
-        margin: 25px 0px ;
-  
+        margin: 25px 0px;
+
     }
 
     .social-icons a {
@@ -174,10 +172,10 @@
     @media only screen and (max-width: 600px) {
         .lefttext {
             margin-top: 5px !important;
-            margin: 10% auto;
-            /* Establece margen superior e inferior del 10% y márgenes automáticos a los lados */
+            margin-left: auto;
+            margin-right: auto;
             max-width: 90%;
-            /* Establece el ancho máximo para evitar que el contenido se estire demasiado en pantallas anchas */
+            text-align: center;
         }
 
         .social-icons {
