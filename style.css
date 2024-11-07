@@ -187,8 +187,6 @@
             /* Ajusta según sea necesario para mover el texto hacia arriba */
         }
 
-
-
         .interested {
             max-height: 50vh;
             z-index: 2;
@@ -196,9 +194,9 @@
             /* Establece el máximo de altura como el 50% del alto de la ventana del navegador */
             overflow-y: auto;
             /* Añade una barra de desplazamiento vertical si el contenido excede la altura máxima */
-            margin-top: 20%;
+            margin-top: 90%;
+            /* Mueve la sección "interested" más abajo en dispositivos móviles */
         }
-
 
         .interested-button:hover {
             letter-spacing: 0px;
