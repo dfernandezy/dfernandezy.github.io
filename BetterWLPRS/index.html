@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Completa Responsive</title>
+    <title>BetterWLPRS</title>
     <style>
         * {
             margin: 0;
+            background-color: #2f2f2f;
             padding: 0;
             box-sizing: border-box;
+            color: white;
         }
 
         body {
-
             font-family: 'dm sans', sans-serif;
         }
 
@@ -30,30 +31,24 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #ffffff;
         }
 
         .hero {
             display: flex;
             flex-direction: column;
-            /* Coloca los elementos en columna (h1 encima de h2) */
             align-items: center;
-            /* Centra horizontalmente */
             justify-content: center;
-            /* Centra verticalmente */
             width: 100%;
             max-width: 1400px;
             margin: 15px auto;
             padding: 20px;
             text-align: center;
-            /* Centra el texto */
         }
 
         .hero h1 {
             font-size: 4rem;
             line-height: 1;
-            /* Mantener la altura de la línea */
-
         }
 
         .hero h2 {
@@ -82,10 +77,8 @@
             width: 100%;
             height: 100%;
             background: transparent;
-            /* El fondo es transparente, pero el div está presente para bloquear la interacción */
             z-index: 10;
         }
-
 
         .explanation {
             margin-bottom: 2rem;
@@ -112,32 +105,47 @@
             transform: translateY(-5px);
         }
 
+        /* Ajuste de las imágenes para que cubran todo el espacio */
         .card img {
             width: 100%;
-            height: 200px;
-            /* Puedes ajustar esta altura según tus necesidades */
-            object-fit: contain;
-            /* La imagen se verá completa */
-            background-color: #f0f0f000;
-            /* Fondo para rellenar el espacio vacío (opcional) */
+            height: 250px;
+            object-fit: cover;
+            /* Esto hace que la imagen cubra todo el espacio */
+            display: block;
+            /* Elimina espacios en blanco debajo de la imagen */
         }
 
         .card-content {
             padding: 1rem;
+            text-align: center;
+            /* Centra todo el contenido de la tarjeta */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Centra los elementos horizontalmente */
         }
 
         .card-content h3 {
             margin-bottom: 0.5rem;
         }
 
+        /* Estilos actualizados para los botones */
         .btn {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: #007bff;
+            padding: 0.8rem 2rem;
+            background-color: #2f2f2f;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 25px;
             margin-top: 1rem;
+            transition: all 0.3s ease;
+            width: fit-content;
+            /* El botón solo ocupará el espacio necesario */
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -156,17 +164,10 @@
             }
         }
 
-
-
-
         @media (min-width: 1200px) {
-
-
             .hero {
                 margin: 0px 0px -100px;
             }
-
-
         }
     </style>
 </head>
@@ -174,9 +175,9 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio">What</a></li>
+            <li><a href="#servicios">Do I</a></li>
+            <li><a href="#contacto">Put Here?</a></li>
         </ul>
     </nav>
 
