@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Galería de Wallpapers</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <style>
-    /* Estilos generales */
     * {
         margin: 0;
         padding: 0;
@@ -24,7 +23,7 @@
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     h1 {
@@ -44,19 +43,14 @@
         letter-spacing: 2px;
     }
 
-
     nav {
         margin-top: 20px;
         display: flex;
-        /* Activar flexbox */
         justify-content: center;
-        /* Centrar horizontalmente */
         align-items: center;
-        /* Centrar verticalmente */
     }
 
     nav a {
-
         color: #ffffff;
         text-decoration: none;
         font-size: 1.1rem;
@@ -71,14 +65,11 @@
         transform: translateY(-4px);
     }
 
-    nav a:focus {
-        outline: none;
-    }
-
     /* Estilos para la galería */
     .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columnas por defecto */
         gap: 15px;
         width: 100%;
         max-width: 1200px;
@@ -93,6 +84,8 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        aspect-ratio: 16/9;
+        /* Mantener proporción de aspecto */
     }
 
     .wallpaper img {
@@ -112,31 +105,40 @@
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     }
 
-    /* Estilo de footer */
     footer {
         text-align: center;
         margin-top: 20px;
+        padding: 20px;
         color: #aaa;
         font-size: 0.9rem;
     }
 
-    footer p {
-        letter-spacing: 1px;
+    /* Ajustes responsivos */
+    @media (max-width: 1024px) {
+        .gallery {
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columnas */
+        }
     }
 
-    /* Ajustes responsivos */
     @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columnas */
+            gap: 10px;
+        }
+
         h1 {
             font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
         }
 
         nav a {
             font-size: 1rem;
             padding: 10px 15px;
-        }
-
-        .gallery {
-            gap: 10px;
         }
     }
 
@@ -145,9 +147,17 @@
             font-size: 1.8rem;
         }
 
+        h2 {
+            font-size: 1.3rem;
+        }
+
         nav a {
             font-size: 0.9rem;
             padding: 8px 12px;
+        }
+
+        .gallery {
+            padding: 0 5px;
         }
 
         footer {
@@ -155,6 +165,8 @@
         }
     }
 </style>
+</style>
+
 <body>
     <header>
         <h1>Games BetterWLPRS</h1>
