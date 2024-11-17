@@ -8,14 +8,15 @@
     <style>
         * {
             margin: 0;
-            background-color: #2f2f2f;
             padding: 0;
             box-sizing: border-box;
-            color: white;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
-            font-family: 'dm sans', sans-serif;
+            background-color: #1b1b1b;
+            color: #fff;
+            line-height: 1.6;
         }
 
         nav {
@@ -34,26 +35,33 @@
             color: #ffffff;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 1400px;
-            margin: 15px auto;
-            padding: 20px;
             text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+            background: linear-gradient(90deg, #1e293b, #334155);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .hero h1 {
             font-size: 4rem;
-            line-height: 1;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #ffffff, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero h2 {
-            margin-top: 10px;
+            color: #94a3b8;
             font-size: 1.3rem;
+            margin-top: 10px;
         }
 
         .iframe-container {
@@ -62,6 +70,8 @@
             height: 60vh;
             overflow: hidden;
             margin-bottom: 20px;
+            background: #1e293b;
+            border-radius: 1rem;
         }
 
         .iframe-container iframe {
@@ -70,103 +80,94 @@
             border: none;
         }
 
-        .iframe-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            z-index: 10;
-        }
-
         .explanation {
             margin-bottom: 2rem;
             text-align: center;
+            color: #94a3b8;
+        }
+
+        .explanation button {
+            display: inline-block;
+            background: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            color: #38bdf8;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
         }
 
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            padding: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            background: #1e293b;
+            border-radius: 1rem;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Ajuste de las imágenes para que cubran todo el espacio */
         .card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            /* Esto hace que la imagen cubra todo el espacio */
-            display: block;
-            /* Elimina espacios en blanco debajo de la imagen */
         }
 
         .card-content {
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
-            /* Centra todo el contenido de la tarjeta */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* Centra los elementos horizontalmente */
         }
 
         .card-content h3 {
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
+            color: #fff;
         }
 
-        /* Estilos actualizados para los botones */
+        .card-content p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
         .btn {
             display: inline-block;
             padding: 0.8rem 2rem;
-            background-color: #2f2f2f;
-            color: white;
+            background: #374151;
+            color: #38bdf8;
             text-decoration: none;
-            border-radius: 25px;
-            margin-top: 1rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
             transition: all 0.3s ease;
-            width: fit-content;
-            /* El botón solo ocupará el espacio necesario */
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background: #4b5563;
             transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
-            .hero {
-                padding: 10px;
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
             .cards-container {
-                padding: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 5px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .hero {
-                margin: 0px 0px -100px;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
             }
         }
     </style>
@@ -181,43 +182,47 @@
         </ul>
     </nav>
 
-    <div class="hero">
-        <h1>Better WLPRS</h1>
-        <h2>For Every Device!</h2>
-    </div>
-
-    <div class="iframe-container">
-        <iframe src="https://my.spline.design/steamdeckwllpprsfcopy-b2b27bf945328bbde988cf13623510ed/"
-            title="Contenido embebido"></iframe>
-        <div class="iframe-overlay"></div>
-    </div>
-    <div class="explanation">
-        <p>Top Selected WALLPRS from Videogames, Movies and <b>much more</b></p>
-    </div>
-    <div class="cards-container">
-
-        <div class="card">
-            <img src="jedi1.png" alt="Tarjeta 1">
-            <div class="card-content">
-                <h3>VideoGames</h3>
-                <p>Descripción de la tarjeta 1. Hover para ver más.</p>
-                <a href="games.html" class="btn">Leer más</a>
-            </div>
+    <div class="container">
+        <div class="hero">
+            <h1>Better WLPRS</h1>
+            <h2>For Every Device!</h2>
         </div>
-        <div class="card">
-            <img src="lord1.jpg" alt="Tarjeta 2">
-            <div class="card-content">
-                <h3>Movies</h3>
-                <p>Descripción de la tarjeta 2. Hover para ver más.</p>
-                <a href="#" class="btn">Leer más</a>
-            </div>
+
+        <div class="iframe-container">
+            <iframe src="https://my.spline.design/steamdeckwllpprsfcopy-b2b27bf945328bbde988cf13623510ed/"
+                title="Contenido embebido"></iframe>
+            <div class="iframe-overlay"></div>
         </div>
-        <div class="card">
-            <img src="avatar.jpg" alt="Tarjeta 3">
-            <div class="card-content">
-                <h3>Anime</h3>
-                <p>Descripción de la tarjeta 3. Hover para ver más.</p>
-                <a href="#" class="btn">Leer más</a>
+
+        <div class="explanation">
+            <p>WLPRS Taken <b>in Game</b>, request your wished ones!</p>
+            <button>Request</button>
+        </div>
+
+        <div class="cards-container">
+            <div class="card">
+                <img src="jedi1.png" alt="Tarjeta 1">
+                <div class="card-content">
+                    <h3>VideoGames</h3>
+                    <p>Descripción de la tarjeta 1. Hover para ver más.</p>
+                    <a href="games.html" class="btn">Leer más</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="lord1.jpg" alt="Tarjeta 2">
+                <div class="card-content">
+                    <h3>Movies</h3>
+                    <p>Descripción de la tarjeta 2. Hover para ver más.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="avatar.jpg" alt="Tarjeta 3">
+                <div class="card-content">
+                    <h3>Anime</h3>
+                    <p>Descripción de la tarjeta 3. Hover para ver más.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </div>
             </div>
         </div>
     </div>
