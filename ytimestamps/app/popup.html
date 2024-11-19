@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Lato:wght@300&display=swap');
+
+    * {
+      text-align: center;
+
+    }
+
+    body {
+      width: 23em;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      display: flex;
+      font-family: 'Darumadrop One', cursive;
+      color: rgb(87, 87, 87);
+      justify-content: center;
+      margin: 0 auto;
+      padding: 5%;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 4px groove #FF0100;
+      color: #353535;
+      text-shadow: red 3px 3px rgba(255, 255, 255, 0);
+      text-align: center;
+      font-size: 1.4em;
+      font-family: 'Lato', sans-serif;
+      padding: 20px;
+      width: 250px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 0 auto 10px;
+    }
+
+    button:hover {
+      background-color: #FF0100;
+      border: white solid;
+    }
+
+    #timestamps button {
+      width: 100px !important;
+      padding: 5px;
+    }
+
+    a {
+      display: flex !important;
+      text-decoration: none !important;
+      justify-content: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0 auto;
+      padding: 4%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>YouTube TimeStamps</h1>
+  <button id="save-timestamp">Save TimeStamp</button>
+  <button id="delete-timestamps">Delete Timestamps</button>
+
+  <div id="timestamps"></div>
+  <div id="controls"></div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
