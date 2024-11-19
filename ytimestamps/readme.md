@@ -70,7 +70,7 @@ YTIMESTAMPS is a Chrome extension that enhances your YouTube viewing experience 
 
 ## Support
 For technical support or feature requests, please:
-- Visit our GitHub repository: dfernandezy.github.io/ytimestamps
+- Visit our GitHub repository: https://github.com/dfernandezy/dfernandezy.github.io/tree/main/ytimestamps
 - Submit issues through the Chrome Web Store
 - Contact me at: dfernandezy@hotmail.com
 
