@@ -291,6 +291,24 @@
             color: var(--yt-gray);
         }
 
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--yt-gray);
+            font-size: 2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+
         .floating-demo {
             position: fixed;
             bottom: 30px;
@@ -412,8 +430,17 @@
         </div>
     </section>
 
+
     <footer class="footer">
-        <p>© 2024 YTIMESTAMPS by <a href="dfernandezy.github.io" alt="Yahved Fernández Portfolio">dfernandezy </a></p>
+        <p>© 2024 YTIMESTAMPS by <a href="dfernandezy.github.io" alt="Yahved Fernández Portfolio">dfernandezy</a></p>
+        <div class="social-links">
+            <a href="https://github.com/dfernandezy" target="_blank" title="GitHub Profile">
+                <i class="fab fa-github">Github Repo</i>
+            </a>
+            <a href="https://linkedin.com/in/yahelfer" target="_blank" title="LinkedIn Profile">
+                <i class="fab fa-linkedin">Linkdn</i>
+            </a>
+        </div>
     </footer>
 
     <a href="#" class="floating-demo">Try Demo</a>
