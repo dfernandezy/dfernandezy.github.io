@@ -1,5 +1,5 @@
 # YTIMESTAMPS - YouTube Timestamp Manager
-[Visita mi página web](https://dfernandezy.github.io/ytimestamps/web/index.html)
+[Official Website](https://dfernandezy.github.io/ytimestamps/web/index.html)
 
 ![Complete YTimestamps Website View ](./completevieweb.png)
 
