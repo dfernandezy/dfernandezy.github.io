@@ -375,6 +375,491 @@
             <a href="https://linkedin.com/in/yahelfer" target="_blank" title="LinkedIn Profile">
                 <i class="fab fa-linkedin"></i>
             </a>
+            <a href="https://buymeacoffee.com/dfernandezp" target="_blank" title="Support on BuyMeACoffee">
+                <i class="fa-solid fa-mug-hot" alt="BuyMeACoffee"></i>
+            </a>
+        </nav>
+
+        <div class="logo">YTIMESTAMPS</div>
+        <p class="subtitle"><b style="font-size: 1.8rem;">Improve</b> your YouTube experience with smart timestamp
+            management</p>
+        <a href="#" class="cta-button">Add to Chrome - It's Free!</a>
+    </header>
+
+    <section class="stats">
+
+        <div class="stat">
+            <div class="stat-number">∞</div>
+            <div><b>Infinite</b> YTimestamps Possible</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <div>Free Forever</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">24/7</div>
+            <div>Time Saved</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <div>Secure & Private</div>
+        </div>
+
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>Smart YTimestamp Creation</h3>
+            <p>Create timestamps with a single click. Add custom labels and descriptions instantly while watching. </p>
+        </div>
+        <div class="feature">
+            <h3>Seamless Organization</h3>
+            <p>Organize timestamps by video, playlist, or custom categories. Find what you need, when you need it.</p>
+        </div>
+        <div class="feature">
+            <h3>Easy Sharing</h3>
+            <p>Share timestamped moments with anyone. Perfect for collaborative learning and content creation.</p>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2>How YTIMESTAMPS Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Install</h3>
+                <p>Add to Chrome in seconds</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Watch</h3>
+                <p>Click to mark important moments</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Manage</h3>
+                <p>Organize and share easily</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Users Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"Perfect for my online courses. I can easily mark important points in lecture videos."</p>
+                <p><strong>- Sarah K., Student</strong></p>
+            </div>
+            <div class="testimonial">
+                <p>"Game-changer for content creators. Makes video reference management so much easier!"</p>
+                <p><strong>- Mike R., YouTuber</strong></p>
+            </div>
+            <div class="testimonial">
+                <p>"The export feature is brilliant. I can share timestamps with my research team effortlessly."</p>
+                <p><strong>- Dr. James L., Researcher</strong></p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <p>© 2024 YTIMESTAMPS by <a href="dfernandezy.github.io" alt="Yahved Fernández Portfolio">dfernandezy</a></p>
+        <div class="social-links">
+            <a href="https://github.com/dfernandezy/ytimestamps" target="_blank" title="GitHub Profile">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yahved-fernandez/" target="_blank" title="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <a href="#" class="floating-demo">Try Demo</a>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTIMESTAMPS - YouTube Timestamp Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        :root {
+            --yt-red: #ff0000;
+            --yt-dark: #282828;
+            --yt-black: #0f0f0f;
+            --yt-gray: #aaa;
+            --yt-light-gray: #f1f1f1;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--yt-black);
+            background-color: var(--yt-light-gray);
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: var(--yt-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, rgba(40, 40, 40, 0) 70%);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--yt-red);
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: white;
+            max-width: 700px;
+            margin: 2rem auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--yt-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            padding: 2rem;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--yt-red);
+        }
+
+        .feature h3 {
+            color: var(--yt-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        .how-it-works {
+            background: var(--yt-dark);
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .how-it-works h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--yt-red);
+        }
+
+        .steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .step {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--yt-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        a {
+            color: white;
+            font-weight: 800;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--yt-red);
+            border-radius: 50%;
+            animation: ripple 1.5s infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .testimonials {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--yt-dark);
+        }
+
+        .testimonial-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--yt-light-gray);
+            padding: 2rem;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--yt-red);
+            opacity: 0.3;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 3rem 1rem;
+            background: var(--yt-red);
+            color: white;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--yt-dark);
+            color: var(--yt-gray);
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--yt-gray);
+            font-size: 2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+
+        .floating-demo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--yt-red);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .floating-demo:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+
+        .top-nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .top-nav a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            color: var(--yt-red);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="top-nav">
+            <a href="https://github.com/dfernandezy" target="_blank" title="GitHub Profile">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/yahelfer" target="_blank" title="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://buymeacoffee.com/dfernandezp" target="_blank" title="Support on BuyMeACoffee">
+                <i class="fa-solid fa-mug-hot" alt="BuyMeACoffee"></i>
+            </a>
         </nav>
 
         <div class="logo">YTIMESTAMPS</div>
