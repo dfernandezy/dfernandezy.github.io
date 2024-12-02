@@ -13,6 +13,12 @@
 </head>
 
 <body>
+    <!-- Loader Container -->
+    <div id="loader-container">
+        <div class="loader"></div>
+        <div class="loader"></div>
+        <div class="loader"></div>
+    </div>
     <div class="lefttext">
 
         <div class="principal-h1">
@@ -29,7 +35,7 @@
         </div>
 
         <div class="downleft">
-            <h2><i>Hi!</i> I'm an Indie Developer based in Barcelona</h2>
+            <h2><i>Fullstack Dev</i> with experience around the world from New York, London and Barcelona.</h2>
 
 
         </div>
@@ -37,7 +43,7 @@
 
 
         <div class="interested">
-            <p>If you are interested in something like this send your idea down below.</p>
+            <p>Get in contact!</p>
 
 
 
@@ -80,6 +86,19 @@
     <spline-viewer loading-anim-type="spinner-big-light"
         url="https://prod.spline.design/vv7CZ9DDGWOa3hYv/scene.splinecode"></spline-viewer>
     <!-- <iframe src="https://my.spline.design/aroomgoodcopy-6ff8303e9d8aaa183b2e40500056be11/" frameborder="0"></iframe> -->
+
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const loader = document.getElementById('loader-container');
+                loader.style.opacity = '0'; // Transición suave a opacidad 0
+                setTimeout(function () {
+                    loader.style.display = 'none'; // Ocultar completamente después de la transición
+                }, 500); // Esperar que la transición termine (0.5s en tu CSS)
+            }, 4000); // 4 segundos antes de comenzar la transición
+        });
+    </script>
+
 
 </body>
 
