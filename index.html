@@ -4,110 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yahved Fernández | 3DFolio</title>
+    <title>dfernandezy 3DFolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: "DM Sans", sans-serif;
-            width: 100%;
-            background-color: #EEEEEE;
-            min-height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-        }
 
-        @media screen and (min-width: 600px) {
-            body {
-                padding: 15px;
-            }
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .social-icons a {
-            margin-right: 10px;
-        }
-
-        .social-icons img {
-            width: 40px;
-        }
-
-        .principal-h1 h1 {
-            font-size: 2.5em;
-            font-weight: bold;
-        }
-
-        .downleft h2 {
-            font-style: italic;
-            margin-top: 10px;
-        }
-
-        .interested {
-            margin-top: 20px;
-        }
-
-        .interested p {
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        #loader-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.9);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .loader {
-            width: 15px;
-            height: 15px;
-            margin: 0 5px;
-            background: #007bff;
-            border-radius: 50%;
-            animation: bounce 0.6s infinite alternate;
-        }
-
-        .loader:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .loader:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes bounce {
-            to {
-                opacity: 0.3;
-                transform: translateY(-10px);
-            }
-        }
     </style>
 </head>
 
@@ -118,50 +19,87 @@
         <div class="loader"></div>
         <div class="loader"></div>
     </div>
-
     <div class="lefttext">
+
         <div class="principal-h1">
             <h1>Yahved Fernández</h1>
         </div>
 
         <div class="social-icons">
-            <a href="https://github.com/dfernandezy" target="_blank">
-                <img src="./images/github.png" alt="GitHub">
-            </a>
-            <a href="https://www.linkedin.com/in/yahved-fern%C3%A1ndez-202017170/" target="_blank">
-                <img src="./images/linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://twitter.com/yeymura" target="_blank">
-                <img src="./images/twitter.png" alt="Twitter">
-            </a>
+            <a href="https://github.com/dfernandezy" target="_blank"><img src="./images/github.png" alt=""
+                    style="width: 40px;"><i class="github-top"></i></a>
+            <a href="https://www.linkedin.com/in/yahved-fern%C3%A1ndez-202017170/" target="_blank"><img
+                    src="./images/linkedin.png" alt="" style="width: 50px;"><i class="linkdin-top"></i></a>
+            <a href="https://twitter.com/yeymura" target="_blank"><img src="./images/twitter.png" alt=""
+                    style="width: 40px;"><i class="twitter-top"></i></a>
         </div>
 
         <div class="downleft">
-            <h2><i>Fullstack Dev</i> with experience around the world from New York, London, and Barcelona.</h2>
+            <h2><i>Fullstack Dev</i> with experience around the world from New York, London and Barcelona.</h2>
+
+
         </div>
+
+
 
         <div class="interested">
             <p>Get in contact!</p>
-            <button class="btn" onclick="window.location.href='https://wa.me/622494800?text=Hola,%20estoy%20interesado%20en%20m%C3%A1s%20informaci%C3%B3n';">
-                Click me
+
+
+
+            <button class="btn" onclick="window.location.href='tel:+622494800';">
+                <span>Click me</span>
+                <div class="container">
+                    <svg width="44" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <image href="./images/github.svg" />
+                    </svg>
+                    <svg width="44" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <image href="./images/linkdin.svg" />
+                    </svg>
+
+                    <svg width="44" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <image href="./images/mail.png" />
+                    </svg>
+                </div>
             </button>
+
+
+
+
+            <!-- 
+
+                <div class="tech-icons">
+                    <br>
+                    <p>Powered by</p>
+                    <div class="powered-icons">
+                        <img src="./images/dfernandezy.png" alt="">
+                        <img src="./images/spline.png" alt="">
+                        <img src="./images/js.png" alt="">
+                    </div>
+                </div> -->
         </div>
     </div>
 
+    </div>
+
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
-    <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/vv7CZ9DDGWOa3hYv/scene.splinecode"></spline-viewer>
+    <spline-viewer loading-anim-type="spinner-big-light"
+        url="https://prod.spline.design/vv7CZ9DDGWOa3hYv/scene.splinecode"></spline-viewer>
+    <!-- <iframe src="https://my.spline.design/aroomgoodcopy-6ff8303e9d8aaa183b2e40500056be11/" frameborder="0"></iframe> -->
 
     <script>
         window.addEventListener('load', function () {
             setTimeout(function () {
                 const loader = document.getElementById('loader-container');
-                loader.style.opacity = '0';
+                loader.style.opacity = '0'; // Transición suave a opacidad 0
                 setTimeout(function () {
-                    loader.style.display = 'none';
-                }, 500);
-            }, 4000);
+                    loader.style.display = 'none'; // Ocultar completamente después de la transición
+                }, 500); // Esperar que la transición termine (0.5s en tu CSS)
+            }, 4000); // 4 segundos antes de comenzar la transición
         });
     </script>
+
+
 </body>
 
 </html>
