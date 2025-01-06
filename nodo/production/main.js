@@ -132,3 +132,27 @@ function init() {
     const wait = txtElement.getAttribute('data-wait');
     new TypeWriter(txtElement, words, wait);
 }
+
+
+// Versión con animación más controlada
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Añade la clase con un pequeño delay para mejor efecto visual
+                setTimeout(() => {
+                    entry.target.classList.add('animate');
+                }, 300);
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '-50px'
+    });
+
+    document.querySelectorAll('.scroll-animation').forEach((element) => {
+        observer.observe(element);
+    });
+});
