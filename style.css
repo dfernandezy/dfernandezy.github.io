@@ -1,0 +1,512 @@
+    /* Estilos generales */
+    body,
+    html {
+        font-family: 'DM Sans', Courier, monospace;
+        font-style: oblique;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        /* Para evitar que el iframe tenga barras de desplazamiento */
+        background:
+            linear-gradient(-90deg, rgba(0, 0, 0, .05) 1px, transparent 1px),
+            linear-gradient(rgba(0, 0, 0, .05) 1px, transparent 1px),
+            linear-gradient(-90deg, rgba(0, 0, 0, .04) 1px, transparent 1px),
+            linear-gradient(rgba(0, 0, 0, .04) 1px, transparent 1px),
+            linear-gradient(transparent 3px, #4E507D 3px, #4E507D 78px, transparent 78px),
+            linear-gradient(-90deg, #4E507D 1px, transparent 1px),
+            linear-gradient(-90deg, transparent 3px, #4E507D 3px, #4E507D 78px, transparent 78px),
+            linear-gradient(#4E507D 1px, transparent 1px),
+            #4E507D;
+        background-size:
+            6px 6px,
+            6px 6px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    /* Sección Izquierda Explicativa /En proceso/ */
+    .lefttext {
+        margin-top: 7%;
+        /* Ajusta según sea necesario */
+        margin-left: 0%;
+        max-width: 350px;
+        text-align: center;
+        color: white;
+        position: absolute;
+        /* Añadido */
+    }
+
+
+    .lefttext {
+        margin-top: 7%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        max-width: 350px;
+        text-align: center;
+        color: white;
+        position: absolute;
+    }
+
+
+    #canvas3d {
+        width: 100%;
+        height: 100%;
+    }
+
+    iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    h1 {
+        position: relative;
+        /* Cambiado a relativo */
+        margin-top: 0;
+        /* Añadido */
+        z-index: 2;
+        color: white;
+    }
+
+    /* .principal-h1 {
+        font-size: 100%;
+    } */
+
+    h2 {
+        font-size: larger !important;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        position: relative;
+        z-index: 99;
+        margin: 25px 0px;
+
+    }
+
+    .social-icons a {
+        color: white;
+        font-size: 24px;
+    }
+
+    .social-icons a:hover {
+        color: lightblue;
+    }
+
+    .downleft {
+        margin-top: -15px;
+        margin-bottom: 5px;
+    }
+
+    .downleft h2 {
+        font-size: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .downleft h2 i {
+        font-size: 140%;
+        color: rgb(246, 246, 246);
+        box-shadow: #ffffff 5px, 5px;
+    }
+
+    .downleft p {
+        font-size: 90%;
+        font-weight: 800;
+    }
+
+    .interested {
+        margin-top: 5%;
+        font-weight: 800;
+        /* Ajusta según sea necesario */
+        position: relative;
+        text-align: center;
+        /* Añadido */
+    }
+
+
+    .interested button {
+        max-width: 200px;
+        /* Añadido para evitar que el botón sea demasiado ancho en dispositivos grandes */
+        margin: 0 auto;
+        /* Centra horizontalmente el botón */
+        z-index: 2;
+    }
+
+    .interested-button:hover {
+        color: blue;
+    }
+
+
+
+    .powered-icons {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .powered-icons img {
+        width: 50px;
+        /* Establece el tamaño deseado para las imágenes */
+    }
+
+    /* Móvil */
+    /*  */
+    /*  */
+    @media only screen and (max-width: 600px) {
+        .lefttext {
+            margin-top: 5px !important;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .downleft {
+            margin-top: -25px;
+            /* Ajusta según sea necesario para mover el texto hacia arriba */
+        }
+
+        .interested {
+            max-height: 50vh;
+            z-index: 2;
+            position: absolute;
+            /* Establece el máximo de altura como el 50% del alto de la ventana del navegador */
+            overflow-y: auto;
+            /* Añade una barra de desplazamiento vertical si el contenido excede la altura máxima */
+            margin-top: 90%;
+            /* Mueve la sección "interested" más abajo en dispositivos móviles */
+        }
+
+        .interested-button:hover {
+            letter-spacing: 0px;
+        }
+
+        div.downleft p {
+            display: none;
+        }
+
+        #canvas3d {
+            width: 100%;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 70%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .tech-icons {
+            margin-top: -6%;
+        }
+    }
+
+
+
+    /* 
+    */
+    /* Móvil */
+
+
+    @media only screen and (min-width: 601px) {
+        .lefttext {
+            margin-left: 3.4%;
+        }
+    }
+
+    /* .interested-button {
+        padding: 12px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        border: 0;
+        background-color: white;
+        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+        z-index: 2;
+        position: relative;
+
+    }
+
+    .interested-button:hover {
+        background-color: hsl(261deg 80% 48%);
+        color: white;
+        box-shadow: rgb(255, 255, 255) 0px 7px 29px 0px;
+    }
+
+    .interested-button:active {
+        letter-spacing: 2px;
+        background-color: hsl(261deg 80% 48%);
+        color: rgb(255, 255, 255);
+        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+        transform: translateY(5px);
+        transition: 300ms;
+    } */
+
+
+    /* Botón animado ultra guay */
+    .btn {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        cursor: pointer;
+        width: 150px;
+        height: 50px;
+        background-color: #eeeeed;
+        border-radius: 80px;
+        border: none;
+        padding: 0 20px;
+        transition: all .2s ease;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+    }
+
+    .btn span {
+        position: absolute;
+        z-index: 99;
+        width: 150px;
+        height: 50px;
+        border-radius: 80px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+        font-size: 17px;
+        text-align: center;
+        line-height: 50px;
+        letter-spacing: 2px;
+        color: #eeeeed;
+        background-color: #2a2660;
+        padding: 0 10px;
+        transition: all 1.2s ease;
+    }
+
+    .btn .container {
+        display: flex;
+        width: 100%;
+        border-radius: 80px;
+        justify-content: space-around;
+        line-height: 55px;
+    }
+
+    .btn svg {
+        padding: 0 5px;
+        opacity: 0;
+    }
+
+    .btn .container svg:nth-of-type(1) {
+        transition-delay: 0.65s;
+    }
+
+    .btn .container svg:nth-of-type(2) {
+        transition-delay: 0.6s;
+    }
+
+    .container svg:nth-of-type(3) {
+        transition-delay: 0.5s;
+    }
+
+    .btn:hover span {
+        opacity: 0;
+    }
+
+    .btn:hover svg {
+        opacity: 1;
+    }
+
+
+
+
+
+    /*  */
+
+
+
+
+
+
+
+    /* Loader Styles */
+    #loader-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+            linear-gradient(-90deg, rgba(0, 0, 0, .05) 1px, transparent 1px),
+            linear-gradient(rgba(0, 0, 0, .05) 1px, transparent 1px),
+            linear-gradient(-90deg, rgba(0, 0, 0, .04) 1px, transparent 1px),
+            linear-gradient(rgba(0, 0, 0, .04) 1px, transparent 1px),
+            linear-gradient(transparent 3px, #4E507D 3px, #4E507D 78px, transparent 78px),
+            linear-gradient(-90deg, #4E507D 1px, transparent 1px),
+            linear-gradient(-90deg, transparent 3px, #4E507D 3px, #4E507D 78px, transparent 78px),
+            linear-gradient(#4E507D 1px, transparent 1px),
+            #4E507D;
+        background-size:
+            6px 6px,
+            6px 6px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px,
+            80px 80px;
+
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+    }
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        width: 160px;
+        height: 100px;
+        margin-left: -80px;
+        margin-top: -50px;
+        border-radius: 5px;
+        background: #1e3f57;
+        animation: dot1_ 3s cubic-bezier(0.55, 0.3, 0.24, 0.99) infinite;
+    }
+
+    .loader:nth-child(2) {
+        z-index: 11;
+        width: 150px;
+        height: 90px;
+        margin-top: -45px;
+        margin-left: -75px;
+        background-image: url(YOOOOO.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 3px;
+        /* background: #3c517d; */
+        animation-name: dot2_;
+    }
+
+    .loader:nth-child(3) {
+        z-index: 12;
+        width: 40px;
+        height: 20px;
+        margin-top: 50px;
+        margin-left: -20px;
+        border-radius: 0 0 5px 5px;
+        background: #6bb2cd;
+        animation-name: dot3_;
+    }
+
+    @keyframes dot1_ {
+
+        3%,
+        97% {
+            width: 160px;
+            height: 100px;
+            margin-top: -50px;
+            margin-left: -80px;
+        }
+
+        30%,
+        36% {
+            width: 80px;
+            height: 120px;
+            margin-top: -60px;
+            margin-left: -40px;
+        }
+
+        63%,
+        69% {
+            width: 40px;
+            height: 80px;
+            margin-top: -40px;
+            margin-left: -20px;
+        }
+    }
+
+    @keyframes dot2_ {
+
+        3%,
+        97% {
+            height: 90px;
+            width: 150px;
+            margin-left: -75px;
+            margin-top: -45px;
+        }
+
+        30%,
+        36% {
+            width: 70px;
+            height: 96px;
+            margin-left: -35px;
+            margin-top: -48px;
+        }
+
+        63%,
+        69% {
+            width: 32px;
+            height: 60px;
+            margin-left: -16px;
+            margin-top: -30px;
+        }
+    }
+
+    @keyframes dot3_ {
+
+        3%,
+        97% {
+            height: 20px;
+            width: 40px;
+            margin-left: -20px;
+            margin-top: 50px;
+        }
+
+        30%,
+        36% {
+            width: 8px;
+            height: 8px;
+            margin-left: -5px;
+            margin-top: 49px;
+            border-radius: 8px;
+        }
+
+        63%,
+        69% {
+            width: 16px;
+            height: 4px;
+            margin-left: -8px;
+            margin-top: -37px;
+            border-radius: 10px;
+        }
+    }
