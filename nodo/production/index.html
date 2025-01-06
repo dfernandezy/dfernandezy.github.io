@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodo3D - Soluciones Digitales Creativas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+
+<body>
+    <!-- Navegación -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="logo">Nodo</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#soluciones">Soluciones</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#como-funciona">Cómo Funciona</a>
+                <a href="#integraciones">Integraciones</a>
+                <a href="#preguntas">Preguntas</a>
+                <a href="#precios">Precios</a>
+                <button class="cta-button">Empezar Ahora</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Transforma tu Presencia Digital
+                    <span class="highlight">Sin Complicaciones</span>
+                </h1>
+                <p class="hero-subtitle">Suscripción todo en uno para desarrollo web, diseño 3D y marketing digital</p>
+                <div class="hero-cta">
+                    <button class="primary-button">Prueba Gratuita</button>
+                    <button class="secondary-button">Ver Demo</button>
+                </div>
+            </div>
+            <div class="hero-image slide-in-right">
+                <spline-viewer id="hero-3d" url="TU_URL_SPLINE"></spline-viewer>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características Principales -->
+    <section id="caracteristicas" class="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Características Principales</h2>
+            <div class="features-grid">
+                <div class="feature-card slide-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Sitios web que convierten visitantes en clientes</p>
+                </div>
+                <div class="feature-card slide-up" data-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Diseño 3D</h3>
+                    <p>Experiencias inmersivas que cautivan a tu audiencia</p>
+                </div>
+                <div class="feature-card slide-up" data-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Marketing Digital</h3>
+                    <p>Estrategias basadas en datos para un crecimiento sostenible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-grid">
+        <h2 class="services-title">Sitios web, apps, branding y más.</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <h3>Sitios Web</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Elementos Web 3D</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Gráficos para Email</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Apps Móviles</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>SAAS</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Banners para Ferias</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Apps Web</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Presentaciones</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Tarjetas de Visita</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Apps de Escritorio</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Diapositivas</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Folletos</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Logos y Branding</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Gráficos para Redes</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Señalización/Vallas</h3>
+                <div class="service-line"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Membership Plans Section -->
+    <section id="membership" class="membership">
+        <div class="container">
+            <h2 class="section-title">Planes de Membresía</h2>
+            <div class="plans-grid">
+                <!-- Plan Standard -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Standard</h3>
+                        <p class="plan-subtitle">Una solicitud a la vez</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="price">€2,495</span>
+                        <span class="period">/mes</span>
+                    </div>
+                    <button class="plan-cta">Empezar ahora</button>
+                    <a href="#" class="book-call">Agendar llamada</a>
+
+                    <div class="plan-features">
+                        <h4>Qué incluye:</h4>
+                        <ul>
+                            <li>Una solicitud a la vez</li>
+                            <li>Entrega promedio 3 días hábiles</li>
+                            <li>Marcas ilimitadas</li>
+                            <li>Usuarios ilimitados</li>
+                            <li>Fotos de stock ilimitadas</li>
+                            <li>Pagos con tarjeta de crédito</li>
+                            <li>Pausar o cancelar en cualquier momento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="plan-card featured">
+                    <div class="plan-header">
+                        <h3>Premium</h3>
+                        <p class="plan-subtitle">Dos solicitudes a la vez</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="price">€3,995</span>
+                        <span class="period">/mes</span>
+                    </div>
+                    <button class="plan-cta">Empezar ahora</button>
+                    <a href="#" class="book-call">Agendar llamada</a>
+
+                    <div class="plan-features">
+                        <h4>Qué incluye:</h4>
+                        <ul>
+                            <li>Dos solicitudes a la vez</li>
+                            <li>Entrega promedio 3 días hábiles</li>
+                            <li>Marcas ilimitadas</li>
+                            <li>Usuarios ilimitados</li>
+                            <li>Fotos de stock ilimitadas</li>
+                            <li>Pagos con tarjeta de crédito</li>
+                            <li>Pausar o cancelar en cualquier momento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Book a Call Card -->
+                <div class="plan-card consultation">
+                    <div class="consultation-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Agendar llamada</h3>
+                    <p>Conoce más sobre cómo DesignWand funciona y cómo puede ayudarte.</p>
+                    <a href="#" class="book-call-main">Agendar llamada</a>
+                </div>
+            </div>
+
+            <!-- Additional Web Development Plan -->
+            <div class="additional-plan">
+                <div class="additional-plan-content">
+                    <h3>Desarrollo web con Framer o Webflow</h3>
+                    <p>Obtén un mejor sitio web más rápido. Requiere una suscripción de diseño.</p>
+                    <div class="additional-plan-price">
+                        <span class="price">€999</span>
+                        <span class="period">/mes</span>
+                    </div>
+                    <button class="plan-cta light">Empezar ahora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Soluciones con Tabs -->
+    <section id="soluciones" class="solutions">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestras Soluciones</h2>
+            <div class="tabs fade-in">
+                <button class="tab-button active" data-tab="web">Sitios Web</button>
+                <button class="tab-button" data-tab="apps">Aplicaciones</button>
+                <button class="tab-button" data-tab="marca">Branding</button>
+                <button class="tab-button" data-tab="marketing">Marketing</button>
+            </div>
+            <div class="tab-content active" id="web">
+                <div class="solution-content slide-in-right">
+                    <spline-viewer id="solution-3d" url="TU_URL_SPLINE"></spline-viewer>
+                    <div class="solution-text">
+                        <h3>Desarrollo Web Profesional</h3>
+                        <p>Creamos sitios web que destacan y convierten</p>
+                        <ul class="solution-features">
+                            <li>✓ Diseño Responsive</li>
+                            <li>✓ Optimización SEO</li>
+                            <li>✓ Integración con CMS</li>
+                            <li>✓ Análisis de Rendimiento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title fade-in">Beneficios</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card slide-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Crecimiento Escalable</h3>
+                    <p>Crece sin límites con nuestras soluciones flexibles</p>
+                </div>
+                <div class="benefit-card slide-up" data-delay="200">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Rentable</h3>
+                    <p>Ahorra hasta un 60% comparado con agencias tradicionales</p>
+                </div>
+                <div class="benefit-card slide-up" data-delay="400">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Resultados en semanas, no en meses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </section>
+
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>¿Cómo funciona?</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                    <h3>Elige tu plan</h3>
+                    <p>Selecciona el plan que mejor se adapte a tus necesidades</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                    <h3>Personalización</h3>
+                    <p>Adaptamos la solución a tu negocio</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                    <h3>Resultados</h3>
+                    <p>Observa cómo crece tu negocio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="integrations">
+        <div class="container">
+            <h2>Integraciones</h2>
+            <div class="integration-showcase">
+                <img src="path-to-integration-image.jpg" alt="Integraciones disponibles">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-avatar">
+                        <img src="avatar1.jpg" alt="Avatar">
+                    </div>
+                    <p class="testimonial-text">"Increíble servicio, superó todas nuestras expectativas"</p>
+                    <p class="client-name">María García</p>
+                </div>
+                <!-- Repite para más testimonios -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Cómo funciona la suscripción?</h3>
+                    <p>Explicación detallada del proceso de suscripción...</p>
+                </div>
+                <!-- Más preguntas FAQ -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Value (CTV) Section -->
+    <section class="ctv">
+        <div class="container">
+            <div class="ctv-content">
+                <h2>¿Listo para transformar tu negocio?</h2>
+                <button class="ctv-button">Comienza Ahora</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#how-it-works">How it Works</a>
+                    <a href="#faqs">FAQs</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
