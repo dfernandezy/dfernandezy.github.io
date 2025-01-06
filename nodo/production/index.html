@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nodo3D - Soluciones Digitales Creativas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
 </head>
 
@@ -14,7 +14,7 @@
     <!-- Navegación -->
     <nav class="main-nav">
         <div class="container nav-container">
-            <div class="logo">Nodo</div>
+            <div class="logo">Nodo3D</div>
             <div class="menu-toggle" id="mobile-menu">
                 <span></span>
                 <span></span>
@@ -81,6 +81,91 @@
         </div>
     </section>
 
+    <!-- Soluciones con Tabs -->
+    <section id="soluciones" class="solutions">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestras Soluciones</h2>
+            <div class="tabs fade-in">
+                <button class="tab-button active" data-tab="web">Sitios Web</button>
+                <button class="tab-button" data-tab="apps">Aplicaciones</button>
+                <button class="tab-button" data-tab="marca">Branding</button>
+                <button class="tab-button" data-tab="marketing">Marketing</button>
+            </div>
+            <div class="tab-content active" id="web">
+                <div class="solution-content slide-in-right">
+                    <spline-viewer id="solution-3d" url="TU_URL_SPLINE"></spline-viewer>
+                    <div class="solution-text">
+                        <h3>Desarrollo Web Profesional</h3>
+                        <p>Creamos sitios web que destacan y convierten</p>
+                        <ul class="solution-features">
+                            <li>✓ Diseño Responsive</li>
+                            <li>✓ Optimización SEO</li>
+                            <li>✓ Integración con CMS</li>
+                            <li>✓ Análisis de Rendimiento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title fade-in">Beneficios</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card slide-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Crecimiento Escalable</h3>
+                    <p>Crece sin límites con nuestras soluciones flexibles</p>
+                </div>
+                <div class="benefit-card slide-up" data-delay="200">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Rentable</h3>
+                    <p>Ahorra hasta un 60% comparado con agencias tradicionales</p>
+                </div>
+                <div class="benefit-card slide-up" data-delay="400">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Resultados en semanas, no en meses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>¿Cómo funciona?</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                    <h3>Elige tu plan</h3>
+                    <p>Selecciona el plan que mejor se adapte a tus necesidades</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                    <h3>Personalización</h3>
+                    <p>Adaptamos la solución a tu negocio</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                    <h3>Resultados</h3>
+                    <p>Observa cómo crece tu negocio</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="services-grid">
         <h2 class="services-title">Sitios web, apps, branding y más.</h2>
@@ -162,11 +247,23 @@
         </div>
     </section>
 
-
-
-
-
-
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-avatar">
+                        <img src="avatar1.jpg" alt="Avatar">
+                    </div>
+                    <p class="testimonial-text">"Increíble servicio, superó todas nuestras expectativas"</p>
+                    <p class="client-name">María García</p>
+                </div>
+                <!-- Repite para más testimonios -->
+            </div>
+        </div>
+    </section>
 
 
     <!-- Membership Plans Section -->
@@ -255,122 +352,36 @@
     </section>
 
 
-    <!-- Soluciones con Tabs -->
-    <section id="soluciones" class="solutions">
-        <div class="container">
-            <h2 class="section-title fade-in">Nuestras Soluciones</h2>
-            <div class="tabs fade-in">
-                <button class="tab-button active" data-tab="web">Sitios Web</button>
-                <button class="tab-button" data-tab="apps">Aplicaciones</button>
-                <button class="tab-button" data-tab="marca">Branding</button>
-                <button class="tab-button" data-tab="marketing">Marketing</button>
-            </div>
-            <div class="tab-content active" id="web">
-                <div class="solution-content slide-in-right">
-                    <spline-viewer id="solution-3d" url="TU_URL_SPLINE"></spline-viewer>
-                    <div class="solution-text">
-                        <h3>Desarrollo Web Profesional</h3>
-                        <p>Creamos sitios web que destacan y convierten</p>
-                        <ul class="solution-features">
-                            <li>✓ Diseño Responsive</li>
-                            <li>✓ Optimización SEO</li>
-                            <li>✓ Integración con CMS</li>
-                            <li>✓ Análisis de Rendimiento</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Beneficios -->
-    <section id="beneficios" class="benefits">
-        <div class="container">
-            <h2 class="section-title fade-in">Beneficios</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card slide-up">
-                    <div class="benefit-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Crecimiento Escalable</h3>
-                    <p>Crece sin límites con nuestras soluciones flexibles</p>
-                </div>
-                <div class="benefit-card slide-up" data-delay="200">
-                    <div class="benefit-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Rentable</h3>
-                    <p>Ahorra hasta un 60% comparado con agencias tradicionales</p>
-                </div>
-                <div class="benefit-card slide-up" data-delay="400">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Entrega Rápida</h3>
-                    <p>Resultados en semanas, no en meses</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    </section>
 
 
-    <!-- How it Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2>¿Cómo funciona?</h2>
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-circle"></div>
-                    <div class="step-line"></div>
-                    <h3>Elige tu plan</h3>
-                    <p>Selecciona el plan que mejor se adapte a tus necesidades</p>
-                </div>
-                <div class="step">
-                    <div class="step-circle"></div>
-                    <div class="step-line"></div>
-                    <h3>Personalización</h3>
-                    <p>Adaptamos la solución a tu negocio</p>
-                </div>
-                <div class="step">
-                    <div class="step-circle"></div>
-                    <div class="step-line"></div>
-                    <h3>Resultados</h3>
-                    <p>Observa cómo crece tu negocio</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Integrations Section -->
-    <section id="integrations" class="integrations">
-        <div class="container">
-            <h2>Integraciones</h2>
-            <div class="integration-showcase">
-                <img src="path-to-integration-image.jpg" alt="Integraciones disponibles">
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>Testimonios</h2>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <div class="testimonial-avatar">
-                        <img src="avatar1.jpg" alt="Avatar">
-                    </div>
-                    <p class="testimonial-text">"Increíble servicio, superó todas nuestras expectativas"</p>
-                    <p class="client-name">María García</p>
-                </div>
-                <!-- Repite para más testimonios -->
-            </div>
-        </div>
-    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- FAQ Section -->
     <section id="faq" class="faq">
@@ -414,3 +425,18 @@
             </div>
         </div>
     </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
