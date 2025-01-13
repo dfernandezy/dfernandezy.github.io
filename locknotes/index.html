@@ -1,0 +1,66 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LockNote - Personaliza tu fondo de pantalla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>LockNote</h1>
+            <p>Crea fondos de pantalla con notas personalizadas</p>
+        </header>
+
+        <main>
+            <!-- Selector de dispositivo -->
+            <div class="device-selector">
+                <h2>Selecciona tu dispositivo</h2>
+                <select id="deviceSelect">
+                    <option value="">Selecciona un modelo</option>
+                    <option value="iphone13">iPhone 13</option>
+                    <option value="s21">Samsung S21</option>
+                    <option value="custom">Personalizado</option>
+                </select>
+
+                <div id="customSize" class="hidden">
+                    <input type="number" id="customWidth" placeholder="Ancho">
+                    <input type="number" id="customHeight" placeholder="Alto">
+                </div>
+            </div>
+
+            <!-- Subida de imagen -->
+            <div class="image-upload">
+                <h2>Sube tu imagen de fondo</h2>
+                <input type="file" id="imageInput" accept="image/*">
+                <div id="imagePreview"></div>
+            </div>
+
+            <!-- Editor de notas -->
+            <div class="note-editor">
+                <h2>Añade notas</h2>
+                <button id="addNote">+ Añadir nota</button>
+                <div id="notesContainer"></div>
+            </div>
+
+            <!-- Vista previa -->
+            <div class="preview-container">
+                <div id="preview" class="preview">
+                    <!-- Aquí se mostrará la vista previa -->
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="actions">
+                <button id="saveButton">Guardar y Descargar</button>
+            </div>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
