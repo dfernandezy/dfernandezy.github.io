@@ -283,7 +283,39 @@
     })();
 </script>
 <script>
-    // Código del manejador del formulario (el que te proporcioné arriba)
-</script>
+    document.getElementById('formularioValoracion').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Obtener todos los valores del formulario
+        const formData = {
+            nombre_completo: document.getElementById('nombre').value,
+            numero_telefono: document.getElementById('telefono').value,
+            correo_electronico: document.getElementById('correo').value,
+            ciudad: document.getElementById('ubicacion').value,
+            tipo_vivienda: document.getElementById('tipo').value,
+            metros_cuadrados: document.getElementById('tamano').value,
+            anos_antiguedad: document.getElementById('edad').value,
+            numero_habitaciones: document.getElementById('habitaciones').value,
+            numero_banos: document.getElementById('banos').value,
+            direccion_calle: document.getElementById('direccion').value,
+            numero_portal: document.getElementById('numero').value,
+            estado_conservacion: document.getElementById('estado').value,
+            observaciones: document.getElementById('comentarios').value
+        };
+
+        // Enviar email usando EmailJS
+        emailjs.send(
+            'service_zizr0pa', // Service ID de EmailJS
+            'template_upy6iiz', // Template ID de EmailJS
+            formData
+        )
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Formulario enviado correctamente');
+            }, function (error) {
+                console.log('FAILED...', error);
+                alert('Error al enviar el formulario');
+            });
+    });</script>
 
 </html>
