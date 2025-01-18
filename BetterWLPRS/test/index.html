@@ -123,6 +123,69 @@
                 width: 100%;
             }
         }
+
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-content p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cards-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
     </style>
     <title>BetterWLPRS - Premium Wallpapers</title>
 
@@ -138,6 +201,34 @@
         </div>
         <div class="hero-spline">
             <spline-viewer url="https://prod.spline.design/j0wNip6JrEXrsom9/scene.splinecode"></spline-viewer>
+        </div>
+    </div>
+
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="jedi.png" alt="Gaming Wallpapers">
+            <div class="card-content">
+                <h3>Video Games</h3>
+                <p>Stunning captures from your favorite games, from epic landscapes to intense action moments.</p>
+                <a href="games.html" class="btn">Explore Collection</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="lord1.jpg" alt="Movie Wallpapers">
+            <div class="card-content">
+                <h3>Movies</h3>
+                <p>Iconic scenes and memorable moments from classic and contemporary cinema.</p>
+                <a href="#" class="btn">View Gallery</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="avatar.jpg" alt="Anime Wallpapers">
+            <div class="card-content">
+                <h3>Anime</h3>
+                <p>Beautiful artwork and scenes from your favorite anime series in high quality.</p>
+                <a href="#" class="btn">Browse Collection</a>
+            </div>
         </div>
     </div>
 </body>
