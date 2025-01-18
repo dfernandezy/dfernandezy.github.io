@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>betterwlprs</title>
+    <!-- Añadimos la fuente Plus Jakarta Sans que da un toque moderno pero sutil -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 0 0 50%;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            color: #666;
+            font-weight: 500;
+            max-width: 500px;
+        }
+
+        .explore-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #666;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .explore-button:hover {
+            background-color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .hero-spline {
+            flex: 0 0 50%;
+            height: 100vh;
+            background-color: #1c1c1c00;
+            position: relative;
+        }
+
+        spline-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero-text {
+                flex: none;
+                padding: 2rem;
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-spline {
+                flex: none;
+                height: 50vh;
+                width: 100%;
+            }
+        }
+
+
+        .cards-container {
+            margin: -50px 25px 25px 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #393939;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-content p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cards-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
+    </style>
+    <title>BetterWLPRS - Premium Wallpapers</title>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js"></script>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>BetterWLPRS</h1>
+            <p>Hand-picked selection of high-quality in-game taken wallpapers.</p>
+            <a href="#explore" class="explore-button">Explore Now</a>
+        </div>
+        <div class="hero-spline">
+            <spline-viewer url="https://prod.spline.design/j0wNip6JrEXrsom9/scene.splinecode"></spline-viewer>
+        </div>
+    </div>
+
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="jedi.png" alt="Gaming Wallpapers">
+            <div class="card-content">
+                <h3>Video Games</h3>
+                <p>Stunning captures from your favorite games, from epic landscapes to intense action moments.</p>
+                <a href="games.html" class="btn">Explore Collection</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="lord1.jpg" alt="Movie Wallpapers">
+            <div class="card-content">
+                <h3>Movies</h3>
+                <p>Iconic scenes and memorable moments from classic and contemporary cinema.</p>
+                <a href="#" class="btn">View Gallery</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="avatar.jpg" alt="Anime Wallpapers">
+            <div class="card-content">
+                <h3>Anime</h3>
+                <p>Beautiful artwork and scenes from your favorite anime series in high quality.</p>
+                <a href="#" class="btn">Browse Collection</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
