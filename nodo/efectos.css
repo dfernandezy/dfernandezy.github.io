@@ -1,0 +1,367 @@
+h1,
+h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    background-color: #3b82f6;
+    color: black;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+
+/* Nuevo estilo para el efecto de colores */
+.efecto-colores {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    background-size: 200% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*  */
+/*  */
+/*  */
+
+.btn {
+    display: inline-block;
+    margin: 0px 50px;
+    background-color: #2563EB;
+    color: #ffffff;
+    padding: 17px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+button:hover {
+    border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pop-in {
+    animation: popIn 0.4s ease-in-out forwards;
+    /* 'forwards' asegura que el último estado de la animación se mantenga */
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Nuevos estilos para la sección de crecimiento */
+.growth-section {
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    margin-top: 2rem;
+    background-size: 200% 200%;
+    /* Tamaño del gradiente para un movimiento más suave */
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease-in-out;
+    /* Suaviza la animación del zoom */
+    animation: gradientAnimation 10s linear infinite;
+    /* Define la animación del gradiente */
+}
+
+
+
+/* p#growth-phrase {
+    transition: ease-in-out 9s ease-in-out;
+    /* Ajusta la duración y la función de tiempo según lo necesites */
+/* } */
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+.growth-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+/* Efecto de zoom en toda la sección */
+.growth-section:hover {
+    transform: scale(1.05);
+}
+
+/* Efecto de transform en los elementos internos */
+.growth-section h2,
+.growth-section .percentage {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Aplicar un ligero zoom a los elementos internos */
+.growth-section:hover h2,
+.growth-section:hover .percentage {
+    transform: scale(1.1);
+}
+
+
+/* Efecto táctil para dispositivos móviles */
+.growth-section:active {
+    transform: scale(1.05);
+    background-position: 100% 100%;
+    /* Puedes ajustar esto para que coincida con el efecto de hover */
+}
+
+
+
+
+
+
+
+.arrow {
+    font-weight: 1000;
+    font-size: 3rem;
+    animation: bounce 9s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+
+
+
+
+
+
+/* Popup */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    /* Ajusta la distancia desde el borde inferior */
+    right: 20px;
+    /* Ajusta la distancia desde el borde derecho */
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1000;
+    display: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    /* Oculto por defecto */
+    transform: translateY(20px);
+    /* Desplazado inicialmente */
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    /* Vuelve a la posición original */
+}
+
+
+.popup p {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.popup .btn-close {
+    background-color: #2563EB;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+
+
+::selection {
+    color: whitesmoke;
+    background-color: orange;
+}
+
+
+.highlight {
+    color: #2563EB;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+button {
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+    transform: translateX(5em);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+
+
+.sendo{
+    display: flex;
+    justify-content: center;
+}

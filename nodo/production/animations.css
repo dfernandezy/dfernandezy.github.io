@@ -1,0 +1,95 @@
+.highlight-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 8px;
+    /* Más espacio para la línea más gruesa */
+}
+
+.highlight {
+    position: relative;
+    z-index: 1;
+    color: var(--primary-purple);
+    /* Color del texto */
+    font-weight: 700;
+    /* Texto más bold */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil al texto */
+}
+
+.highlight-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 8px;
+    /* Línea más gruesa */
+    background-color: #4A1D96;
+    /* Morado más oscuro y contrastante */
+    transition: left 0.4s ease;
+    z-index: 0;
+    box-shadow: 0 2px 4px rgba(74, 29, 150, 0.4);
+    /* Sombra a la línea */
+    opacity: 0.9;
+    /* Más opaco para mayor contraste */
+}
+
+.highlight-container:hover::after {
+    left: 0;
+}
+
+/* Asegurarnos de que el hover también funcione en dispositivos táctiles */
+@media (hover: hover) {
+    .highlight-container:hover::after {
+        left: 0;
+    }
+}
+
+/* Variación con gradiente para más impacto visual */
+.highlight-container::after {
+    background: linear-gradient(90deg,
+            var(--primary-purple) 0%,
+            #4A1D96 50%,
+            var(--primary-purple) 100%);
+}
+
+
+.highlight-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 8px;
+}
+
+.highlight {
+    position: relative;
+    z-index: 1;
+    color: var(--primary-purple);
+    font-weight: 700;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #4A1D96 0%, #7C3AED 50%, #4A1D96 100%);
+    transition: left 0.8s ease;
+    z-index: 0;
+    box-shadow: 0 2px 4px rgba(74, 29, 150, 0.4);
+    opacity: 0.9;
+}
+
+/* Clase que se añade cuando el elemento es visible */
+.highlight-container.animate::after {
+    left: 0;
+}
+
+/* Mantener el efecto hover */
+.highlight-container:hover::after {
+    left: 0;
+}

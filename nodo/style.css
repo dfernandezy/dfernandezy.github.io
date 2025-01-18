@@ -1,0 +1,584 @@
+        /* Estilos existentes */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        :root {
+            font-family: Inter, 'dm sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+            color-scheme: light dark;
+            color: rgba(255, 255, 255, 0.87);
+            background-color: #242424;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+
+
+
+
+
+        /* Definir propiedades personalizadas */
+        @property --w_raw {
+            syntax: '<length>';
+            inherits: true;
+            initial-value: 100vw;
+        }
+
+        @property --h_raw {
+            syntax: '<length>';
+            inherits: true;
+            initial-value: 100vh;
+        }
+
+        /* Convertir valores a números sin unidades */
+        :root {
+            --w: tan(atan2(var(--w_raw), 1px));
+            --h: tan(atan2(var(--h_raw), 1px));
+        }
+
+        /* Aplicar ajustes en el diseño según el tamaño de la ventana */
+        body {
+            font-size: calc(1rem + var(--w) / 100);
+        }
+
+        .header {
+            padding: calc(20px + var(--h) / 50) 0;
+        }
+
+        .hero h1 {
+            font-size: calc(3rem + var(--w) / 50);
+        }
+
+        .service-card {
+            padding: calc(20px + var(--h) / 50);
+        }
+
+
+        header {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px 0;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            color: black;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .nav-links a {
+            color: #2e2e2e;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            /* Para asegurarnos de que el video cubra toda la pantalla */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Fondo oscuro semitransparente sobre el video */
+        }
+
+        .hero-content {
+            position: relative;
+            /* Asegura que el contenido esté encima del video */
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-weight: 100;
+            color: #ffffff;
+        }
+
+
+        /* Arreglar iframe */
+
+        #esplain {
+            position: absolute !;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* Bring spline-viewer to the front */
+        }
+
+        #esplain2 {
+            position: static;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* Bring spline-viewer to the front */
+        }
+
+
+
+        /* Texto iframe */
+
+        .textoiframe h1 {
+            position: absolute;
+            top: -1.2em;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 5rem;
+            /* Tamaño del texto en función del ancho de la pantalla */
+            padding: 20px 0;
+            z-index: 10;
+
+        }
+
+        .textoiframe {
+            position: absolute;
+            margin-top: 1rem;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .textoiframe h2 {
+            margin-top: 3.3em;
+        }
+
+
+        #services h2 {
+            margin: 0px;
+        }
+
+        #services h3 {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 1000;
+            margin-top: -0.5rem;
+        }
+
+        .services,
+        .team-section {
+            background-color: #242424;
+        }
+
+
+        .service-grid,
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card,
+        .team-card {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 2cap;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .service-card i {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .service-card p,
+        h3 {
+            color: black;
+
+        }
+
+        .team-card h3 {
+            color: #3b82f6;
+        }
+
+        .team-members {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-members li {
+            margin-bottom: 10px;
+        }
+
+        .cta {
+            background-color: #2563EB;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta .btn {
+            background-color: #ebebeb;
+            color: black;
+        }
+
+        #palabra-cambiante {
+            font-weight: 800;
+            color: #2563EB;
+        }
+
+        .about-content p {
+            color: black;
+
+        }
+
+        .highlight {
+            color: #2563EB;
+            font-weight: 800;
+        }
+
+
+        span.highlight {
+            font-weight: 990;
+            color: #2563EB;
+            margin-bottom: 20px;
+        }
+
+
+
+        .Potencia {
+            font-size: 2.5rem;
+        }
+
+        .listo {
+            font-size: 1.5rem !important;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                color: #213547;
+                background-color: #ffffff;
+            }
+
+            a:hover {
+                color: #747bff;
+            }
+
+            button {
+                background-color: #f9f9f9;
+            }
+        }
+
+        .team-section {
+            padding: 50px 0;
+        }
+
+        section#services.bajalo h2 {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .container img {
+            width: 100%;
+            /* Ajusta la imagen al ancho del contenedor */
+            height: auto;
+            /* Mantiene la proporción de la imagen */
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .team-members {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-members li {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1em;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .team-members li:hover {
+            background-color: #e8f4fc;
+        }
+
+
+        .cambiante {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+
+
+
+        /* MEDIAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 0px;
+            }
+
+            .about-agency {
+                color: black !important;
+            }
+
+            .hero {
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                height: 90vh;
+                /* Para asegurarnos de que el video cubra toda la pantalla */
+            }
+
+
+
+            .textoiframe h1 {
+                font-size: 4.5rem;
+                /* Ajuste del tamaño del texto para pantallas pequeñas */
+                white-space: pre-line;
+                /* Forzar el salto de línea */
+                display: block;
+                /* Asegura que se comporte como un bloque */
+                text-align: center;
+                /* Centrar el texto en pantallas pequeñas */
+            }
+
+            .textoiframe h2 {
+                margin-top: 10rem;
+                /* Aumentar la distancia con el texto superior */
+                font-size: 2rem;
+                /* Ajustar el tamaño del texto para pantallas pequeñas */
+            }
+
+
+        }
+
+
+
+        .percentage {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+
+
+        /* Testimonios */
+        .testimonials {
+            padding: 50px 0;
+            background-color: #242424;
+        }
+
+        .testimonial-card {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+        }
+
+        .testimonial-card h3 {
+            color: #2563EB;
+            margin-top: 15px;
+        }
+
+
+
+        #esplain {
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            position: relative;
+        }
+
+
+        .about-agency {
+            background-color: #ffffff;
+            color: #333;
+            position: relative;
+            top: -35px;
+            text-align: center;
+            padding: 0px 15px 25px;
+        }
+
+        .about-content h2 {
+            color: rgb(66, 64, 64);
+
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+
+
+
+        .about-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .about-content ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-align: left;
+            display: inline-block;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .about-content strong {
+            font-weight: 700;
+        }
+
+
+
+        /* Estilos para la sección de mantenimiento */
+        .maintenance {
+            background-color: #2563EB;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .maintenance h2 {
+            color: #856404;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .maintenance p {
+            color: #856404;
+            font-size: 16px;
+        }
+
+        /* Icono de advertencia */
+        .maintenance::before {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .maintenance {
+            animation: blink 2s linear infinite;
+        }
+
+        
+
+
+        /* Servicios */
+
+        #achetres {
+            color: black;
+            text-align: center;
+            font-size: 2, 3rem;
+            font-weight: 1000;
+            margin-top: -0.5rem;
+        }
+
+        h3#achetres {
+            color: rgb(255, 0, 0) !important;
+            text-align: center;
+            font-size: 2, 3rem;
+            font-weight: 1000;
+            margin-top: -0.5rem;
+        }

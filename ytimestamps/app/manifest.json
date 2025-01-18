@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Timestamp Saver",
+  "description": "Save and show YouTube video timestamps",
+  "version": "1.1",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "timestampslogo.png"
+  },
+  "permissions": ["activeTab", "tabs","storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+  
+}
