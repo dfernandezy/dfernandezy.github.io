@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andalucía</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        /* Estilos base */
+        body {
+            font-family: 'DM Sans', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+
+        /* Navegación */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .back-link {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .right-links a {
+            color: #000;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Encabezado */
+        .title {
+            font-size: clamp(2em, 8vw, 4em);
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-style: italic;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+
+        .admission-date {
+            text-align: right;
+            font-style: italic;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            margin: 40px 0;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            font-size: clamp(1em, 2vw, 1.2em);
+        }
+
+        /* Estilos para la sección de composición */
+        .composition {
+            margin-top: 60px;
+            border-top: 1px dotted #ccc;
+            padding-top: 40px;
+        }
+
+        /* Layout para desktop */
+        @media (min-width: 768px) {
+            .composition {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .composition>h2 {
+                grid-column: 1 / -1;
+            }
+
+            .composition-text {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .survey-note {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .flag-diagram {
+                grid-column: 2;
+                grid-row: 2 / span 2;
+                margin-top: 0;
+            }
+        }
+
+        /* Estilos base de los elementos */
+        .composition-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .composition-text p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #006400;
+            font-weight: 500;
+        }
+
+        .survey-note {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .survey-logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .survey-note p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        .flag-diagram {
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px solid #FFD700;
+            text-align: center;
+        }
+
+        .diagram-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .composition-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .composition-text p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #006400;
+            font-weight: 500;
+        }
+
+        .survey-note {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .survey-logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .survey-note p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        .rank {
+            font-weight: bold;
+        }
+
+        .flag-diagram {
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px solid #FFD700;
+            text-align: center;
+        }
+
+        .diagram-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .flag-details {
+            padding-right: 20px;
+        }
+
+        .flag-image {
+            width: 100%;
+            border: 1px solid #FFD700;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Secciones generales */
+        .section {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        h2 {
+            font-size: clamp(1.2em, 3vw, 1.5em);
+            margin-bottom: 30px;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            padding-left: 20px;
+            border-left: 3px solid #008C3A;
+            position: relative;
+        }
+
+        .timeline-item h3 {
+            color: #008C3A;
+            margin-bottom: 10px;
+        }
+
+        /* Especificaciones */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .spec-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Simbolismo */
+        .symbol-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .symbol-content li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .symbol-content li:before {
+            content: "•";
+            color: #008C3A;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Protocolo */
+        .protocol-content h3 {
+            color: #008C3A;
+            margin: 20px 0 10px;
+        }
+
+        /* Variantes */
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .variant-item {
+            text-align: center;
+        }
+
+        .variant-item img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        /* Curiosidades */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .fact-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Referencias */
+        .references-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .references-content li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .references-content li:before {
+            content: "→";
+            color: #008C3A;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #eee;
+            padding: 20px 0;
+            margin-top: 80px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .heart {
+            color: #45b914;
+            margin: 0 4px;
+        }
+
+        .footer-content a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .right-links {
+                display: flex;
+                gap: 15px;
+            }
+
+            .right-links a {
+                margin-left: 0;
+            }
+
+            .composition {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .flag-details {
+                padding-right: 0;
+                order: 2;
+            }
+
+            .flag-image {
+                order: 1;
+            }
+
+            .admission-date {
+                text-align: left;
+                margin-top: 10px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .variants-grid,
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Estilos para la sección de iconografía */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .icon-item h3 {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+            color: #000;
+        }
+
+        .icon-item .denotes {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            color: #666;
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+
+        .icon-item p {
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #333;
+        }
+
+
+        /* Estilos para la sección de colores */
+        .colors {
+            margin-top: 40px;
+        }
+
+        .color-description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .color-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .color-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .color-info h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .color-code {
+            font-family: monospace;
+            color: #666;
+        }
+
+        .color-name {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .color-usage {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .color-notes {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .color-notes ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .color-notes li {
+            margin-bottom: 5px;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .color-item {
+                flex-direction: column;
+            }
+
+            .color-box {
+                width: 100%;
+                height: 60px;
+            }
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .icon-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .icon-item {
+                padding: 15px;
+            }
+
+            .icon-item img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Mejoras de interacción */
+        a:hover,
+        a:focus {
+            color: #008C3A;
+        }
+
+        .timeline-item:hover {
+            border-left-width: 5px;
+        }
+
+        .spec-item:hover,
+        .fact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <nav class="nav">
+            <a href="/" class="back-link">← Volver a banderas</a>
+            <div class="right-links">
+                <a href="/about">Acerca de</a>
+                <a href="/glossary">Glosario</a>
+            </div>
+        </nav>
+        <div class="header-content">
+            <img src="/img/cant.png" height="50px" alt="Bandera de Cantabria" class="small-flag">
+            <h1 class="title">Cantabria</h1>
+        </div>
+
+        <div class="header-bar"></div>
+
+        <div class="subtitle-group">
+            <div class="subtitle">La Montaña</div>
+            <div class="admission-date">Estatuto de Autonomía 1981</div>
+        </div>
+
+        <div class="main-content">
+            <p class="description">
+                La bandera de Cantabria está compuesta por dos franjas horizontales: blanca en la parte superior y roja
+                en la parte inferior. En el centro, se encuentra el escudo de Cantabria, que representa su historia y
+                cultura marítima.
+            </p>
+
+            <p class="description">
+                El blanco simboliza la paz y la pureza, mientras que el rojo representa la fuerza y la determinación de
+                su gente. El escudo central es un homenaje a las tradiciones y al legado histórico de la región.
+            </p>
+
+            <div class="section composition">
+                <h2>Composición</h2>
+                <div class="composition-text">
+                    <p>
+                        La bandera de Cantabria consta de dos franjas horizontales de igual tamaño: blanca en la parte
+                        superior y roja en la inferior. El escudo de Cantabria, colocado en el centro, añade un elemento
+                        distintivo que refleja su identidad única.
+                    </p>
+
+                    <p>
+                        Este diseño sencillo y elegante es un reflejo de la historia y el carácter de la región.
+                    </p>
+                </div>
+
+                <div class="survey-note">
+                    <img src="/img/nava.webp" alt="Logo NAVA" class="survey-logo">
+                    <p>
+                        En la <a href="#" class="highlight">Encuesta de Calidad de Banderas Autonómicas de 2023</a>,
+                        la bandera de Cantabria fue clasificada en el puesto <span class="rank">10º</span>
+                        de entre las 17 banderas autonómicas.
+                    </p>
+                </div>
+
+                <div class="flag-diagram">
+                    <img src="/img/cant.png" alt="Diagrama de la bandera de Cantabria" class="diagram-image">
+                </div>
+            </div>
+
+            <div class="section colors">
+                <h2>Colores</h2>
+                <p class="color-description">
+                    Los colores oficiales de la bandera de Cantabria reflejan los valores y tradiciones de la región.
+                </p>
+
+                <div class="color-grid">
+                    <div class="color-item">
+                        <div class="color-box" style="background-color: #FFFFFF;"></div>
+                        <div class="color-info">
+                            <h3>Blanco</h3>
+                            <div class="color-code">#FFFFFF</div>
+                            <div class="color-name">Color Puro</div>
+                            <div class="color-usage">Paz y pureza</div>
+                        </div>
+                    </div>
+
+                    <div class="color-item">
+                        <div class="color-box" style="background-color: #D52B1E;"></div>
+                        <div class="color-info">
+                            <h3>Rojo</h3>
+                            <div class="color-code">#D52B1E</div>
+                            <div class="color-name">Pantone 485-C</div>
+                            <div class="color-usage">Fuerza y determinación</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-notes">
+                    <ul>
+                        <li><strong>Blanco:</strong> simboliza la paz y la pureza</li>
+                        <li><strong>Rojo:</strong> representa la fuerza y el coraje de su pueblo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section history">
+                <h2>Historia y Origen</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>1981</h3>
+                        <p>Reconocimiento oficial tras la aprobación del Estatuto de Autonomía de Cantabria.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section iconography">
+                <h2>Iconografía</h2>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <img src="/img/ship.png" alt="Barco cántabro">
+                        <h3>Barco cántabro</h3>
+                        <div class="denotes">DENOTA</div>
+                        <p>La tradición marítima y la conexión con el mar Cantábrico</p>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/img/tower.png" alt="Torre histórica">
+                        <h3>Torre histórica</h3>
+                        <div class="denotes">DENOTA</div>
+                        <p>La defensa y el legado arquitectónico</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section symbolism">
+                <h2>Significado y Simbolismo</h2>
+                <div class="symbol-content">
+                    <p>La bandera simboliza la esencia de Cantabria:</p>
+                    <ul>
+                        <li>El blanco destaca la paz y la pureza</li>
+                        <li>El rojo representa la fuerza y el coraje</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="section variants">
+                <h2>Variantes y Usos Históricos</h2>
+                <div class="variants-grid">
+                    <div class="variant-item">
+                        <img src="/img/variant-1.png" alt="Versión histórica">
+                        <p>Bandera utilizada en celebraciones tradicionales</p>
+                    </div>
+                    <div class="variant-item">
+                        <img src="/img/variant-2.png" alt="Versión oficial con escudo">
+                        <p>Bandera oficial con el escudo de Cantabria</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section facts">
+                <h2>Curiosidades</h2>
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <h3>¿Sabías que...?</h3>
+                        <p>La bandera de Cantabria se exhibe en numerosos eventos culturales y deportivos.</p>
+                    </div>
+                    <div class="fact-item">
+                        <h3>Tradición marítima</h3>
+                        <p>El escudo incluye elementos que hacen referencia a la importancia del mar en la historia
+                            cántabra.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section references">
+                <h2>Referencias y Base Legal</h2>
+                <div class="references-content">
+                    <ul>
+                        <li>Estatuto de Autonomía de Cantabria (1981)</li>
+                        <li>Ley 2/1984 sobre símbolos de Cantabria</li>
+                        <li>Documentación del Parlamento de Cantabria</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="made-with">
+                    Hecho con <span class="heart">💚</span> por <a href="https://dfernandezy.github.io/">Yahved
+                        Fernández</a>
+                </div>
+                <div class="coffee-section">
+                    ¿Te gusta la web? <a href="#">¡Invítame a un ☕!</a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</body>
+
+</html>
