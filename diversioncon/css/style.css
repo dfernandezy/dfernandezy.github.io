@@ -1,169 +1,169 @@
-        body {
-            font-family: 'DM Sans', sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+body {
+    font-family: 'DM Sans', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
 
-        .title {
-            font-size: 2.5em;
-            font-weight: bold;
-        }
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
 
-        .spain-flag {
-            width: 60px;
-            height: auto;
-        }
+.spain-flag {
+    width: 60px;
+    height: auto;
+}
 
-        .nav {
-            text-align: right;
-            margin-bottom: 20px;
-        }
+.nav {
+    text-align: right;
+    margin-bottom: 20px;
+}
 
-        .nav a {
-            color: #000;
-            text-decoration: none;
-            margin-left: 15px;
-        }
+.nav a {
+    color: #000;
+    text-decoration: none;
+    margin-left: 15px;
+}
 
-        .subtitle {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 30px;
-        }
+.subtitle {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+}
 
-        .flags-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 60px;
-            padding: 20px 0;
-        }
+.flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 60px;
+    padding: 20px 0;
+}
 
-        .flag-card {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+.flag-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        .flag-card:focus-within {
-            outline: 3px solid #007bff;
-        }
+.flag-card:focus-within {
+    outline: 3px solid #007bff;
+}
 
-        .flag-card img {
-            border-radius: 8px 8px 0 0;
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s ease-in-out;
-        }
+.flag-card img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .flag-name {
-            position: relative;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            transform: translateY(0);
-            transition: all 0.3s ease-in-out;
-            z-index: 1;
-        }
+.flag-name {
+    position: relative;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
 
-        .flag-card:hover,
-        .flag-card:focus-within {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
+.flag-card:hover,
+.flag-card:focus-within {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
 
-        .flag-card:hover img,
-        .flag-card:focus-within img {
-            transform: scale(1.05);
-        }
+.flag-card:hover img,
+.flag-card:focus-within img {
+    transform: scale(1.05);
+}
 
-        .flag-card:hover .flag-name,
-        .flag-card:focus-within .flag-name {
-            background: rgba(255, 255, 255, 0.98);
-            color: #007bff;
-        }
+.flag-card:hover .flag-name,
+.flag-card:focus-within .flag-name {
+    background: rgba(255, 255, 255, 0.98);
+    color: #007bff;
+}
 
-        @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
 
-            .flag-card,
-            .flag-card img,
-            .flag-name {
-                transition: none;
-            }
-        }
+    .flag-card,
+    .flag-card img,
+    .flag-name {
+        transition: none;
+    }
+}
 
-        .flag-card:focus-within {
-            outline: 3px solid #007bff;
-            outline-offset: 2px;
-        }
+.flag-card:focus-within {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
 
-        .flag-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0);
-            transition: background 0.3s ease;
-            z-index: 1;
-        }
+.flag-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    z-index: 1;
+}
 
-        .flag-card:hover::before {
-            background: rgba(0, 0, 0, 0.03);
-        }
+.flag-card:hover::before {
+    background: rgba(0, 0, 0, 0.03);
+}
 
-        footer {
-            border-top: 1px solid #eee;
-            padding: 20px 0;
-            margin-top: 40px;
-            font-size: 14px;
-        }
+footer {
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-        .made-with {
-            color: #333;
-        }
+.made-with {
+    color: #333;
+}
 
-        .heart {
-            color: #45b914;
-            margin: 0 4px;
-        }
+.heart {
+    color: #45b914;
+    margin: 0 4px;
+}
 
-        .footer-content a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-        }
+.footer-content a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
 
-        .coffee-icon {
-            margin: 0 4px;
-        }
+.coffee-icon {
+    margin: 0 4px;
+}
 
-        .coffee-section {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.coffee-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
