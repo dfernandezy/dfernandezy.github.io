@@ -11,7 +11,8 @@
 
 	<link rel="icon" type="image/png" href="images/favicon.png">
 
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -95,8 +96,8 @@
 							<i class="fa-solid fa-phone-volume"></i>
 							0123456789
 						</a>
-						<a href="#"><i class="fa-brands fa-instagram"></i></a>
-						<a href="#"><i class="fa-brands fa-youtube"></i></a>
+						<a href="#"><i class="fa-solid fa-map-location-dot"></i></a>
+						<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
 					</div>
 				</div>
 
@@ -160,7 +161,24 @@
 				</div>
 
 				<div class="imagearea">
-					<img src="images/dentista.jpg" alt="" />
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="images/dentista.jpg" alt="Dentista 1" />
+							</div>
+							<div class="swiper-slide">
+								<img src="images/dentista2.jpg" alt="Dentista 2" />
+							</div>
+							<div class="swiper-slide">
+								<img src="images/dentista3.jpg" alt="Dentista 3" />
+							</div>
+						</div>
+						<!-- Añade navegación -->
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<!-- Añade paginación -->
+						<div class="swiper-pagination"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -169,7 +187,56 @@
 
 
 
+	<section class="installations" id="installations">
+		<div class="container">
+			<div class="installations-header">
+				<h3>Instalaciones</h3>
+				<h4>Tecnología de vanguardia a tu servicio</h4>
+			</div>
 
+			<div class="installations-grid">
+				<div class="installation-item">
+					<div class="installation-image">
+						<img src="images/reception.jpg" alt="Recepción">
+					</div>
+					<div class="installation-info">
+						<h5>Recepción</h5>
+						<p>Ambiente acogedor y moderno para tu comodidad</p>
+					</div>
+				</div>
+
+				<div class="installation-item">
+					<div class="installation-image">
+						<img src="images/treatment-room.jpg" alt="Sala de Tratamiento">
+					</div>
+					<div class="installation-info">
+						<h5>Sala de Tratamiento</h5>
+						<p>Equipada con la última tecnología dental</p>
+					</div>
+				</div>
+
+				<div class="installation-item">
+					<div class="installation-image">
+						<img src="images/xray-room.jpg" alt="Sala de Rayos X">
+					</div>
+					<div class="installation-info">
+						<h5>Sala de Rayos X</h5>
+						<p>Diagnóstico preciso con equipos digitales</p>
+					</div>
+				</div>
+
+				<div class="installation-item">
+					<div class="installation-image">
+						<img src="images/waiting-room.jpg" alt="Sala de Espera">
+					</div>
+					<div class="installation-info">
+						<h5>Sala de Espera</h5>
+						<p>Espacio confortable para tu tiempo de espera</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 
@@ -308,6 +375,33 @@
 	<script src="js/bliss.js"></script>
 	<script>
 		var dateobj = new Date(); var getyear = dateobj.getFullYear(); var getyeardiv = document.getElementById('copyrightyear'); getyeardiv.innerHTML = getyear;
+	</script>
+	<script>
+		var swiper = new Swiper(".mySwiper", {
+			// Efecto de desvanecimiento
+			effect: "slide",
+
+			// Autoplay
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+
+			// Loop
+			loop: true,
+
+			// Navegación
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+
+			// Paginación
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+		});
 	</script>
 </body>
 
