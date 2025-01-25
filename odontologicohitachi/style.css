@@ -110,7 +110,7 @@ header .container {
 }
 
 
-.site-branding {}
+
 
 .site-branding a.logo {
 	float: left;
@@ -301,7 +301,7 @@ header.fixed .contact-info a {
 	width: 100%;
 	margin: 0 0 0 0;
 	padding: 300px 0 220px 0;
-	background: url(images/dentist.jpg) no-repeat center center;
+	background: url(images/dentista6edit.jpg) no-repeat center center;
 	background-size: cover;
 	position: relative;
 	z-index: 1;
@@ -397,7 +397,7 @@ header.fixed .contact-info a {
 }
 
 
-/*  */
+
 
 
 /* -- ABOUT CSS STARTS -- */
@@ -423,9 +423,9 @@ header.fixed .contact-info a {
 .about .imagearea img {
 	float: left;
 	width: 100%;
-	height: auto;
-	aspect-ratio: 2/1.75;
-	object-fit: cover;
+	height: 100%;
+	aspect-ratio: 1.8/1.75;
+	object-fit: fill;
 	object-position: center;
 }
 
