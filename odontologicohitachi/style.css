@@ -313,13 +313,20 @@ header.fixed .contact-info a {
 	margin: 0 0 0 0;
 	padding: 300px 0 220px 0;
 	background: url(images/dentista6edit.jpg) no-repeat center center;
+	background-attachment: fixed;
 	/* Parallax effect */
 	background-size: cover;
 	position: relative;
 	z-index: 1;
 }
 
+@media (max-width: 768px) {
+	.banner {
+		background-attachment: scroll;
+		/* Desactiva parallax */
+	}
 
+}
 
 .banner:before {
 	position: absolute;
