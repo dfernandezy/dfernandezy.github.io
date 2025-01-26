@@ -320,12 +320,18 @@ header.fixed .contact-info a {
 	z-index: 1;
 }
 
-@media (max-width: 768px) {
+/* Desactivar parallax en pantallas más pequeñas */
+@media (max-width: 1024px) {
+
+	/* Ajusta el tamaño según necesites */
 	.banner {
 		background-attachment: scroll;
 		/* Desactiva parallax */
+		background-position: center 60%;
+		/* Ajusta la posición si es necesario */
+		background-size: cover;
+		/* Mantiene la imagen bien ajustada */
 	}
-
 }
 
 .banner:before {
