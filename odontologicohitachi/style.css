@@ -56,11 +56,13 @@ body {
 	color: #333;
 	font-family: 'Poppins', sans-serif;
 }
+
 .top-bar a {
 	color: #007bff;
 	text-decoration: none;
 	margin-left: 10px;
 }
+
 .top-bar a:hover {
 	text-decoration: underline;
 }
@@ -126,9 +128,6 @@ header .container {
 	justify-content: space-between;
 }
 
-.logo{
-	padding-bottom: 20px;
-}
 
 
 .site-branding a.logo {
@@ -912,3 +911,35 @@ footer {
 }
 
 /* -- FOOTER ENDS -- */
+
+
+
+.horario {
+	position: absolute;
+	top: 130px;
+	/* Ajusta según la ubicación deseada */
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	/* Centra verticalmente el ícono y el texto */
+	justify-content: center;
+	/* Centra horizontalmente */
+	text-align: center;
+	font-size: 19px;
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff;
+	z-index: 10;
+}
+
+.horario i.fa-regular {
+	margin-right: 10px;
+	margin-left: 10px;
+	/* Espaciado entre el ícono y el texto */
+	color: #ff0000;
+	/* Ajusta el color del ícono */
+	font-size: 20px;
+	/* Ajusta el tamaño del ícono según el diseño */
+	line-height: 1;
+	/* Asegura alineación perfecta */
+}
