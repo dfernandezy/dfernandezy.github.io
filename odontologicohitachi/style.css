@@ -912,34 +912,36 @@ footer {
 
 /* -- FOOTER ENDS -- */
 
-
-
-.horario {
+.horario-container {
 	position: absolute;
-	top: 130px;
-	/* Ajusta según la ubicación deseada */
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	align-items: center;
-	/* Centra verticalmente el ícono y el texto */
-	justify-content: center;
-	/* Centra horizontalmente */
-	text-align: center;
-	font-size: 19px;
-	font-family: 'Poppins', sans-serif;
-	color: #ffffff;
-	z-index: 10;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 35px 0;
 }
 
-.horario i.fa-regular {
-	margin-right: 10px;
-	margin-left: 10px;
-	/* Espaciado entre el ícono y el texto */
+.horario {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	color: #ffffff;
+	/* Texto blanco */
+	font-family: 'Poppins';
+	font-size: 18px;
+	/* Texto un poco más grande */
+	font-weight: 500;
+	/* Texto un poco más grueso */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	/* Sombra sutil para mejor legibilidad */
+}
+
+.horario i {
 	color: #ff0000;
-	/* Ajusta el color del ícono */
+	/* Mantener los iconos en rojo */
 	font-size: 20px;
-	/* Ajusta el tamaño del ícono según el diseño */
-	line-height: 1;
-	/* Asegura alineación perfecta */
+	/* Iconos un poco más grandes */
 }
