@@ -303,6 +303,7 @@
 
 @media(max-width:800px) {
 
+
 	.bannercontent .text h2 {
 		font-size: 30px;
 		margin-bottom: 20px;
@@ -361,6 +362,28 @@
 	.maparea iframe {
 		height: 400px;
 	}
+}
+
+
+
+
+.horario {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff;
+	z-index: 10;
+}
+
+.fa-regular {
+	color: #ff0000;
 }
 
 /* -- 800 ENDS -- */
@@ -434,6 +457,27 @@
 		float: left;
 		margin-top: 30px;
 	}
+}
+
+
+.horario {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff;
+	z-index: 10;
+}
+
+
+.fa-regular {
+	color: #ff0000;
 }
 
 /* -- 600 ENDS -- */
