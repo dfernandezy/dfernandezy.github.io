@@ -458,22 +458,38 @@
 }
 
 
-.horario {
-	position: absolute;
-	top: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	font-size: 16px;
-	font-family: 'Poppins', sans-serif;
-	color: #ffffff;
-	z-index: 10;
-}
-
-
-.fa-regular {
-	color: #ff0000;
-}
 
 /* -- 600 ENDS -- */
+
+
+
+@media (max-width: 768px) {
+	.horario {
+		padding: 0 20px;
+		/* Añade padding horizontal */
+		font-size: 16px;
+		/* Reduce un poco el tamaño de fuente si es necesario */
+	}
+
+	.horario i {
+		margin: 0 10px;
+		/* Añade margen a los iconos */
+	}
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+	.horario {
+		padding: 0 15px;
+		font-size: 14px;
+		/* Reduce más el tamaño de fuente */
+		line-height: 1.4;
+		/* Mejora el espaciado entre líneas */
+	}
+
+	.horario i {
+		margin: 0 8px;
+		font-size: 16px;
+		/* Ajusta el tamaño del icono */
+	}
+}
