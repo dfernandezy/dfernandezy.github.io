@@ -370,8 +370,6 @@
 .horario {
 	position: absolute;
 	top: 20px;
-	left: 50%;
-	transform: translateX(-50%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -463,8 +461,6 @@
 .horario {
 	position: absolute;
 	top: 20px;
-	left: 50%;
-	transform: translateX(-50%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
