@@ -919,11 +919,29 @@ footer {
 	width: 100%;
 }
 
+
+.horario {
+	position: absolute;
+	top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	color: #000000;
+	z-index: 10;
+}
+
+.fa-regular {
+	color: #ff0000;
+}
+
+
 .horario {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	color: #000000;
 	/* Texto blanco */
 	font-family: 'Poppins';
 	font-size: 18px;
@@ -934,7 +952,6 @@ footer {
 	align-items: center;
 	justify-content: center;
 	gap: 15px;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	/* Sombra sutil para mejor legibilidad */
 }
 
