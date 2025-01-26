@@ -194,7 +194,7 @@
 
 
 	.about {
-		padding: 45px 0;
+		padding: 55px 0;
 	}
 
 	.about .contentinline {
@@ -367,22 +367,6 @@
 
 
 
-.horario {
-	position: absolute;
-	top: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	font-size: 16px;
-	font-family: 'Poppins', sans-serif;
-	color: #ffffff;
-	z-index: 10;
-}
-
-.fa-regular {
-	color: #ff0000;
-}
 
 /* -- 800 ENDS -- */
 
@@ -463,10 +447,31 @@
 
 
 
+
+.horario {
+	position: absolute;
+	top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	color: #000000;
+	z-index: 10;
+}
+
+.fa-regular {
+	color: #ff0000;
+}
+
+
+
 @media (max-width: 768px) {
 	.horario {
 		padding: 0 20px;
-		/* Añade padding horizontal */
+
+
 		font-size: 16px;
 		/* Reduce un poco el tamaño de fuente si es necesario */
 	}

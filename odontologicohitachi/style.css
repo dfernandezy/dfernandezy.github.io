@@ -4,7 +4,7 @@
  * 	URL: https://layoutflow.com/
  *
  * */
-* {
+ * {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	margin: 0;
@@ -415,7 +415,7 @@ header.fixed .contact-info a {
 	float: left;
 	width: 100%;
 	margin: 0 0 0 0;
-	padding: 100px 0;
+	padding: 80px 0;
 }
 
 .about .contentinline {
@@ -917,14 +917,13 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	padding: 35px 0;
 }
 
 .horario {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	color: #ffffff;
+	color: #000000;
 	/* Texto blanco */
 	font-family: 'Poppins';
 	font-size: 18px;
