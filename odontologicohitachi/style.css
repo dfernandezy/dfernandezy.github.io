@@ -393,6 +393,7 @@ header.fixed .contact-info a {
 .imagearea .swiper {
 	width: 100%;
 	height: 100%;
+
 }
 
 .imagearea .swiper-slide {
@@ -443,8 +444,15 @@ header.fixed .contact-info a {
 
 .about .imagearea {
 	width: 50%;
+	height: ;
 	margin: 0 0 0 0;
 	overflow: hidden;
+}
+
+.imagearea {
+	border-radius: 25px;
+	box-shadow: 0 4px 10px rgba(227, 4, 4, 0.2);
+
 }
 
 .about .imagearea img {
@@ -452,7 +460,7 @@ header.fixed .contact-info a {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 2/1.75;
-	object-fit: cover;
+	object-fit: fill;
 	object-position: center;
 }
 
@@ -521,7 +529,7 @@ header.fixed .contact-info a {
 	float: left;
 	width: 100%;
 	margin: 0 0 0 0;
-	padding: 20px 0;
+	padding: 100px 0;
 	background: #f9f9f9;
 }
 
@@ -1147,4 +1155,52 @@ footer {
 		justify-content: center;
 		gap: 5px;
 	}
+}
+
+
+
+
+
+
+
+
+
+
+.swiper-slide {
+	position: relative;
+}
+
+.swiper-text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 6, 6, 0.684);
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+.swiper-text h3 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.swiper-text p {
+	font-size: 16px;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Efecto de transición para el texto */
+.swiper-text {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.3s ease-in-out;
+}
+
+.swiper-slide-active .swiper-text {
+	opacity: 1;
+	transform: translateY(0);
 }
