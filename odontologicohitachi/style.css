@@ -444,7 +444,6 @@ header.fixed .contact-info a {
 
 .about .imagearea {
 	width: 50%;
-	height: ;
 	margin: 0 0 0 0;
 	overflow: hidden;
 }
@@ -719,8 +718,8 @@ header.fixed .contact-info a {
 .menuitems_wrap .item img {
 	float: left;
 	width: 100%;
-	border-radius: 25px;
 	height: auto;
+	border-radius: 25px;
 	aspect-ratio: 1.2/1;
 	object-fit: cover;
 	margin-bottom: 10px;
@@ -1204,4 +1203,103 @@ footer {
 .swiper-slide-active .swiper-text {
 	opacity: 1;
 	transform: translateY(0);
+}
+
+
+
+
+.reviews {
+	float: left;
+	width: 100%;
+	padding: 80px 0;
+	background: #f9f9f9;
+}
+
+.reviews h3 {
+	text-align: center;
+	color: #000;
+	font-size: 90px;
+	font-family: 'Poppins';
+	margin-bottom: 10px;
+}
+
+.reviews-subtitle {
+	text-align: center;
+	color: #ff0000;
+	font-size: 21px;
+	font-family: 'Poppins';
+	margin-bottom: 50px;
+}
+
+.reviews-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	margin-top: 40px;
+}
+
+.review-card {
+	background: #fff;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.review-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.review-info h4 {
+	color: #000;
+	font-size: 18px;
+	font-family: 'Poppins';
+	margin-bottom: 5px;
+}
+
+.review-date {
+	color: #666;
+	font-size: 14px;
+	font-family: 'Poppins';
+}
+
+.review-stars {
+	color: #ff0000;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.review-text {
+	color: #666;
+	font-size: 15px;
+	line-height: 1.6;
+	font-family: 'Poppins';
+}
+
+@media (max-width: 992px) {
+	.reviews-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.reviews h3 {
+		font-size: 60px;
+	}
+}
+
+@media (max-width: 576px) {
+	.reviews-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.reviews h3 {
+		font-size: 40px;
+	}
 }

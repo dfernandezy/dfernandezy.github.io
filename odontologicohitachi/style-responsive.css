@@ -481,3 +481,55 @@
 		/* Ajusta el tamaño del icono */
 	}
 }
+
+
+
+
+
+
+
+/* Slider Text */
+
+/* Ajustes para móviles */
+@media (max-width: 480px) {
+	.swiper-text {
+		padding: 10px;
+		bottom: 0;
+		/* Asegura que esté en la parte inferior */
+	}
+
+	.swiper-text h3 {
+		font-size: 16px;
+		margin-bottom: 3px;
+	}
+
+	.swiper-text p {
+		font-size: 12px;
+		line-height: 1.2;
+	}
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 320px) {
+	.swiper-text {
+		padding: 8px;
+	}
+
+	.swiper-text h3 {
+		font-size: 14px;
+		margin-bottom: 2px;
+	}
+
+	.swiper-text p {
+		font-size: 11px;
+	}
+}
+
+
+
+/* Swiper Settings */
+
+.imagearea .swiper-pagination-bullet-active {
+	background: #ff0000;
+	display: none;
+}
