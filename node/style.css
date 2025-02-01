@@ -146,6 +146,8 @@
     padding: 0 2rem;
 }
 
+
+
 .author {
     display: flex;
     align-items: center;
@@ -280,6 +282,11 @@
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+    }
+
+    .hero{
+        margin: 1rem auto;
+
     }
 
     .hero h1 {
