@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://clinicadentalhitachi.com/sitemap.xml
