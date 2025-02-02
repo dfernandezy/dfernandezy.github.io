@@ -141,7 +141,7 @@
 
 .hero {
     max-width: 1200px;
-    margin: 1rem auto;
+    margin: 4rem auto;
     text-align: center;
     padding: 0 2rem;
 }
@@ -282,13 +282,17 @@
         display: none;
     }
 
-    
-.hero {
-    max-width: 1200px;
-    margin: 1rem auto;
-    text-align: center;
-    padding: 0 2rem;
-}
+    .custom-cursor {
+        display: none;
+    }
+
+
+    .hero {
+        max-width: 1200px;
+        margin: 1rem auto;
+        text-align: center;
+        padding: 0 2rem;
+    }
 
     .hero h1 {
         font-size: 2rem;
@@ -317,6 +321,7 @@
     transform: scale(1.2);
     /* Efecto hover */
 }
+
 
 
 /* Estilos para la sección de usuarios */
@@ -376,6 +381,14 @@
     display: flex;
     gap: 2rem;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.stats-section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .stat-card {
@@ -435,7 +448,6 @@
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
     .stats-section {
-        flex-direction: column;
         gap: 3rem;
     }
 
@@ -449,6 +461,11 @@
 
     .percent {
         font-size: 2rem;
+    }
+
+
+    .timeline-item::after {
+        display: none;
     }
 }
 
