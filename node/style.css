@@ -282,6 +282,7 @@
         display: none;
     }
 
+
     .custom-cursor {
         display: none;
     }
@@ -449,6 +450,8 @@
 @media (max-width: 768px) {
     .stats-section {
         gap: 3rem;
+        display: grid;
+
     }
 
     .stat-card {
