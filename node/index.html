@@ -7,9 +7,6 @@
     <title>Nodo | Agencia Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -56,15 +53,16 @@
         </div>
     </main>
 
-    <div class="timeline">
+
+
+    <!-- <div class="timeline">
         <div class="timeline-item">
             <i class="fa-solid fa-code-compare"></i>
             <h3>Día 1</h3>
             <p>Definición de estrategia digital</p>
         </div>
         <div class="timeline-item">
-            <i class="fa-brands fa-stack-overflow"></i> <!-- Ícono para diseño -->
-            <h3>Día 4</h3>
+            <i class="fa-brands fa-stack-overflow"></i>
             <p>Diseño y arquitectura web</p>
         </div>
         <div class="timeline-item">
@@ -73,12 +71,12 @@
             <p>Desarrollo e implementación</p>
         </div>
         <div class="timeline-item">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> <!-- Ícono para lanzamiento -->
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
             <h3>Día 14</h3>
             <p>¡Lanzamiento de tu proyecto!</p>
         </div>
     </div>
-
+ -->
 
 
     <div class="stats-section">
@@ -98,6 +96,120 @@
         </div>
     </div>
 
+
+    <section class="services">
+        <h2 class="services-title">Servicios incluídos con Nodo</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="tarjeta.jpg" alt="Tarjetas">
+                <div class="service-info">
+                    <h3>Tarjetas</h3>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="po.jpg" alt="Camisetas">
+                <div class="service-info">
+                    <h3>Camisetas</h3>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="esq.png" alt="Vinilos">
+                <div class="service-info">
+                    <h3>Vinilos</h3>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="cartel.png" alt="Banners">
+                <div class="service-info">
+                    <h3>Banners</h3>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="image.png" alt="Webs">
+                <div class="service-info">
+                    <h3>Webs</h3>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="nose.png" alt="Logos">
+                <div class="service-info">
+                    <h3>Logos</h3>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="esq.png" alt="SEO">
+                <div class="service-info">
+                    <h3>SEO y Posicionamiento</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        .services {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .services-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #5f6aff;
+            font-weight: bold;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #5f6aff;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-item:hover .service-info {
+            background: #5f6aff;
+        }
+    </style>
 
 
 
@@ -268,7 +380,15 @@
 
 
 
-
+    <footer class="footer">
+        <p>&copy; 2025 Nodo. Todos los derechos reservados.</p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+        <p>Contacto: <a href="mailto:info@tuempresa.com">info@tuempresa.com</a></p>
+    </footer>
 
 
 

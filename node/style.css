@@ -418,7 +418,7 @@
 .stat-number {
     font-size: 4rem;
     font-weight: bold;
-    font-size: larger;
+    /* font-size: larger; */
     text-decoration: underline #5f6aff7c;
     font-weight: bold;
     color: #4E507D;
@@ -813,4 +813,23 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+.footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: #5f6aff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
