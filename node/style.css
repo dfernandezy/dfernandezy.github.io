@@ -27,8 +27,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; */
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 .header {
@@ -175,6 +175,7 @@
 }
 
 
+
 .tu {
     font-weight: bold;
     font-size: larger;
@@ -210,6 +211,59 @@
         z-index: -1;
     }
 }
+
+.highlihgto {
+    position: relative;
+    display: inline-block;
+    z-index: -1;
+    /* Asegura que el texto esté por encima */
+
+}
+
+
+.highlihgto::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    bottom: 5px;
+    height: 12px;
+    background-color: #5f6aff7c;
+    transform: rotate(1deg);
+    z-index: -1;
+    /* Asegura que esté siempre por detrás */
+    animation: highlightIn 1s ease forwards;
+    transform-origin: left;
+    scale: 0 1;
+}
+
+@keyframes highlihgtoIn {
+    0% {
+        scale: 0 1;
+        transform-origin: left;
+        z-index: -1;
+    }
+
+    100% {
+        scale: 1 1;
+        transform-origin: left;
+        z-index: -1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .hero p {
     font-size: 1.2rem;
