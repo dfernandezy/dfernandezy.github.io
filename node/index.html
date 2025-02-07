@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nodo | Agencia Digital</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Nodo - Agencia Digital especializada en diseño web y transformación digital">
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="./img/node.png" as="image">
+
+    <!-- Font Awesome con carga optimizada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -14,9 +22,9 @@
         <a href="#" class="logo">Nodo <img src="./img/node.png" style="height: 20px;" alt="Nodo Logo"></a>
         <nav class="nav-links">
             <a href="#servicios">Servicios</a>
-            <a href="#proyectos">Proyectos</a>
+            <a href="./exito/index.html">Proyectos</a>
             <a href="#precios">Precios</a>
-            <a href="#faq">FAQ</a>
+            <a href="#faq">FAQ</a>vs
         </nav>
         <div class="buttons">
             <a href="#contacto" class="btn btn-secondary">Contacto</a>
@@ -235,14 +243,14 @@
         <h2 class="services-title">Servicios incluídos con Nodo</h2>
         <div class="services-grid">
             <div class="service-item">
-                <img src="./img/mockups/25.png" alt="Tarjetas">
+                <img src="/img/mockups/25.png" alt="Tarjetas">
                 <div class="service-info">
                     <h3>Branding</h3>
                     <p>(Tarjetas, Ropa, Vinilos)</p>
                 </div>
             </div>
             <div class="service-item">
-                <img src="./img/mockups/aa.png" alt="Camisetas">
+                <img src="/img/mockups/aa.png" alt="Camisetas">
                 <div class="service-info">
                     <h3>Posicionamiento</h3>
                     <p>(Redes Sociales, SEO, Webs)</p>
@@ -326,13 +334,7 @@
     </style>
 
 
-    <!-- Barra flotante con CTA -->
-    <div class="floating-cta">
-        <div class="cta-container">
-            <button class="cta-button schedule">Agendar Llamada</button>
-            <button class="cta-button quote">Solicitar Presupuesto</button>
-        </div>
-    </div>
+
 
 
 
@@ -395,7 +397,10 @@
 
 
 
-
+    <div class="cta">
+        <img src="./img/node.png" alt="Logo del Teléfono" class="logo">
+        <button class="boton-llamada">Llamar ahora</button>
+    </div>
 
 
 
