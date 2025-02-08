@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casos de éxito de Nodo - Transformación digital para empresas">
+    <title>Casos de Éxito | Nodo</title>
+
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="node.png" as="image">
+
+    <!-- Cargar CSS de manera optimizada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-..." crossorigin="anonymous" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">
+            Nodo
+            <img src="node.png" width="20" height="20" alt="Nodo Logo" loading="lazy">
+        </a>
+
+        <nav aria-label="Navegación principal">
+            <ul class="nav-links">
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#precios">Precios</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <div class="buttons">
+            <a href="#contacto" class="btn btn-secondary">Contacto</a>
+            <a href="#cotizar" class="btn btn-primary">Cotizar Proyecto</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="cases-hero">
+            <h1>Casos de Éxito</h1>
+            <p>Descubre cómo hemos ayudado a empresas como la tuya a crecer digitalmente</p>
+        </section>
+
+        <section class="cases-filters">
+            <div class="container">
+                <div class="filter-buttons" role="group" aria-label="Filtros de casos">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+                    <button class="filter-btn" data-filter="web" aria-pressed="false">Diseño Web</button>
+                    <button class="filter-btn" data-filter="branding" aria-pressed="false">Branding</button>
+                    <button class="filter-btn" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cases-grid">
+            <div class="container">
+                <article class="case-card" data-category="web">
+                    <div class="case-image">
+                        <img src="case1.jpg" alt="Proyecto XYZ Travel" loading="lazy" width="300" height="200">
+                        <div class="case-overlay">
+                            <span class="case-category">Diseño Web</span>
+                            <a href="case-xyz.html" class="btn btn-white">Ver Proyecto</a>
+                        </div>
+                    </div>
+                    <div class="case-content">
+                        <h3>XYZ Travel</h3>
+                        <p>Transformación digital completa para agencia de viajes</p>
+                        <dl class="case-metrics">
+                            <div class="metric">
+                                <dt class="metric-label">Conversiones</dt>
+                                <dd class="metric-number">+40%</dd>
+                            </div>
+                            <div class="metric">
+                                <dt class="metric-label">Tiempo de Carga</dt>
+                                <dd class="metric-number">-50%</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+                <!-- Más casos aquí -->
+            </div>
+        </section>w
+
+        <section class="cases-cta">
+            <div class="container">
+                <h2>¿Listo para ser el próximo caso de éxito?</h2>
+                <p>Trabajemos juntos para transformar tu presencia digital</p>
+                <a href="#contacto" class="btn btn-primary">Comienza tu Proyecto</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- Contenido del footer -->
+    </footer>
+
+    <script>
+        // Script optimizado con debouncing
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cases = document.querySelectorAll('.case-card');
+            let debounceTimeout;
+
+            const filterCases = (filter) => {
+                cases.forEach(caseItem => {
+                    const shouldShow = filter === 'all' || caseItem.dataset.category === filter;
+                    caseItem.classList.toggle('hidden', !shouldShow);
+                });
+            };
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    clearTimeout(debounceTimeout);
+
+                    debounceTimeout = setTimeout(() => {
+                        filterButtons.forEach(btn => {
+                            btn.classList.remove('active');
+                            btn.setAttribute('aria-pressed', 'false');
+                        });
+
+                        button.classList.add('active');
+                        button.setAttribute('aria-pressed', 'true');
+
+                        filterCases(button.dataset.filter);
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
