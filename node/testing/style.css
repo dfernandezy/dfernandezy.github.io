@@ -1346,3 +1346,165 @@
     padding-block: 2rem;
     opacity: 0.5;
 }
+
+/* Propiedades personalizadas para el efecto de scroll */
+@property --hue {
+    initial-value: 0;
+    syntax: '<number>';
+    inherits: false;
+}
+
+@property --chroma {
+    initial-value: 0;
+    syntax: '<number>';
+    inherits: true;
+}
+
+:root {
+    --start: 0;
+    --end: 360;
+    --lightness: 65%;
+    --base-chroma: 0.3;
+}
+
+/* Mejoras en los estilos base */
+.scroll-header {
+    min-height: 100vh;
+    display: flex;
+    place-items: center;
+    width: 100%;
+    padding-inline: 5rem;
+}
+
+.scroll-title {
+    --font-size-min: 24;
+    --font-level: 8;
+    text-wrap: pretty;
+    line-height: 0.8;
+    margin: 0;
+    background: linear-gradient(canvasText 60%,
+            color-mix(in oklch, canvas, canvasText));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.scroll-section-first {
+    --font-level: 6;
+    display: flex;
+    line-height: 1.25;
+    width: 100%;
+    padding-left: 5rem;
+}
+
+.scroll-heading {
+    position: sticky;
+    top: calc(50% - 0.5lh);
+    font-size: inherit;
+    margin: 0;
+    display: inline-block;
+    height: fit-content;
+    font-weight: 600;
+    background: linear-gradient(canvasText 50%,
+            color-mix(in oklch, canvas, canvasText 25%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.scroll-list {
+    --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
+    font-weight: 600;
+    padding-inline: 0;
+    margin: 0;
+    list-style-type: none;
+    timeline-scope: --list;
+}
+
+/* Mejoras en las animaciones de los items */
+.scroll-item:not(:last-of-type) {
+    color: oklch(var(--lightness) var(--base-chroma) calc(var(--start) + (var(--step) * var(--i))));
+}
+
+@supports (animation-timeline: scroll()) and (animation-range: 0% 100%) {
+    [data-animate='true'] .scroll-item {
+        opacity: 0.2;
+        animation: scroll-brighten linear both;
+        animation-range: cover calc(50% - 1lh) calc(50% + 1lh);
+        animation-timeline: view();
+    }
+
+    .scroll-item:first-of-type {
+        --start-opacity: 1;
+    }
+
+    .scroll-item:last-of-type {
+        --brightness: 1;
+        --end-opacity: 1;
+        background: linear-gradient(canvasText 50%,
+                color-mix(in oklch, canvas, canvasText 25%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+/* Animación mejorada */
+@keyframes scroll-brighten {
+    0% {
+        opacity: var(--start-opacity, 0.2);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(var(--brightness, 1.2));
+    }
+
+    100% {
+        opacity: var(--end-opacity, 0.2);
+    }
+}
+
+/* Mejoras en el scroll */
+[data-sync-scrollbar='true'] {
+    scrollbar-color: oklch(var(--lightness) var(--chroma) var(--hue)) transparent;
+}
+
+@supports (animation-timeline: scroll()) and (animation-range: 0% 100%) {
+    [data-sync-scrollbar='true'][data-animate='true'] {
+        timeline-scope: --list;
+        scrollbar-color: oklch(var(--lightness) var(--chroma, 0) var(--hue)) transparent;
+        animation: change, chroma-on, chroma-off;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-range: entry 50% exit 50%, entry 40% entry 50%, exit 30% exit 40%;
+        animation-timeline: --list;
+    }
+}
+
+@keyframes change {
+    to {
+        --hue: var(--end);
+    }
+}
+
+@keyframes chroma-on {
+    to {
+        --chroma: 0.3;
+    }
+}
+
+@keyframes chroma-off {
+    to {
+        --chroma: 0;
+    }
+}
+
+/* Ajustes para el snap scroll */
+[data-snap='true'] {
+    scroll-snap-type: y proximity;
+}
+
+[data-snap='true'] .scroll-item {
+    scroll-snap-align: center;
+}
