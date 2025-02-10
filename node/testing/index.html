@@ -9,6 +9,7 @@
     <!-- Precargar recursos críticos -->
     <link rel="preload" href="style.css" as="style">
     <link rel="preload" href="./img/node.png" as="image">
+    <link rel="logo" href="./img/node.png">
 
     <!-- Font Awesome con carga optimizada -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -66,12 +67,12 @@
                 <li class="scroll-item" style="--i: 18">evolucionamos.</li>
                 <li class="scroll-item" style="--i: 19">adaptamos.</li>
                 <li class="scroll-item" style="--i: 20">lideramos.</li>
-                <li class="scroll-item" style="--i: 21">hacemos realidad.</li>
+                <li class="scroll-item" style="--i: 21" class="hacemos">hacemos realidad.</li>
             </ul>
         </section>
         <section class="scroll-section-last">
-            <h2 class="scroll-heading scroll-fluid">Lo que necesites.</h2> <img src="./img/node.png"
-                height="25px" alt="">
+            <h2 class="scroll-heading scroll-fluid">Lo que necesites.</h2> <img src="./img/node.png" height="25px"
+                alt="">
         </section>
     </main>
 
@@ -667,6 +668,20 @@
                 }
             });
         });
+
+
+        const elements = document.querySelectorAll(".animatable");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("seen");
+                    observer.unobserve(entry.target); // Dejar de observar para que no se resetee
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elements.forEach(el => observer.observe(el));
 
 
 
