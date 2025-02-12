@@ -68,6 +68,7 @@
 
     </main>
 
+    <div class="cursor-effect"></div>
 
 
     <!-- <div class="timeline">
@@ -116,13 +117,11 @@
 
     <section class="case-studies">
         <h2>Éxitos Recientes</h2>
-        <p><i>de nuestros clientes.</i> <img src="./img/node.png" height="25px" width="25px" alt="Nodo Logo">
-        </p>
-
+        <p><i>de nuestros clientes.</i> <img src="./img/node.png" height="25px" width="25px" alt="Nodo Logo"></p>
 
         <div class="case-studies-grid">
             <!-- Caso de Estudio 1 -->
-            <div class="case-study-card">
+            <div class="case-study-card card">
                 <div class="case-study-images">
                     <div class="before-after-container">
                         <img src="./img/hitachilanding.png" alt="Después" class="after-image">
@@ -145,16 +144,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="hover-info">
+                    <img src="./img/doctorahitachi.webp" alt="Avatar">
+                    <span>Dra. Hitachi A.</span>
+                </div>
             </div>
 
             <!-- Caso de Estudio 2 -->
-            <div class="case-study-card">
+            <div class="case-study-card card">
                 <div class="case-study-images">
                     <div class="before-after-container">
                         <img src="./img/callcenter.png" alt="Después" class="after-image">
                     </div>
                 </div>
-
                 <div class="case-study-content">
                     <h3>Start Up Call Center BCN</h3>
                     <div class="metrics-grid">
@@ -172,10 +174,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="hover-info">
+                    <img src="./img/doctorahitachi.jpg" alt="Avatar">
+                    <span>Dra. Hitachi A.</span>
+                </div>
             </div>
 
             <!-- Caso de Estudio 3 -->
-            <div class="case-study-card">
+            <div class="case-study-card card">
                 <div class="case-study-images">
                     <div class="before-after-container">
                         <img src="./img/hc.png" alt="Después" class="after-image">
@@ -198,12 +204,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="hover-info">
+                    <img src="./img/doctorahitachi.jpg" alt="Avatar">
+                    <span>Dra. Hitachi A.</span>
+                </div>
             </div>
-
-
-
         </div>
     </section>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -216,13 +232,14 @@
             <div class="testimonials-track">
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p class="testimonial-text">"Increíble transformación de nuestra presencia online. En solo dos
-                            semanas, teníamos una web que realmente representa nuestra marca."</p>
+                        <p class="testimonial-text">"La transformación digital de mi clínica ha sido extraordinaria.
+                            Triplicamos nuestras reservas online y el tráfico web se multiplicó por 100. La facilidad
+                            con la que los pacientes pueden agendar citas ahora es incomparable."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente">
+                            <img src="./img/doctorahitachi.jpg" alt="Cliente">
                             <div class="author-info">
-                                <h4>María García</h4>
-                                <span>Fundadora de EcoVida</span>
+                                <h4>Dra. Hitachi A.</h4>
+                                <span>Clínica Dra. Hitachi</span>
                             </div>
                         </div>
                     </div>
@@ -230,13 +247,14 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p class="testimonial-text">"La mejor inversión que hemos hecho. No solo mejoraron nuestra web,
-                            sino que nos ayudaron a entender cómo maximizar nuestra presencia digital."</p>
+                        <p class="testimonial-text">"Desde que implementamos las nuevas estrategias digitales, nuestras
+                            consultas online se duplicaron y los leads se cuadruplicaron. Lo mejor es que mantenemos un
+                            90% de satisfacción del cliente, algo crucial en nuestro sector."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
+                            <img src="https://via.placeholder.com/30" alt="Cliente">
                             <div class="author-info">
-                                <h4>Carlos Ruiz</h4>
-                                <span>CEO de TechSolutions</span>
+                                <h4>Jane Smith</h4>
+                                <span>Start Up Call Center BCN</span>
                             </div>
                         </div>
                     </div>
@@ -244,13 +262,14 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p class="testimonial-text">"Profesionalidad y eficiencia desde el primer día. El proceso fue
-                            muy claro y los resultados llegaron incluso antes de lo prometido."</p>
+                        <p class="testimonial-text">"El impacto en nuestro negocio ha sido tremendo. Aumentamos las
+                            membresías en un 150% y triplicamos nuestra presencia en redes sociales. Lo más importante:
+                            mantenemos un 95% de retención de clientes."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
+                            <img src="./img/doctorahitachi.jpg" alt="Cliente">
                             <div class="author-info">
-                                <h4>Laura Martínez</h4>
-                                <span>Directora de Marketing</span>
+                                <h4>Helena Castro</h4>
+                                <span>H.C Finanzas Completas</span>
                             </div>
                         </div>
                     </div>
@@ -299,83 +318,6 @@
         </div>
     </section>
 
-
-
-
-    <style>
-        .services {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: #f8f9fa;
-        }
-
-        .services-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #5f6aff;
-            font-weight: bold;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
-        }
-
-        .service-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .service-info {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: #5f6aff;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .service-item:hover .service-info {
-            background: #5f6aff;
-        }
-    </style>
-
-
-
-
-
-
-    <!-- CSS correspondiente -->
-    <style>
-
-    </style>
 
 
 
@@ -435,11 +377,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
 
 
 
@@ -539,6 +476,36 @@
 
 
     <script>
+        document.querySelectorAll(".card").forEach(card => {
+            const hoverInfo = card.querySelector(".hover-info");
+
+            card.addEventListener("mousemove", (e) => {
+                const { left, top } = card.getBoundingClientRect();
+                hoverInfo.style.left = `${e.clientX - left}px`;
+                hoverInfo.style.top = `${e.clientY - top}px`;
+                hoverInfo.style.opacity = 1;
+            });
+
+            card.addEventListener("mouseleave", () => {
+                hoverInfo.style.opacity = 0;
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         const cursor = document.querySelector(".custom-cursor");
         let cursorX = 0, cursorY = 0;
@@ -561,6 +528,12 @@
         }
 
         smoothCursor();
+
+
+
+
+
+
 
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -680,56 +653,14 @@
 
 
 
-        // document.addEventListener('DOMContentLoaded', () => {
-        //     const caseStudies = document.querySelectorAll('.case-study-card');
 
-        //     const observerOptions = {
-        //         root: null,
-        //         rootMargin: '0px',
-        //         threshold: 0.5
-        //     };
 
-        //     const caseStudyObserver = new IntersectionObserver((entries) => {
-        //         entries.forEach(entry => {
-        //             if (entry.isIntersecting) {
-        //                 const card = entry.target;
-        //                 const beforeImage = card.querySelector('.before-image');
-        //                 const afterImage = card.querySelector('.after-image');
-        //                 const metrics = card.querySelectorAll('.metric-number');
 
-        //                 // Añade clase para activar animación
-        //                 card.classList.add('active');
 
-        //                 // Transición de imágenes con delay
-        //                 setTimeout(() => {
-        //                     beforeImage.style.opacity = '0';
-        //                     afterImage.style.opacity = '1';
-        //                 }, 500);
 
-        //                 // Anima los números de las métricas
-        //                 metrics.forEach((metric, index) => {
-        //                     setTimeout(() => {
-        //                         metric.classList.add('animate-metric');
-        //                     }, 1000 + (index * 200));
-        //                 });
 
-        //                 // Reset opcional después de 5 segundos
-        //                 setTimeout(() => {
-        //                     beforeImage.style.opacity = '1';
-        //                     afterImage.style.opacity = '0';
-        //                     card.classList.remove('active');
-        //                     metrics.forEach(metric => {
-        //                         metric.classList.remove('animate-metric');
-        //                     });
-        //                 }, 5000);
-        //             }
-        //         });
-        //     }, observerOptions);
 
-        //     caseStudies.forEach(caseStudy => {
-        //         caseStudyObserver.observe(caseStudy);
-        //     });
-        // });
+
     </script>
 
 </body>

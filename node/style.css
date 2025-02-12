@@ -18,6 +18,62 @@
 }
 
 
+/* Efecto de magnetismo */
+.custom-cursor.cursor-hover {
+    transform: translate(calc(-50% + var(--magnetic-x, 0)), calc(-50% + var(--magnetic-y, 0)));
+}
+
+/* Efecto de rotación */
+.custom-cursor.cursor-hover {
+    animation: cursorRotate 2s linear infinite;
+}
+
+@keyframes cursorRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+
+/* Estilos del hover-info */
+.hover-info {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.hover-info img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -770,6 +826,93 @@
     display: flex;
     gap: 0.5rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.services {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #5f6aff;
+    font-weight: bold;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.service-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #5f6aff;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-item:hover img {
+    transform: scale(1.05);
+}
+
+.service-item:hover .service-info {
+    background: #5f6aff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .dot {
     width: 8px;
