@@ -1478,3 +1478,160 @@
 .case-metrics {
     padding: 15px;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+:root {
+    --background: #0f0f0f;
+    --text: #f5f5f5;
+    --accent: #8855ff;
+    --spacing: clamp(2rem, 5vw, 5rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    cursor: default;
+}
+
+.services {
+    min-height: 100vh;
+    padding: var(--spacing);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+}
+
+.services-intro {
+    grid-column: 1 / -1;
+    margin-bottom: 4rem;
+}
+
+.massive-title {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.service-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    background: #161616;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.service-card:hover::before {
+    opacity: 0.05;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-number {
+    font-size: 0.875rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.service-items {
+    list-style: none;
+    position: relative;
+    z-index: 1;
+}
+
+.service-item {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-item::before {
+    content: '—';
+    color: var(--accent);
+    opacity: 0.5;
+}
+
+.service-card:hover .service-item {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 2rem;
+    }
+
+    .massive-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+}
+
+.scroll-text {
+    grid-column: 1 / -1;
+    overflow: hidden;
+    margin: 4rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem 0;
+}
+
+.scroll-text p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
