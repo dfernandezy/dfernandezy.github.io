@@ -2115,3 +2115,48 @@
         padding: 1rem;
     }
 }
+
+
+.nodo-service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nodo-service-icon i {
+    transition-delay: 1.7s;
+    /* ❗ Espera más que la tarjeta */
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.nodo-service-card.visible .nodo-service-icon i {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Retrasar los elementos de la lista */
+.nodo-service-features li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.nodo-service-card.visible .nodo-service-features li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nodo-service-features li:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.nodo-service-features li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.nodo-service-features li:nth-child(3) {
+    transition-delay: 0.4s;
+}
