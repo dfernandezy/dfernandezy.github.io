@@ -440,6 +440,8 @@
     color: #666;
 }
 
+
+/* lamedia */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -459,11 +461,27 @@
     }
 
     .hero p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    .tuhaces {
+        font-size: 1.3rem;
     }
 
     .btn {
         font-size: 0.6rem;
+    }
+
+    .hero {
+        padding: 0;
+    }
+
+    .hero p {
+        padding: 0 2rem;
+    }
+
+    .users-count {
+        padding: 0 0.5rem;
     }
 
     .logologodos {
@@ -471,7 +489,7 @@
     }
 
     .hero h1 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .timeline {
