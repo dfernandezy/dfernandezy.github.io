@@ -94,8 +94,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    /* ¡Crucial! Define dónde se "pegará" el elemento */
+    z-index: 1000;
+    /* Asegura que esté por encima de otros elementos */
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .logo {
@@ -261,13 +267,14 @@
     line-height: 1.2;
 }
 
+
+
 .highlight {
     position: relative;
     display: inline-block;
     z-index: -1;
     /* Asegura que el texto esté por encima */
 }
-
 
 
 .tu {
@@ -291,6 +298,7 @@
     transform-origin: left;
     scale: 0 1;
 }
+
 
 @keyframes highlightIn {
     0% {
@@ -450,8 +458,20 @@
         padding: 0 2rem;
     }
 
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.6rem;
+    }
+
+    .logologodos {
+        display: none;
+    }
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.1rem;
     }
 
     .timeline {
@@ -1294,32 +1314,6 @@
 
 
 
-
-
-
-
-
-
-.parallax-section {
-    position: relative;
-    height: 100px;
-    background: #f8f9fa;
-    overflow: hidden;
-}
-
-.parallax-content {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    padding: 2rem;
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-out;
-}
 
 .award-badges {
     display: flex;
