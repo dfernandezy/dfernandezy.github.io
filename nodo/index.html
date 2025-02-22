@@ -712,32 +712,32 @@
 
 
 
+
+
+    <div class="custom-cursor"></div>
+
     <div class="cta">
         <img src="./img/nodedos.svg" alt="Logo del Teléfono" class="logo">
         <button class="boton-llamada">Llamar ahora</button>
     </div>
 
-    <div class="custom-cursor"></div>
+</body>
 
+<script>
+    document.querySelectorAll(".card").forEach(card => {
+        const hoverInfo = card.querySelector(".hover-info");
 
-
-
-    <script>
-        document.querySelectorAll(".card").forEach(card => {
-            const hoverInfo = card.querySelector(".hover-info");
-
-            card.addEventListener("mousemove", (e) => {
-                const { left, top } = card.getBoundingClientRect();
-                hoverInfo.style.left = `${e.clientX - left}px`;
-                hoverInfo.style.top = `${e.clientY - top}px`;
-                hoverInfo.style.opacity = 1;
-            });
-
-            card.addEventListener("mouseleave", () => {
-                hoverInfo.style.opacity = 0;
-            });
+        card.addEventListener("mousemove", (e) => {
+            const { left, top } = card.getBoundingClientRect();
+            hoverInfo.style.left = `${e.clientX - left}px`;
+            hoverInfo.style.top = `${e.clientY - top}px`;
+            hoverInfo.style.opacity = 1;
         });
 
+        card.addEventListener("mouseleave", () => {
+            hoverInfo.style.opacity = 0;
+        });
+    });
 
 
 
@@ -754,213 +754,213 @@
 
 
 
-        const cursor = document.querySelector(".custom-cursor");
-        let cursorX = 0, cursorY = 0;
-        let targetX = 0, targetY = 0;
-        const speed = 0.2; // Ajusta la fluidez (0.1 = más lento, 0.3 = más rápido)
 
-        document.addEventListener("mousemove", (e) => {
-            targetX = e.clientX;
-            targetY = e.clientY;
+    const cursor = document.querySelector(".custom-cursor");
+    let cursorX = 0, cursorY = 0;
+    let targetX = 0, targetY = 0;
+    const speed = 0.2; // Ajusta la fluidez (0.1 = más lento, 0.3 = más rápido)
+
+    document.addEventListener("mousemove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+    });
+
+    function smoothCursor() {
+        cursorX += (targetX - cursorX) * speed;
+        cursorY += (targetY - cursorY) * speed;
+
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
+
+        requestAnimationFrame(smoothCursor);
+    }
+
+    smoothCursor();
+
+
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const statsSection = document.querySelector(".stats-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statsSection.classList.add("show");
+                    observer.unobserve(statsSection); // Para que la animación solo se active una vez
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(statsSection);
+    });
+
+    // Añade este JavaScript
+    document.addEventListener('DOMContentLoaded', () => {
+        // Añadir clase parallax-element a los elementos que queremos animar
+        const elements = [
+            document.querySelector('.author'),
+            document.querySelector('.hero h1'),
+            document.querySelector('.hero p'),
+            document.querySelector('.btn.contacto'),
+            document.querySelector('.users-count')
+        ];
+
+        elements.forEach(element => {
+            if (element) {
+                element.classList.add('parallax-element');
+            }
         });
 
-        function smoothCursor() {
-            cursorX += (targetX - cursorX) * speed;
-            cursorY += (targetY - cursorY) * speed;
+        // Función para manejar la animación al hacer scroll
+        const handleScroll = () => {
+            elements.forEach(element => {
+                if (!element) return;
 
-            cursor.style.left = `${cursorX}px`;
-            cursor.style.top = `${cursorY}px`;
+                const rect = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
 
-            requestAnimationFrame(smoothCursor);
+                if (rect.top < windowHeight * 0.8) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // Ejecutar una vez al cargar la página
+        handleScroll();
+
+        // Añadir el evento scroll con throttling para mejor rendimiento
+        let isScrolling = false;
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    handleScroll();
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
+        });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".nodo-service-card");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.3 });
+
+        cards.forEach(card => observer.observe(card));
+    });
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Efecto hover suave para los enlaces
+        const links = document.querySelectorAll('.footer-links a, .footer-social a');
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', (e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.transition = 'all 0.3s ease';
+            });
+
+            link.addEventListener('mouseleave', (e) => {
+                e.target.style.transform = 'translateY(0)';
+            });
+        });
+    });
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const track = document.querySelector('.testimonials-track');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dotsContainer = document.querySelector('.slider-dots');
+        let currentSlide = 0;
+
+        // Crear dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goToSlide(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentSlide = index;
         }
 
-        smoothCursor();
+        // Auto play (opcional)
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            goToSlide(currentSlide);
+        }, 4500);
+    });
 
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const parallaxContent = document.querySelector('.parallax-content');
+        const parallaxSection = document.querySelector('.parallax-section');
 
-
-
-
-
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const statsSection = document.querySelector(".stats-section");
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        statsSection.classList.add("show");
-                        observer.unobserve(statsSection); // Para que la animación solo se active una vez
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            observer.observe(statsSection);
-        });
-
-        // Añade este JavaScript
-        document.addEventListener('DOMContentLoaded', () => {
-            // Añadir clase parallax-element a los elementos que queremos animar
-            const elements = [
-                document.querySelector('.author'),
-                document.querySelector('.hero h1'),
-                document.querySelector('.hero p'),
-                document.querySelector('.btn.contacto'),
-                document.querySelector('.users-count')
-            ];
-
-            elements.forEach(element => {
-                if (element) {
-                    element.classList.add('parallax-element');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    parallaxContent.classList.add('parallax-visible');
+                } else {
+                    parallaxContent.classList.remove('parallax-visible');
                 }
             });
+        }, {
+            threshold: 0.5
+        });
 
-            // Función para manejar la animación al hacer scroll
-            const handleScroll = () => {
-                elements.forEach(element => {
-                    if (!element) return;
+        observer.observe(parallaxSection);
+    });
 
-                    const rect = element.getBoundingClientRect();
-                    const windowHeight = window.innerHeight;
+    document.addEventListener('DOMContentLoaded', function () {
+        const faqItems = document.querySelectorAll('.nodo-faq-question');
 
-                    if (rect.top < windowHeight * 0.8) {
-                        element.classList.add('visible');
+        faqItems.forEach(item => {
+            item.addEventListener('click', function () {
+                // Toggle active class on question
+                this.classList.toggle('active');
+
+                // Toggle answer visibility
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('active');
+
+                // Close other open answers
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.nextElementSibling.classList.remove('active');
                     }
                 });
-            };
-
-            // Ejecutar una vez al cargar la página
-            handleScroll();
-
-            // Añadir el evento scroll con throttling para mejor rendimiento
-            let isScrolling = false;
-            window.addEventListener('scroll', () => {
-                if (!isScrolling) {
-                    window.requestAnimationFrame(() => {
-                        handleScroll();
-                        isScrolling = false;
-                    });
-                    isScrolling = true;
-                }
             });
         });
+    });
 
+</script>
 
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const cards = document.querySelectorAll(".nodo-service-card");
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            cards.forEach(card => observer.observe(card));
-        });
-
-
-
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Efecto hover suave para los enlaces
-            const links = document.querySelectorAll('.footer-links a, .footer-social a');
-
-            links.forEach(link => {
-                link.addEventListener('mouseenter', (e) => {
-                    e.target.style.transform = 'translateY(-2px)';
-                    e.target.style.transition = 'all 0.3s ease';
-                });
-
-                link.addEventListener('mouseleave', (e) => {
-                    e.target.style.transform = 'translateY(0)';
-                });
-            });
-        });
-
-
-
-
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const track = document.querySelector('.testimonials-track');
-            const slides = document.querySelectorAll('.testimonial-slide');
-            const dotsContainer = document.querySelector('.slider-dots');
-            let currentSlide = 0;
-
-            // Crear dots
-            slides.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(index));
-                dotsContainer.appendChild(dot);
-            });
-
-            function goToSlide(index) {
-                track.style.transform = `translateX(-${index * 100}%)`;
-                document.querySelectorAll('.dot').forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-                currentSlide = index;
-            }
-
-            // Auto play (opcional)
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                goToSlide(currentSlide);
-            }, 4500);
-        });
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const parallaxContent = document.querySelector('.parallax-content');
-            const parallaxSection = document.querySelector('.parallax-section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        parallaxContent.classList.add('parallax-visible');
-                    } else {
-                        parallaxContent.classList.remove('parallax-visible');
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            observer.observe(parallaxSection);
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.nodo-faq-question');
-
-            faqItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    // Toggle active class on question
-                    this.classList.toggle('active');
-
-                    // Toggle answer visibility
-                    const answer = this.nextElementSibling;
-                    answer.classList.toggle('active');
-
-                    // Close other open answers
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            otherItem.nextElementSibling.classList.remove('active');
-                        }
-                    });
-                });
-            });
-        });
-
-    </script>
-
-</body>
 
 </html>
