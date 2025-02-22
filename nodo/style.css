@@ -1024,7 +1024,6 @@
     height: 8px;
     border-radius: 50%;
     background: #ddd;
-    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -2068,7 +2067,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     font-size: 1.1rem;
     color: #2c3e50;
     font-weight: 500;
@@ -2202,7 +2200,6 @@
     background: white;
     border-radius: 8px;
     transition: all 0.3s ease;
-    cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
