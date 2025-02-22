@@ -2173,3 +2173,73 @@
 .nodo-service-features li:nth-child(3) {
     transition-delay: 0.4s;
 }
+
+
+.nodo-block {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.nodo-block__heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+    font-weight: 500;
+}
+
+.nodo-block__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    background: #faf9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.nodo-block__card {
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.nodo-block__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nodo-block__card-heading {
+    color: #2d3748;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.nodo-block__card-text {
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .nodo-block__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .nodo-block__container {
+        grid-template-columns: 1fr;
+    }
+
+    .nodo-block__heading {
+        font-size: 2rem;
+    }
+}
