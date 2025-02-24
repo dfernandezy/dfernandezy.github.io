@@ -464,7 +464,10 @@
         font-size: 0.8rem;
     }
 
-  
+    .tuhaces {
+        font-size: 1.3rem;
+    }
+
     .btn {
         font-size: 0.6rem;
     }
@@ -486,7 +489,7 @@
     }
 
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .timeline {
@@ -2208,5 +2211,310 @@
         gap: 24px;
         text-align: center;
         margin-bottom: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --primary: #2B2D42;
+    --primary-light: #8D99AE;
+    --primary-dark: #14151F;
+    --secondary: #EF233C;
+    --secondary-light: #FF4D6D;
+    --dark: #2B2D42;
+    --light: #EDF2F4;
+    --success: #4CAF50;
+    --gray: #F8F9FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.pricing-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(20px, 5vw, 60px) clamp(15px, 3vw, 20px);
+}
+
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: clamp(30px, 5vw, 50px);
+}
+
+.pricing-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: clamp(10px, 2vw, 15px);
+    line-height: 1.2;
+}
+
+.pricing-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: clamp(8px, 1.5vw, 10px);
+}
+
+.pricing-description {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--primary-light);
+}
+
+
+.pricing-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: clamp(30px, 5vw, 40px);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tab {
+    padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 30px);
+    border: none;
+    background: var(--gray);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    white-space: nowrap;
+}
+
+.tab.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 5px 15px rgba(43, 45, 66, 0.3);
+}
+
+.pricing-sections {
+    position: relative;
+    /* Eliminar o reducir el min-height */
+    min-height: auto;
+    margin-bottom: 40px;
+}
+
+.pricing-section {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    position: relative;
+    display: none;
+    /* Añadir display none */
+
+    /* Cambiar de absolute/fixed a relative */
+    width: 100%;
+    transform: translateY(20px);
+}
+
+
+.pricing-section.active {
+    opacity: 1;
+    display: block;
+    /* Mostrar cuando está activo */
+    transform: translateY(0);
+}
+
+
+.subscription-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(20px, 3vw, 30px);
+    margin-bottom: clamp(30px, 5vw, 50px);
+}
+
+.plan-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--gray);
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary);
+}
+
+.plan-header {
+    padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 25px);
+    background: var(--primary);
+    color: var(--light);
+}
+
+.plan-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary);
+    color: white;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transform: rotate(5deg);
+}
+
+
+.plan-name {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.plan-price {
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    color: var(--light);
+    margin-bottom: 10px;
+}
+
+.plan-price span {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.plan-features {
+    padding: clamp(20px, 3vw, 25px);
+    flex: 1;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.features-list li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+}
+
+.plan-footer {
+    padding: 0 clamp(15px, 3vw, 25px) clamp(20px, 4vw, 30px);
+    text-align: center;
+}
+
+
+.btn-plan {
+    width: 100%;
+    padding: clamp(12px, 2.5vw, 15px);
+    border: none;
+    border-radius: 30px;
+    background: var(--secondary);
+    color: white;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(239, 35, 60, 0.2);
+}
+
+.btn-plan:hover {
+    background: var(--secondary-light);
+    transform: translateY(-3px);
+}
+
+.btn-quote {
+    background: none;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2.5vw, 15px);
+    border-radius: 20px;
+    font-size: clamp(0.8rem, 1.6vw, 0.85rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-quote:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+
+@media (max-width: 1024px) {
+    .subscription-plans {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-tabs {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tab {
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .single-payment-container {
+        padding: clamp(15px, 3vw, 20px);
+    }
+
+    .custom-projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .plan-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .features-list li {
+        padding-left: 25px;
+    }
+
+    .plan-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}
+
+@media (hover: none) {
+    .plan-card:hover {
+        transform: none;
+    }
+
+    .btn-plan:hover {
+        transform: none;
     }
 }
