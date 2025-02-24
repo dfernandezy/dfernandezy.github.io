@@ -2226,15 +2226,31 @@
 
 
 :root {
-    --primary: #2B2D42;
-    --primary-light: #8D99AE;
-    --primary-dark: #14151F;
-    --secondary: #EF233C;
-    --secondary-light: #FF4D6D;
-    --dark: #2B2D42;
-    --light: #EDF2F4;
+    /* Colores principales de Nodo */
+    --primary: #4B4ACF;
+    /* Azul/Morado principal de Nodo (botón principal) */
+    --primary-light: #6B6ADF;
+    /* Versión más clara del azul/morado */
+    --primary-dark: #3B3ABF;
+    /* Versión más oscura para hovers */
+    --secondary: #000000;
+    /* Negro para textos principales */
+    --text-gray: #666666;
+    /* Gris para textos secundarios */
+    --background: #FFFFFF;
+    /* Blanco para fondos */
+    --light: #F5F5F7;
+    /* Gris muy claro para fondos alternativos */
     --success: #4CAF50;
+    /* Verde para elementos de éxito */
     --gray: #F8F9FA;
+    /* Gris muy claro para bordes y separadores */
+
+    /* Colores de acento */
+    --accent-purple: #4B4ACF;
+    /* Color morado de acento */
+    --accent-gradient: linear-gradient(135deg, #4B4ACF, #6B6ADF);
+    /* Gradiente para elementos especiales */
 }
 
 * {
@@ -2547,6 +2563,11 @@
     font-size: clamp(1.5rem, 3vw, 1.8rem);
     font-weight: 700;
     color: var(--primary);
+}
+
+
+.custom-projects p{
+    color: black;
 }
 
 /* Grid de proyectos */
