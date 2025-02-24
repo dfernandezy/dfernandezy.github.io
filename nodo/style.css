@@ -333,10 +333,10 @@ body {
     position: absolute;
     left: -5px;
     right: -5px;
-    bottom: 5px;
+    bottom: 0px;
     height: 12px;
     background-color: #5f6aff7c;
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
     z-index: -1;
     /* Asegura que esté siempre por detrás */
     animation: highlightIn 1s ease forwards;
