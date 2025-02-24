@@ -203,15 +203,60 @@
     }
 }
 
-/* Modificaciones al CSS existente */
 .hero {
     position: relative;
+    width: 100%;
     max-width: 1200px;
     margin: 4rem auto;
     text-align: center;
-    padding: 0 2rem;
-    overflow: hidden;
+    padding: 0 1rem;
+    /* Reducimos el padding por defecto */
 }
+
+/*  */
+/*  */
+/*  */
+/*  */
+@media (max-width: 768px) {
+    .hero {
+        margin: 1rem auto;
+        /* Reducimos el margen en móvil */
+        padding: 0 0.5rem;
+        /* Reducimos aún más el padding en móvil */
+        width: 100%;
+        /* Aseguramos que ocupe todo el ancho */
+    }
+
+    .hero h1 {
+        font-size: 1.2rem;
+        padding: 0 0.5rem;
+        /* Añadimos un pequeño padding al título */
+    }
+
+    .hero p {
+        padding: 0 0.5rem;
+        /* Ajustamos el padding del párrafo */
+        font-size: 0.8rem;
+    }
+
+    /* Ajustamos los márgenes de la sección de usuarios */
+    .users-count {
+        padding: 0;
+        margin: 1.2rem 0.5rem;
+    }
+}
+
+/* Aseguramos que el contenido no se desborde */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    /* Prevenimos scroll horizontal */
+    width: 100%;
+}
+
 
 /* Añadir estas nuevas clases */
 .parallax-element {
@@ -2566,7 +2611,7 @@
 }
 
 
-.custom-projects p{
+.custom-projects p {
     color: black;
 }
 
