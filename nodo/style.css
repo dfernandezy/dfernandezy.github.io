@@ -2518,3 +2518,159 @@
         transform: none;
     }
 }
+
+
+
+/* Contenedor principal de pagos únicos */
+.single-payment-container {
+    background: white;
+    border-radius: 20px;
+    padding: clamp(30px, 5vw, 50px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+}
+
+/* Encabezado de la sección */
+.single-payment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 15px;
+}
+
+.single-payment-icon {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--secondary);
+}
+
+.single-payment-title {
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Grid de proyectos */
+.custom-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(20px, 3vw, 30px);
+    margin-bottom: 50px;
+}
+
+/* Tarjetas de proyecto */
+.project-card {
+    background: var(--light);
+    border-radius: 15px;
+    padding: clamp(25px, 4vw, 30px);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.project-icon {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--secondary);
+    display: inline-block;
+}
+
+.project-name {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.project-description {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    color: var(--primary-light);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Botones */
+.btn-quote {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: clamp(8px, 2vw, 12px) clamp(15px, 3vw, 20px);
+    border-radius: 30px;
+    font-size: clamp(0.85rem, 1.7vw, 0.9rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-self: flex-start;
+}
+
+.btn-quote:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Sección CTA */
+.quote-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-contact {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: clamp(12px, 2.5vw, 15px) clamp(25px, 5vw, 35px);
+    border-radius: 30px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(43, 45, 66, 0.2);
+}
+
+.btn-contact:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(43, 45, 66, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .single-payment-container {
+        padding: clamp(20px, 4vw, 30px);
+    }
+
+    .custom-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        text-align: center;
+    }
+
+    .btn-quote {
+        align-self: center;
+        width: 100%;
+    }
+
+    .btn-contact {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .single-payment-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+}
