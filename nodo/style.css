@@ -2740,3 +2740,158 @@ body {
         padding: 20px;
     }
 }
+
+
+/* Estilos minimalistas estilo AWWWARDS que no afectarán al HTML existente */
+.nodo-stats-container {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.nodo-stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    padding: 5rem 2rem;
+    background-color: #fbfbfb;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nodo-stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.nodo-stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    transform-origin: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nodo-stat-card:hover::after {
+    transform: translateX(-50%) scaleX(2);
+}
+
+.nodo-number {
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: #151515;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.nodo-plus {
+    position: relative;
+    display: inline-block;
+}
+
+.nodo-label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #151515;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.3px;
+}
+
+.nodo-brand {
+    font-size: 0.75rem;
+    color: #767676;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.nodo-brand .nodo-emphasis {
+    color: #000;
+    font-weight: 500;
+}
+
+@keyframes countUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes lineDrawIn {
+    0% {
+        transform: translateX(-50%) scaleX(0);
+    }
+
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/* Animaciones aplicadas */
+.nodo-animation-ready .nodo-number {
+    opacity: 0;
+    animation: countUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.nodo-animation-ready .nodo-label {
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.3s forwards;
+}
+
+.nodo-animation-ready .nodo-brand {
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.5s forwards;
+}
+
+.nodo-animation-ready .nodo-stat-card::after {
+    transform: translateX(-50%) scaleX(0);
+    animation: lineDrawIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+}
+
+@media screen and (max-width: 768px) {
+    .nodo-stats-section {
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .nodo-number {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nodo-stats-section {
+        gap: 3rem;
+    }
+
+    .nodo-stat-card {
+        padding: 0.5rem 0;
+    }
+}

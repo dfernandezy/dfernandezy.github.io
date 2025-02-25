@@ -87,6 +87,30 @@
 
 
 
+    <div class="nodo-stats-container">
+        <section class="nodo-stats-section">
+            <div class="nodo-stat-card">
+                <div class="nodo-number" id="retention-counter">0%</div>
+                <div class="nodo-label">Retención de clientes</div>
+                <div class="nodo-brand">made in <span class="nodo-emphasis">Nodo</span></div>
+            </div>
+
+            <div class="nodo-stat-card">
+                <div class="nodo-number"><span class="nodo-plus" id="services-counter">0</span></div>
+                <div class="nodo-label">Servicios</div>
+                <div class="nodo-brand">made in <span class="nodo-emphasis">Nodo</span></div>
+            </div>
+
+            <div class="nodo-stat-card">
+                <div class="nodo-number" id="support-counter">24/7</div>
+                <div class="nodo-label">Soporte Dedicado</div>
+                <div class="nodo-brand">made in <span class="nodo-emphasis">Nodo</span></div>
+            </div>
+        </section>
+    </div>
+
+
+
     <div class="stats-section">
         <div class="stat-card">
             <div class="stat-number">90<span class="percent">%</span></div>
@@ -938,7 +962,62 @@
 
 
 
+    // Función de animación de contador
+    function animateCounter(id, start, end, duration, format) {
+        let startTimestamp = null;
+        const element = document.getElementById(id);
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            let value = Math.floor(progress * (end - start) + start);
 
+            if (format === 'percentage') {
+                element.innerText = `${value}%`;
+            } else if (format === 'plus') {
+                element.innerText = `+${value}`;
+            } else {
+                element.innerText = value;
+            }
+
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Función para verificar si un elemento está visible en la ventana
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+            rect.bottom >= 0 &&
+            rect.left >= 0 &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Función para iniciar las animaciones cuando los elementos son visibles
+    function handleAnimations() {
+        const section = document.querySelector('.nodo-stats-section');
+
+        if (isElementInViewport(section) && !section.classList.contains('nodo-animation-ready')) {
+            section.classList.add('nodo-animation-ready');
+
+            // Iniciar contadores con un pequeño retraso
+            setTimeout(() => {
+                animateCounter('retention-counter', 0, 90, 2000, 'percentage');
+                animateCounter('services-counter', 0, 50, 1800, 'plus');
+            }, 200);
+        }
+    }
+
+    // Iniciar animaciones cuando se carga la página o se hace scroll
+    document.addEventListener('DOMContentLoaded', handleAnimations);
+    window.addEventListener('scroll', handleAnimations);
+
+    // También activamos las animaciones inmediatamente para demostración
+    setTimeout(handleAnimations, 500);
 
 
 
