@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://ejemplo.com/favicon.ico">
+    <meta name="theme-color" content="#3498db">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./img/nodedos.svg" />
+    <title>Nodo - Encuentra la solución perfecta para tu negocio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #4e53be;
+            --secondary-color: #000000;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --accent-color: #e74c3c;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        /* Estilo específico para las tarjetas "No necesito" */
+        .option-card[data-value*="No"] {
+            background-color: #f1f1f1;
+            /* Fondo más oscuro */
+            border-color: #ddd;
+        }
+
+        /* Estilo específico para las tarjetas "No necesito" */
+        .option-card[data-value*="No necesito"],
+        .option-card[data-value="Por definir"] {
+            background-color: #f1f1f1;
+            /* Fondo más oscuro */
+            border-color: #ddd;
+        }
+
+        .option-card[data-value*="No necesito"]:hover,
+        .option-card[data-value="Por definir"]:hover {
+            background-color: #e5e5e5;
+            /* Fondo más oscuro al hover */
+            border-color: #ccc;
+        }
+
+        .option-card[data-value*="No necesito"].selected,
+        .option-card[data-value="Por definir"].selected {
+            background-color: #d9d9d9;
+            /* Fondo más oscuro cuando está seleccionado */
+            border-color: var(--primary-color);
+        }
+
+        /* Si quieres que el icono y el texto también sean un poco más oscuros */
+        .option-card[data-value*="No necesito"] .option-icon,
+        .option-card[data-value="Por definir"] .option-icon {
+            color: #666;
+        }
+
+        .option-card[data-value*="No necesito"] h3,
+        .option-card[data-value="Por definir"] h3 {
+            color: #555;
+        }
+
+        .option-card[data-value*="No necesito"] p,
+        .option-card[data-value="Por definir"] p {
+            color: #777;
+        }
+
+        /* Para asegurarnos de que estas tarjetas siempre aparezcan al final */
+        .option-card[data-value*="No necesito"],
+        .option-card[data-value="Por definir"] {
+            order: 999;
+            /* Esto requiere que el contenedor padre tenga display: flex */
+        }
+
+        /* Asegúrate de que el contenedor padre tenga display: flex */
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .funnel-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .funnel-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .funnel-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .funnel-step {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            display: none;
+        }
+
+        .funnel-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-header {
+            margin-bottom: 20px;
+        }
+
+        .step-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .step-content {
+            margin-bottom: 30px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .option-card {
+            flex: 1 0 calc(33.333% - 15px);
+            min-width: 200px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .option-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .option-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .option-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-back {
+            background-color: #95a5a6;
+        }
+
+        .btn-back:hover {
+            background-color: #7f8c8d;
+        }
+
+        .btn-submit {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-submit:hover {
+            background-color: #27ae60;
+        }
+
+        .contact-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-option {
+            flex: 1;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-email {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .contact-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background-color: #ddd;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .summary-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: var(--border-radius);
+        }
+
+        .summary-item strong {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .option-card {
+                flex: 1 0 100%;
+            }
+
+            .contact-options {
+                flex-direction: column;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 100px;
+        }
+
+        .error-message {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+
+        .nodo-footer {
+            background-color: #f8f9fc;
+            padding: 80px 0 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+        }
+
+        .footer-tagline {
+            color: #666;
+            font-size: 16px;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #6366F1;
+        }
+
+        .contact-link {
+            color: #6366F1 !important;
+        }
+
+        .cta-button {
+            background-color: #6366F1;
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 100px;
+            transition: background-color 0.3s ease !important;
+        }
+
+        .cta-button:hover {
+            background-color: #4F46E5;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-social a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #6366F1;
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="funnel-header">
+            <h1>Nodo</h1>
+            <p>¿Qué Necesitas? <img src="./img/nodedos.svg" height="45px" alt=""></p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Paso 1: Página Web -->
+        <div class="funnel-step active" id="step1">
+            <div class="step-header">
+                <h2>¿Necesitas una página web?</h2>
+                <p>Selecciona la opción que mejor describa tu situación actual</p>
+            </div>
+            <div class="step-content">
+                <div class="options-container">
+                    <div class="option-card" data-value="Si, necesito una web nueva">
+                        <div class="option-icon"><i class="fas fa-plus-circle"></i></div>
+                        <h3>Sí, necesito una web</h3>
+                        <p>Quiero crear una web profesional desde cero</p>
+                    </div>
+                    <div class="option-card" data-value="Mi web actual podría mejorar">
+                        <div class="option-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3>Mi web podría mejorar</h3>
+                        <p>Tengo una web pero necesita mejoras</p>
+                    </div>
+                    <div class="option-card negative-option" data-value="No, ya tengo una web">
+                        <div class="option-icon"><i class="fas fa-times-circle"></i></div>
+                        <h3>No necesito web</h3>
+                        <p>Mi web actual funciona perfectamente</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-next" data-next="step2">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Paso 2: Branding -->
+        <div class="funnel-step" id="step2">
+            <div class="step-header">
+                <h2>¿Necesitas servicios de branding?</h2>
+                <p>Selecciona los elementos de marca que necesitas</p>
+            </div>
+            <div class="step-content">
+                <div class="options-container">
+                    <div class="option-card" data-value="Logotipo">
+                        <div class="option-icon"><i class="fas fa-vector-square"></i></div>
+                        <h3>Logotipo</h3>
+                        <p>Diseño o rediseño de logo</p>
+                    </div>
+                    <div class="option-card" data-value="Merchandising">
+                        <div class="option-icon"><i class="fas fa-tags"></i></div>
+                        <h3>Merchandising</h3>
+                        <p>Productos promocionales personalizados</p>
+                    </div>
+                    <div class="option-card" data-value="Material impreso">
+                        <div class="option-icon"><i class="fas fa-print"></i></div>
+                        <h3>Material impreso</h3>
+                        <p>Flyers, tarjetas, folletos, etc.</p>
+                    </div>
+                    <div class="option-card" data-value="Identidad completa">
+                        <div class="option-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Identidad completa</h3>
+                        <p>Desarrollo integral de marca</p>
+                    </div>
+                    <div class="option-card negative-option" data-value="No necesito branding">
+                        <div class="option-icon"><i class="fas fa-times-circle"></i></div>
+                        <h3>No necesito branding</h3>
+                        <p>Ya tengo mi marca establecida</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-back" data-back="step1">Atrás</button>
+                <button class="btn btn-next" data-next="step3">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Paso 3: Marketing Digital -->
+        <div class="funnel-step" id="step3">
+            <div class="step-header">
+                <h2>¿Qué servicios de marketing digital te interesan?</h2>
+                <p>Selecciona las áreas en las que necesitas apoyo</p>
+            </div>
+            <div class="step-content">
+                <div class="options-container">
+                    <div class="option-card" data-value="SEO">
+                        <div class="option-icon"><i class="fas fa-search"></i></div>
+                        <h3>SEO</h3>
+                        <p>Optimización para motores de búsqueda</p>
+                    </div>
+                    <div class="option-card" data-value="SEM">
+                        <div class="option-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>SEM</h3>
+                        <p>Publicidad en buscadores</p>
+                    </div>
+                    <div class="option-card" data-value="Redes Sociales">
+                        <div class="option-icon"><i class="fas fa-share-nodes"></i></div>
+                        <h3>Redes Sociales</h3>
+                        <p>Gestión y estrategia para redes sociales</p>
+                    </div>
+                    <div class="option-card" data-value="Email Marketing">
+                        <div class="option-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3>Email Marketing</h3>
+                        <p>Campañas de correo electrónico</p>
+                    </div>
+                    <div class="option-card" data-value="Estrategia completa">
+                        <div class="option-icon"><i class="fas fa-chart-network"></i></div>
+                        <h3>Estrategia completa</h3>
+                        <p>Plan integral de marketing digital</p>
+                    </div>
+                    <div class="option-card negative-option" data-value="No necesito marketing digital">
+                        <div class="option-icon"><i class="fas fa-times-circle"></i></div>
+                        <h3>No necesito marketing</h3>
+                        <p>Ya tengo mi estrategia definida</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-back" data-back="step2">Atrás</button>
+                <button class="btn btn-next" data-next="step4">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Paso 4: Presupuesto -->
+        <div class="funnel-step" id="step4">
+            <div class="step-header">
+                <h2>¿Cuál es tu presupuesto aproximado?</h2>
+                <p>Selecciona el rango que más se ajuste a tus posibilidades</p>
+            </div>
+            <div class="step-content">
+                <div class="options-container">
+                    <div class="option-card" data-value="Menos de 1,000€">
+                        <div class="option-icon"><i class="fas fa-euro-sign"></i></div>
+                        <h3>Menos de 1,000€</h3>
+                        <p>Soluciones básicas</p>
+                    </div>
+                    <div class="option-card" data-value="Entre 1,000€ y 3,000€">
+                        <div class="option-icon">
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <h3>1,000€ - 3,000€</h3>
+                        <p>Soluciones estándar</p>
+                    </div>
+                    <div class="option-card" data-value="Entre 3,000€ y 5,000€">
+                        <div class="option-icon">
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <h3>3,000€ - 5,000€</h3>
+                        <p>Soluciones avanzadas</p>
+                    </div>
+                    <div class="option-card" data-value="Más de 5,000€">
+                        <div class="option-icon">
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <h3>Más de 5,000€</h3>
+                        <p>Soluciones premium</p>
+                    </div>
+                    <div class="option-card negative-option" data-value="Por definir">
+                        <div class="option-icon"><i class="fas fa-circle-question"></i></div>
+                        <h3>Por definir</h3>
+                        <p>Necesito asesoramiento</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-back" data-back="step3">Atrás</button>
+                <button class="btn btn-next" data-next="step5">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Paso 5: Datos de contacto -->
+        <div class="funnel-step" id="step5">
+            <div class="step-header">
+                <h2>Datos de contacto</h2>
+                <p>Déjanos tus datos para poder contactarte con una propuesta personalizada</p>
+            </div>
+            <div class="step-content">
+                <div class="form-group">
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name" name="name" placeholder="Introduce tu nombre completo">
+                    <div class="error-message" id="nameError">Por favor, introduce tu nombre</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico">
+                    <div class="error-message" id="emailError">Por favor, introduce un correo electrónico válido</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono (con WhatsApp)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Introduce tu número de teléfono">
+                    <div class="error-message" id="phoneError">Por favor, introduce un número de teléfono válido</div>
+                </div>
+                <div class="form-group">
+                    <label for="company">Empresa (opcional)</label>
+                    <input type="text" id="company" name="company" placeholder="Introduce el nombre de tu empresa">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje adicional (opcional)</label>
+                    <textarea id="message" name="message"
+                        placeholder="Cuéntanos más sobre tu proyecto o necesidades específicas"></textarea>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-back" data-back="step4">Atrás</button>
+                <button class="btn btn-next" data-next="step6">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Paso 6: Resumen y envío -->
+        <div class="funnel-step" id="step6">
+            <div class="step-header">
+                <h2>Resumen de tu solicitud</h2>
+                <p>Revisa la información antes de enviar</p>
+            </div>
+            <div class="step-content">
+                <div id="summaryContainer">
+                    <!-- Aquí se generará el resumen dinámicamente -->
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-back" data-back="step5">Atrás</button>
+                <div class="contact-options">
+                    <div class="contact-option contact-email" id="sendEmail">
+                        <div class="option-icon">✉️</div>
+                        <h3>Enviar por Email</h3>
+                    </div>
+                    <div class="contact-option contact-whatsapp" id="sendWhatsApp">
+                        <div class="option-icon">📱</div>
+                        <h3>Enviar por WhatsApp</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 7: Confirmación -->
+        <div class="funnel-step" id="step7">
+            <div class="step-header">
+                <h2>¡Gracias por tu interés!</h2>
+                <p>Hemos recibido tu solicitud correctamente</p>
+            </div>
+            <div class="step-content">
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 20px;">
+                    Nos pondremos en contacto contigo lo antes posible para ofrecerte una solución personalizada que se
+                    adapte a tus necesidades.
+                </p>
+                <div style="text-align: center; margin-top: 30px;">
+                    <div class="option-icon" style="font-size: 4rem; color: var(--secondary-color);">✅</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Nodo Style -->
+    <footer class="nodo-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        Nodo <img src="./img/nodedos.svg" height="45px" alt="">
+                    </div>
+                    <p class="footer-tagline">Diseñamos tu éxito digital</p>
+                </div>
+                <div class="footer-right" style="margin: 0 auto;">
+                    <div class="footer-links">
+                        <a href="#">Servicios</a>
+                        <a href="#">Proyectos</a>
+                        <a href="#">Precios</a>
+                        <a href="#">FAQ</a>
+                        <a href="#" class="contact-link">Contacto</a>
+                        <a href="#" class="cta-button">Cotizar Proyecto</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Nodo. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Variables para almacenar las selecciones
+            let userSelections = {
+                web: '',
+                branding: [],
+                marketing: [],
+                budget: '',
+                contact: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    message: ''
+                }
+            };
+
+            // Elementos DOM
+            const steps = document.querySelectorAll('.funnel-step');
+            const progressBar = document.getElementById('progressBar');
+            const nextButtons = document.querySelectorAll('.btn-next');
+            const backButtons = document.querySelectorAll('.btn-back');
+            const optionCards = document.querySelectorAll('.option-card');
+
+            // Establecer el progreso inicial
+            updateProgress(1, steps.length);
+
+            // Event listeners para las tarjetas de opciones
+            optionCards.forEach(card => {
+                card.addEventListener('click', handleOptionCardClick);
+            });
+
+            function handleOptionCardClick(event) {
+                const card = event.currentTarget;
+                const stepId = card.closest('.funnel-step').id;
+                const value = card.getAttribute('data-value');
+
+                // Manejar selección única (pasos 1 y 4)
+                if (stepId === 'step1' || stepId === 'step4') {
+                    const stepCards = card.closest('.funnel-step').querySelectorAll('.option-card');
+                    stepCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+
+                    if (stepId === 'step1') {
+                        userSelections.web = value;
+                    } else if (stepId === 'step4') {
+                        userSelections.budget = value;
+                    }
+                }
+                // Manejar selección múltiple (pasos 2 y 3)
+                else if (stepId === 'step2' || stepId === 'step3') {
+                    if (value.includes('No necesito')) {
+                        // Si se selecciona "No necesito", deseleccionar todas las demás opciones
+                        const stepCards = card.closest('.funnel-step').querySelectorAll('.option-card');
+                        stepCards.forEach(c => c.classList.remove('selected'));
+                        card.classList.add('selected');
+
+                        if (stepId === 'step2') {
+                            userSelections.branding = [value];
+                        } else {
+                            userSelections.marketing = [value];
+                        }
+                    } else {
+                        // Deseleccionar la opción "No necesito" si existe
+                        const noNeedOption = card.closest('.funnel-step').querySelector('.option-card[data-value*="No necesito"]');
+                        if (noNeedOption) {
+                            noNeedOption.classList.remove('selected');
+                        }
+
+                        // Toggle la selección de la tarjeta actual
+                        card.classList.toggle('selected');
+
+                        // Actualizar las selecciones
+                        if (stepId === 'step2') {
+                            if (card.classList.contains('selected')) {
+                                if (!userSelections.branding.includes(value)) {
+                                    userSelections.branding.push(value);
+                                }
+                            } else {
+                                userSelections.branding = userSelections.branding.filter(item => item !== value);
+                            }
+                        } else {
+                            if (card.classList.contains('selected')) {
+                                if (!userSelections.marketing.includes(value)) {
+                                    userSelections.marketing.push(value);
+                                }
+                            } else {
+                                userSelections.marketing = userSelections.marketing.filter(item => item !== value);
+                            }
+                        }
+                    }
+                }
+
+                console.log('Selecciones actuales:', userSelections); // Para depuración
+            }
+
+            // Event listeners para los botones "Siguiente"
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const currentStep = this.closest('.funnel-step');
+                    const nextStepId = this.getAttribute('data-next');
+
+                    if (validateStep(currentStep.id)) {
+                        currentStep.classList.remove('active');
+                        document.getElementById(nextStepId).classList.add('active');
+                        updateProgress(parseInt(nextStepId.replace('step', '')), steps.length);
+                    }
+                });
+            });
+
+            // Event listeners para los botones "Atrás"
+            backButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const currentStep = this.closest('.funnel-step');
+                    const prevStepId = this.getAttribute('data-back');
+
+                    currentStep.classList.remove('active');
+                    document.getElementById(prevStepId).classList.add('active');
+                    updateProgress(parseInt(prevStepId.replace('step', '')), steps.length);
+                });
+            });
+
+            function updateProgress(currentStep, totalSteps) {
+                const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            function validateStep(stepId) {
+                switch (stepId) {
+                    case 'step1':
+                        return userSelections.web !== '';
+                    case 'step2':
+                        return userSelections.branding.length > 0;
+                    case 'step3':
+                        return userSelections.marketing.length > 0;
+                    case 'step4':
+                        return userSelections.budget !== '';
+                    case 'step5':
+                        return validateContactForm();
+                    default:
+                        return true;
+                }
+            }
+
+            function validateContactForm() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+
+                document.getElementById('nameError').style.display = name ? 'none' : 'block';
+                document.getElementById('emailError').style.display = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'none' : 'block';
+                document.getElementById('phoneError').style.display = /^\d{9,}$/.test(phone.replace(/\D/g, '')) ? 'none' : 'block';
+
+                return name && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && /^\d{9,}$/.test(phone.replace(/\D/g, ''));
+            }
+
+            // Resto del código (generateSummary, generateEmailBody, generateWhatsAppMessage) se mantiene igual...
+        });
+    </script>
+</body>
+
+</html>
