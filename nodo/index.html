@@ -20,7 +20,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="./img/nodedos.svg" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Poppins/4.0.5/poppins.min.css">
+</head>
 </head>
 
 <body>
@@ -1030,6 +1033,100 @@
 
 
 
+    <!-- Sección de Contacto para Nodo Agencia Digital -->
+    <section class="nodo-contact-section">
+        <div class="nodo-contact-header">
+            <h2>Contacta con nosotros</h2>
+            <p>¿Tienes un proyecto en mente? ¿Necesitas ayuda con tu presencia digital? En <span
+                    style="text-decoration: underline; color: #471fa5; ">Nodo Agencia Digital</span> estamos
+                listos para convertir tus ideas en realidad.</p>
+        </div>
+
+        <div class="nodo-contact-container">
+            <div class="nodo-contact-form">
+                <form id="nodo-contact-form" action="/enviar-contacto" method="POST">
+                    <div class="nodo-form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="¿Cómo te llamas?" required>
+                    </div>
+                    <div class="nodo-form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="nodo-form-group">
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Tu número de contacto">
+                    </div>
+                    <div class="nodo-form-group">
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" required>
+                    </div>
+                    <div class="nodo-form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" placeholder="Cuéntanos los detalles de tu proyecto..."
+                            required></textarea>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="nodo-submit-btn">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="nodo-contact-info">
+                <div class="nodo-info-content-wrapper">
+                    <h3 class="nodo-info-title">Información de contacto</h3>
+
+                    <div class="nodo-info-item">
+                        <div class="nodo-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="nodo-info-content">
+                            <h4>Ubicación</h4>
+                            <p>Barcelona, España</p>
+                        </div>
+                    </div>
+
+                    <div class="nodo-info-item">
+                        <div class="nodo-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="nodo-info-content">
+                            <h4>Correo electrónico</h4>
+                            <a href="mailto:hola@nododigital.com">dfernnandezy@hotmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="nodo-info-item">
+                        <div class="nodo-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="nodo-info-content">
+                            <h4>Teléfono</h4>
+                            <a href="tel:+123456789">+34 622 494 800</a>
+                        </div>
+                    </div>
+
+                    <div class="nodo-info-item">
+                        <div class="nodo-info-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div class="nodo-info-content">
+                            <h4>Horario de atención</h4>
+                            <p>Lun - Vie: 9:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nodo-social-links">
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" title="Behance"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
