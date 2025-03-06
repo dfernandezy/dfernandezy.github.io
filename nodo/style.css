@@ -148,6 +148,8 @@
 
 .btn-primary {
     background-color: #4e53be;
+    background: linear-gradient(135deg, #2d65fe, #6a11cb);
+
     color: white;
 }
 
@@ -1300,6 +1302,7 @@ body {
     /* distancia desde la derecha de la página */
     display: flex;
     align-items: center;
+
     z-index: 9999;
     border-radius: 50%;
 }
@@ -1330,6 +1333,8 @@ body {
     border: none;
     /* borde sin bordes */
     background-color: #4e53be;
+    background: linear-gradient(135deg, #2d65fe, #6a11cb);
+
     /* color de fondo del botón */
     /* cursor para el botón */
     border-radius: 100px 0 0 100px;
@@ -1339,6 +1344,16 @@ body {
     background-color: #2f4f7a;
     /* cambio de color en hover */
     color: #fff;
+}
+
+.features-list li::before {
+    margin-top: 25px;
+    content: "- ";
+    /* Agrega el guion con un espacio */
+    color: inherit;
+    /* Mantiene el mismo color del texto */
+    font-weight: bold;
+    /* Opcional: hace que el guion resalte */
 }
 
 .floating-cta {
@@ -1358,6 +1373,8 @@ body {
     border-radius: 5px;
     border: none;
     transition: all 0.3s ease;
+    background: linear-gradient(135deg, #2d65fe, #6a11cb);
+
 }
 
 .portfolio-filters {
@@ -2472,6 +2489,7 @@ body {
 .features-list {
     list-style: none;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .features-list li {
@@ -3213,6 +3231,8 @@ body {
 
 .nodo-submit-btn {
     background-color: #2d65fe;
+    background: linear-gradient(135deg, #2d65fe, #6a11cb);
+
     color: white;
     border: none;
     padding: 14px 32px;
@@ -3229,7 +3249,7 @@ body {
 .nodo-submit-btn:hover {
     background-color: #1e50dd;
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(45, 101, 254, 0.3);
+    box-shadow: 0 8px 14px rgba(45, 101, 254, 0.3);
 }
 
 .nodo-submit-btn:active {
