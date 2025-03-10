@@ -510,7 +510,7 @@
                         </div>
                     </div>
                     <div class="case-study-content">
-                        <h3>Inmobiliaria Profesional</h3>
+                        <h3>Inmobiliaria con Gestión de Inmuebles</h3>
                         <div class="metrics-grid">
                             <div class="metric">
                                 <span class="metric-number">100%</span>
@@ -598,13 +598,13 @@
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
                         <p class="testimonial-text">"Desde que implementé las nuevas estrategias digitales, mis
-                            visitas online se duplicaron y los leads se cuadruplicaron. Lo mejor es que mantenemos la
+                            visitas y solicitudes se duplicaron. Lo mejor es que mantenemos la
                             satisfacción del cliente, algo crucial en mi sector."</p>
                         <div class="testimonial-author">
-                            <img src="/img/lucas.webp" alt="Cliente">
+                            <img src="./img/llarunica.webp" alt="Cliente">
                             <div class="author-info">
-                                <h4>Lucas Gartier</h4>
-                                <span>IT Professional</span>
+                                <h4>LlarUnica</h4>
+                                <span>Inmobiliaria</span>
                             </div>
                         </div>
                     </div>
@@ -643,7 +643,7 @@
     <div class="nodo-services-cta" style="margin: 25px;">
         <h3>¿Listo para dar el siguiente paso?</h3>
         <p>Agenda una consulta gratuita y descubre cómo podemos ayudarte</p>
-        <a href="https://wa.me/1234567890?text=Quisiera%20una%20consulta" class="nodo-btn-primary"
+        <a href="https://wa.me/1234567890?text=Quisiera%20una%20consulta%20con%20Nodo" class="nodo-btn-primary"
             style="margin: 25px;">
             Consultar
         </a>
@@ -835,7 +835,8 @@
                     </div>
 
                     <div class="quote-cta">
-                        <button class="btn-contact">Contacto para Presupuesto Personalizado</button>
+                        <button href="https://wa.me/1234567890?text=Quisiera%20una%20consulta%20con%20Nodo"
+                            class="btn-contact">Contacto para Presupuesto Personalizado</button>
                     </div>
                 </div>
             </div>
@@ -843,6 +844,7 @@
     </div>
 
     <script>
+        // Primero, modificamos el JavaScript existente para incluir la funcionalidad de WhatsApp
         document.addEventListener('DOMContentLoaded', function () {
             // Tab switching functionality
             const tabs = document.querySelectorAll('.tab');
@@ -872,19 +874,79 @@
                 }, 100 * index);
             });
 
+            // Modificación: Redireccionar a WhatsApp con los botones de plan
+            const planButtons = document.querySelectorAll('.btn-plan');
+            planButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const planCard = this.closest('.plan-card');
+                    const planName = planCard.querySelector('.plan-name').textContent;
+                    const planPrice = planCard.querySelector('.plan-price').textContent;
+
+                    // Número de teléfono al que enviar el mensaje (reemplaza con el número real)
+                    const phoneNumber = '34600000000'; // Reemplazar con tu número
+
+                    // Construir el mensaje
+                    let message = `Hola, estoy interesado en el ${planName} de Nodo Digital Agency`;
+
+                    // Añadir precio si no es "Personalizado"
+                    if (planPrice !== 'Personalizado') {
+                        message += ` por ${planPrice}`;
+                    }
+
+                    message += `. Me gustaría recibir más información.`;
+
+                    // Codificar el mensaje para URL
+                    const encodedMessage = encodeURIComponent(message);
+
+                    // Construir la URL de WhatsApp
+                    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                    // Abrir WhatsApp en una nueva pestaña
+                    window.open(whatsappURL, '_blank');
+                });
+            });
+
             // Quote buttons functionality
             const quoteButtons = document.querySelectorAll('.btn-quote');
             quoteButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    const projectName = this.parentElement.querySelector('.project-name').textContent;
-                    alert(`Has solicitado un presupuesto para: ${projectName}. Un representante de Nodo se pondrá en contacto contigo pronto.`);
+                    const projectCard = this.closest('.project-card');
+                    const projectName = projectCard.querySelector('.project-name').textContent;
+
+                    // Número de teléfono
+                    const phoneNumber = '34600000000'; // Reemplazar con tu número
+
+                    // Construir el mensaje
+                    const message = `Hola, estoy interesado en el servicio individual de ${projectName} de Nodo Digital Agency. Me gustaría recibir un presupuesto.`;
+
+                    // Codificar el mensaje para URL
+                    const encodedMessage = encodeURIComponent(message);
+
+                    // Construir la URL de WhatsApp
+                    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                    // Abrir WhatsApp en una nueva pestaña
+                    window.open(whatsappURL, '_blank');
                 });
             });
 
             // Contact button functionality
             const contactButton = document.querySelector('.btn-contact');
             contactButton.addEventListener('click', function () {
-                alert('Gracias por tu interés en nuestros servicios personalizados. Por favor, completa el formulario de contacto y te responderemos en menos de 24 horas.');
+                // Número de teléfono
+                const phoneNumber = '34600000000'; // Reemplazar con tu número
+
+                // Construir el mensaje
+                const message = `Hola, estoy interesado en recibir un presupuesto personalizado para los servicios de Nodo Digital Agency.`;
+
+                // Codificar el mensaje para URL
+                const encodedMessage = encodeURIComponent(message);
+
+                // Construir la URL de WhatsApp
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Abrir WhatsApp en una nueva pestaña
+                window.open(whatsappURL, '_blank');
             });
         });
     </script>

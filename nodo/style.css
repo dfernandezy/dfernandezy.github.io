@@ -81,6 +81,7 @@
 
 * {
     cursor: none;
+    scroll-behavior: smooth;
 
     margin: 0;
     padding: 0;
@@ -2394,7 +2395,6 @@ body {
 
 .pricing-section {
     opacity: 0;
-    pointer-events: none;
     transition: all 0.5s ease;
     position: relative;
     display: none;
@@ -2520,7 +2520,7 @@ body {
 }
 
 .btn-plan:hover {
-    background: var(--secondary-light);
+    background: var(--primary);
     transform: translateY(-3px);
 }
 
