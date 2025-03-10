@@ -15,6 +15,7 @@
     /* No interfiere con elementos */
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 
@@ -94,6 +95,7 @@
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
+
     align-items: center;
     position: sticky;
     top: 0;
@@ -124,6 +126,10 @@
 .nav-links a {
     text-decoration: none;
     color: #333;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
 }
 
 .buttons {
@@ -2653,12 +2659,12 @@ body {
     gap: 15px;
 }
 
-.project-card p{
+.project-card p {
     font-weight: 300;
     font-style: italic;
 }
 
-.project-card li{
+.project-card li {
     font-weight: 400;
     padding: 15px;
 }
@@ -2703,7 +2709,7 @@ body {
 }
 
 .btn-quote:hover {
-    background:var(--primary);
+    background: var(--primary);
     color: white;
     transform: translateY(-2px);
 }
