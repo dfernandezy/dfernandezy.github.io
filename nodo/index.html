@@ -408,7 +408,188 @@
 
 
 
+    <section class="services-grid">
+        <h2 class="services-title">Sitios web, apps, branding y más.</h2>
+        <div class="services-container" class="nomark">
+            <div class="service-item">
+                <h3>Sitios Web</h3>
+                <div class="service-line"></div>
+            </div>
 
+            <div class="service-item">
+                <h3>Elementos Web 3D</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Gráficos para Email</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Apps Móviles</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>SAAS</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Banners para Ferias</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Apps Web</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Presentaciones</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Tarjetas de Visita</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Apps de Escritorio</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Diapositivas</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Folletos</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Logos y Branding</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Gráficos para Redes</h3>
+                <div class="service-line"></div>
+            </div>
+
+            <div class="service-item">
+                <h3>Señalización/Vallas</h3>
+                <div class="service-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .services-grid {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .services-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+            font-family: 'serif';
+            /* Ajusta según la fuente que uses */
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-item {
+            padding: 15px 0;
+            position: relative;
+            text-align: left;
+            /* Alinea el texto a la izquierda */
+            display: block;
+            /* Cambiado a block para mantener alineación natural */
+            list-style-type: none;
+            /* Elimina los bullets si es una lista */
+        }
+
+        /* Asegurarse de que .service-item no reciba los guiones de .features-list */
+        .service-item::before {
+            content: none !important;
+            /* Anula cualquier contenido before */
+            margin-top: 0;
+        }
+
+        .service-item h3 {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .service-line {
+            width: 100%;
+            height: 1px;
+            background-color: #E5E5E5;
+            margin-top: 15px;
+        }
+
+        /* Hover effect */
+        .service-item:hover {
+            cursor: pointer;
+        }
+
+        .service-item:hover h3 {
+            color: var(--primary-purple);
+        }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .services-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-title {
+                font-size: 2rem;
+                padding: 0 20px;
+            }
+        }
+
+        /* Animaciones */
+        .service-item {
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateX(10px);
+        }
+
+        /* Asegurarse de que el contenedor principal tenga padding */
+        @media (max-width: 1200px) {
+            .services-container {
+                margin: 0 20px;
+            }
+        }
+    </style>
 
 
 
