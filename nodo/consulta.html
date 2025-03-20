@@ -912,8 +912,170 @@
                 return name && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && /^\d{9,}$/.test(phone.replace(/\D/g, ''));
             }
 
-            // Resto del código (generateSummary, generateEmailBody, generateWhatsAppMessage) se mantiene igual...
+            // Agregar estas funciones al final del script:
+
+            function generateEmailBody() {
+                // Actualizar información de contacto desde el formulario
+                userSelections.contact.name = document.getElementById('name').value;
+                userSelections.contact.email = document.getElementById('email').value;
+                userSelections.contact.phone = document.getElementById('phone').value;
+                userSelections.contact.company = document.getElementById('company').value;
+                userSelections.contact.message = document.getElementById('message').value;
+
+                // Crear cuerpo del correo
+                return `
+SOLICITUD DE SERVICIOS NODO
+
+DATOS DE CONTACTO:
+- Nombre: ${userSelections.contact.name}
+- Email: ${userSelections.contact.email}
+- Teléfono: ${userSelections.contact.phone}
+- Empresa: ${userSelections.contact.company || 'No especificada'}
+
+SERVICIOS SOLICITADOS:
+- Página Web: ${userSelections.web}
+- Branding: ${userSelections.branding.join(', ')}
+- Marketing Digital: ${userSelections.marketing.join(', ')}
+- Presupuesto: ${userSelections.budget}
+
+MENSAJE ADICIONAL:
+${userSelections.contact.message || 'Sin mensaje adicional'}
+`;
+            }
+
+            // Agregar event listeners para los botones de envío
+            document.getElementById('sendEmail').addEventListener('click', function () {
+                if (validateContactForm()) {
+                    // Preparar datos para Formspree
+                    const formData = new FormData();
+                    formData.append('name', userSelections.contact.name);
+                    formData.append('email', userSelections.contact.email);
+                    formData.append('phone', userSelections.contact.phone);
+                    formData.append('message', generateEmailBody());
+
+                    // Enviar a Formspree (reemplaza con tu endpoint)
+                    fetch('https://formspree.io/f/mkgjngab', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                // Mostrar pantalla de confirmación
+                                document.getElementById('step6').classList.remove('active');
+                                document.getElementById('step7').classList.add('active');
+                                updateProgress(7, 7);
+                            } else {
+                                alert('Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.');
+                        });
+                }
+            });
+
+            document.getElementById('sendWhatsApp').addEventListener('click', function () {
+                if (validateContactForm()) {
+                    // Número de WhatsApp (reemplaza con tu número)
+                    const whatsappNumber = '34622494800';
+
+                    // Generar mensaje de WhatsApp
+                    const message = generateWhatsAppMessage();
+
+                    // Crear enlace de WhatsApp
+                    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+                    // Abrir WhatsApp
+                    window.open(whatsappLink, '_blank');
+
+                    // Mostrar pantalla de confirmación
+                    document.getElementById('step6').classList.remove('active');
+                    document.getElementById('step7').classList.add('active');
+                    updateProgress(7, 7);
+                }
+            });
+
+            function generateWhatsAppMessage() {
+                // Actualizar información de contacto
+                userSelections.contact.name = document.getElementById('name').value;
+                userSelections.contact.email = document.getElementById('email').value;
+                userSelections.contact.phone = document.getElementById('phone').value;
+                userSelections.contact.company = document.getElementById('company').value;
+                userSelections.contact.message = document.getElementById('message').value;
+
+                // Crear mensaje para WhatsApp sin emojis
+                let message = "SOLICITUD DE SERVICIOS NODO\n\n";
+
+                // Datos de contacto
+                message += "DATOS DE CONTACTO:\n";
+                message += `Nombre: ${userSelections.contact.name}\n`;
+                message += `Email: ${userSelections.contact.email}\n`;
+                message += `Teléfono: ${userSelections.contact.phone}\n`;
+
+                if (userSelections.contact.company) {
+                    message += `Empresa: ${userSelections.contact.company}\n`;
+                }
+
+                // Servicios solicitados
+                message += "\nSERVICIOS SOLICITADOS:\n";
+                message += `Web: ${userSelections.web}\n`;
+
+                if (userSelections.branding.length > 0) {
+                    message += `Branding: ${userSelections.branding.join(', ')}\n`;
+                }
+
+                if (userSelections.marketing.length > 0) {
+                    message += `Marketing: ${userSelections.marketing.join(', ')}\n`;
+                }
+
+                message += `Presupuesto: ${userSelections.budget}\n`;
+
+                // Mensaje adicional
+                if (userSelections.contact.message) {
+                    message += "\nMENSAJE ADICIONAL:\n";
+                    message += `${userSelections.contact.message}\n`;
+                }
+
+                message += "\nGracias por contactar con Nodo! Te responderemos lo antes posible.";
+
+                return encodeURIComponent(message);
+            }
+
+            function generateEmailBody() {
+                // Actualizar información de contacto desde el formulario
+                userSelections.contact.name = document.getElementById('name').value;
+                userSelections.contact.email = document.getElementById('email').value;
+                userSelections.contact.phone = document.getElementById('phone').value;
+                userSelections.contact.company = document.getElementById('company').value;
+                userSelections.contact.message = document.getElementById('message').value;
+
+                // Crear cuerpo del correo sin símbolos especiales
+                return `
+SOLICITUD DE SERVICIOS NODO
+
+DATOS DE CONTACTO:
+- Nombre: ${userSelections.contact.name}
+- Email: ${userSelections.contact.email}
+- Teléfono: ${userSelections.contact.phone}
+- Empresa: ${userSelections.contact.company || 'No especificada'}
+
+SERVICIOS SOLICITADOS:
+- Página Web: ${userSelections.web}
+- Branding: ${userSelections.branding.join(', ')}
+- Marketing Digital: ${userSelections.marketing.join(', ')}
+- Presupuesto: ${userSelections.budget}
+
+MENSAJE ADICIONAL:
+${userSelections.contact.message || 'Sin mensaje adicional'}
+`;
+            }
         });
+
+
     </script>
 </body>
 
