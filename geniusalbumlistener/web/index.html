@@ -242,6 +242,26 @@
             }
         }
 
+        .top-nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .top-nav a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            color: var(--yt-red);
+        }
+
         .album-showcase {
             position: relative;
             padding: 5rem 2rem;
@@ -358,14 +378,28 @@
 
 <body>
     <header class="header">
+        <nav class="top-nav">
+            <a href="https://github.com/dfernandezy" target="_blank" title="GitHub Profile">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yahved-fernandez/" target="_blank" title="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://buymeacoffee.com/dfernandezp" target="_blank" title="Support on BuyMeACoffee">
+                <i class="fa-solid fa-mug-hot" alt="BuyMeACoffee"></i>
+            </a>
+        </nav>
         <div class="logo">GENIUS ALBUM PLAYER</div>
-        <p class="subtitle">Listen to full albums on Genius in their <b style="font-size: 1.8rem;">original order</b>, effortlessly</p>
+        <p class="subtitle">Listen to full albums on Genius in their <b style="font-size: 1.8rem;">original order</b>,
+            effortlessly</p>
         <a href="#" class="cta-button">Add to Chrome - It's Free!</a>
     </header>
 
     <section class="purpose">
         <h2>One Purpose, Perfectly Executed</h2>
-        <p>This extension is designed with a single, clear purpose: to let you open and play full albums on Genius in their original order effortlessly. No unnecessary features—just a streamlined experience to enhance your music browsing.</p>
+        <p>This extension is designed with a single, clear purpose: to let you open and play full albums on Genius in
+            their original order effortlessly. No unnecessary features—just a streamlined experience to enhance your
+            music browsing.</p>
     </section>
 
     <section class="features">
@@ -442,17 +476,18 @@
     </section>
 
     <footer class="footer">
-        <p>© 2025 Genius Album Player</p>
-        <p>Not affiliated with Genius. Created by music lovers for music lovers.</p>
+        <p>© 2025 Genius Album Player by <a href="dfernandezy.github.io"
+                alt="Yahved Fernández Portfolio">dfernandezy</a></p>
+        <p>Not affiliated with Genius. Created by music lover for music lovers.</p>
         <div class="social-links">
-            <a href="#" target="_blank" title="GitHub Repository">
+            <a href="https://github.com/dfernandezy/ytimestamps" target="_blank" title="GitHub Profile">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="#" target="_blank" title="Twitter">
-                <i class="fab fa-twitter"></i>
+            <a href="https://www.linkedin.com/in/yahved-fernandez/" target="_blank" title="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
             </a>
-            <a href="#" target="_blank" title="Support on Ko-fi">
-                <i class="fas fa-mug-hot"></i>
+            <a href="https://buymeacoffee.com/dfernandezp" target="_blank" title="Support on BuyMeACoffee">
+                <i class="fa-solid fa-mug-hot" alt="BuyMeACoffee"></i>
             </a>
         </div>
     </footer>
