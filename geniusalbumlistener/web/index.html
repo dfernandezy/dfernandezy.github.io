@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Album Player - Play Albums in Original Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        :root {
+            --genius-yellow: #ffff64;
+            --genius-black: #222222;
+            --genius-dark: #333333;
+            --genius-gray: #999999;
+            --genius-light-gray: #f7f7f7;
+            --genius-white: #ffffff;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--genius-black);
+            background-color: var(--genius-white);
+        }
+
+        .header {
+            text-align: center;
+            padding: 5rem 1rem;
+            background: var(--genius-black);
+            color: var(--genius-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 100, 0.1) 0%, rgba(34, 34, 34, 0) 70%);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--genius-yellow);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -1px;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--genius-yellow);
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: var(--genius-white);
+            max-width: 700px;
+            margin: 2rem auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--genius-yellow);
+            color: var(--genius-black);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 100, 0.3);
+        }
+
+        .purpose {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .purpose h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--genius-black);
+        }
+
+        .purpose p {
+            font-size: 1.2rem;
+            color: var(--genius-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            padding: 2.5rem;
+            border-radius: 12px;
+            background: var(--genius-light-gray);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature i {
+            font-size: 3rem;
+            color: var(--genius-yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h3 {
+            color: var(--genius-black);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: var(--genius-dark);
+        }
+
+        .how-it-works {
+            background: var(--genius-black);
+            padding: 6rem 2rem;
+            text-align: center;
+            color: var(--genius-white);
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            color: var(--genius-yellow);
+        }
+
+        .how-it-works h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--genius-yellow);
+        }
+
+        .steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .step {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--genius-yellow);
+            color: var(--genius-black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--genius-yellow);
+            border-radius: 50%;
+            animation: ripple 1.5s infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .album-showcase {
+            position: relative;
+            padding: 5rem 2rem;
+            background: var(--genius-light-gray);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .album-showcase h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--genius-black);
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .album {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .album:hover {
+            transform: translateY(-10px);
+        }
+
+        .album img {
+            width: 100%;
+            display: block;
+        }
+
+        .album-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(34, 34, 34, 0.8);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .album:hover .album-overlay {
+            transform: translateY(0);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--genius-black);
+            color: var(--genius-gray);
+        }
+
+        .footer a {
+            color: var(--genius-yellow);
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--genius-gray);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--genius-yellow);
+        }
+
+        .floating-demo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--genius-yellow);
+            color: var(--genius-black);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 255, 100, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .floating-demo:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">GENIUS ALBUM PLAYER</div>
+        <p class="subtitle">Listen to full albums on Genius in their <b style="font-size: 1.8rem;">original order</b>, effortlessly</p>
+        <a href="#" class="cta-button">Add to Chrome - It's Free!</a>
+    </header>
+
+    <section class="purpose">
+        <h2>One Purpose, Perfectly Executed</h2>
+        <p>This extension is designed with a single, clear purpose: to let you open and play full albums on Genius in their original order effortlessly. No unnecessary features—just a streamlined experience to enhance your music browsing.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-play-circle"></i>
+            <h3>Album Integrity</h3>
+            <p>Listen to albums exactly as the artist intended, with tracks in the correct sequence.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-bolt"></i>
+            <h3>One-Click Playback</h3>
+            <p>Start playing full albums with a single click, no manual playlist creation required.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-feather"></i>
+            <h3>Lightweight Design</h3>
+            <p>Minimal resource usage means better performance without slowing down your browsing.</p>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Install</h3>
+                <p>Add the extension to Chrome with a single click</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Browse</h3>
+                <p>Navigate to any album page on Genius</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Play</h3>
+                <p>Click the album play button and enjoy the full album</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="album-showcase">
+        <h2>Enjoy Albums As Intended</h2>
+        <div class="album-grid">
+            <div class="album">
+                <img src="/api/placeholder/200/200" alt="Album Cover">
+                <div class="album-overlay">
+                    <h4>Kendrick Lamar</h4>
+                    <p>To Pimp A Butterfly</p>
+                </div>
+            </div>
+            <div class="album">
+                <img src="/api/placeholder/200/200" alt="Album Cover">
+                <div class="album-overlay">
+                    <h4>Taylor Swift</h4>
+                    <p>1989</p>
+                </div>
+            </div>
+            <div class="album">
+                <img src="/api/placeholder/200/200" alt="Album Cover">
+                <div class="album-overlay">
+                    <h4>Frank Ocean</h4>
+                    <p>Blonde</p>
+                </div>
+            </div>
+            <div class="album">
+                <img src="/api/placeholder/200/200" alt="Album Cover">
+                <div class="album-overlay">
+                    <h4>Tyler, The Creator</h4>
+                    <p>IGOR</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Genius Album Player</p>
+        <p>Not affiliated with Genius. Created by music lovers for music lovers.</p>
+        <div class="social-links">
+            <a href="#" target="_blank" title="GitHub Repository">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" target="_blank" title="Support on Ko-fi">
+                <i class="fas fa-mug-hot"></i>
+            </a>
+        </div>
+    </footer>
+
+    <a href="#" class="floating-demo">Try It Now</a>
+</body>
+
+</html>
