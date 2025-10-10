@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin:0;overflow:hidden;">
+    <!-- Pantalla 3D Spline -->
+    <div id="spline-cover" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:1000;background:#000;">
+        <canvas id="canvas3d" style="width:100vw;height:100vh;display:block;"></canvas>
+        <div id="fade-overlay" style="position:absolute;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0);pointer-events:none;transition:background 1s;"></div>
+    </div>
+    <!-- Contenido web oculto al inicio -->
+    <div id="main-content" style="opacity:0;transition:opacity 1s;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#0a0a13;">
+        <div class="container" style="text-align:center;">
+            <h1 style="font-size:4rem;font-weight:300;color:#b9caff;letter-spacing:-2px;margin-bottom:0.5em;">AI Dev. Programmer<span style="color: #b388ff;">.</span></h1>
+            <p style="font-size:1.5rem;color:#b388ff99;margin-bottom:2em;">We turn complex ideas into effortless experiences</p>
+        </div>
+        <div class="wave" style="width:100vw;height:180px;background:linear-gradient(90deg,#b388ff33 0%,#b388ff 100%);border-radius:100% 0 0 0/100% 0 0 0;filter:blur(8px);position:absolute;bottom:0;left:0;z-index:-1;"></div>
+        <div style="margin-top:3em;color:#b388ff77;font-size:1.1rem;">Desliza arriba para volver al 3D</div>
+    </div>
+    <script type="module">
+    import { Application } from 'https://unpkg.com/@splinetool/runtime@1.0.49/build/runtime.js';
+    const canvas = document.getElementById('canvas3d');
+    const app = new Application(canvas);
+    app.load('https://prod.spline.design/GRUXpn6EqTxuTm4v/scene.splinecode');
+
+    let transitioned = false;
+    function triggerTransition() {
+        if (transitioned) return;
+        transitioned = true;
+        // Fade overlay
+        const overlay = document.getElementById('fade-overlay');
+        overlay.style.background = 'rgba(0,0,0,1)';
+        setTimeout(() => {
+            document.getElementById('spline-cover').style.display = 'none';
+            document.getElementById('main-content').style.opacity = 1;
+            document.body.style.overflow = '';
+        }, 1000);
+    }
+    function triggerBackTo3D() {
+        if (!transitioned) return;
+        transitioned = false;
+        document.getElementById('spline-cover').style.display = '';
+        document.getElementById('main-content').style.opacity = 0;
+        document.body.style.overflow = 'hidden';
+        // Fade in overlay
+        const overlay = document.getElementById('fade-overlay');
+        overlay.style.background = 'rgba(0,0,0,1)';
+        setTimeout(() => {
+            overlay.style.background = 'rgba(0,0,0,0)';
+        }, 100);
+    }
+    // Detect scroll, wheel, touch para salir del 3D
+    window.addEventListener('wheel', e => {
+        if (!transitioned && (e.deltaY > 0 || e.deltaY < 0)) triggerTransition();
+    });
+    window.addEventListener('touchstart', triggerTransition, { once: true });
+    window.addEventListener('keydown', e => {
+        if(!transitioned && ['ArrowDown','ArrowUp','Space','Enter'].includes(e.key)) triggerTransition();
+    });
+    // Detect scroll up, swipe up, flecha arriba para volver al 3D
+    document.getElementById('main-content').addEventListener('wheel', e => {
+        if (transitioned && e.deltaY < 0) triggerBackTo3D();
+    });
+    document.getElementById('main-content').addEventListener('touchstart', function(e) {
+        let startY = e.touches[0].clientY;
+        function onTouchMove(ev) {
+            let moveY = ev.touches[0].clientY;
+            if (startY - moveY > 50) triggerBackTo3D();
+            document.getElementById('main-content').removeEventListener('touchmove', onTouchMove);
+        }
+        document.getElementById('main-content').addEventListener('touchmove', onTouchMove);
+    });
+    window.addEventListener('keydown', e => {
+        if (transitioned && e.key === 'ArrowUp') triggerBackTo3D();
+    });
+    </script>
+</body>
+</html>
