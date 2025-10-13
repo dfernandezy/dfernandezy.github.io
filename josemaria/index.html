@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="José María Alguersuari - Fotografía de autor. Pionero del fotoperiodismo creativo en España.">
+    <title>José María Alguersuari - Fotógrafo</title>
+    
+    <!-- GSAP Libraries -->
+    <script src="../GSAP/gsap-public/minified/gsap.min.js"></script>
+    <script src="../GSAP/gsap-public/minified/ScrollTrigger.min.js"></script>
+    <script src="../GSAP/gsap-public/minified/ScrollSmoother.min.js"></script>
+    <script src="../GSAP/gsap-public/minified/SplitText.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-bg: #f8f8f5;
+            --color-text: #1a1a1a;
+            --color-accent: #008bd7;
+            --color-light: #e8e8e5;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: auto;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        #smooth-wrapper {
+            overflow: hidden;
+        }
+        
+        #smooth-content {
+            overflow: visible;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 0.95;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            margin-top: 1.5rem;
+            opacity: 0;
+            transform: translateY(40px);
+            color: var(--color-accent);
+        }
+        
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 3rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            opacity: 0;
+            color: #666;
+        }
+        
+        /* Biography Section */
+        .biography {
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            opacity: 0;
+        }
+        
+        .bio-content h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 3rem;
+            opacity: 0;
+        }
+        
+        .bio-text {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            opacity: 0;
+        }
+        
+        .bio-text strong {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .award-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .award-year {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .award-title {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            min-height: 100vh;
+            padding: 8rem 0;
+            background: var(--color-light);
+        }
+        
+        .gallery-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        
+        .gallery-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+        }
+        
+        .gallery-slider-wrapper {
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        
+        .gallery-slider {
+            display: flex;
+            gap: 2rem;
+            padding: 0 2rem;
+            will-change: transform;
+        }
+        
+        .gallery-item {
+            flex-shrink: 0;
+            width: 60vw;
+            max-width: 800px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            will-change: transform;
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--color-text);
+            color: white;
+        }
+        
+        footer p {
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 80vw;
+            }
+            
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">José María<br>Alguersuari</h1>
+        <p class="hero-subtitle">Pionero del fotoperiodismo creativo</p>
+        <div class="hero-scroll-hint">Desliza para descubrir</div>
+    </section>
+            
+            <!-- Biography Section -->
+            <section class="biography">
+                <div class="section-label">Biografía</div>
+                <div class="bio-content">
+                    <h2>El fundador de una rama del fotoperiodismo creativo</h2>
+                    
+                    <p class="bio-text">
+                        <strong>José María Alguersuari Tortajada</strong> nace en Sabadell el 10 de diciembre de 1945. 
+                        Se inicia en la fotografía desde niño ayudando a su padre, también fotógrafo, realizando 
+                        fotografías en el ámbito deportivo para revistas y periódicos desde 1961.
+                    </p>
+                    
+                    <p class="bio-text">
+                        Considerado el <strong>precursor absoluto de la modernidad en la fotografía deportiva en España</strong>, 
+                        su forma de hacer marcó pautas y sirvió de modelo a buena parte del colectivo profesional. 
+                        Fue el primer fotógrafo que dejó de lado los teleobjetivos cortos, trabajando con un 300mm f2.8.
+                    </p>
+                    
+                    <p class="bio-text">
+                        Desde 1983 hasta 2007, formó parte del equipo del diario <strong>La Vanguardia</strong>, 
+                        donde desarrolló la mayor parte de su actividad fotográfica, siendo Jefe de Fotografía 
+                        del Magazine. Ha cubierto las Olimpiadas de Seúl 88 y Barcelona 92.
+                    </p>
+                    
+                    <!-- Awards Grid -->
+                    <div class="awards-grid">
+                        <div class="award-item">
+                            <div class="award-year">1985</div>
+                            <div class="award-title">1.º Premio Gaziel de Fotoperiodismo, Generalitat de Catalunya</div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-year">1990</div>
+                            <div class="award-title">Premio Mejor Fotógrafo del Año en España</div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-year">2007</div>
+                            <div class="award-title">1.º Premio Oro Society for News Design (SNDE)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gallery Section -->
+            <section class="gallery">
+                <div class="gallery-header">
+                    <div class="section-label">Obra fotográfica</div>
+                    <h2 class="gallery-title">Una vida capturando momentos</h2>
+                </div>
+                
+                <div class="gallery-slider-wrapper">
+                    <div class="gallery-slider">
+                        <!-- Gallery items with placeholder images -->
+                        <div class="gallery-item" data-caption="Fotoperiodismo deportivo">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23ddd' width='800' height='600'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EFoto 1 - Fotoperiodismo deportivo%3C/text%3E%3C/svg%3E" alt="Fotografía de José María Alguersuari">
+                            <div class="gallery-caption">
+                                <p>Fotoperiodismo deportivo</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Reportajes diversos">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23ccc' width='800' height='600'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EFoto 2 - Reportajes diversos%3C/text%3E%3C/svg%3E" alt="Fotografía de José María Alguersuari">
+                            <div class="gallery-caption">
+                                <p>Reportajes diversos</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Magazine La Vanguardia">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23ddd' width='800' height='600'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EFoto 3 - Magazine La Vanguardia%3C/text%3E%3C/svg%3E" alt="Fotografía de José María Alguersuari">
+                            <div class="gallery-caption">
+                                <p>Magazine La Vanguardia</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Álbum de fotografía práctica">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ccc' width='800' height='1000'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EÁlbum de fotografía práctica%3C/text%3E%3C/svg%3E" alt="Álbum de fotografía práctica">
+                            <div class="gallery-caption">
+                                <p>Álbum de fotografía práctica</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Magazine - Portadas">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ddd' width='800' height='1000'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EMagazine - Portadas%3C/text%3E%3C/svg%3E" alt="Magazine">
+                            <div class="gallery-caption">
+                                <p>Portadas de Magazine</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Pasión por las motos">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1200'%3E%3Crect fill='%23ccc' width='800' height='1200'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EPasión por las motos%3C/text%3E%3C/svg%3E" alt="Hobby - Motociclismo">
+                            <div class="gallery-caption">
+                                <p>Pasión por las motos</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="La Vanguardia">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ddd' width='800' height='1000'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3ELa Vanguardia%3C/text%3E%3C/svg%3E" alt="La Vanguardia">
+                            <div class="gallery-caption">
+                                <p>Portadas La Vanguardia</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-caption="Diarios de fotografía">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ccc' width='800' height='1000'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EDiarios de fotografía y alguna motocicleta%3C/text%3E%3C/svg%3E" alt="Diarios de fotografía">
+                            <div class="gallery-caption">
+                                <p>Diarios de fotografía</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer>
+                <p>© 2009 - 2025 José María Alguersuari</p>
+                <p style="margin-top: 1rem; font-size: 0.75rem;">
+                    Los contenidos de este sitio son titularidad exclusiva de José María Alguersuari<br>
+                    y están amparados por la normativa de Propiedad Intelectual e Industrial.
+                </p>
+            </footer>
+            
+        </div>
+    </div>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">×</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+        </div>
+    </div>
+    
+    <script>
+        // Register GSAP plugins
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+        
+        // Wait for content to load
+        window.addEventListener('load', () => {
+            
+            // Initialize ScrollSmoother for smooth scrolling
+            const smoother = ScrollSmoother.create({
+                wrapper: '#smooth-wrapper',
+                content: '#smooth-content',
+                smooth: 1.5,
+                effects: true,
+                smoothTouch: 0.1
+            });
+            
+            // Hero animations
+            const heroTimeline = gsap.timeline({ delay: 0.5 });
+            heroTimeline
+                .to('.hero-title', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: 'power3.out'
+                })
+                .to('.hero-subtitle', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out'
+                }, '-=0.8')
+                .to('.hero-scroll-hint', {
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                }, '-=0.5');
+            
+            // Biography section animations
+            gsap.to('.section-label', {
+                opacity: 1,
+                duration: 1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.biography',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+            
+            gsap.to('.bio-content h2', {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.bio-content h2',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                }
+            });
+            
+            // Animate bio paragraphs with stagger
+            gsap.to('.bio-text', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.bio-text',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                }
+            });
+            
+            // Animate award items
+            gsap.to('.award-item', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.awards-grid',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+            
+            // Gallery title animation
+            gsap.to('.gallery-title', {
+                opacity: 1,
+                duration: 1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.gallery-title',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                }
+            });
+            
+            // Horizontal scroll for gallery
+            const gallerySlider = document.querySelector('.gallery-slider');
+            const galleryItems = gsap.utils.toArray('.gallery-item');
+            
+            // Create horizontal scroll
+            gsap.to(gallerySlider, {
+                x: () => -(gallerySlider.scrollWidth - window.innerWidth),
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.gallery-slider-wrapper',
+                    start: 'top 20%',
+                    end: () => `+=${gallerySlider.scrollWidth}`,
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+            
+            // Parallax effect on gallery images
+            galleryItems.forEach((item) => {
+                const img = item.querySelector('img');
+                gsap.to(img, {
+                    scale: 1.1,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'left right',
+                        end: 'right left',
+                        scrub: 1,
+                        containerAnimation: gsap.getById('galleryScroll')
+                    }
+                });
+            });
+            
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.getElementById('lightbox-close');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightbox.classList.add('active');
+                    gsap.to(lightbox, { opacity: 1, duration: 0.3 });
+                });
+            });
+            
+            lightboxClose.addEventListener('click', () => {
+                gsap.to(lightbox, {
+                    opacity: 0,
+                    duration: 0.3,
+                    onComplete: () => {
+                        lightbox.classList.remove('active');
+                    }
+                });
+            });
+            
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    gsap.to(lightbox, {
+                        opacity: 0,
+                        duration: 0.3,
+                        onComplete: () => {
+                            lightbox.classList.remove('active');
+                        }
+                    });
+                }
+            });
+            
+        });
+    </script>
+</body>
+</html>
