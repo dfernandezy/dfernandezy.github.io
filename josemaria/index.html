@@ -49,33 +49,144 @@
         
         /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 150vh;
+            min-height: 900px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
+            background: var(--color-bg);
+        }
+        
+        /* Photo frames (polaroid style) */
+        .photo-frames {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .photo-frame {
+            position: absolute;
+            background: white;
+            border: 2px solid #1a1a1a;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            padding: 1.5rem 1.5rem 3rem;
+            transform: rotate(0deg);
+            overflow: hidden;
+            will-change: transform, box-shadow, top, left, right;
+            transition: top 0.3s ease, left 0.3s ease, right 0.3s ease;
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1);
+            will-change: transform;
+        }
+        
+        /* Frame positions - optimized for 150vh */
+        .photo-frame:nth-child(1) {
+            width: 300px;
+            height: 360px;
+            top: 10%;
+            left: 8%;
+            transform: rotate(-8deg);
+            z-index: 1;
+        }
+        
+        .photo-frame:nth-child(2) {
+            width: 340px;
+            height: 400px;
+            top: 55%;
+            left: 12%;
+            transform: rotate(5deg);
+            z-index: 2;
+        }
+        
+        .photo-frame:nth-child(3) {
+            width: 320px;
+            height: 380px;
+            top: 15%;
+            right: 10%;
+            transform: rotate(12deg);
+            z-index: 1;
+        }
+        
+        .photo-frame:nth-child(4) {
+            width: 300px;
+            height: 360px;
+            top: 60%;
+            right: 12%;
+            transform: rotate(-6deg);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+        
+        /* Quote text - visible first on mobile */
+        .hero-quote {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            line-height: 1.7;
+            color: #666;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            font-weight: 300;
+        }
+        
+        .hero-quote strong {
+            color: var(--color-text);
+            font-weight: 500;
         }
         
         .hero-title {
-            font-size: clamp(3rem, 10vw, 8rem);
+            font-size: clamp(3.5rem, 11vw, 9rem);
             font-weight: 700;
             letter-spacing: -0.03em;
             line-height: 0.95;
             text-align: center;
+            perspective: 1000px;
+            position: relative;
+            z-index: 10;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title .char {
+            display: inline-block;
             opacity: 0;
-            transform: translateY(60px);
+            transform: translateY(120px) rotateX(-90deg);
+            transform-origin: 50% 100%;
         }
         
         .hero-subtitle {
             font-size: clamp(1.2rem, 3vw, 2rem);
             font-weight: 300;
             margin-top: 1.5rem;
-            opacity: 0;
-            transform: translateY(40px);
             color: var(--color-accent);
+            perspective: 1000px;
+        }
+        
+        .hero-subtitle .word {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(40px);
         }
         
         .hero-scroll-hint {
@@ -86,6 +197,170 @@
             letter-spacing: 0.15em;
             opacity: 0;
             color: #666;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Hero background decoration */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(0, 139, 215, 0.05) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+        }
+        
+        /* Responsive frames */
+        @media (max-width: 1024px) {
+            .hero {
+                height: 130vh;
+                min-height: 800px;
+            }
+            
+            .photo-frame:nth-child(1) {
+                width: 240px;
+                height: 300px;
+                top: 12%;
+                left: 5%;
+            }
+            
+            .photo-frame:nth-child(2) {
+                width: 260px;
+                height: 320px;
+                top: 55%;
+                left: 8%;
+            }
+            
+            .photo-frame:nth-child(3) {
+                width: 250px;
+                height: 310px;
+                top: 18%;
+                right: 5%;
+            }
+            
+            .photo-frame:nth-child(4) {
+                width: 240px;
+                height: 300px;
+                top: 58%;
+                right: 8%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 100vh;
+                min-height: 700px;
+                padding: 2rem 1rem;
+                justify-content: flex-start;
+                padding-top: 25vh;
+            }
+            
+            .hero-quote {
+                font-size: clamp(1rem, 3.5vw, 1.2rem);
+                margin-bottom: 4rem;
+                padding: 0 1.5rem;
+                opacity: 1;
+            }
+            
+            .hero-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+                opacity: 0.3;
+            }
+            
+            .hero-title .char {
+                opacity: 0;
+            }
+            
+            .photo-frame {
+                opacity: 0.5;
+            }
+            
+            .photo-frame:nth-child(1) {
+                width: 180px;
+                height: 220px;
+                top: 8%;
+                left: -20px;
+                transform: rotate(-12deg);
+            }
+            
+            .photo-frame:nth-child(2) {
+                width: 200px;
+                height: 240px;
+                top: 65%;
+                left: -30px;
+                transform: rotate(8deg);
+            }
+            
+            .photo-frame:nth-child(3) {
+                width: 180px;
+                height: 220px;
+                top: 12%;
+                right: -20px;
+                transform: rotate(15deg);
+            }
+            
+            .photo-frame:nth-child(4) {
+                width: 190px;
+                height: 230px;
+                top: 68%;
+                right: -30px;
+                transform: rotate(-10deg);
+            }
+            
+            .hero-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(1rem, 4vw, 1.5rem);
+                opacity: 0;
+            }
+            
+            .hero-scroll-hint {
+                opacity: 0;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 600px;
+            }
+            
+            .photo-frame:nth-child(2),
+            .photo-frame:nth-child(4) {
+                display: none;
+            }
+            
+            .photo-frame:nth-child(1),
+            .photo-frame:nth-child(3) {
+                opacity: 0.35;
+                width: 160px;
+                height: 200px;
+            }
+            
+            .photo-frame:nth-child(1) {
+                top: 5%;
+                left: -40px;
+            }
+            
+            .photo-frame:nth-child(3) {
+                top: 5%;
+                right: -40px;
+            }
         }
         
         /* Biography Section */
@@ -291,6 +566,44 @@
             opacity: 0.7;
         }
         
+        /* Decorative lines for hero */
+        .hero-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .hero-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(0, 139, 215, 0.3), transparent);
+            height: 1px;
+            width: 0;
+        }
+        
+        .hero-line:nth-child(1) {
+            top: 20%;
+            left: 0;
+        }
+        
+        .hero-line:nth-child(2) {
+            top: 40%;
+            left: 0;
+        }
+        
+        .hero-line:nth-child(3) {
+            top: 60%;
+            left: 0;
+        }
+        
+        .hero-line:nth-child(4) {
+            top: 80%;
+            left: 0;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .gallery-item {
@@ -308,10 +621,41 @@
         <div id="smooth-content">
             
     <!-- Hero Section -->
-    <section class="hero">
-        <h1 class="hero-title">José María<br>Alguersuari</h1>
-        <p class="hero-subtitle">Pionero del fotoperiodismo creativo</p>
-        <div class="hero-scroll-hint">Desliza para descubrir</div>
+    <section class="hero" style="height: 250vh;">
+        <!-- Photo Frames (Polaroid style) -->
+        <div class="photo-frames">
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fotografía deportiva - Fútbol">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Reportaje periodístico">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fotografía deportiva - Atletismo">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fotoperiodismo - Eventos">
+            </div>
+        </div>
+        
+        <div class="hero-lines">
+            <div class="hero-line"></div>
+            <div class="hero-line"></div>
+            <div class="hero-line"></div>
+            <div class="hero-line"></div>
+        </div>
+        
+        <div class="hero-content">
+            <p class="hero-quote">
+                "La vena de <strong>José María Alguersuari</strong> está hecha de rebeldía y afán de cambio y renovación. 
+                Alguersuari es el mejor fotógrafo deportivo del país y, curiosamente, esto es algo que puede decirse sin que 
+                sus compañeros se ofendan, pues todos le reconocen como un pionero tanto en la técnica como en la concepción 
+                de la fotografía deportiva."
+            </p>
+            <h1 class="hero-title">José María<br>Alguersuari</h1>
+            <p class="hero-subtitle">Pionero del fotoperiodismo creativo</p>
+            <div class="hero-scroll-hint">Desliza para descubrir</div>
+        </div>
     </section>
             
             <!-- Biography Section -->
@@ -440,7 +784,7 @@
     
     <script>
         // Register GSAP plugins
-        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
         
         // Wait for content to load
         window.addEventListener('load', () => {
@@ -454,26 +798,299 @@
                 smoothTouch: 0.1
             });
             
-            // Hero animations
-            const heroTimeline = gsap.timeline({ delay: 0.5 });
-            heroTimeline
-                .to('.hero-title', {
-                    y: 0,
+            // Split text for hero animations
+            const heroTitle = new SplitText('.hero-title', { type: 'chars' });
+            const heroSubtitle = new SplitText('.hero-subtitle', { type: 'words' });
+            
+            // Detectar si es móvil
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // MOBILE: La cita ya está visible, animar letras del título al scroll
+                
+                // Fade in quote (ya visible por CSS)
+                gsap.to('.hero-quote', {
                     opacity: 1,
-                    duration: 1.2,
-                    ease: 'power3.out'
-                })
-                .to('.hero-subtitle', {
+                    duration: 1.5,
+                    delay: 0.5,
+                    ease: 'power2.out'
+                });
+                
+                // Animar letras del título al hacer scroll
+                gsap.to(heroTitle.chars, {
+                    opacity: 1,
                     y: 0,
+                    rotationX: 0,
+                    stagger: 0.02,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: 'top top',
+                        end: '40% top',
+                        scrub: 1
+                    }
+                });
+                
+                // Fade in del título completo
+                gsap.to('.hero-title', {
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: 'top top',
+                        end: '40% top',
+                        scrub: 1
+                    }
+                });
+                
+                // Fade out de la cita al hacer scroll
+                gsap.to('.hero-quote', {
+                    opacity: 0,
+                    y: -50,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: 'top top',
+                        end: '30% top',
+                        scrub: 1
+                    }
+                });
+                
+                // Fade in subtitle después del título
+                gsap.to('.hero-subtitle', {
+                    opacity: 1,
+                    y: 0,
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: '20% top',
+                        end: '50% top',
+                        scrub: 1
+                    }
+                });
+                
+                // Fade in scroll hint
+                gsap.to('.hero-scroll-hint', {
+                    opacity: 0.7,
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: '30% top',
+                        end: '50% top',
+                        scrub: 1
+                    }
+                });
+                
+            } else {
+                // DESKTOP: Animación normal con timeline
+                
+                const heroTimeline = gsap.timeline({ delay: 0.3 });
+                
+                // Animate decorative lines first
+                heroTimeline.to('.hero-line', {
+                    width: '100%',
+                    duration: 1.5,
+                    ease: 'power2.inOut',
+                    stagger: 0.15
+                });
+                
+                // Fade in quote first
+                heroTimeline.to('.hero-quote', {
                     opacity: 1,
                     duration: 1,
-                    ease: 'power3.out'
-                }, '-=0.8')
-                .to('.hero-scroll-hint', {
-                    opacity: 1,
-                    duration: 0.8,
                     ease: 'power2.out'
+                }, '-=1');
+                
+                // Animate title characters with 3D rotation
+                heroTimeline.to(heroTitle.chars, {
+                    y: 0,
+                    rotationX: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: 'power4.out',
+                    stagger: {
+                        amount: 0.8,
+                        from: 'start'
+                    }
                 }, '-=0.5');
+                
+                // Animate subtitle words with blur effect
+                heroTimeline.to(heroSubtitle.words, {
+                    y: 0,
+                    opacity: 1,
+                    filter: 'blur(0px)',
+                    duration: 1,
+                    ease: 'power3.out',
+                    stagger: 0.08
+                }, '-=0.6');
+                
+                // Scroll hint with delay
+                heroTimeline.to('.hero-scroll-hint', {
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power2.out'
+                }, '-=0.3');
+            }
+            
+            // ScrollTrigger: Zoom images and move text up on scroll
+            
+            // Pin frames: las imágenes se quedan fijas arriba mientras se amplían
+            if (!isMobile) {
+                // En desktop, pin avanzado con las 2 imágenes superiores
+                const topFrames = document.querySelectorAll('.photo-frame:nth-child(1), .photo-frame:nth-child(3)');
+                
+                topFrames.forEach((frame, index) => {
+                    const img = frame.querySelector('img');
+                    
+                    // Timeline para cada frame: acompañar, ampliar, quedar fijo
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: '.hero',
+                            start: 'top top',
+                            end: 'bottom center',
+                            scrub: 1,
+                            pin: false // No pin, solo movimiento
+                        }
+                    })
+                    .to(frame, {
+                        y: 50,
+                        scale: 1.3,
+                        rotation: 0,
+                        boxShadow: '0 50px 120px rgba(0, 0, 0, 0.4)',
+                        ease: 'none',
+                        duration: 0.5
+                    })
+                    .to(frame, {
+                        y: 0,
+                        scale: 1.5,
+                        top: index === 0 ? '10%' : '10%',
+                        left: index === 0 ? '5%' : 'auto',
+                        right: index === 0 ? 'auto' : '5%',
+                        ease: 'power2.out',
+                        duration: 0.5
+                    });
+                    
+                    // Zoom de la imagen interna
+                    gsap.fromTo(img, 
+                        { scale: 1 },
+                        {
+                            scale: 1.8,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: '.hero',
+                                start: 'top top',
+                                end: 'bottom center',
+                                scrub: 1.5
+                            }
+                        }
+                    );
+                });
+                
+                // Frames inferiores se mueven normal
+                const bottomFrames = document.querySelectorAll('.photo-frame:nth-child(2), .photo-frame:nth-child(4)');
+                bottomFrames.forEach((frame, index) => {
+                    const img = frame.querySelector('img');
+                    const speed = 300;
+                    
+                    gsap.to(frame, {
+                        y: speed,
+                        rotation: index === 0 ? 15 : -15,
+                        scale: 1.2,
+                        opacity: 0.5,
+                        boxShadow: '0 40px 100px rgba(0, 0, 0, 0.35)',
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.hero',
+                            start: 'top top',
+                            end: 'bottom center',
+                            scrub: 1
+                        }
+                    });
+                    
+                    gsap.fromTo(img,
+                        { scale: 1 },
+                        {
+                            scale: 1.6,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: '.hero',
+                                start: 'top top',
+                                end: 'bottom center',
+                                scrub: 1.5
+                            }
+                        }
+                    );
+                });
+                
+            } else {
+                // MOBILE: efecto más simple
+                gsap.utils.toArray('.photo-frame').forEach((frame, index) => {
+                    const img = frame.querySelector('img');
+                    
+                    gsap.to(frame, {
+                        y: 1600,
+                        scale: 1.15,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.hero',
+                            start: 'top top',
+                            end: 'bottom center',
+                            scrub: 1
+                        }
+                    });
+                    
+                    gsap.fromTo(img,
+                        { scale: 1 },
+                        {
+                            scale: 1.4,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: '.hero',
+                                start: 'top top',
+                                end: 'bottom center',
+                                scrub: 1.5
+                            }
+                        }
+                    );
+                });
+            }
+            
+            // Move hero title up on scroll (más movimiento para 150vh)
+            gsap.to('.hero-title', {
+                y: -300,
+                opacity: 0.2,
+                scale: 0.85,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom center',
+                    scrub: 1
+                }
+            });
+            
+            // Move hero subtitle up on scroll
+            gsap.to('.hero-subtitle', {
+                y: -220,
+                opacity: 0,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom center',
+                    scrub: 1
+                }
+            });
+            
+            // Fade out scroll hint más rápido
+            gsap.to('.hero-scroll-hint', {
+                opacity: 0,
+                y: -80,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: '25% top',
+                    scrub: 1
+                }
+            });
             
             // Biography section animations
             gsap.to('.section-label', {
