@@ -1,0 +1,18 @@
+/* formValidation.css - Styles for contact form validation and success message */
+
+#contact-form input[required],
+#contact-form textarea[required],
+#contact-form select[required] {
+    border-color: #e5e7eb;
+    transition: border-color 0.2s;
+}
+
+#contact-form input[required]:invalid,
+#contact-form textarea[required]:invalid,
+#contact-form select[required]:invalid {
+    border-color: #DC143C;
+}
+
+.fixed.top-4.right-4.bg-green-600 {
+    z-index: 9999;
+}

@@ -1,0 +1,33 @@
+/* videoScroll.css - Styles for hero video scroll animation */
+
+#video-section {
+    position: relative;
+    z-index: 20;
+}
+
+#video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-wrapper {
+    transform-origin: center center;
+    will-change: transform, opacity, border-radius;
+    transition: none; /* GSAP will handle all transitions */
+}
+
+#hero-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#video-spacer {
+    position: relative;
+    z-index: 10;
+}

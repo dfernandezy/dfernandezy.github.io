@@ -1,0 +1,10 @@
+/* parallaxHero.css - Styles for hero parallax background */
+
+.parallax-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1;
+}

@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFC Barcelona - Elite Soccer Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./components/videoScroll.css">
+    <link rel="stylesheet" href="./components/parallaxHero.css">
+    <link rel="stylesheet" href="./components/formValidation.css">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-logo">
+            <svg viewBox="0 0 200 200">
+                <path d="M100 20 L120 80 L180 80 L130 120 L150 180 L100 140 L50 180 L70 120 L20 80 L80 80 Z" 
+                      fill="#DC143C" stroke="#8B2635" stroke-width="2"/>
+            </svg>
+        </div>
+        <!-- Emergency button to remove loader -->
+        <button onclick="document.getElementById('loader').style.display='none'" 
+                style="position: absolute; bottom: 20px; right: 20px; background: #DC143C; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+            Skip Loading
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-900 to-red-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">CFC</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-900 font-bold text-xl">CFC Barcelona</span>
+                        <div class="text-xs text-red-600 font-semibold uppercase tracking-wider">No Opinions, Just Data</div>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-item text-gray-700 hover:text-red-600 transition-colors font-medium">Home</a>
+                    <a href="#features" class="nav-item text-gray-700 hover:text-red-600 transition-colors font-medium">Features</a>
+                    <a href="#solution" class="nav-item text-gray-700 hover:text-red-600 transition-colors font-medium">Solution</a>
+                    <a href="#benefits" class="nav-item text-gray-700 hover:text-red-600 transition-colors font-medium">Benefits</a>
+                    <a href="#testimonials" class="nav-item text-gray-700 hover:text-red-600 transition-colors font-medium">Success Stories</a>
+                    <a href="#contact" class="nav-item text-gray-700 hover:text-red-600 transition-colors font-medium">Contact</a>
+                </div>
+                <button id="menu-toggle" class="md:hidden text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-red-600 font-medium">Home</a>
+                <a href="#features" class="block text-gray-700 hover:text-red-600 font-medium">Features</a>
+                <a href="#solution" class="block text-gray-700 hover:text-red-600 font-medium">Solution</a>
+                <a href="#benefits" class="block text-gray-700 hover:text-red-600 font-medium">Benefits</a>
+                <a href="#testimonials" class="block text-gray-700 hover:text-red-600 font-medium">Success Stories</a>
+                <a href="#contact" class="block text-gray-700 hover:text-red-600 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-8 md:pt-32 lg:pt-40" style="background: #ffffff;">
+        <!-- Parallax Background Image -->
+        <div class="absolute inset-0 parallax-bg" style="background-image: url('image2.jpg'); background-size: cover; background-position: center; background-attachment: fixed; opacity: 0.1;"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-red-100/40 rounded-full blur-3xl floating"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-red-50/60 rounded-full blur-3xl floating" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
+            <!-- Social Proof Badge -->
+            <div class="mb-8 fade-in immediate">
+                <div class="inline-block p-3 bg-white/80 backdrop-blur-sm border border-red-200 rounded-2xl shadow-lg">
+                    <span class="text-red-600 text-sm font-semibold uppercase tracking-wider">🏆 UEFA Pro Certified • 500+ Players Developed</span>
+                </div>
+            </div>
+            
+            <!-- Main Headline - Clear Desired Outcome -->
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight fade-in immediate" style="color: #1a1a1a !important;">
+                Transform Your Soccer Skills
+                <span class="block gradient-text mt-2" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Barcelona Style</span>
+            </h1>
+            
+            <!-- Clear Value Proposition -->
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 fade-in immediate" style="color: #4b5563 !important;">
+                Data-driven development program with UEFA Pro coaches. Get measurable results 
+                in technical skills, tactical awareness, and professional mindset.
+            </p>
+            <style>
+                .hero-section p.hero-description, .text-xl.md\:text-2xl.max-w-3xl.mx-auto.mb-8.fade-in.immediate {
+                    color: #222 !important;
+                    font-weight: 500;
+                    text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+                }
+            </style>
+            </p>
+            <!-- ELVIDEO - Full Screen Video Experience -->
+            <div id="video-section" class="mb-12">
+                <div id="video-container" class="relative">
+                    <div id="video-wrapper" class="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 shadow-2xl max-w-4xl mx-auto overflow-hidden">
+                        <video id="hero-video" class="rounded-xl shadow-lg w-full h-auto" muted loop playsinline>
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spacer for scroll effect -->
+            <div id="video-spacer" style="height: 200vh;"></div>
+            
+            <!-- Clear CTA with Compelling Reason -->
+            <div class="flex flex-col md:flex-row gap-4 justify-center mb-12 fade-in immediate">
+                <a href="#contact" class="cta-button text-lg" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); color: white; padding: 15px 40px; border-radius: 50px; font-weight: 600; display: inline-block;">
+                    Start Your Transformation →
+                </a>
+                <a href="#solution" class="group px-8 py-4 rounded-full font-semibold transition-all" style="border: 2px solid #c41230; color: #c41230 !important;">
+                    See How It Works
+                    <span class="inline-block ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                </a>
+            </div>
+            
+            <!-- Trust Indicators/Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 fade-in immediate">
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">7+</div>
+                    <div class="mt-2" style="color: #6b7280 !important;">Years in Europe</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">500+</div>
+                    <div class="mt-2" style="color: #6b7280 !important;">Players Developed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">UEFA</div>
+                    <div class="mt-2" style="color: #6b7280 !important;">Pro Certified</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">100%</div>
+                    <div class="mt-2" style="color: #6b7280 !important;">Data Driven</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Key <span class="gradient-text">Features</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Concise subheadings to list your top features. This helps readability.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 fade-in">
+                <!-- Feature 1: Data Analysis -->
+                <div class="group text-center p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Real-Time Performance Data</h3>
+                    <p class="text-gray-600">
+                        GPS tracking, sprint analysis, and heat maps provide instant feedback 
+                        on your performance metrics during every training session.
+                    </p>
+                </div>
+                
+                <!-- Feature 2: Video Analysis -->
+                <div class="group text-center p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Professional Video Analysis</h3>
+                    <p class="text-gray-600">
+                        Frame-by-frame breakdown of your technique with side-by-side comparisons 
+                        to professional players and personalized improvement plans.
+                    </p>
+                </div>
+                
+                <!-- Feature 3: UEFA Coaches -->
+                <div class="group text-center p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">UEFA Pro Certified Coaches</h3>
+                    <p class="text-gray-600">
+                        Train directly under Europe's finest coaches with UEFA Pro licenses, 
+                        bringing professional club methodology to your development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our <span class="gradient-text">Solution</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Show the product's solution with a dashboard mockup or an interactive preview.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                        Complete Player Development Dashboard
+                    </h3>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Our integrated platform combines all aspects of modern soccer development 
+                        into one comprehensive system that tracks, analyzes, and optimizes your progress.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Performance Tracking</h4>
+                                <p class="text-gray-600">Real-time metrics and historical data analysis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Personalized Training Plans</h4>
+                                <p class="text-gray-600">AI-driven recommendations based on your data</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Progress Visualization</h4>
+                                <p class="text-gray-600">Clear charts and graphs showing your improvement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+                        <!-- Dashboard Mockup -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-lg font-bold text-gray-900">Player Dashboard</h4>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">LIVE</span>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-red-50 p-4 rounded-xl">
+                                    <div class="text-2xl font-bold text-red-600">92%</div>
+                                    <div class="text-sm text-gray-600">Technical Skills</div>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-xl">
+                                    <div class="text-2xl font-bold text-red-600">88%</div>
+                                    <div class="text-sm text-gray-600">Tactical Awareness</div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                        <span>Sprint Speed</span>
+                                        <span>94%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-red-600 h-2 rounded-full" style="width: 94%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                        <span>Passing Accuracy</span>
+                                        <span>89%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-red-600 h-2 rounded-full" style="width: 89%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Why Choose <span class="gradient-text">CFC Barcelona</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Focus on your audience's core value propositions. Features tell, but benefits sell.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+                <div class="text-center p-6 bg-red-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Faster Improvement</h3>
+                    <p class="text-gray-600 text-sm">Data-driven training accelerates your development by 3x compared to traditional methods</p>
+                </div>
+                
+                <div class="text-center p-6 bg-red-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Proven Results</h3>
+                    <p class="text-gray-600 text-sm">95% of our players improve their performance scores within the first 3 months</p>
+                </div>
+                
+                <div class="text-center p-6 bg-red-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Cost Effective</h3>
+                    <p class="text-gray-600 text-sm">Get professional-level coaching at a fraction of the cost of private academies</p>
+                </div>
+                
+                <div class="text-center p-6 bg-red-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Global Network</h3>
+                    <p class="text-gray-600 text-sm">Access to European clubs and international opportunities through our network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    How It <span class="gradient-text">Works</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Simplify the process into 3 to 5 easy steps. This will improve understanding.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Process Timeline -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-red-200"></div>
+                
+                <div class="space-y-12">
+                    <!-- Step 1 -->
+                    <div class="relative flex items-center fade-in">
+                        <div class="flex-1 mr-8 text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">1. Initial Assessment</h3>
+                                <p class="text-gray-600">
+                                    Complete evaluation of your current skills, physical condition, and technical abilities 
+                                    using our advanced testing protocols.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg relative z-10">
+                            1
+                        </div>
+                        <div class="flex-1 ml-8"></div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative flex items-center fade-in">
+                        <div class="flex-1 mr-8"></div>
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg relative z-10">
+                            2
+                        </div>
+                        <div class="flex-1 ml-8">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">2. Personalized Plan</h3>
+                                <p class="text-gray-600">
+                                    Receive a customized training program designed specifically for your needs, 
+                                    goals, and current skill level.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative flex items-center fade-in">
+                        <div class="flex-1 mr-8 text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">3. Data-Driven Training</h3>
+                                <p class="text-gray-600">
+                                    Train with UEFA Pro coaches while our system tracks your progress 
+                                    in real-time with GPS and video analysis.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg relative z-10">
+                            3
+                        </div>
+                        <div class="flex-1 ml-8"></div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative flex items-center fade-in">
+                        <div class="flex-1 mr-8"></div>
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg relative z-10">
+                            4
+                        </div>
+                        <div class="flex-1 ml-8">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">4. Continuous Improvement</h3>
+                                <p class="text-gray-600">
+                                    Regular assessments and plan adjustments ensure you're always progressing 
+                                    toward your soccer goals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations/Programs Section -->
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        About <span class="gradient-text">CFC Barcelona</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        We are a holistic data-based soccer development program that utilizes a unique variety 
+                        of futbol modalities as part of our unique methodology. We thrive on being an intense 
+                        learning environment to develop male and female players with training opportunities 
+                        from grassroots to semi-professional.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Our goal is to take players to Barcelona, Spain, and give them the experience of 
+                        training under our UEFA Pro coaches in our evaluation development tours while creating 
+                        camps and clinics here in the US alongside our UEFA Pro level coaches!
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Data-Driven Approach</h4>
+                                <p class="text-gray-500">GPS tracking, video analysis, and performance metrics</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">UEFA Pro Coaches</h4>
+                                <p class="text-gray-500">Learn from Europe's finest coaching talent</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Holistic Development</h4>
+                                <p class="text-gray-500">Sports psychology, nutrition, and recovery work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    <!-- Integrations/Programs Section -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our <span class="gradient-text">Programs</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Show seamless integration with tools your users love. Comprehensive training programs for every level.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 fade-in">
+                <!-- Grassroots Program -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-lg card-hover">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-100 rounded-full blur-3xl group-hover:bg-red-200 transition-colors"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Grassroots Development</h3>
+                        <p class="text-gray-600 mb-6">
+                            Foundation training for young players focusing on fundamental skills, ball mastery, 
+                            and love for the game. Ages 6-12.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Technical fundamentals
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Coordination & agility
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Small-sided games
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
+                            Learn More
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Elite Program -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white border-2 border-red-600 shadow-xl card-hover transform scale-105">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-red-600 to-red-500 rounded-b-xl">
+                        <span class="text-white text-sm font-semibold">MOST POPULAR</span>
+                    </div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-100 rounded-full blur-3xl group-hover:bg-red-200 transition-colors"></div>
+                    <div class="relative p-8 mt-6">
+                        <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Elite Performance</h3>
+                        <p class="text-gray-600 mb-6">
+                            Advanced training for competitive players with focus on tactical intelligence, 
+                            position-specific skills. Ages 13-18.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Advanced tactics
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Position specialization
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Mental conditioning
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
+                            Learn More
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Semi-Pro Program -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-lg card-hover">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-100 rounded-full blur-3xl group-hover:bg-red-200 transition-colors"></div>
+                    <div class="relative p-8">
+                        <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Semi-Professional</h3>
+                        <p class="text-gray-600 mb-6">
+                            Professional pathway program with exposure to scouts, trials, and career development. 
+                            Ages 16+.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Professional trials
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Scout exposure
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Career guidance
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
+                            Learn More
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Methodology Section -->
+    <section id="methodology" class="py-20 bg-gradient-to-b from-black to-gray-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Our Unique <span class="gradient-text">Methodology</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    A comprehensive approach combining multiple disciplines for complete player development
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+                <div class="metric-card rounded-xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Data Analysis</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Real-time performance metrics and statistical analysis to track improvement and identify areas for development.
+                    </p>
+                </div>
+                
+                <div class="metric-card rounded-xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Video Analysis</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Detailed match and training footage review for tactical understanding and technical correction.
+                    </p>
+                </div>
+                
+                <div class="metric-card rounded-xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">GPS Tracking</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Monitor physical performance including distance covered, sprint counts, and positional heat maps.
+                    </p>
+                </div>
+                
+                <div class="metric-card rounded-xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Sports Psychology</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Mental training for peak performance, confidence building, and handling pressure situations.
+                    </p>
+                </div>
+                
+                <div class="metric-card rounded-xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Nutrition Planning</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Personalized nutrition programs for optimal performance, recovery, and long-term health.
+                    </p>
+                </div>
+                
+                <div class="metric-card rounded-xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Recovery Work</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Professional recovery protocols including stretching, massage therapy, and injury prevention.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barcelona Tours Section -->
+    <section id="tours" class="py-20 bg-black relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-900/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Development Tours in <span class="gradient-text">Barcelona</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+                    Experience a transformative journey in Spain that goes beyond a sports tour. Our holistic approach 
+                    to futbol development immerses players and coaches in an intense learning environment.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-6">
+                        Train Like a <span class="gradient-text">Professional</span>
+                    </h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="mb-6">
+                                <h4 class="text-xl font-semibold text-white mb-2">UEFA Pro Coaching</h4>
+                                <p class="text-gray-400">
+                                    Train under Europe's finest UEFA Pro licensed coaches who have developed 
+                                    players for top European clubs.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="mb-6">
+                                <h4 class="text-xl font-semibold text-white mb-2">Professional Facilities</h4>
+                                <p class="text-gray-400">
+                                    Access to world-class training grounds and facilities used by professional 
+                                    clubs in Barcelona.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="mb-6">
+                                <h4 class="text-xl font-semibold text-white mb-2">Cultural Immersion</h4>
+                                <p class="text-gray-400">
+                                    Experience the football culture of Barcelona, attend professional matches, 
+                                    and explore the city's rich sporting heritage.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-white mb-2">Player Evaluation</h4>
+                                <p class="text-gray-400">
+                                    Comprehensive assessment and feedback from professional scouts and coaches 
+                                    with detailed development plans.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="cta-button">
+                        Book Your Tour
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='sans-serif'%3ETraining Session%3C/text%3E%3C/svg%3E" 
+                         alt="Training" class="rounded-xl w-full h-48 object-cover card-hover">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='sans-serif'%3EBarcelona Facilities%3C/text%3E%3C/svg%3E" 
+                         alt="Facilities" class="rounded-xl w-full h-48 object-cover card-hover">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='sans-serif'%3EUEFA Coaches%3C/text%3E%3C/svg%3E" 
+                         alt="Coaches" class="rounded-xl w-full h-48 object-cover card-hover">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='sans-serif'%3ETeam Photo%3C/text%3E%3C/svg%3E" 
+                         alt="Team" class="rounded-xl w-full h-48 object-cover card-hover">
+                </div>
+            </div>
+            
+            <div class="mt-16 p-8 bg-gradient-to-r from-red-900/20 to-black rounded-2xl border border-red-900/30 fade-in">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Tour Includes</h3>
+                    <div class="grid md:grid-cols-4 gap-6 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text mb-2">10</div>
+                            <div class="text-gray-400">Training Sessions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text mb-2">2</div>
+                            <div class="text-gray-400">Friendly Matches</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text mb-2">24/7</div>
+                            <div class="text-gray-400">Video Analysis</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text mb-2">1:1</div>
+                            <div class="text-gray-400">Player Feedback</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- US Programs Section -->
+    <section id="us-programs" class="py-20 bg-gradient-to-b from-black to-gray-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Programs in the <span class="gradient-text">United States</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Bringing European methodology to American players through camps, clinics, and year-round training
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 fade-in">
+                <div class="p-8 bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-800 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-red-900/30 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Summer Camps</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Intensive summer programs featuring UEFA Pro coaches from Barcelona, combining technical 
+                        development with tactical understanding in a fun, engaging environment.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> 5-day intensive programs
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> Age groups 8-18
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> UEFA Pro coaching staff
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> Video analysis included
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="p-8 bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-800 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-red-900/30 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Weekend Clinics</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Specialized weekend sessions focusing on specific skills and positions, perfect for 
+                        players looking to supplement their regular training with elite coaching.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> Position-specific training
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> Small group sessions
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> Technical skill focus
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-400 mr-2">•</span> GPS performance tracking
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Call-To-Value (CTV) -->
+    <section id="contact" class="py-20 bg-gray-50 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-red-100 rounded-full blur-3xl"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Ready to <span class="gradient-text">Transform Your Game?</span>
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Combine actionable steps with compelling reasons to convert.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl border border-gray-200 shadow-xl p-8 fade-in">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">First Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-red-500 focus:ring-2 focus:ring-red-200 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-red-500 focus:ring-2 focus:ring-red-200 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-red-500 focus:ring-2 focus:ring-red-200 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-red-500 focus:ring-2 focus:ring-red-200 focus:outline-none transition-colors">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Program Interest</label>
+                        <select class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-red-500 focus:ring-2 focus:ring-red-200 focus:outline-none transition-colors">
+                            <option>Select a program</option>
+                            <option>Grassroots Development</option>
+                            <option>Elite Performance</option>
+                            <option>Semi-Professional</option>
+                            <option>Barcelona Tours</option>
+                            <option>Assessment & Evaluation</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-red-500 focus:ring-2 focus:ring-red-200 focus:outline-none transition-colors resize-none" placeholder="Tell us about your goals and current skill level..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button w-full text-center text-lg">
+                        🚀 Start My Soccer Transformation
+                    </button>
+                    
+                    <div class="text-center">
+                        <p class="text-sm text-gray-500">
+                            ✅ Free initial assessment • ✅ No long-term commitment • ✅ 100% money-back guarantee
+                        </p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mt-12 fade-in">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2 2v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a2 2 0 00-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
+                    <p class="text-gray-600">info@cfcbarcelona.com</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
+                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Visit Us</h3>
+                    <p class="text-gray-600">Barcelona, Spain & USA</p>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Success <span class="gradient-text">Stories</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Highlight authentic stories with customer photos and measurable results
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 fade-in">
+                <div class="p-8 bg-white rounded-2xl border border-gray-200 shadow-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%23DC143C'/%3E%3Ctext x='30' y='38' text-anchor='middle' fill='white' font-family='Arial' font-size='24' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E" 
+                             alt="Alex" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="text-gray-900 font-bold">Alex Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Youth Player</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-600">
+                        "The Barcelona experience completely transformed my understanding of football. The UEFA Pro coaches 
+                        helped me develop skills I never knew I had. Now I'm playing at the collegiate level!"
+                    </p>
+                    <div class="mt-4 p-3 bg-red-50 rounded-lg">
+                        <div class="text-sm text-red-700 font-semibold">Improved by 40% in 3 months</div>
+                    </div>
+                </div>
+                
+                <div class="p-8 bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-800 card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%23DC143C'/%3E%3Ctext x='30' y='38' text-anchor='middle' fill='white' font-family='Arial' font-size='24' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E" 
+                             alt="Maria" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="text-white font-bold">Maria Gonzalez</h4>
+                            <p class="text-gray-400 text-sm">Parent</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-400">
+                        "As a parent, I was amazed by the holistic approach CFC Barcelona takes. It's not just about 
+                        soccer skills - they develop character, discipline, and confidence. Best investment we've made!"
+                    </p>
+                </div>
+                
+                <div class="p-8 bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-800 card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%23DC143C'/%3E%3Ctext x='30' y='38' text-anchor='middle' fill='white' font-family='Arial' font-size='24' font-weight='bold'%3EJ%3C/text%3E%3C/svg%3E" 
+                             alt="Jake" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="text-white font-bold">Jake Thompson</h4>
+                            <p class="text-gray-400 text-sm">Elite Player</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-400">
+                        "The data-driven approach and GPS tracking helped me understand my performance like never before. 
+                        I earned a scholarship to a Division 1 university thanks to CFC Barcelona's elite program!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Frequently Asked <span class="gradient-text">Questions</span>
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Address potential concerns or objections with simple, clear answers.
+                </p>
+            </div>
+            
+            <div class="space-y-6 fade-in">
+                <div class="faq-item p-6 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">What age groups do you work with?</h3>
+                        <svg class="w-5 h-5 text-red-600 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600">
+                        We work with players from grassroots level (ages 6+) to semi-professional (ages 18+). Our programs are specifically designed and adapted for different age groups and skill levels to ensure optimal development.
+                    </div>
+                </div>
+                
+                <div class="faq-item p-6 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">How long are the Barcelona development tours?</h3>
+                        <svg class="w-5 h-5 text-red-600 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600">
+                        Our Barcelona development tours typically range from 10-14 days. Each tour includes intensive training sessions, friendly matches, video analysis, cultural experiences, and comprehensive player evaluations.
+                    </div>
+                </div>
+                
+                <div class="faq-item p-6 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">What makes your methodology unique?</h3>
+                        <svg class="w-5 h-5 text-red-600 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600">
+                        Our methodology combines traditional futbol training with modern sports science including data analysis, GPS tracking, video analysis, sports psychology, nutrition planning, and recovery work - all delivered by UEFA Pro certified coaches.
+                    </div>
+                </div>
+                
+                <div class="faq-item p-6 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you offer programs for female players?</h3>
+                        <svg class="w-5 h-5 text-red-600 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600">
+                        Absolutely! We develop both male and female players with equal dedication and attention. Our programs are designed to meet the specific needs of all players regardless of gender, from grassroots to semi-professional levels.
+                    </div>
+                </div>
+                
+                <div class="faq-item p-6 bg-white border border-gray-200 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-900">What are the costs for your programs?</h3>
+                        <svg class="w-5 h-5 text-red-600 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600">
+                        Program costs vary depending on the specific program, duration, and level. Please contact us for detailed pricing information. We offer payment plans and scholarships for qualified players based on need and merit.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-red-900 to-red-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">CFC</span>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold text-xl">CFC Barcelona</span>
+                            <div class="text-xs text-red-400 font-semibold uppercase tracking-wider">No Opinions, Just Data</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Elite soccer development with UEFA Pro coaches. Transforming players through 
+                        holistic, data-driven methodology.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.89 2.748.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.78-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-colors">Grassroots Development</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-colors">Elite Performance</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition-colors">Semi-Professional</a></li>
+                        <li><a href="#solution" class="text-gray-400 hover:text-white transition-colors">Barcelona Solution</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition-colors">Benefits</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">
+                            <span class="block">Email:</span>
+                            <a href="mailto:info@cfcbarcelona.com" class="text-red-400 hover:text-red-300 transition-colors">info@cfcbarcelona.com</a>
+                        </li>
+                        <li class="text-gray-400">
+                            <span class="block">Phone:</span>
+                            <a href="tel:+15551234567" class="text-red-400 hover:text-red-300 transition-colors">+1 (555) 123-4567</a>
+                        </li>
+                        <li class="text-gray-400">
+                            <span class="block">Locations:</span>
+                            <span>Barcelona, Spain & USA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 CFC Barcelona. All rights reserved. • Include essential links, contact info, and legal disclaimers—close with trust.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./gsap/gsap.min.js"></script>
+    <script src="./gsap/ScrollTrigger.min.js"></script>
+    <script type="module">
+        import { setupHeroVideoScroll } from './components/videoScroll.js';
+        import { setupParallaxHero } from './components/parallaxHero.js';
+        import { setupFormValidation } from './components/formValidation.js';
+        import { setupAnimations } from './components/animations.js';
+        
+        // Initialize all components
+        setupHeroVideoScroll();
+        setupParallaxHero();
+        setupFormValidation();
+        setupAnimations();
+        
+        console.log('CFC Barcelona website loaded successfully!');
+    </script>
+</body>
+</html>
