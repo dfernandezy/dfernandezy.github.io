@@ -67,6 +67,10 @@
       color: #1a1a1a;
   }
 
+  #topera {
+      padding-top: 1rem;
+  }
+
   .gradient-text {
       background: linear-gradient(135deg, #c41230 0%, #e63946 100%);
       background-clip: text;
@@ -189,7 +193,7 @@
           transform: scale(1);
       }
   }
-
+/* 
   .loader {
       width: 100%;
       height: 100vh;
@@ -214,7 +218,7 @@
   .loader-logo {
       width: 120px;
       animation: pulse 1s infinite;
-  }
+  } */
 
   .video-bg {
       position: absolute;
@@ -404,11 +408,16 @@
 
   @media (max-width: 768px) {
       #video-container {
-          margin-top: 0px !important;
-         height: 80vh !important;
+          margin-top: -75px !important;
+          height: 120vh;        
       }
   }
 
+  @media (max-width: 768px) {
+      #hero-video {
+          height: 50vh !important;
+      }
+  }
 
   #video-wrapper {
       transform-origin: center center;

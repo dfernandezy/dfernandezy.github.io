@@ -8,7 +8,7 @@ export function setupHeroVideoScroll() {
     const videoTimeline = window.gsap.timeline({
         scrollTrigger: {
             trigger: videoContainer,
-            start: 'top 80%',
+            start: 'top 5   %',
             end: 'bottom -100%',
             scrub: 1,
             pin: true,
