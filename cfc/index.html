@@ -118,6 +118,26 @@
                 in technical skills, tactical awareness, and professional mindset.
             </p>
 
+            <!-- Minimal Awwwards-style CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 fade-in immediate">
+                <a href="#contact" class="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium tracking-wide rounded-full transition-all duration-300" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); box-shadow: 0 4px 15px rgba(196, 18, 48, 0.2); color: #ffffff !important;">
+                    <span class="relative flex items-center gap-2" style="color: #ffffff !important;">
+                        <span style="color: #ffffff !important;">Get Started</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="#ffffff" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </span>
+                    <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(135deg, #a81028 0%, #d6303e 100%);"></div>
+                </a>
+                <a href="#features" class="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium tracking-wide text-black border border-black rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                    <span class="relative flex items-center gap-2">
+                        <span>Explore</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
 
             <!-- ELVIDEO - Full Screen Video Experience -->
             <div id="video-section" class="mb-12">
@@ -132,11 +152,10 @@
                 </div>
             </div>
 
-            <!-- Spacer for scroll effect -->
-            <div id="video-spacer" style="height: 200vh;"></div>
+           
 
-            <!-- Clear CTA with Compelling Reason -->
-            <div class="flex flex-col md:flex-row gap-4 justify-center mb-12 fade-in immediate">
+          
+            <div class="flex flex-col md:flex-row gap-4 justify-center mb-12 fade-in immediate" style="display: none;">
                 <a href="#contact" class="cta-button text-lg"
                     style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); color: white; padding: 15px 40px; border-radius: 50px; font-weight: 600; display: inline-block;">
                     Start Your Transformation →
@@ -149,36 +168,151 @@
             </div>
 
             <!-- Trust Indicators/Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 fade-in immediate">
-                <div class="text-center">
-                    <div class="text-4xl font-bold gradient-text"
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 fade-in immediate hero-stats">
+                <div class="text-center stat-item">
+                    <div class="text-4xl font-bold gradient-text stat-number" data-target="7"
                         style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        7+</div>
+                        0+</div>
                     <div class="mt-2" style="color: #6b7280 !important;">Years in Europe</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold gradient-text"
+                <div class="text-center stat-item">
+                    <div class="text-4xl font-bold gradient-text stat-number" data-target="500"
                         style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        500+</div>
+                        0+</div>
                     <div class="mt-2" style="color: #6b7280 !important;">Players Developed</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold gradient-text"
+                <div class="text-center stat-item">
+                    <div class="text-4xl font-bold gradient-text stat-number" data-target="UEFA"
                         style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         UEFA</div>
                     <div class="mt-2" style="color: #6b7280 !important;">Pro Certified</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold gradient-text"
+                <div class="text-center stat-item">
+                    <div class="text-4xl font-bold gradient-text stat-number" data-target="100"
                         style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        100%</div>
+                        0%</div>
                     <div class="mt-2" style="color: #6b7280 !important;">Data Driven</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Features Section -->
+    <!-- Solution Section - MOVED HERE AFTER VIDEO -->
+    <section id="solution" class="py-20 bg-gradient-to-b from-gray-50 to-white solution-reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 solution-header">
+                <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+                    Our <span class="gradient-text" style="background: linear-gradient(135deg, #c41230 0%, #e63946 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Solution</span>
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+                    A comprehensive platform that transforms your soccer development journey
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center solution-content">
+                <div class="solution-text">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Complete Player Development Dashboard
+                    </h3>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Our integrated platform combines all aspects of modern soccer development
+                        into one comprehensive system that tracks, analyzes, and optimizes your progress.
+                    </p>
+
+                    <div class="space-y-6 solution-features">
+                        <div class="flex items-start space-x-4 feature-item">
+                            <div
+                                class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Performance Tracking</h4>
+                                <p class="text-gray-600">Real-time metrics and historical data analysis</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 feature-item">
+                            <div
+                                class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Personalized Training Plans</h4>
+                                <p class="text-gray-600">AI-driven recommendations based on your data</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 feature-item">
+                            <div
+                                class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Progress Visualization</h4>
+                                <p class="text-gray-600">Clear charts and graphs showing your improvement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative solution-dashboard">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200 hover:shadow-3xl transition-shadow duration-500">
+                        <!-- Dashboard Mockup -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-lg font-bold text-gray-900">Player Dashboard</h4>
+                                <span
+                                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">LIVE</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-red-50 p-4 rounded-xl hover:bg-red-100 transition-colors duration-300">
+                                    <div class="text-2xl font-bold text-red-600">92%</div>
+                                    <div class="text-sm text-gray-600">Technical Skills</div>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-xl hover:bg-red-100 transition-colors duration-300">
+                                    <div class="text-2xl font-bold text-red-600">88%</div>
+                                    <div class="text-sm text-gray-600">Tactical Awareness</div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                        <span>Sprint Speed</span>
+                                        <span>94%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-red-600 h-2 rounded-full progress-bar" style="width: 94%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                        <span>Passing Accuracy</span>
+                                        <span>89%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-red-600 h-2 rounded-full progress-bar" style="width: 89%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section - MOVED BELOW -->
     <section id="features" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 fade-in">
@@ -247,121 +381,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Solution Section -->
-    <section id="solution" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Our <span class="gradient-text">Solution</span>
-                </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Show the product's solution with a dashboard mockup or an interactive preview.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
-                <div>
-                    <h3 class="text-3xl font-bold text-gray-900 mb-6">
-                        Complete Player Development Dashboard
-                    </h3>
-                    <p class="text-gray-600 text-lg mb-8">
-                        Our integrated platform combines all aspects of modern soccer development
-                        into one comprehensive system that tracks, analyzes, and optimizes your progress.
-                    </p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Performance Tracking</h4>
-                                <p class="text-gray-600">Real-time metrics and historical data analysis</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Personalized Training Plans</h4>
-                                <p class="text-gray-600">AI-driven recommendations based on your data</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Progress Visualization</h4>
-                                <p class="text-gray-600">Clear charts and graphs showing your improvement</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
-                        <!-- Dashboard Mockup -->
-                        <div class="mb-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <h4 class="text-lg font-bold text-gray-900">Player Dashboard</h4>
-                                <span
-                                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">LIVE</span>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div class="bg-red-50 p-4 rounded-xl">
-                                    <div class="text-2xl font-bold text-red-600">92%</div>
-                                    <div class="text-sm text-gray-600">Technical Skills</div>
-                                </div>
-                                <div class="bg-red-50 p-4 rounded-xl">
-                                    <div class="text-2xl font-bold text-red-600">88%</div>
-                                    <div class="text-sm text-gray-600">Tactical Awareness</div>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3">
-                                <div>
-                                    <div class="flex justify-between text-sm text-gray-600 mb-1">
-                                        <span>Sprint Speed</span>
-                                        <span>94%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-red-600 h-2 rounded-full" style="width: 94%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm text-gray-600 mb-1">
-                                        <span>Passing Accuracy</span>
-                                        <span>89%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-red-600 h-2 rounded-full" style="width: 89%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <!-- Benefits Section -->
     <section id="benefits" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
@@ -1028,7 +1048,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
-                            </svg>
+                        </div>
                         <h3 class="text-2xl font-bold text-white">Summer Camps</h3>
                     </div>
                     <p class="text-gray-400 mb-6">
@@ -1057,10 +1077,9 @@
                             <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
                         </div>
                         <h3 class="text-2xl font-bold text-white">Weekend Clinics</h3>
-                    
+                    </div>
                     <p class="text-gray-400 mb-6">
                         Specialized weekend sessions focusing on specific skills and positions, perfect for
                         players looking to supplement their regular training with elite coaching.
@@ -1555,14 +1574,20 @@
         import { setupParallaxHero } from './components/parallaxHero.js';
         import { setupFormValidation } from './components/formValidation.js';
         import { setupAnimations } from './components/animations.js';
+        import { setupPostVideoReveal } from './components/postVideoReveal.js';
+        import { setupSolutionReveal } from './components/solutionReveal.js';
+        import { setupHeroStatsCounter } from './components/heroStatsCounter.js';
 
         // Initialize all components
         setupHeroVideoScroll();
         setupParallaxHero();
         setupFormValidation();
         setupAnimations();
+        setupPostVideoReveal();
+        setupSolutionReveal();
+        setupHeroStatsCounter();
 
-        console.log('CFC Barcelona website loaded successfully!');
+        console.log('🔥 CFC Barcelona website loaded successfully! (PRO MODE + COUNTERS)');
     </script>
 </body>
 
