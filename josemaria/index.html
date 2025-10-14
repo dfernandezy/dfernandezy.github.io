@@ -7,10 +7,10 @@
     <title>José María Alguersuari - Fotógrafo</title>
     
     <!-- GSAP Libraries -->
-    <script src="../GSAP/gsap-public/minified/gsap.min.js"></script>
-    <script src="../GSAP/gsap-public/minified/ScrollTrigger.min.js"></script>
-    <script src="../GSAP/gsap-public/minified/ScrollSmoother.min.js"></script>
-    <script src="../GSAP/gsap-public/minified/SplitText.min.js"></script>
+    <script src="assets/js/gsap/gsap.min.js"></script>
+    <script src="assets/js/gsap/ScrollTrigger.min.js"></script>
+    <script src="assets/js/gsap/ScrollSmoother.min.js"></script>
+    <script src="assets/js/gsap/SplitText.min.js"></script>
     
     <style>
         * {
@@ -475,7 +475,12 @@
         }
         
         .gallery-item:hover {
-            transform: scale(1.02);
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+        }
+        
+        .gallery-item:hover img {
+            filter: brightness(1.1) saturate(1.3) contrast(1.1);
         }
         
         .gallery-item img {
@@ -604,15 +609,37 @@
             left: 0;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .gallery-item {
-                width: 80vw;
-            }
-            
-            .awards-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Partículas decorativas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+        
+        .particle:nth-child(2n) {
+            background: var(--color-accent-secondary);
+            width: 6px;
+            height: 6px;
+        }
+        
+        .particle:nth-child(3n) {
+            background: #667eea;
+            width: 3px;
+            height: 3px;
         }
     </style>
 </head>
@@ -620,12 +647,31 @@
     <div id="smooth-wrapper">
         <div id="smooth-content">
             
+    <!-- Partículas decorativas -->
+    <div class="particles">
+        <div class="particle" style="top: 10%; left: 10%;"></div>
+        <div class="particle" style="top: 20%; left: 80%;"></div>
+        <div class="particle" style="top: 30%; left: 20%;"></div>
+        <div class="particle" style="top: 40%; left: 70%;"></div>
+        <div class="particle" style="top: 50%; left: 30%;"></div>
+        <div class="particle" style="top: 60%; left: 90%;"></div>
+        <div class="particle" style="top: 70%; left: 15%;"></div>
+        <div class="particle" style="top: 80%; left: 85%;"></div>
+        <div class="particle" style="top: 90%; left: 25%;"></div>
+        <div class="particle" style="top: 15%; left: 75%;"></div>
+        <div class="particle" style="top: 35%; left: 45%;"></div>
+        <div class="particle" style="top: 55%; left: 5%;"></div>
+        <div class="particle" style="top: 75%; left: 55%;"></div>
+        <div class="particle" style="top: 85%; left: 35%;"></div>
+        <div class="particle" style="top: 25%; left: 65%;"></div>
+    </div>
+            
     <!-- Hero Section -->
     <section class="hero" style="height: 250vh;">
         <!-- Photo Frames (Polaroid style) -->
         <div class="photo-frames">
             <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fotografía deportiva - Fútbol">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==&auto=format&fit=crop&w=800&q=80" alt="Fotografía deportiva - Fútbol">
             </div>
             <div class="photo-frame">
                 <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Reportaje periodístico">
@@ -709,51 +755,51 @@
                 
                 <div class="gallery-slider-wrapper">
                     <div class="gallery-slider">
-                        <!-- Gallery items with placeholder images -->
+                        <!-- Gallery items with stock images -->
                         <div class="gallery-item" data-caption="Fotoperiodismo deportivo">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23ddd' width='800' height='600'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EFoto 1 - Fotoperiodismo deportivo%3C/text%3E%3C/svg%3E" alt="Fotografía de José María Alguersuari">
+                            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fotografía de José María Alguersuari - Fútbol">
                             <div class="gallery-caption">
                                 <p>Fotoperiodismo deportivo</p>
                             </div>
                         </div>
                         <div class="gallery-item" data-caption="Reportajes diversos">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23ccc' width='800' height='600'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EFoto 2 - Reportajes diversos%3C/text%3E%3C/svg%3E" alt="Fotografía de José María Alguersuari">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fotografía de José María Alguersuari - Reportaje">
                             <div class="gallery-caption">
                                 <p>Reportajes diversos</p>
                             </div>
                         </div>
                         <div class="gallery-item" data-caption="Magazine La Vanguardia">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23ddd' width='800' height='600'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EFoto 3 - Magazine La Vanguardia%3C/text%3E%3C/svg%3E" alt="Fotografía de José María Alguersuari">
+                            <img src="https://images.unsplash.com/photo-1486312338219-ce68e2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fotografía de José María Alguersuari - Magazine">
                             <div class="gallery-caption">
                                 <p>Magazine La Vanguardia</p>
                             </div>
                         </div>
                         <div class="gallery-item" data-caption="Álbum de fotografía práctica">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ccc' width='800' height='1000'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EÁlbum de fotografía práctica%3C/text%3E%3C/svg%3E" alt="Álbum de fotografía práctica">
+                            <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Álbum de fotografía práctica">
                             <div class="gallery-caption">
                                 <p>Álbum de fotografía práctica</p>
                             </div>
                         </div>
                         <div class="gallery-item" data-caption="Magazine - Portadas">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ddd' width='800' height='1000'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EMagazine - Portadas%3C/text%3E%3C/svg%3E" alt="Magazine">
+                            <img src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Magazine - Portadas">
                             <div class="gallery-caption">
                                 <p>Portadas de Magazine</p>
                             </div>
                         </div>
                         <div class="gallery-item" data-caption="Pasión por las motos">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1200'%3E%3Crect fill='%23ccc' width='800' height='1200'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EPasión por las motos%3C/text%3E%3C/svg%3E" alt="Hobby - Motociclismo">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Hobby - Motociclismo">
                             <div class="gallery-caption">
                                 <p>Pasión por las motos</p>
                             </div>
                         </div>
                         <div class="gallery-item" data-caption="La Vanguardia">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ddd' width='800' height='1000'/%3E%3Ctext fill='%23999' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3ELa Vanguardia%3C/text%3E%3C/svg%3E" alt="La Vanguardia">
+                            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="La Vanguardia">
                             <div class="gallery-caption">
                                 <p>Portadas La Vanguardia</p>
                             </div>
                         </div>
                         <div class="gallery-item" data-caption="Diarios de fotografía">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect fill='%23ccc' width='800' height='1000'/%3E%3Ctext fill='%23888' font-family='Arial' font-size='24' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EDiarios de fotografía y alguna motocicleta%3C/text%3E%3C/svg%3E" alt="Diarios de fotografía">
+                            <img src="https://images.unsplash.com/photo-1554048612-b6a482dbe3c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Diarios de fotografía">
                             <div class="gallery-caption">
                                 <p>Diarios de fotografía</p>
                             </div>
@@ -929,104 +975,19 @@
                 }, '-=0.3');
             }
             
-            // ScrollTrigger: Zoom images and move text up on scroll
-            
-            // Pin frames: las imágenes se quedan fijas arriba mientras se amplían
+            // ScrollTrigger: Animaciones suaves y profesionales de los frames
             if (!isMobile) {
-                // En desktop, pin avanzado con las 2 imágenes superiores
-                const topFrames = document.querySelectorAll('.photo-frame:nth-child(1), .photo-frame:nth-child(3)');
-                
-                topFrames.forEach((frame, index) => {
-                    const img = frame.querySelector('img');
-                    
-                    // Timeline para cada frame: acompañar, ampliar, quedar fijo
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: '.hero',
-                            start: 'top top',
-                            end: 'bottom center',
-                            scrub: 1,
-                            pin: false // No pin, solo movimiento
-                        }
-                    })
-                    .to(frame, {
-                        y: 50,
-                        scale: 1.3,
-                        rotation: 0,
-                        boxShadow: '0 50px 120px rgba(0, 0, 0, 0.4)',
-                        ease: 'none',
-                        duration: 0.5
-                    })
-                    .to(frame, {
-                        y: 0,
-                        scale: 1.5,
-                        top: index === 0 ? '10%' : '10%',
-                        left: index === 0 ? '5%' : 'auto',
-                        right: index === 0 ? 'auto' : '5%',
-                        ease: 'power2.out',
-                        duration: 0.5
-                    });
-                    
-                    // Zoom de la imagen interna
-                    gsap.fromTo(img, 
-                        { scale: 1 },
-                        {
-                            scale: 1.8,
-                            ease: 'none',
-                            scrollTrigger: {
-                                trigger: '.hero',
-                                start: 'top top',
-                                end: 'bottom center',
-                                scrub: 1.5
-                            }
-                        }
-                    );
-                });
-                
-                // Frames inferiores se mueven normal
-                const bottomFrames = document.querySelectorAll('.photo-frame:nth-child(2), .photo-frame:nth-child(4)');
-                bottomFrames.forEach((frame, index) => {
-                    const img = frame.querySelector('img');
-                    const speed = 300;
-                    
-                    gsap.to(frame, {
-                        y: speed,
-                        rotation: index === 0 ? 15 : -15,
-                        scale: 1.2,
-                        opacity: 0.5,
-                        boxShadow: '0 40px 100px rgba(0, 0, 0, 0.35)',
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: '.hero',
-                            start: 'top top',
-                            end: 'bottom center',
-                            scrub: 1
-                        }
-                    });
-                    
-                    gsap.fromTo(img,
-                        { scale: 1 },
-                        {
-                            scale: 1.6,
-                            ease: 'none',
-                            scrollTrigger: {
-                                trigger: '.hero',
-                                start: 'top top',
-                                end: 'bottom center',
-                                scrub: 1.5
-                            }
-                        }
-                    );
-                });
-                
-            } else {
-                // MOBILE: efecto más simple
+                // DESKTOP: Animaciones elegantes y controladas
                 gsap.utils.toArray('.photo-frame').forEach((frame, index) => {
                     const img = frame.querySelector('img');
+                    const isLeft = index === 0 || index === 1;
                     
+                    // Animación simple y fluida del frame
                     gsap.to(frame, {
-                        y: 1600,
-                        scale: 1.15,
+                        y: 300 + (index * 50),
+                        rotation: isLeft ? -25 : 25,
+                        scale: 1.2,
+                        opacity: 0.3,
                         ease: 'none',
                         scrollTrigger: {
                             trigger: '.hero',
@@ -1036,67 +997,143 @@
                         }
                     });
                     
-                    gsap.fromTo(img,
-                        { scale: 1 },
-                        {
-                            scale: 1.4,
-                            ease: 'none',
-                            scrollTrigger: {
-                                trigger: '.hero',
-                                start: 'top top',
-                                end: 'bottom center',
-                                scrub: 1.5
-                            }
+                    // Zoom suave de la imagen
+                    gsap.to(img, {
+                        scale: 1.3,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.hero',
+                            start: 'top top',
+                            end: 'bottom center',
+                            scrub: 1.5
                         }
-                    );
+                    });
+                });
+
+            } else {
+                // MOBILE: Animaciones simples y optimizadas
+                gsap.utils.toArray('.photo-frame').forEach((frame, index) => {
+                    const img = frame.querySelector('img');
+                    const isLeft = index === 0 || index === 1;
+                    
+                    gsap.to(frame, {
+                        y: 400 + (index * 80),
+                        rotation: isLeft ? -20 : 20,
+                        scale: 1.1,
+                        opacity: 0.2,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.hero',
+                            start: 'top top',
+                            end: 'bottom center',
+                            scrub: 1
+                        }
+                    });
+                    
+                    gsap.to(img, {
+                        scale: 1.2,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.hero',
+                            start: 'top top',
+                            end: 'bottom center',
+                            scrub: 1.5
+                        }
+                    });
                 });
             }
             
-            // Move hero title up on scroll (más movimiento para 150vh)
+            // Move hero title up on scroll - animación más dramática
             gsap.to('.hero-title', {
-                y: -300,
-                opacity: 0.2,
-                scale: 0.85,
-                ease: 'none',
+                y: -500,
+                x: -100,
+                rotationX: -15,
+                rotationY: 10,
+                opacity: 0.1,
+                scale: 0.6,
+                filter: 'blur(8px)',
+                ease: 'power2.inOut',
                 scrollTrigger: {
                     trigger: '.hero',
                     start: 'top top',
                     end: 'bottom center',
-                    scrub: 1
+                    scrub: 2
                 }
             });
             
-            // Move hero subtitle up on scroll
+            // Move hero subtitle up on scroll - con más efectos
             gsap.to('.hero-subtitle', {
-                y: -220,
+                y: -400,
+                x: 80,
+                rotationX: 20,
+                rotationY: -15,
                 opacity: 0,
-                ease: 'none',
+                scale: 0.4,
+                filter: 'blur(12px)',
+                ease: 'power3.inOut',
                 scrollTrigger: {
                     trigger: '.hero',
                     start: 'top top',
                     end: 'bottom center',
-                    scrub: 1
+                    scrub: 2.5
                 }
             });
             
-            // Fade out scroll hint más rápido
+            // Fade out scroll hint con efecto de desvanecimiento
             gsap.to('.hero-scroll-hint', {
                 opacity: 0,
-                y: -80,
-                ease: 'none',
+                y: -150,
+                scale: 0.5,
+                filter: 'blur(5px)',
+                ease: 'power4.inOut',
                 scrollTrigger: {
                     trigger: '.hero',
                     start: 'top top',
                     end: '25% top',
+                    scrub: 1.5
+                }
+            });
+            
+            // Agregar efecto de parallax al fondo
+            gsap.to('body::before', {
+                y: -200,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom center',
                     scrub: 1
                 }
             });
             
-            // Biography section animations
+            // Animaciones de partículas con diferentes velocidades para efecto de profundidad
+            gsap.utils.toArray('.particle').forEach((particle, index) => {
+                const speed = 0.5 + (index % 3) * 0.3; // Velocidades diferentes
+                
+                gsap.to(particle, {
+                    y: -100 * speed,
+                    x: (index % 2 === 0 ? 50 : -50) * speed,
+                    rotation: 360 * speed,
+                    opacity: 0.2,
+                    scale: 0.5,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: 'top top',
+                        end: 'bottom center',
+                        scrub: 1.5
+                    }
+                });
+            });
+            
+            // Biography section animations - más dramáticas
             gsap.to('.section-label', {
                 opacity: 1,
-                duration: 1,
-                ease: 'power2.out',
+                y: 0,
+                scale: 1,
+                filter: 'blur(0px)',
+                duration: 1.5,
+                ease: 'power3.out',
                 scrollTrigger: {
                     trigger: '.biography',
                     start: 'top 80%',
@@ -1107,8 +1144,11 @@
             gsap.to('.bio-content h2', {
                 opacity: 1,
                 y: 0,
-                duration: 1.2,
-                ease: 'power3.out',
+                scale: 1,
+                rotationX: 0,
+                filter: 'blur(0px)',
+                duration: 1.8,
+                ease: 'power4.out',
                 scrollTrigger: {
                     trigger: '.bio-content h2',
                     start: 'top 85%',
@@ -1116,13 +1156,17 @@
                 }
             });
             
-            // Animate bio paragraphs with stagger
+            // Animate bio paragraphs with stagger - más dinámico
             gsap.to('.bio-text', {
                 opacity: 1,
                 y: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: 'power2.out',
+                x: 0,
+                rotationY: 0,
+                scale: 1,
+                filter: 'blur(0px)',
+                duration: 1.2,
+                stagger: 0.3,
+                ease: 'power3.out',
                 scrollTrigger: {
                     trigger: '.bio-text',
                     start: 'top 85%',
@@ -1130,13 +1174,17 @@
                 }
             });
             
-            // Animate award items
+            // Animate award items - con efectos más elaborados
             gsap.to('.award-item', {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: 'power2.out',
+                x: 0,
+                rotationY: 0,
+                scale: 1,
+                boxShadow: '0 10px 40px rgba(255, 107, 53, 0.2)',
+                duration: 1.5,
+                stagger: 0.2,
+                ease: 'back.out(1.7)',
                 scrollTrigger: {
                     trigger: '.awards-grid',
                     start: 'top 80%',
@@ -1144,11 +1192,15 @@
                 }
             });
             
-            // Gallery title animation
+            // Gallery title animation - más dramática
             gsap.to('.gallery-title', {
                 opacity: 1,
-                duration: 1,
-                ease: 'power2.out',
+                y: 0,
+                scale: 1,
+                rotationX: 0,
+                filter: 'blur(0px)',
+                duration: 2,
+                ease: 'power4.out',
                 scrollTrigger: {
                     trigger: '.gallery-title',
                     start: 'top 85%',
@@ -1156,37 +1208,55 @@
                 }
             });
             
-            // Horizontal scroll for gallery
+            // Horizontal scroll for gallery - con efectos mejorados
             const gallerySlider = document.querySelector('.gallery-slider');
             const galleryItems = gsap.utils.toArray('.gallery-item');
             
-            // Create horizontal scroll
+            // Create horizontal scroll con easing más dinámico
             gsap.to(gallerySlider, {
                 x: () => -(gallerySlider.scrollWidth - window.innerWidth),
-                ease: 'none',
+                ease: 'power2.inOut',
                 scrollTrigger: {
                     trigger: '.gallery-slider-wrapper',
                     start: 'top 20%',
                     end: () => `+=${gallerySlider.scrollWidth}`,
-                    scrub: 1,
+                    scrub: 2,
                     pin: true,
                     anticipatePin: 1,
                     invalidateOnRefresh: true
                 }
             });
             
-            // Parallax effect on gallery images
-            galleryItems.forEach((item) => {
+            // Parallax effect on gallery images - más elaborado
+            galleryItems.forEach((item, index) => {
                 const img = item.querySelector('img');
+                const caption = item.querySelector('.gallery-caption');
+                
                 gsap.to(img, {
-                    scale: 1.1,
-                    ease: 'none',
+                    scale: 1.3,
+                    rotationY: 5,
+                    filter: 'brightness(1.1) saturate(1.2)',
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: item,
                         start: 'left right',
                         end: 'right left',
-                        scrub: 1,
-                        containerAnimation: gsap.getById('galleryScroll')
+                        scrub: 2
+                    }
+                });
+                
+                // Animar captions con efecto de entrada
+                gsap.to(caption, {
+                    opacity: 1,
+                    y: 0,
+                    filter: 'blur(0px)',
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'left center',
+                        end: 'right center',
+                        toggleActions: 'play reverse play reverse'
                     }
                 });
             });
@@ -1201,14 +1271,47 @@
                     const imgSrc = item.querySelector('img').src;
                     lightboxImg.src = imgSrc;
                     lightbox.classList.add('active');
-                    gsap.to(lightbox, { opacity: 1, duration: 0.3 });
+                    
+                    // Animación más dramática para abrir lightbox
+                    gsap.fromTo(lightbox, 
+                        { opacity: 0, scale: 0.8 },
+                        { 
+                            opacity: 1, 
+                            scale: 1,
+                            duration: 0.6,
+                            ease: 'power3.out'
+                        }
+                    );
+                    
+                    gsap.fromTo(lightboxImg,
+                        { scale: 0.5, rotation: -10, filter: 'blur(10px)' },
+                        {
+                            scale: 1,
+                            rotation: 0,
+                            filter: 'blur(0px)',
+                            duration: 0.8,
+                            ease: 'back.out(1.7)',
+                            delay: 0.2
+                        }
+                    );
                 });
             });
             
             lightboxClose.addEventListener('click', () => {
+                // Animación más dramática para cerrar lightbox
+                gsap.to(lightboxImg, {
+                    scale: 0.8,
+                    rotation: 10,
+                    filter: 'blur(5px)',
+                    duration: 0.3,
+                    ease: 'power2.in'
+                });
+                
                 gsap.to(lightbox, {
                     opacity: 0,
-                    duration: 0.3,
+                    scale: 0.9,
+                    duration: 0.4,
+                    ease: 'power2.in',
                     onComplete: () => {
                         lightbox.classList.remove('active');
                     }
@@ -1217,9 +1320,20 @@
             
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
+                    // Animación más dramática para cerrar lightbox
+                    gsap.to(lightboxImg, {
+                        scale: 0.8,
+                        rotation: 10,
+                        filter: 'blur(5px)',
+                        duration: 0.3,
+                        ease: 'power2.in'
+                    });
+                    
                     gsap.to(lightbox, {
                         opacity: 0,
-                        duration: 0.3,
+                        scale: 0.9,
+                        duration: 0.4,
+                        ease: 'power2.in',
                         onComplete: () => {
                             lightbox.classList.remove('active');
                         }

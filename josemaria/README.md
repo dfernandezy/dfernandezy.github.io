@@ -14,10 +14,33 @@ Web moderna y profesional creada con GSAP ScrollTrigger y ScrollSmoother.
 
 ```
 alguersuari/
-├── index.html          # Archivo principal
-├── images/             # Carpeta para imágenes (actualmente con placeholders)
-└── README.md           # Este archivo
+├── assets/
+│   └── js/
+│       └── gsap/           # Archivos GSAP incluidos
+│           ├── gsap.min.js
+│           ├── ScrollTrigger.min.js
+│           ├── ScrollSmoother.min.js
+│           └── SplitText.min.js
+├── index.html              # Archivo principal
+├── images/                 # Carpeta para imágenes (actualmente con placeholders)
+└── README.md              # Este archivo
 ```
+
+## 🎨 GSAP Libraries Incluidas
+
+El proyecto incluye los siguientes archivos GSAP (v3.12.5) en `assets/js/gsap/`:
+
+- **`gsap.min.js`** - Core library de GSAP
+- **`ScrollTrigger.min.js`** - Plugin para animaciones basadas en scroll
+- **`ScrollSmoother.min.js`** - Plugin para scroll suavizado
+- **`SplitText.min.js`** - Plugin para dividir y animar texto
+
+Estos archivos proporcionan:
+- Animaciones de scroll ultra-suaves
+- Efectos parallax en las imágenes del hero
+- Texto dividido en caracteres/palabras para animaciones
+- Scroll horizontal en la galería
+- Lightbox con animaciones fluidas
 
 ## 🖼️ Para añadir las imágenes reales
 
@@ -39,7 +62,9 @@ Las imágenes necesarias del sitio original son:
 
 ## 🚀 Para visualizar
 
-Abre `index.html` en un navegador moderno. Las animaciones GSAP se cargan desde la carpeta `../GSAP/gsap-public/minified/`.
+Abre `index.html` en un navegador moderno. Todas las dependencias GSAP están incluidas localmente en el proyecto.
+
+**Nota**: El sitio funciona completamente sin conexión a internet ya que todos los archivos GSAP están incluidos localmente.
 
 ## 🛠️ Personalización
 
