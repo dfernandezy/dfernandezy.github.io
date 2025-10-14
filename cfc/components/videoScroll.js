@@ -11,6 +11,9 @@ export function setupHeroVideoScroll() {
             start: 'top 5   %',
             end: 'bottom -100%',
             scrub: 1,
+            smoother: {
+                smooth: 1.5
+            },
             pin: true,
             pinSpacing: true,
             anticipatePin: 1,
