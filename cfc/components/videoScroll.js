@@ -8,15 +8,10 @@ export function setupHeroVideoScroll() {
     const videoTimeline = window.gsap.timeline({
         scrollTrigger: {
             trigger: videoContainer,
-            start: 'top 5   %',
-            end: 'bottom -100%',
+            start: 'center 90%',
+            end: 'bottom 80%',
             scrub: 1,
-            smoother: {
-                smooth: 1.5
-            },
-            pin: true,
-            pinSpacing: true,
-            anticipatePin: 1,
+            pin: false,
             onEnter: () => heroVideo.play(),
             onLeave: () => heroVideo.pause(),
             onEnterBack: () => heroVideo.play(),
@@ -39,12 +34,14 @@ export function setupHeroVideoScroll() {
         })
         .to(videoWrapper, {
             scale: 4,
-            duration: 0.3,
-            ease: 'none'
+            y: '20vh',
+            duration: 0.5,
+            ease: 'power2.inOut'
         })
         .to(videoWrapper, {
             opacity: 0,
             scale: 5,
+            y: '30vh',
             duration: 0.5,
             ease: 'power2.out'
         });
