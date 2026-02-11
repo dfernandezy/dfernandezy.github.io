@@ -1,0 +1,43 @@
+    <section class="professional-section">
+        <div class="content-wrapper">
+            <div class="content-left">
+                <h2>Calidad, Innovación y Confianza</h2>
+                <p>En La Chiquitana, fusionamos la tradición con los más altos estándares de calidad. Cada producto es elaborado bajo procesos controlados, con ingredientes seleccionados y un equipo comprometido con la excelencia.</p>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <i class="fa-solid fa-check-circle feature-icon"></i>
+                        <span class="feature-text">Certificación de calidad alimentaria y trazabilidad de ingredientes</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fa-solid fa-check-circle feature-icon"></i>
+                        <span class="feature-text">Producción sostenible y empaques ecológicos</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fa-solid fa-check-circle feature-icon"></i>
+                        <span class="feature-text">Reserva tu pedido y recógelo en nuestro local</span>
+                    </li>
+                </ul>
+                <a href="../index.html#contacto-hero" class="cta-button">Reserva tu pedido para recoger</a>
+            </div>
+            <div class="content-right">
+                <img src="../img/PRODUCT_IMAGE.webp" alt="Producto profesional" class="main-image">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="stat-value">+10 años</div>
+                        <div class="stat-label">de experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <div class="stat-value">100% natural</div>
+                        <div class="stat-label">sin aditivos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-store"></i></div>
+                        <div class="stat-value">Recogida local</div>
+                        <div class="stat-label">Reserva y ven a buscarla</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

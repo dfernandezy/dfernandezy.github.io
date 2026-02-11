@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | La Chiquitana</title>
+    <meta name="description"
+        content="Descubre salteñas, cuñapé, Asadito Camba, empanadas y más productos tradicionales bolivianos en La Chiquitana, panadería boliviana en Barcelona.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lachiquitana.com/productos/productos.html">
+    <meta property="og:title" content="Productos | La Chiquitana">
+    <meta property="og:description"
+        content="Salteñas, cuñapé, Asadito Camba, empanadas y más productos tradicionales bolivianos.">
+    <meta property="og:image" content="https://www.lachiquitana.com/img/saltenas.webp">
+    <meta property="og:site_name" content="La Chiquitana">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Productos | La Chiquitana">
+    <meta name="twitter:description"
+        content="Salteñas, cuñapé, Asadito Camba, empanadas y más productos tradicionales bolivianos.">
+    <meta name="twitter:image" content="https://www.lachiquitana.com/img/saltenas.webp">
+    <link rel="canonical" href="https://www.lachiquitana.com/productos/productos.html">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/logopng.webp" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/logopng.webp">
+    <link rel="icon" type="image/webp" sizes="32x32" href="../img/logopng.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="../img/logopng.webp">
+    <link rel="manifest" href="../img/site.webmanifest">
+
+    <!-- <link rel='stylesheet' href='https://codepen.io/GreenSock/pen/gOWxmWG.css'> -->
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<style>
+    /* 🎨 REDISEÑO COMPLETO - PRODUCTOS MODERNOS */
+    :root {
+        --primary-gold: #e8a238;
+        --secondary-gold: #ffc062;
+        --light-gold: #fff7e6;
+        --forest-dark: #1a3a2e;
+        --forest-medium: #2e5339;
+        --forest-light: #4e7c59;
+        --earth-warm: #8b4513;
+        --earth-light: #d2b48c;
+        --text-dark: #2c3e50;
+        --text-medium: #5a6c7d;
+        --text-light: #8892a0;
+        --white: #ffffff;
+        --shadow-light: rgba(0, 0, 0, 0.08);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(232, 162, 56, 0.3);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        overflow-x: hidden !important;
+        scroll-behavior: smooth;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: white !important;
+    }
+
+    /* Reset de conflictos del CSS externo */
+    .productos-hero,
+    .content-wrapper,
+    .story-section {
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    /* Sobrescribir estilos GSAP y CSS externo */
+    #smooth-wrapper,
+    #smooth-content {
+        width: 100% !important;
+        height: auto !important;
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        transform: none !important;
+        will-change: auto !important;
+    }
+
+    /* Asegurar que las secciones sean visibles */
+    section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        position: relative !important;
+    }
+
+    /* Desactivar cualquier animación que pueda estar ocultando contenido */
+    * {
+        transform: none !important;
+        animation: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Forzar visibilidad del header */
+    .header-modern {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* 🚀 HEADER MODERNO */
+    .header-modern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(232, 162, 56, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-modern {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    .logo-modern:hover {
+        transform: scale(1.05);
+    }
+
+    .logo-modern img {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px var(--shadow-light);
+    }
+
+    .nav-modern {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav-modern a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+    }
+
+    .nav-modern a:hover {
+        color: var(--primary-gold);
+        background: var(--light-gold);
+    }
+
+    /* 🎯 HERO SECTION ESPECTACULAR */
+    .hero-productos {
+        background: url('../img/frontaliglesia.webp') center center/cover no-repeat, linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-medium) 50%, var(--earth-warm) 100%) !important;
+        padding: 8rem 2rem 4rem !important;
+        position: relative;
+        overflow: hidden;
+        min-height: 80vh;
+        display: flex !important;
+        align-items: center;
+        margin: 0 !important;
+        width: 100% !important;
+        position: relative;
+    }
+
+    /* Overlay con blur y oscurecimiento */
+    .hero-productos::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(20, 20, 20, 0.35);
+        backdrop-filter: blur(6px);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .hero-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 25px var(--shadow-heavy);
+    }
+
+    .hero-badge::before {
+        content: '🌟';
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        color: white;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-description {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+        font-weight: 400;
+    }
+
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+        color: var(--secondary-gold);
+        font-size: 2.5rem;
+        font-weight: 900;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* 🍞 PRODUCTOS GRID MODERNO */
+    .productos-section {
+        padding: 6rem 2rem !important;
+        background: linear-gradient(to bottom, var(--white) 0%, var(--light-gold) 100%) !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .productos-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .section-header-modern {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-overline {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 25px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+
+    .section-title-modern {
+        color: var(--text-dark);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .section-desc-modern {
+        color: var(--text-medium);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .productos-grid-modern {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .producto-card-modern {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px var(--shadow-light);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border: 2px solid transparent;
+    }
+
+    .producto-card-modern:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 30px 60px var(--shadow-medium);
+        border-color: var(--primary-gold);
+    }
+
+    .producto-image-modern {
+        position: relative;
+        height: 280px;
+        overflow: hidden;
+    }
+
+    .producto-image-modern img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .producto-card-modern:hover .producto-image-modern img {
+        transform: scale(1.1);
+    }
+
+    .producto-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 12px var(--shadow-heavy);
+    }
+
+    .producto-content-modern {
+        padding: 2rem;
+    }
+
+    .producto-title {
+        color: var(--text-dark);
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .producto-description {
+        color: var(--text-medium);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .producto-origin {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary-gold);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .producto-origin::before {
+        content: '📍';
+        font-size: 1rem;
+    }
+
+    .btn-producto {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+        color: white;
+        text-decoration: none;
+        padding: 0.875rem 1.5rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px var(--shadow-heavy);
+    }
+
+    .btn-producto:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px var(--shadow-heavy);
+        color: white;
+    }
+
+    .btn-producto i {
+        transition: transform 0.3s ease;
+    }
+
+    .btn-producto:hover i {
+        transform: translateX(3px);
+    }
+
+    /* 🏭 PROCESO SECTION - REDISEÑO MODERNO */
+    .proceso-section {
+        padding: 6rem 2rem !important;
+        background: linear-gradient(to bottom, #fff 0%, #fffbf0 100%) !important;
+        position: relative;
+        overflow: hidden;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .proceso-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 30%, rgba(232, 162, 56, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(255, 192, 98, 0.04) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .proceso-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .proceso-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .proceso-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .proceso-step {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px var(--shadow-light);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border: 2px solid transparent;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .proceso-step:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px var(--shadow-medium);
+        border-color: var(--primary-gold);
+    }
+
+    .step-visual {
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .step-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .proceso-step:hover .step-visual img {
+        transform: scale(1.1);
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: white;
+        box-shadow: 0 8px 25px var(--shadow-heavy);
+        flex-shrink: 0;
+        margin-bottom: 1rem;
+    }
+
+    .step-content {
+        padding: 2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .step-content h3 {
+        color: var(--text-dark);
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .step-content p {
+        color: var(--text-medium);
+        font-size: 1rem;
+        line-height: 1.6;
+        flex: 1;
+    }
+
+    /* 📱 CTA SECTION */
+    .cta-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+        text-align: center;
+    }
+
+    .cta-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .cta-title {
+        color: white;
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-description {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .btn-cta-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: white;
+        color: var(--primary-gold);
+        text-decoration: none;
+        padding: 1.25rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-cta-primary:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        color: var(--primary-gold);
+    }
+
+    /* 📱 RESPONSIVE */
+    @media (max-width: 1200px) {
+        .proceso-container {
+            max-width: 95%;
+        }
+        
+        .proceso-steps {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .proceso-section {
+            padding: 5rem 1.5rem !important;
+        }
+
+        .proceso-steps {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .step-visual {
+            height: 240px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-container {
+            padding: 1rem;
+        }
+
+        .nav-modern {
+            gap: 1rem;
+        }
+
+        .nav-modern a {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+        }
+
+        .hero-productos {
+            padding: 6rem 1rem 3rem;
+            min-height: 70vh;
+        }
+
+        .hero-stats {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+        }
+
+        .productos-section {
+            padding: 4rem 1rem;
+        }
+
+        .productos-grid-modern {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .proceso-section {
+            padding: 4rem 1rem !important;
+        }
+
+        .proceso-container {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .proceso-header {
+            margin-bottom: 3rem;
+        }
+
+        .proceso-header .section-title-modern {
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+
+        .proceso-header .section-desc-modern {
+            font-size: 1rem;
+            padding: 0 1rem;
+        }
+
+        .proceso-steps {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 0 0.5rem;
+        }
+
+        .step-visual {
+            height: 220px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-content {
+            padding: 1.5rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            padding: 3rem 1rem;
+        }
+
+        .cta-title {
+            font-size: 1.6rem;
+        }
+
+        .btn-cta-primary {
+            padding: 1rem 2rem;
+            font-size: 0.95rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-productos {
+            padding: 5rem 1rem 2rem;
+        }
+
+        .hero-stats {
+            grid-template-columns: 1fr;
+        }
+
+        .productos-grid-modern {
+            grid-template-columns: 1fr;
+        }
+
+        .producto-card-modern {
+            margin: 0 0.5rem;
+        }
+
+        .proceso-section {
+            padding: 3rem 1rem !important;
+        }
+
+        .proceso-header .section-title-modern {
+            font-size: 1.8rem;
+        }
+
+        .proceso-steps {
+            gap: 1.5rem;
+            padding: 0;
+        }
+
+        .step-visual {
+            height: 200px;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content {
+            padding: 1.25rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Tablet specific styles */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .proceso-section {
+            padding: 5rem 2rem !important;
+        }
+
+        .proceso-steps {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .step-visual {
+            height: 250px;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    /* 🚀 FOOTER MODERNO */
+    .footer-modern {
+        background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-medium) 100%);
+        color: white;
+        padding: 3rem 2rem 1rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-modern::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+            radial-gradient(circle at 20% 30%, rgba(232, 162, 56, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(255, 192, 98, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .footer-modern-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-modern-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer-modern-logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-modern-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer-modern-desc strong {
+        color: var(--secondary-gold);
+        font-weight: 700;
+    }
+
+    .footer-modern-social {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .footer-modern-social a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-modern-social a:hover {
+        background: var(--primary-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(232, 162, 56, 0.3);
+    }
+
+    .footer-modern-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .footer-modern-links h4 {
+        color: var(--secondary-gold);
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .footer-modern-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-modern-links li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-modern-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .footer-modern-links a:hover {
+        color: var(--secondary-gold);
+        transform: translateX(3px);
+    }
+
+    .footer-modern-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Footer Responsive */
+    @media (max-width: 768px) {
+        .footer-modern {
+            padding: 2rem 1rem 1rem;
+        }
+
+        .footer-modern-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .footer-modern-links {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .footer-modern-social {
+            justify-content: center;
+        }
+    }
+
+    /* Animaciones */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-20px) rotate(5deg);
+        }
+    }
+
+    @keyframes drift {
+        from {
+            transform: translateX(-100px);
+        }
+
+        to {
+            transform: translateX(100px);
+        }
+    }
+
+
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .clic-indicador {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        font-size: 2.2rem;
+        color: #fff;
+        background: rgba(46, 83, 57, 0.65);
+        border-radius: 50%;
+        padding: 0.5rem 0.6rem;
+        z-index: 3;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+        animation: pulse-clic 2.2s infinite ease-in-out;
+        display: none;
+    }
+
+    @keyframes pulse-clic {
+        0% {
+            transform: scale(1);
+        }
+
+        60% {
+            transform: scale(1.18);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .clic-indicador {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .story-visual .image-overlay {
+            pointer-events: none;
+            transition: transform 0.3s;
+        }
+
+        .story-visual.overlay-visible .image-overlay {
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .story-visual .image-overlay {
+            /* Oculto por defecto en móvil */
+            transform: translateY(100%);
+        }
+    }
+
+    .professional-section {
+        background: linear-gradient(120deg, #fff 60%, #e6d3b3 100%);
+        padding: 6rem 2rem 4rem 2rem;
+    }
+
+    .content-wrapper {
+        flex-wrap: wrap;
+        gap: 4rem;
+        align-items: stretch;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .content-left,
+    .content-right {
+        flex: 1 1 340px;
+        min-width: 320px;
+        box-sizing: border-box;
+    }
+
+    .content-left {
+        padding-right: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .content-left h2 {
+        font-size: 2.7rem;
+        font-weight: 700;
+        color: #2e5339;
+        margin-bottom: 1.5rem;
+        letter-spacing: -1px;
+        line-height: 1.2;
+    }
+
+    .content-left p {
+        font-size: 1.25rem;
+        color: #444;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem 2.5rem;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.7rem;
+        min-width: 220px;
+        font-size: 1.05rem;
+    }
+
+    .feature-icon {
+        color: #4e7c59;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+    }
+
+    .feature-text {
+        font-size: 1.1rem;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: #4e7c59;
+        color: #fff;
+        font-size: 1.1rem;
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(78, 124, 89, 0.3);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(78, 124, 89, 0.4);
+    }
+
+    .menu-toggle {
+        display: block;
+        background: #fff;
+        color: #4e7c59;
+        border: 2px solid #e8a238;
+        border-radius: 12px;
+        padding: 0.6rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .menu-toggle:hover {
+        color: white;
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        gap: 1.2rem;
+        background: #fff;
+        position: absolute;
+        top: 110%;
+        right: 0;
+        min-width: 220px;
+        box-shadow: 0 8px 32px rgba(46, 83, 57, 0.10);
+        border-radius: 16px;
+        padding: 1.2rem 1.5rem;
+        z-index: 1001;
+        list-style: none;
+    }
+
+    .menu-list.open {
+        display: flex;
+    }
+
+    .menu-list li a {
+        color: #2e5339;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .menu-list li a:hover {
+        color: #e8a238;
+    }
+
+    .menu-list {
+        left: auto;
+        right: 0;
+        width: 260px;
+        /* o el ancho que prefieras */
+    }
+
+    @media (max-width: 900px) {
+        .menu-list {
+            display: none;
+            flex-direction: column;
+            gap: 1.2rem;
+            background: #fff;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            left: 0;
+            z-index: 1001;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 8px 32px rgba(46, 83, 57, 0.10);
+        }
+
+        .menu-list.open {
+            display: flex;
+            left: -150px;
+        }
+    }
+
+    .overline {
+        color: #ffc56f;
+    }
+
+    /* Agrega este bloque para mostrar el catálogo de productos correctamente */
+    .productos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        margin: 3rem 0 2rem 0;
+        width: 100%;
+    }
+
+    .producto-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 6px 24px rgba(46, 83, 57, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s, box-shadow 0.2s;
+        min-width: 0;
+    }
+
+    .producto-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 16px 40px rgba(46, 83, 57, 0.13);
+    }
+
+    .producto-image img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        background: #e6d3b3;
+    }
+
+    .producto-content {
+        padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .producto-content h3 {
+        font-size: 1.4rem;
+        color: #2e5339;
+        margin-bottom: 0.7rem;
+        font-weight: 700;
+    }
+
+    .producto-content p {
+        color: #555;
+        font-size: 1.05rem;
+        margin-bottom: 0.8rem;
+        flex: 1 1 auto;
+    }
+
+    .producto-origin {
+        font-size: 0.98rem;
+        color: #a68b5b;
+        margin-bottom: 1rem;
+    }
+
+    .btn-ver-mas {
+        display: inline-block;
+        background: #e8a238;
+        color: #fff;
+        padding: 0.7rem 1.7rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background 0.2s, color 0.2s;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn-ver-mas:hover {
+        background: #4e7c59;
+        color: #fff;
+    }
+
+    .productos-boton-centro {
+        text-align: center;
+        margin-top: 2.5rem;
+    }
+
+    /* Márgenes consistentes entre secciones */
+    .productos-hero,
+    .proceso-hero {
+        margin-bottom: 3.5rem;
+        padding-bottom: 0;
+        padding-top: 3.5rem;
+    }
+
+    #productos-hero {
+        margin-top: 85px;
+        padding-top: 0;
+    }
+
+    #proceso-hero {
+        margin-top: 0;
+    }
+
+    /* Ajuste de padding para el wrapper de contenido */
+    .content-wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    
+.footer-bottom-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #e6d3b3;
+    font-size: 0.85rem;
+}
+
+.footer-bottom-credit span {
+    opacity: 0.8;
+}
+
+.footer-bottom-credit a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.footer-bottom-credit a:hover {
+    background: rgba(232, 162, 56, 0.1);
+}
+
+.footer-nodo-icon {
+    width: 14px;
+    height: auto;
+    transition: all 0.3s ease;
+    color: #EE0AFC;
+}
+
+.footer-bottom-credit a:hover .footer-nodo-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Estado de brillo - se activa con scroll */
+.footer-nodo-icon.glowing {
+    animation: nodo-glow 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(238, 10, 252, 0.6));
+}
+
+@keyframes nodo-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 6px rgba(238, 10, 252, 0.6)) 
+                drop-shadow(0 0 10px rgba(238, 10, 252, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(238, 10, 252, 0.8)) 
+                drop-shadow(0 0 16px rgba(238, 10, 252, 0.5));
+    }
+}
+
+.footer-bottom-credit a span {
+    font-weight: 700;
+    color: white;
+}
+
+</style>
+
+
+
+<body>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- 🚀 HEADER MODERNO -->
+            <header class="header-modern">
+                <div class="header-container">
+                    <a href="../index.html" class="logo-modern">
+                        <img src="../img/renewedLogoBlack.png" alt="La Chiquitana - Panadería Boliviana en Barcelona">
+                    </a>
+                    <nav class="nav-modern">
+                        <a href="../index.html">Inicio</a>
+                        <a href="productos.html">Productos</a>
+                        <a href="../historia/historia.html">Historia</a>
+                    </nav>
+                </div>
+            </header>
+
+            <!-- 🎯 HERO SECTION ESPECTACULAR -->
+            <section class="hero-productos">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            Calidad Artesanal
+                        </div>
+                        <h1 class="hero-title">La historia de la Chiquitanía en cada bocado</h1>
+                        <p class="hero-description">
+                            En <strong style="color: var(--primary-gold);">La Chiquitana</strong>, cada producto es el
+                            resultado de procesos naturales, ingredientes
+                            seleccionados y recetas originales transmitidas desde el corazón de <strong
+                                style="color: var(--primary-gold);">Bolivia</strong>.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">30+</span>
+                                <span class="stat-label">Productos Tradicionales</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Ingredientes naturales</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">Pasión Artesanal</span>
+                                <span class="stat-label">Origen Cruceño</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 🍞 PRODUCTOS SECTION -->
+            <section class="productos-section">
+                <div class="productos-container">
+                    <div class="section-header-modern">
+                        <span class="section-overline">Sabores Auténticos</span>
+                        <h2 class="section-title-modern">Nuestra Cocina y Panadería</h2>
+                        <p class="section-desc-modern">
+                            Descubre los sabores más representativos de la Chiquitanía Boliviana, elaborados como
+                            <strong style="color: var(--primary-gold);">antaño</strong>,
+                            <strong style="color: var(--primary-gold);">tradicionales</strong> y con el <strong
+                                style="color: var(--primary-gold);">cariño</strong> de nuestra familia.
+                        </p>
+                    </div>
+
+                    <div class="productos-grid-modern">
+                        <div class="producto-card-modern">
+                            <div class="producto-image-modern">
+                                <img src="../img/saltenas.webp" alt="Salteñas">
+                                <div class="producto-badge">Tradición</div>
+                            </div>
+                            <div class="producto-content-modern">
+                                <h3 class="producto-title">Salteñas</h3>
+                                <p class="producto-description">
+                                    La empanada jugosa y tradicional de Bolivia, masa dorada, cresta original Cruceña y
+                                    con jugoso relleno. ¡Perfecta para el desayuno o la merienda!
+                                </p>
+                                <div class="producto-origin">Tradición Chiquitana</div>
+                                <a href="./saltena.html" class="btn-producto">
+                                    Ver más <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="producto-card-modern">
+                            <div class="producto-image-modern">
+                                <img src="../img/asadito.webp" alt="Asadito Camba">
+                                <div class="producto-badge">De diario</div>
+                            </div>
+                            <div class="producto-content-modern">
+                                <h3 class="producto-title">Asadito Camba</h3>
+                                <p class="producto-description">
+                                    Deliciosa mezcla de verduras, carne y yuca. Perfecto para llevar en el camino o
+                                    compartir con amigos.
+                                </p>
+                                <div class="producto-origin">Tradición Chiquitana</div>
+                                <a href="./asadito.html" class="btn-producto">
+                                    Ver más <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="producto-card-modern">
+                            <div class="producto-image-modern">
+                                <img src="../img/cunape.webp" alt="Cuñapé">
+                                <div class="producto-badge">Popular</div>
+                            </div>
+                            <div class="producto-content-modern">
+                                <h3 class="producto-title">Cuñapé</h3>
+                                <p class="producto-description">
+                                    Panecillo de queso típico de Santa Cruz, elaborado con almidón de yuca y queso
+                                    fresco. Crujiente por fuera y suave por dentro.
+                                </p>
+                                <div class="producto-origin">Oriente Boliviano</div>
+                                <a href="./cunape.html" class="btn-producto">
+                                    Ver más <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="producto-card-modern">
+                            <div class="producto-image-modern">
+                                <img src="../img/tortitamaiz.webp" alt="Empanada de Maíz">
+                                <div class="producto-badge">Especial</div>
+                            </div>
+                            <div class="producto-content-modern">
+                                <h3 class="producto-title">Empanada de Maíz</h3>
+                                <p class="producto-description">
+                                    Empanada de maíz rellena de queso fresco. Suave y cremosa. Un clásico reconfortante
+                                    de la tradición chiquitana.
+                                </p>
+                                <div class="producto-origin">Tradición Chiquitana</div>
+                                <a href="./empanadamaiz.html" class="btn-producto">
+                                    Ver más <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Empanadas de Arroz -->
+                        <div class="producto-card-modern">
+                            <div class="producto-image-modern">
+                                <img src="../img/empanadarroz.jpeg" alt="Empanadas de Arroz">
+                                <div class="producto-badge">Sin Gluten</div>
+                            </div>
+                            <div class="producto-content-modern">
+                                <h3 class="producto-title">Empanadas de Arroz</h3>
+                                <p class="producto-description">
+                                    Masa de harina de arroz y queso, con o sin cebollitas verdes. Suaves, ligeras y
+                                    perfectas para cualquier momento.
+                                </p>
+                                <div class="producto-origin">Receta Tradicional</div>
+                                <a href="./empanadaarroz.html" class="btn-producto">
+                                    Ver más <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Sonso -->
+                        <div class="producto-card-modern">
+                            <div class="producto-image-modern">
+                                <img src="../img/sonso.jpg" alt="Sonso">
+                                <div class="producto-badge">Típico</div>
+                            </div>
+                            <div class="producto-content-modern">
+                                <h3 class="producto-title">Sonso</h3>
+                                <p class="producto-description">
+                                    Especialidad cruceña de yuca fresca y queso, asada a la brasa o a la plancha.
+                                    Sencillo y lleno de sabor.
+                                </p>
+                                <div class="producto-origin">Santa Cruz</div>
+                                <a href="./sonso.html" class="btn-producto">
+                                    Ver más <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Pan de Mollete -->
+                        <div class="producto-card-modern">
+                            <div class="producto-image-modern">
+                                <img src="../img/mollete.webp" alt="Pan de Mollete">
+                                <div class="producto-badge">Dulce</div>
+                            </div>
+                            <div class="producto-content-modern">
+                                <h3 class="producto-title">Pan de Mollete</h3>
+                                <p class="producto-description">
+                                    Pan relleno de manjar blanco casero y canela, elaborado con paciencia y tradición.
+                                    Ideal para acompañar el café.
+                                </p>
+                                <div class="producto-origin">Receta Casera</div>
+                                <a href="./mollete.html" class="btn-producto">
+                                    Ver más <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 🏭 PROCESO SECTION -->
+            <section class="proceso-section">
+                <div class="proceso-container">
+                    <div class="proceso-header">
+                        <span class="section-overline">Nuestro Proceso</span>
+                        <h2 class="section-title-modern">De la tierra a tu mesa</h2>
+                        <p class="section-desc-modern">
+                            Así elaboramos cada producto, cuidando cada detalle con amor y tradición.
+                        </p>
+                    </div>
+
+                    <div class="proceso-steps">
+                        <div class="proceso-step">
+                            <div class="step-visual">
+                                <img src="../img/ingredientes.webp" alt="Ingredientes frescos">
+                            </div>
+                            <div class="step-content">
+                                <div class="step-number">1</div>
+                                <h3>Ingredientes frescos</h3>
+                                <p>Yuca, maíz, queso y huevos locales seleccionados cuidadosamente para garantizar la
+                                    máxima calidad y frescura en cada producto.</p>
+                            </div>
+                        </div>
+
+                        <div class="proceso-step">
+                            <div class="step-visual">
+                                <img src="../img/proceso1.webp" alt="Amasado artesanal">
+                            </div>
+                            <div class="step-content">
+                                <div class="step-number">2</div>
+                                <h3>Amasado artesanal</h3>
+                                <p>Respetamos la tradición familiar con técnicas de amasado a mano que han pasado de
+                                    generación en generación.</p>
+                            </div>
+                        </div>
+
+                        <div class="proceso-step">
+                            <div class="step-visual">
+                                <img src="../img/proceso3.webp" alt="Horno de barro">
+                            </div>
+                            <div class="step-content">
+                                <div class="step-number">3</div>
+                                <h3>Horneado tradicional</h3>
+                                <p>En horno de barro o piedra, manteniendo las temperaturas y tiempos que dan el sabor
+                                    auténtico de la Chiquitanía.</p>
+                            </div>
+                        </div>
+
+                        <div class="proceso-step">
+                            <div class="step-visual">
+                                <img src="../img/resultado.webp" alt="Empaque ecológico">
+                            </div>
+                            <div class="step-content">
+                                <div class="step-number">4</div>
+                                <h3>Presentación perfecta</h3>
+                                <p>Empaque ecológico y cuidadoso para mantener la frescura y calidad hasta llegar a tu
+                                    mesa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 📱 CTA SECTION -->
+            <section class="cta-section">
+                <div class="cta-container">
+                    <h2 class="cta-title">¿Listo para vivir la experiencia?</h2>
+                    <p class="cta-description">
+                        Descubre los auténticos sabores de la Chiquitanía boliviana. Reserva tu pedido y disfruta
+                        de la tradición que ha pasado de generación en generación.
+                    </p>
+                    <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en..."
+                        class="btn-cta-primary">
+                        <i class="fab fa-whatsapp"></i>
+                        Reserva tu pedido ahora
+                    </a>
+                </div>
+            </section>
+
+
+            <footer class="footer-modern">
+                <div class="footer-modern-wrapper">
+                    <div class="footer-modern-brand">
+                        <img src="/img/renewedLogo.png" alt="La Chiquitana - Panadería Boliviana en Barcelona"
+                            class="footer-modern-logo">
+                        <div class="footer-modern-desc">
+                            <strong>La Chiquitana</strong>
+                            Sabores auténticos de Bolivia en España. Desde 1952, tres generaciones preservando la
+                            tradición culinaria de la Chiquitanía.
+                        </div>
+                        <div class="footer-modern-social">
+                            <a href="https://www.facebook.com/lachiquitanaoriginal/?locale=es_ES"
+                                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/lachiquitana/" aria-label="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en..."
+                                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-modern-links">
+                        <div>
+                            <h4>Productos</h4>
+                            <ul style="margin: 0%;">
+                                <li><a href="../productos/saltena.html" target="_blank">Salteñas</a></li>
+                                <li><a href="../productos/cunape.html" target="_blank">Cuñapé</a></li>
+                                <li><a href="../productos/asadito.html" target="_blank">Asadito Camba</a></li>
+                                <li><a href="../productos/empanadamaiz.html" target="_blank">Empanada de Maíz</a></li>
+                                <li><a href="../productos/productos.html">Ver todos</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>La Chiquitana</h4>
+                            <ul>
+                                <li><a href="../index.html">Inicio</a></li>
+                                <li><a href="../productos/productos.html">Productos</a></li>
+                                <li><a href="../historia/historia.html">Historia</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Contacto</h4>
+                            <ul>
+                                <li>Barcelona, España</li>
+                                <li>
+                                    <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en..."
+                                        target="_blank" rel="noopener">
+                                        <i class="fab fa-whatsapp" style="color:#25d366;"></i> Enviar WhatsApp
+                                    </a>
+                                </li>
+                                <li><a href="mailto:pedidos@lachiquitana.es">pedidos@lachiquitana.es</a></li>
+                                <li>Lun-Sáb: 8:00-20:00</li>
+                                <li>Dom: 9:00-15:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-modern-wrapper">
+                    <div class="footer-modern-brand">
+                        <img src="../img/renewedLogoBlack.png" alt="La Chiquitana - Panadería Boliviana en Barcelona"
+                            class="footer-modern-logo">
+                        <div class="footer-modern-desc">
+                            <strong>La Chiquitana - Panadería Boliviana en Barcelona</strong>
+                            Panadería de comida boliviana en Barcelona. Desde 1952, tres generaciones
+                            preservando la
+                            tradición culinaria de Bolivia en España, con recetas auténticas y el sabor de nuestra
+                            tierra.
+                        </div>
+                        <div class="footer-modern-social">
+                            <a href="https://www.facebook.com/lachiquitanaoriginal/?locale=es_ES"
+                                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/lachiquitana/" aria-label="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en..."
+                                aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-modern-links">
+                        <div>
+                            <h4>Nuestra Gastronomía Boliviana</h4>
+                            <ul style="margin: 0%;">
+                                <li><a href="../productos/saltena.html">Salteñas Bolivianas en Barcelona</a></li>
+                                <li><a href="../productos/cunape.html">Cuñapé Tradicional Boliviano</a></li>
+                                <li><a href="../productos/asadito.html">Asadito Camba de Bolivia</a></li>
+                                <li><a href="../productos/empanadamaiz.html">Empanada de Maíz Boliviana</a></li>
+                                <li><a href="../productos/productos.html">Ver toda la comida boliviana</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>La Chiquitana - Bolivia en Barcelona</h4>
+                            <ul>
+                                <li><a href="../historia/historia.html">Sobre Nosotros</a></li>
+                                <li><a href="../index.html#productos-hero">Productos</a></li>
+                                <li><a href="../historia/historia.html">Historia</a></li>
+                                <li><a href="../index.html#poemas-hero">Poemas</a></li>
+                                <li><a href="../index.html#impacto-hero">Impacto Social</a></li>
+                                <li><a href="../index.html#testimonios-hero">Testimonios</a></li>
+                                <li><a href="../index.html#contacto-hero">Contacto</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Contacto</h4>
+                            <ul>
+                                <li>Barcelona, España</li>
+                                <li>
+                                    <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en..."
+                                        target="_blank" rel="noopener">
+                                        <i class="fab fa-whatsapp" style="color:#25d366;"></i> Enviar WhatsApp
+                                    </a>
+                                </li>
+                                <li><a href="mailto:pedidos@lachiquitana.es">pedidos@lachiquitana.es</a></li>
+                                <li>Lun-Sáb: 8:00-20:00</li>
+                                <li>Dom: 9:00-15:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-modern-bottom">
+                    <div class="footer-bottom-content">
+                        <p class="footer-bottom-text">
+                            Todos los derechos reservados &copy; 2025 | La Chiquitana - Panadería Boliviana en Barcelona
+                        </p>
+                        <div class="footer-bottom-credit">
+                            <span>Hecho por</span>
+                            <a href="https://nodoamd.github.io" target="_blank" rel="noopener" aria-label="Nodo Digital">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="118 82 47 106" class="footer-nodo-icon">
+                                    <path fill="currentColor" d="M118.934 109.058C118.935 107.469 118.998 105.888 119.391 104.339C120.323 100.667 127.063 88.9964 130.224 87.2871C131.74 86.4675 137.647 88.4372 139.382 89.0349C141.177 89.6534 142.812 90.5383 144.284 91.7411C148.144 94.8948 153.299 102.257 155.469 106.724C156.107 107.779 156.629 108.929 156.841 110.152C157.365 113.177 157.482 116.345 157.789 119.406L159.4 134.643C159.844 139.182 160.169 143.742 160.671 148.273C161.062 151.791 161.68 155.306 161.932 158.834C162.053 160.527 162.302 162.781 161.877 164.427C160.038 171.562 152.991 178.565 149.296 185.021C148.903 185.922 148.293 186.806 147.797 187.659C144.661 184.091 142.732 179.828 140.43 175.714C138.768 172.742 136.886 169.772 135.587 166.62C134.195 163.239 133.562 159.126 132.524 155.575C130.909 150.048 128.512 144.424 127.508 138.783C126.497 135.839 125.921 132.693 125 129.71C123.626 125.26 119.067 113.247 118.934 109.058Z" />
+                                </svg>
+                                <span>Nodo Digital</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>

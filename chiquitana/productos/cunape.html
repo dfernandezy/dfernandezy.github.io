@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cuñapé - La Chiquitana</title>
+    <meta name="description"
+        content="Cuñapé, queso y yuca artesanal de la Chiquitanía. Pan esponjoso, dorado y tradicional en Barcelona.">
+    <meta name="keywords" content="cuñapé, queso, yuca, bolivia, la chiquitana, barcelona, tradicional">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://www.lachiquitana.com/productos/cunape.html">
+    <meta property="og:title" content="Cuñapé - La Chiquitana">
+    <meta property="og:description" content="Cuñapé, queso y yuca artesanal de la Chiquitanía. Pan esponjoso, dorado y tradicional en Barcelona.">
+    <meta property="og:image" content="https://www.lachiquitana.com/img/cuñape.webp">
+    <meta property="og:site_name" content="La Chiquitana">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cuñapé - La Chiquitana">
+    <meta name="twitter:description" content="Cuñapé, queso y yuca artesanal de la Chiquitanía. Pan esponjoso, dorado y tradicional en Barcelona.">
+    <meta name="twitter:image" content="https://www.lachiquitana.com/img/cuñape.webp">
+    <link rel="canonical" href="https://www.lachiquitana.com/productos/cunape.html">
+    <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "name": "Cuñapé",
+                "image": "https://www.lachiquitana.es/img/cuñape.webp",
+                "description": "Cuñapé, queso y yuca artesanal de la Chiquitanía. Pan esponjoso, dorado y tradicional en Barcelona.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "La Chiquitana"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock"
+                }
+            }
+            </script>
+    <!-- Favicon -->
+    <link rel="icon" href="../img/logopng.webp" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/logopng.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --earth-light: #e6d3b3;
+            --earth-medium: #c2b280;
+            --earth-dark: #a68b5b;
+            --jungle-dark: #2e5339;
+            --jungle: #4e7c59;
+            --jungle-light: #7bb661;
+            --dark: var(--earth-dark);
+            --purple: var(--jungle);
+            --accent: #e8a238;
+            --text-light: #5a5a5a;
+            --border-light: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.7;
+            background: #fafafa;
+            color: #333;
+            font-family: 'Unbounded', sans-serif;
+        }
+
+        /* Header */
+        header {
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            border-bottom: 1px solid var(--border-light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            width: 140px;
+            height: 35px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--jungle-dark);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(46, 83, 57, 0.95), rgba(232, 162, 56, 0.25)), url('../img/newmontanacasa.webp') no-repeat center center;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            padding: 2rem;
+            margin-top: 60px;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: none;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 300;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #e6d3b3;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 24px rgba(232, 162, 56, 0.25);
+            font-size: 1rem;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(232, 162, 56, 0.35);
+            background: #f0b555;
+        }
+
+        /* Story Sections */
+        .story-section {
+            position: relative;
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .story-section:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .story-grid:nth-child(even) {
+            direction: rtl;
+        }
+
+        .story-grid:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .story-content h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            color: var(--jungle-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .story-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-visual {
+            position: relative;
+            height: 450px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f0f0f0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .story-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .story-visual:hover .story-image {
+            transform: scale(1.03);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+            color: white;
+            padding: 2.5rem 2rem;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: 5;
+        }
+
+        .image-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .image-overlay p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .story-visual:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        /* Mission Cards */
+        .mission-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .mission-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--border-light);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent);
+        }
+
+        .mission-year {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .mission-title {
+            font-size: 1.2rem;
+            color: var(--jungle-dark);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .mission-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: #fff;
+            padding: 7rem 2rem;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .video-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .video-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .video-header h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--jungle-dark);
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+        }
+
+        .video-header p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .video-player-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+            background: #000;
+        }
+
+        .video-player-wrapper video,
+        .video-player-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-player-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="white" stroke-width="2" opacity="0.3"/><polygon points="50,40 50,80 80,60" fill="white" opacity="0.6"/></svg>') no-repeat center;
+            background-size: 80px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-player-wrapper:hover::before {
+            opacity: 1;
+        }
+
+        /* Connection Section */
+        .connection-section {
+            background: linear-gradient(135deg, var(--jungle-dark) 0%, var(--jungle) 100%);
+            color: white;
+            padding: 7rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connection-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(232, 162, 56, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(230, 211, 179, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .connection-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connection-title {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .connection-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .back-home {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 24px rgba(232, 162, 56, 0.25);
+            font-size: 0.95rem;
+        }
+
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(232, 162, 56, 0.4);
+            background: #f0b555;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .story-grid {
+                gap: 3rem;
+            }
+
+            .main-image {
+                height: 300px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                width: 120px;
+                height: 30px;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .hero-section {
+                padding: 1.5rem;
+                margin-top: 50px;
+                min-height: 100vh;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 6vw, 3.5rem);
+                letter-spacing: 1px;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(0.9rem, 2vw, 1.2rem);
+            }
+
+            .story-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .story-grid:nth-child(even) {
+                direction: ltr;
+            }
+
+            .story-grid:nth-child(even) > * {
+                direction: ltr;
+            }
+
+            .story-visual {
+                height: 320px;
+            }
+
+            .video-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .video-header h2 {
+                font-size: clamp(1.5rem, 3vw, 2.2rem);
+            }
+
+            .video-header p {
+                font-size: 0.95rem;
+            }
+
+            .professional-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .connection-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .connection-title {
+                font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+            }
+
+            .connection-text {
+                font-size: 0.95rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .main-image {
+                height: 250px;
+            }
+
+            .mission-timeline {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-list {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 1rem;
+                margin-top: 45px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2.8rem);
+            }
+
+            .story-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .story-content h2 {
+                font-size: clamp(1.4rem, 3vw, 2rem);
+            }
+
+            .story-visual {
+                height: 250px;
+            }
+
+            .professional-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .content-left h2 {
+                font-size: clamp(1.3rem, 3vw, 2rem);
+            }
+
+            .connection-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .connection-title {
+                font-size: clamp(1.3rem, 3vw, 2rem);
+            }
+
+            .main-image {
+                height: 200px;
+            }
+
+            .video-section {
+                padding: 2.5rem 1rem;
+            }
+        }
+
+        .professional-section {
+            background: #fff;
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--border-light);
+            overflow-x: hidden;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .content-left,
+        .content-right {
+            box-sizing: border-box;
+        }
+
+        .content-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .content-left h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 300;
+            color: var(--jungle-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .content-left p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1rem;
+        }
+
+        .feature-icon {
+            color: var(--jungle);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--jungle);
+            color: #fff;
+            font-size: 0.95rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 24px rgba(78, 124, 89, 0.2);
+            margin: 3rem auto 0;
+            width: fit-content;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(78, 124, 89, 0.3);
+            background: #3d6a4a;
+        }
+
+        .content-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            height: 380px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .stat-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 0.7rem;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: var(--jungle-dark);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 1100px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .content-left,
+            .content-right {
+                min-width: 0;
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .content-left {
+                text-align: center;
+                align-items: center;
+            }
+
+            .feature-list {
+                flex-direction: column;
+                gap: 1.2rem 0;
+                align-items: flex-start;
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto 2.5rem;
+            }
+
+            .feature-item {
+                justify-content: flex-start;
+                min-width: 0;
+                width: 100%;
+                text-align: left;
+            }
+
+            .cta-button {
+                margin-top: 2.5rem;
+                width: fit-content;
+            }
+
+            .main-image {
+                height: 220px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-image {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .professional-section {
+                padding: 3rem 1.5rem 2rem 1.5rem;
+            }
+
+            .content-left h2 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                width: calc(100% - 3rem);
+                max-width: 500px;
+                margin: 2rem auto 0;
+                padding: 1.1rem 2rem;
+            }
+
+            .main-image {
+                height: 240px;
+            }
+        }
+
+        /* Responsive Menu */
+        .menu-toggle {
+            display: none;
+            background: #fff;
+            color: var(--jungle-dark);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .menu-toggle:hover {
+            background: #f5f5f5;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            background: transparent;
+            position: static;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+            z-index: auto;
+            list-style: none;
+        }
+
+        .menu-list.open {
+            display: flex;
+        }
+
+        .menu-list li a {
+            color: var(--jungle-dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .menu-list li a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-list {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                background: #fff;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                z-index: 999;
+                padding: 1rem 0;
+                margin: 0;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+                border-top: 1px solid var(--border-light);
+                width: 100%;
+            }
+
+            .menu-list.open {
+                display: flex;
+            }
+
+            .menu-list li {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menu-list li a {
+                font-size: 1rem;
+                padding: 1rem 2rem;
+                display: block;
+                width: 100%;
+                color: var(--jungle-dark);
+            }
+
+            .menu-list li a:hover {
+                background: rgba(232, 162, 56, 0.1);
+                color: var(--accent);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html"><img src="../img/renewedLogoBlack.png" alt="La Chiquitana - Panadería Boliviana en Barcelona"></a>
+        </div>
+        <nav class="menu-nav" aria-label="Navegación principal">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="menu-list" aria-label="Abrir menú">
+                Menú <i class="fa fa-chevron-down"></i>
+            </button>
+            <ul class="menu-list" id="menu-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../productos/productos.html">Productos</a></li>
+                <li><a href="../historia/historia.html">Historia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: url('../img/cuñape.webp');">
+        <div class="hero-content">
+            <h1 class="hero-title">Cuñapé</h1>
+            <p class="hero-subtitle">Queso de la Chiquitanía, dorado por fuera, fundido por dentro.<br>Tradición en forma de pan esponjoso e irresistible.</p>
+            <a href="#storytelling" class="hero-cta">Descubre el secreto</a>
+        </div>
+    </section>
+
+    <!-- Storytelling Section -->
+    <section class="story-section" id="storytelling">
+        <div class="story-container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>Raíces en la Yuca y el Queso</h2>
+                    <p>El cuñapé nace de la fusión perfecta: yuca, queso de la tierra chiquitana y un toque de sal. Es la merienda preferida, el acompañamiento imprescindible en toda mesa boliviana.</p>
+                    <p>Cada pan es resultado de técnica ancestral que convierte ingredientes simples en algo extraordinario: esponjoso por dentro, dorado por fuera.</p>
+                </div>
+                <div class="story-visual">
+                    <img src="../img/maiz-cuñape.webp" alt="Preparación artesanal del Cuñapé" class="story-image">
+                    <div class="image-overlay">
+                        <h3>Esponjoso y Dorado</h3>
+                        <p>Yuca fresca, queso artesanal, horneado tradicional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essence Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-grid">
+                <div class="story-visual">
+                    <img src="../img/cuñape.webp" alt="Cuñapé recién horneado" class="story-image">
+                    <div class="image-overlay">
+                        <h3>Sabor Irresistible</h3>
+                        <p>Esponjoso, fundido, perfectamente dorado</p>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <h2>¿Por qué es especial?</h2>
+                    <p>La magia del cuñapé está en su textura: por fuera crujiente y dorado, por dentro esponjoso y lleno de queso fundido. Cada bocado es una experiencia sensorial.</p>
+                    <p>Es la merienda de la infancia, el acompañamiento de las sobremesas, el símbolo de una tradición viva que une generaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-header">
+                <h2>Descubre la preparación</h2>
+                <p>Cómo convertimos yuca fresca y queso artesanal en el cuñapé perfecto, paso a paso.</p>
+            </div>
+            <div class="video-player-wrapper">
+                <video controls poster="../img/saltenas.webp" preload="metadata">
+                    <source src="https://storage.googleapis.com/coverr-main/mp4/Baking-Bread.mp4" type="video/mp4">
+                    Tu navegador no soporta HTML5 video.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Section -->
+    <section class="professional-section">
+        <div class="content-wrapper">
+            <div class="content-left">
+                <h2>Calidad, Innovación y Confianza</h2>
+                <p>En La Chiquitana, fusionamos la tradición con los más altos estándares de calidad. Cada cuñapé es elaborado bajo procesos controlados, con ingredientes seleccionados y un equipo comprometido con la excelencia.</p>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <i class="fa-solid fa-check-circle feature-icon"></i>
+                        <span class="feature-text">Certificación de calidad alimentaria y trazabilidad de
+                            ingredientes</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fa-solid fa-check-circle feature-icon"></i>
+                        <span class="feature-text">Producción sostenible y empaques ecológicos</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fa-solid fa-check-circle feature-icon"></i>
+                        <span class="feature-text">Reserva tu pedido y recógelo en nuestro local</span>
+                    </li>
+                     <li class="feature-item">
+                        <i class="fa-solid fa-check-circle feature-icon"></i>
+                        <span class="feature-text">Aportamos a tan nuestra cultura viva, y mantener nuestras tradiciones.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <img src="../img/cuñape.webp" alt="Cuñapé profesional" class="main-image">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="stat-value">+10 años</div>
+                        <div class="stat-label">de experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <div class="stat-value">100% natural</div>
+                        <div class="stat-label">sin aditivos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-store"></i></div>
+                        <div class="stat-value">Recogida local</div>
+                        <div class="stat-label">Reserva y ven a buscarla</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                        <a href="../index.html#contacto-hero" class="cta-button">Reserva tu pedido para recoger</a>
+
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="connection-section">
+        <div class="connection-content">
+            <h2 class="connection-title">Esponjoso, dorado, del alma de la Chiquitanía</h2>
+            <p class="connection-text">
+                El cuñapé es más que pan: es la merienda de la infancia, el acompañamiento de las sobremesas, el símbolo de una tradición viva.
+            </p>
+            <p class="connection-text">
+                Su simplicidad es su fuerza. Con solo yuca, queso y sal, logramos capturar la esencia de un pueblo, su calidez y su hospitalidad.
+            </p>
+            <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en%20Cu%C3%B1ap%C3%A9." class="back-home">Pedir ahora 🛒</a>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuNav = document.querySelector('.menu-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuList = document.querySelector('.menu-list');
+
+            if (menuToggle && menuList && menuNav) {
+                menuToggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    menuList.classList.toggle('open');
+                    menuToggle.setAttribute('aria-expanded', menuList.classList.contains('open'));
+                });
+
+                // Cierra el menú al hacer clic fuera
+                document.addEventListener('click', function (e) {
+                    if (!menuNav.contains(e.target)) {
+                        menuList.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Cierra el menú al seleccionar una opción
+                menuList.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuList.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
+
+
+    <footer class="footer-modern">
+        <div class="footer-modern-wrapper">
+            <div class="footer-modern-brand">
+                <img src="../img/renewedLogoBlack.png" alt="La Chiquitana - Panadería Boliviana en Barcelona" class="footer-modern-logo">
+                <div class="footer-modern-desc">
+                    <strong>La Chiquitana - Panadería Boliviana en Barcelona</strong>
+                    Panadería de comida boliviana en Barcelona. Tradición culinaria de Bolivia en España, con recetas auténticas y el sabor de Bolivia.
+                </div>
+                <div class="footer-modern-social">
+                    <a href="https://www.facebook.com/lachiquitanaoriginal/?locale=es_ES" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/lachiquitana/" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en..."
+                        aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-modern-links">
+                <div>
+                    <h4>Productos</h4>
+                    <ul style="margin: 0%;">
+                        <li><a href="../productos/saltena.html">Salteñas</a></li>
+                        <li><a href="../productos/cunape.html">Cuñapé</a></li>
+                        <li><a href="../productos/asadito.html">Asadito</a></li>
+                        <li><a href="../productos/empanadamaiz.html">Empanada de Maíz</a></li>
+                        <li><a href="../productos/productos.html">Ver todos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>La Chiquitana</h4>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../productos/productos.html">Productos</a></li>
+                        <li><a href="../historia/historia.html">Historia</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>Barcelona, España</li>
+                        <li>
+                            <a href="https://wa.me/34619084848?text=%C2%A1Hola%20Chiquitana!%20Estoy%20interesado%20en..."
+                                target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp" style="color:#25d366;"></i> Enviar WhatsApp
+                            </a>
+                        </li>
+                        <li><a href="mailto:pedidos@lachiquitana.es">pedidos@lachiquitana.es</a></li>
+                        <li>Lun-Sáb: 8:00-20:00</li>
+                        <li>Dom: 9:00-15:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-modern-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-text">
+                    Todos los derechos reservados &copy; 2025 | La Chiquitana - Panadería Boliviana en Barcelona
+                </p>
+                <div class="footer-bottom-credit">
+                    <span>Hecho por</span>
+                    <a href="https://nodoamd.github.io" target="_blank" rel="noopener" aria-label="Nodo Digital">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="118 82 47 106" class="footer-nodo-icon">
+                            <path fill="currentColor" d="M118.934 109.058C118.935 107.469 118.998 105.888 119.391 104.339C120.323 100.667 127.063 88.9964 130.224 87.2871C131.74 86.4675 137.647 88.4372 139.382 89.0349C141.177 89.6534 142.812 90.5383 144.284 91.7411C148.144 94.8948 153.299 102.257 155.469 106.724C156.107 107.779 156.629 108.929 156.841 110.152C157.365 113.177 157.482 116.345 157.789 119.406L159.4 134.643C159.844 139.182 160.169 143.742 160.671 148.273C161.062 151.791 161.68 155.306 161.932 158.834C162.053 160.527 162.302 162.781 161.877 164.427C160.038 171.562 152.991 178.565 149.296 185.021C148.903 185.922 148.293 186.806 147.797 187.659C144.661 184.091 142.732 179.828 140.43 175.714C138.768 172.742 136.886 169.772 135.587 166.62C134.195 163.239 133.562 159.126 132.524 155.575C130.909 150.048 128.512 144.424 127.508 138.783C126.497 135.839 125.921 132.693 125 129.71C123.626 125.26 119.067 113.247 118.934 109.058Z" />
+                        </svg>
+                        <span>Nodo Digital</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
