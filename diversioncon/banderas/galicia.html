@@ -4,12 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andalucía</title>
+    <title>Galicia — Diversión con Banderas</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 
 
     <style>
+        :root {
+            --accent: #0066FF;
+            --accent-soft: rgba(0, 102, 255, 0.15);
+        }
+
+        .header-bar { background: var(--accent); height: 4px; border-radius: 2px; margin-bottom: 24px; }
+        a { color: var(--accent); }
+        a:hover, a:focus { color: var(--accent); filter: brightness(0.85); }
+        .back-link { color: #1a1a1a; }
+        .back-link:hover, .back-link:focus { color: var(--accent); filter: none; }
+        .right-links a { color: #1a1a1a; }
+        .right-links a:hover, .right-links a:focus { color: var(--accent); filter: none; }
+        .highlight { color: var(--accent) !important; }
+        .timeline-item { border-left-color: var(--accent); }
+        .timeline-item h3 { color: var(--accent); }
+        .timeline-item:hover { border-left-width: 5px; }
+        .symbol-content li::before { color: var(--accent); }
+        .references-content li::before { color: var(--accent); }
+        .fact-item h3 { color: var(--accent); }
+        .fact-item:hover, .spec-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px var(--accent-soft);
+            border-left: 4px solid var(--accent);
+        }
+        .variant-item { border-left: 4px solid var(--accent); }
+        .icon-item {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            border: 2px solid transparent;
+        }
+        .icon-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px var(--accent-soft);
+            border-color: var(--accent);
+        }
+        .icon-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+        .flag-diagram { border-color: var(--accent); }
+        ::selection { background-color: var(--accent); color: #fff; }
+        .footer-content { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+        .made-with { margin: 0; }
+        .nodo-made { margin: 0; font-size: 13px; color: #888; letter-spacing: 0.03em; text-transform: uppercase; font-weight: 500; }
+        .nodo-made a { font-weight: 700; color: #1a1a1a; text-decoration: none; }
+        .nodo-made a:hover { color: var(--accent); }
+        .diagram-image { max-width: 100%; width: 100%; height: auto; object-fit: contain; object-position: center; }
+        .flag-diagram { display: flex; align-items: center; justify-content: center; min-height: 200px; }
+        .small-flag { object-fit: contain; }
+
+
         /* Estilos base */
         body {
             font-family: 'DM Sans', sans-serif;
@@ -117,7 +169,7 @@
         }
 
         .highlight {
-            color: #006400;
+            color: var(--accent);
             font-weight: 500;
         }
 
@@ -164,7 +216,7 @@
         }
 
         .highlight {
-            color: #006400;
+            color: var(--accent);
             font-weight: 500;
         }
 
@@ -236,12 +288,12 @@
 
         .timeline-item {
             padding-left: 20px;
-            border-left: 3px solid #008C3A;
+            border-left: 3px solid var(--accent);
             position: relative;
         }
 
         .timeline-item h3 {
-            color: #008C3A;
+            color: var(--accent);
             margin-bottom: 10px;
         }
 
@@ -272,14 +324,14 @@
 
         .symbol-content li:before {
             content: "•";
-            color: #008C3A;
+            color: var(--accent);
             position: absolute;
             left: 0;
         }
 
         /* Protocolo */
         .protocol-content h3 {
-            color: #008C3A;
+            color: var(--accent);
             margin: 20px 0 10px;
         }
 
@@ -328,7 +380,7 @@
 
         .references-content li:before {
             content: "→";
-            color: #008C3A;
+            color: var(--accent);
             position: absolute;
             left: 0;
         }
@@ -580,7 +632,7 @@
         /* Mejoras de interacción */
         a:hover,
         a:focus {
-            color: #008C3A;
+            color: var(--accent);
         }
 
         .timeline-item:hover {
@@ -596,20 +648,18 @@
 </head>
 
 <body>
-
-    <body>
         <nav class="nav">
-            <a href="/" class="back-link">← Volver a banderas</a>
+            <a href="../index.html" class="back-link">← Volver a banderas</a>
             <div class="right-links">
-                <a href="/about">Acerca de</a>
-                <a href="/glossary">Glosario</a>
+                <a href="../acerca.html">Acerca de</a>
+                <a href="../glosario.html">Glosario</a>
             </div>
         </nav>
 
 
 
         <div class="header-content">
-            <img src="./img/gal.png" height="50px" alt="Bandera de Galicia" class="small-flag">
+            <img src="../img/gal.png" height="50px" alt="Bandera de Galicia" class="small-flag">
             <h1 class="title">Galicia</h1>
         </div>
 
@@ -654,7 +704,7 @@
                 </div>
 
                 <div class="survey-note">
-                    <img src="./img/nava.webp" alt="Logo NAVA" class="survey-logo">
+                    <img src="../img/nava.webp" alt="Logo NAVA" class="survey-logo">
                     <p>
                         En la <a href="#" class="highlight">Encuesta de Calidad de Banderas Autonómicas de 2023</a>,
                         la bandera de Galicia destaca por su diseño único entre las banderas autonómicas españolas.
@@ -662,7 +712,7 @@
                 </div>
 
                 <div class="flag-diagram">
-                    <img src="./img/gal.png" alt="Diagrama de la bandera de Galicia" class="diagram-image">
+                    <img src="../img/gal.png" alt="Diagrama de la bandera de Galicia" class="diagram-image">
                 </div>
             </div>
 
@@ -719,19 +769,26 @@
                 </div>
             </div>
 
-            <div class="section iconography">
-                <h2>Iconografía</h2>
-                <div class="icon-grid">
-                    <div class="icon-item">
-                        <img src="/img/bandera.png" alt="A Bandeira Galega">
-                        <h3>A Bandeira</h3>
-                        <div class="denotes">DENOTA</div>
-                        <p>La identidad histórica y cultural gallega, representando la unión entre el cielo y el mar</p>
-                    </div>
+                    <div class="section iconography">
+            <h2>Iconografía del escudo</h2>
+            <p class="color-description">Símbolos del escudo recortados de la bandera. Pasa el cursor sobre cada elemento para ver su color.</p>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <img src="../img/iconografia/galicia/cruz.png" alt="Cruz de Santiago" loading="lazy" onerror="this.style.display='none'">
+                    <h3>Cruz de Santiago</h3>
+                    <div class="denotes">DENOTA</div>
+                    <p>La franja diagonal blanca sobre azul</p>
+                </div>
+                <div class="icon-item">
+                    <img src="../img/iconografia/galicia/caliz.png" alt="Cáliz" loading="lazy" onerror="this.style.display='none'">
+                    <h3>Cáliz</h3>
+                    <div class="denotes">DENOTA</div>
+                    <p>La Sagrada Forma y el escudo gallego</p>
                 </div>
             </div>
+        </div>
 
-            <div class="section symbolism">
+        <div class="section symbolism">
                 <h2>Significado y Simbolismo</h2>
                 <div class="symbol-content">
                     <p>La bandera simboliza elementos fundamentales de Galicia:</p>
@@ -747,9 +804,7 @@
             <div class="section variants">
                 <h2>Variantes y Usos Históricos</h2>
                 <div class="variants-grid">
-                    <div class="variant-item">
-                        <img src="/img/variant-galicia.png" alt="Versión histórica de la Bandera de Galicia">
-                        <p>Bandera histórica de Galicia con el escudo en el centro</p>
+                    <div class="variant-item"><p>Bandera histórica de Galicia con el escudo en el centro</p>
                     </div>
                 </div>
             </div>
@@ -782,20 +837,14 @@
             </div>
         </div>
 
-        <footer>
-            <div class="footer-content">
-                <div class="made-with">
-                    Hecho con <span class="heart">💚</span> por <a href="https://dfernandezy.github.io/">Yahved
-                        Fernández</a>
-                </div>
-                <div class="coffee-section">
-                    ¿Te gusta la web? <a href="#">¡Invítame a un ☕!</a>
-                </div>
-            </div>
-        </footer>
+            <footer>
+        <div class="footer-content">
+            <p class="made-with">
+                Hecho con <span class="heart">💜</span> por <a href="https://dfernandezy.github.io/">Yahved Fernández</a>
+            </p>
+            <p class="nodo-made">Made in <a href="https://dfernandezy.github.io/nodo/">Nodo</a> 2026</p>
+        </div>
+    </footer>
 
     </body>
-
-</body>
-
 </html>
